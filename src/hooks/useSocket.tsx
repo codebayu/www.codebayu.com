@@ -155,6 +155,13 @@ export const SocketProvider = ({ children }: ISocket) => {
           { id: state.id, name: state.name, roomID: state.roomID },
           (err: string | null) => {
             if (err !== null) {
+              setState((prev) => ({
+                ...prev,
+                roomID: undefined,
+                counter: 0,
+                winner: undefined,
+                roomStatus: undefined,
+              }));
               return alert(err);
             }
             setState((prev) => ({
