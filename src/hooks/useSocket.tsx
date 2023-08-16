@@ -57,7 +57,9 @@ export const SocketProvider = ({ children }: ISocket) => {
   };
   const [state, setState] = useState(initialState);
 
-  const socket = io('https://rumahinggris.cc', {});
+  const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
+
+  const socket = io(SOCKET_URL, {});
 
   const register = (name: string) => {
     socket.emit('game:register', (id: string) => {
