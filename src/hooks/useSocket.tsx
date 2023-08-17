@@ -59,7 +59,7 @@ export const SocketProvider = ({ children }: ISocket) => {
 
   const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 
-  const socket = io(SOCKET_URL, {});
+  const socket = io(SOCKET_URL, {}); // test
 
   const register = (name: string) => {
     socket.emit('game:register', (id: string) => {
