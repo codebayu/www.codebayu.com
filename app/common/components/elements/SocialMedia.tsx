@@ -14,7 +14,7 @@ export default function SocialMedia({ items }: SocialMediaProps) {
       <div className="text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora">
         Let`s Connect
       </div>
-      <div className="flex justify-between px-5 pt-2">
+      <div className="flex justify-around lg:justify-between px-5 pt-2">
         {items?.map((item: MenuItemProps, index: number) => (
           <Link
             key={index}

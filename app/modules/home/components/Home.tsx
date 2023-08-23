@@ -1,6 +1,5 @@
 import Breakline from '@/app/common/components/elements/Breakline';
 import Introduction from './Introduction';
-import Tiktok from './Tiktok';
 import Contributions from './Contributions';
 
 interface HomeProps {
@@ -12,8 +11,6 @@ export default function Home({ githubData }: HomeProps) {
       <Introduction />
       <Breakline className="mt-8 mb-6" />
       <Contributions githubData={githubData} />
-      <Breakline className="mt-8 mb-6" />
-      <Tiktok />
     </>
   );
 }
