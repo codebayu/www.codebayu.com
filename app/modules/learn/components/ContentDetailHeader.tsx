@@ -82,7 +82,7 @@ const ContentDetailHeader = ({
           )}
           {difficulty && (
             <Tooltip title={`Difficulty: ${difficulty}`}>
-              <div className="px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400">
+              <div className="px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-400">
                 {difficulty}
               </div>
             </Tooltip>

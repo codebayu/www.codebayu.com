@@ -4,6 +4,7 @@ import Container from '@/app/common/components/elements/Container';
 import loadMdxFiles from '@/app/common/libs/mdx';
 import ContentDetail from '@/app/modules/learn/components/ContentDetail';
 import ContentDetailHeader from '@/app/modules/learn/components/ContentDetailHeader';
+import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 
 interface Params {
@@ -14,6 +15,26 @@ interface Params {
 interface LearnContentDetailPageProps {
   params: Params;
 }
+
+export async function generateMetadata(
+  { params }: LearnContentDetailPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const data = await getContentDetail(params);
+  const { frontMatter: meta } = data as any;
+  return {
+    title: meta?.title,
+    openGraph: {
+      url: process.env.DOMAIN,
+      siteName: 'Bayu Setiawan',
+      locale: 'id-ID',
+      type: 'article',
+      authors: 'Bayu Setiawan',
+    },
+    category: meta.category,
+  };
+}
+
 export default async function LearnContentDetailPage({
   params,
 }: LearnContentDetailPageProps) {

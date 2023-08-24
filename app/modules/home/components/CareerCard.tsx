@@ -36,7 +36,7 @@ const CareerCard = ({
       )}
 
       <div className="space-y-1">
-        <h6>{position}</h6>
+        <h2>{position}</h2>
         <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
           <div className="flex items-center gap-1 md:gap-2">
             <a

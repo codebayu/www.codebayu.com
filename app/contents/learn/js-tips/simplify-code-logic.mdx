@@ -1,0 +1,88 @@
+---
+id: 2
+title: 'Comparing If-Else Statements and Object-Based Evaluation'
+category: 'JavasScript Tips'
+language: 'JavaScript'
+difficulty: 'Medium'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-08-24'
+updated_at: '2023-08-24'
+---
+
+> Introduction
+
+In JavaScript, handling conditional scenarios is a crucial aspect of coding. In this article, we'll explore two contrasting approaches to managing complex logic: traditional if-else statements and the modern object-based evaluation. By comparing these methods, we'll uncover the strengths and weaknesses of each, helping you make informed decisions when writing clean and efficient code.
+
+> Problem
+
+When faced with complex logic, developers often find themselves dealing with convoluted if-else statements. These constructs can quickly become difficult to manage and lead to code that's hard to understand and maintain.
+
+&nbsp;
+
+> Solution
+
+JavaScript objects are collections of key-value pairs, where keys are strings (or Symbols) and values can be any data type. They allow us to model real-world entities or abstract concepts.
+
+### Lets breakdown the problem:
+
+1. If-Else Statements
+
+```
+const countMonthsByDurationType = (duration, durationType) => {
+    let months = duration
+
+    if (durationType === 4) {
+        months = months * 12
+    } else if (durationType === 2) {
+        months = months / 4
+    } else if (durationType === 1) {
+        months = months / 30
+    }
+
+    months = Math.ceil(months)
+    return months
+}
+```
+
+Traditional if-else statements can become cumbersome when dealing with multiple conditions and potential nested structures.
+
+2. The Object-Based Evaluation
+
+```
+const countMonthsByDurationType = (duration, durationType) => {
+    const evaluate = {
+        4: duration * 12,
+        3: duration,
+        2: duration / 4,
+        1: duration / 30
+    }
+    return Math.ceil(evaluate[durationType])
+}
+```
+
+By utilizing objects, you can significantly reduce the complexity of your code while maintaining clarity
+
+### Comparing the Two Approaches:
+
+#### Readability:
+
+- if-else: Readability can decline as conditions multiply.
+- Object-Based Evaluation: Object structure enhances readability by encapsulating conditions.
+
+#### Maintainability:
+
+- if-else: Modifications can lead to intricate and error-prone adjustments.
+- Object-Based Evaluation: Centralized conditions simplify maintenance and updates.
+
+#### Efficiency:
+
+- if-else: Execution time may increase with numerous checks.
+- Object-Based Evaluation: Direct mapping accelerates execution and reduces redundant checks.
+
+> Summary
+
+In the world of conditional logic, the choice between traditional if-else statements and modern object-based evaluation comes down to a balance between readability, maintainability, and efficiency. By understanding the strengths and weaknesses of both approaches, you can make informed decisions that lead to cleaner, more elegant, and more maintainable code.
+
+Hope this helps!

@@ -5,10 +5,35 @@ import { LEARN_CONTENTS } from '@/app/common/constant/learn';
 import loadMdxFiles from '@/app/common/libs/mdx';
 import ContentLists from '@/app/modules/learn/components/ContentLists';
 import { compareDesc, parseISO } from 'date-fns';
+import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 
 interface LearnContentPage {
   params: { content: string };
+}
+
+type Props = {
+  params: { content: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { content } = await getContent(params.content);
+  return {
+    title: content?.title,
+    description: content?.description,
+    openGraph: {
+      images: content?.image,
+      url: process.env.DOMAIN,
+      siteName: 'Bayu Setiawan',
+      locale: 'id-ID',
+      type: 'article',
+      authors: 'Bayu Setiawan',
+    },
+  };
 }
 
 export default async function LearnContentPage({ params }: LearnContentPage) {
@@ -22,6 +47,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
   });
 
   const { title, description } = content;
+
   return (
     <>
       <Container data-aos="fade-up">

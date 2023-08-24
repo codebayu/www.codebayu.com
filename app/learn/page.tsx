@@ -6,7 +6,7 @@ import { LEARN_CONTENTS } from '../common/constant/learn';
 
 export const metadata: Metadata = {
   title: 'Learn - Bayu Setiawan',
-  description: 'Awesome portfolio',
+  description: 'Programming tips for software developer',
 };
 
 const PAGE_TITLE = 'Learn';

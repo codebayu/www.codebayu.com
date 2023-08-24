@@ -1,0 +1,52 @@
+---
+id: 3
+title: 'Simplifying OR Conditional Operator'
+category: 'JavasScript Tips'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-08-24'
+updated_at: '2023-08-24'
+---
+
+> Introduction
+
+Optimizing code is a key aspect of efficient programming. In this article, we'll explore how to enhance user validation logic in JavaScript. We'll compare two approaches, highlighting the benefits of choosing simplicity and performance.
+
+> Problem
+
+Complex User Validation Logic:
+User validation often involves checking if a user's type matches specific criteria, leading to intricate if conditions.
+&nbsp;
+
+> Solution
+
+JavaScript objects are collections of key-value pairs, where keys are strings (or Symbols) and values can be any data type. They allow us to model real-world entities or abstract concepts.
+
+### Lets comparing the two approaches:
+
+1. Traditional If-Else Statements:
+
+```
+const isValidUser = (type) => {
+  if (type === 'admin' || type === 'employee' || type === 'customer'){
+    return true;
+  } else {
+    return false;
+  }
+};
+
+```
+
+2. Array Includes Method:
+
+```
+const isValidUser = (type) => ['admin', 'employee', 'customer'].includes(type);
+
+```
+
+> Summary
+
+When comparing the two approaches, it's evident that using the array includes() method offers a cleaner and more concise solution for user validation. By embracing simplicity in your code, you not only improve readability but also enhance the performance of your JavaScript applications.
