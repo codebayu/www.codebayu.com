@@ -21,6 +21,8 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
     reading_time_minutes,
   } = blog;
 
+  const defaultImage = '/placeholder.png';
+
   return (
     <>
       <BlogHeader
@@ -32,7 +34,7 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
       />
       <div className="space-y-6 leading-[1.8] dark:text-neutral-300 ">
         <Image
-          src={cover_image}
+          src={cover_image || defaultImage}
           width={800}
           height={500}
           alt={title}
