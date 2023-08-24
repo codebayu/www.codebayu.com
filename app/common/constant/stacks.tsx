@@ -12,7 +12,14 @@ import {
   SiTypescript,
   SiVite,
   SiWordpress,
+  SiChakraui,
+  SiExpo,
+  SiSass,
+  SiGulp,
+  SiFirebase,
+  SiFramer,
 } from 'react-icons/si';
+import { BiLogoPostgresql } from 'react-icons/bi';
 
 type stacksProps = {
   [key: string]: JSX.Element;
@@ -36,4 +43,12 @@ export const STACKS: stacksProps = {
   Laravel: <SiLaravel size={iconSize} className="text-red-500" />,
   'Material UI': <SiMui size={iconSize} className="text-sky-400" />,
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
+  PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,
+  ChakraUI: <SiChakraui size={iconSize} className="text-teal-500" />,
+  'React Native': <SiReact size={iconSize} className="text-sky-600" />,
+  Expo: <SiExpo size={iconSize} />,
+  SASS: <SiSass size={iconSize} className="text-pink-600" />,
+  Gulp: <SiGulp size={iconSize} className="text-red-500" />,
+  Firebase: <SiFirebase size={iconSize} className="text-yellow-500" />,
+  'Framer Motion': <SiFramer size={iconSize} />,
 };

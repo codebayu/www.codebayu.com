@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 import Layouts from '@/app/common/components/layouts/index';
 import { soraSans } from './common/styles/fonts';
+import ThemeProviderContext from './context/theme';
 
 export const metadata: Metadata = {
   title: 'Bayu Setiawan',
@@ -28,7 +29,9 @@ export default function RootLayout({
           speed={200}
           shadow="0 0 10px #2299DD,0 0 5px #2299DD"
         />
-        <Layouts>{children}</Layouts>
+        <ThemeProviderContext>
+          <Layouts>{children}</Layouts>
+        </ThemeProviderContext>
       </body>
     </html>
   );

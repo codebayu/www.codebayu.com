@@ -37,7 +37,8 @@
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "typescript": "^5.1.6",
-    "usehooks-ts": "^2.9.1"
+    "usehooks-ts": "^2.9.1",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.1",

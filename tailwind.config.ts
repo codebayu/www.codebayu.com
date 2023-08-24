@@ -13,6 +13,11 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        darkText: '#E4E6EB',
+        dark: '#121212',
+        light: '#fafafa',
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },

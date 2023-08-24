@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs';
 import { MenuItemProps } from '@/app/common/types/menu';
+import { useMenu } from '@/app/context/menu';
 
 export default function MenuItem({
   title,
@@ -16,6 +17,7 @@ export default function MenuItem({
 }: MenuItemProps) {
   //   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
+  const { hideMenu } = useMenu();
   const isExternalUrl = href?.includes('http');
   const isHashLink = href === '#';
   const pathname = usePathname();
@@ -27,7 +29,7 @@ export default function MenuItem({
   }`;
 
   const handleClick = () => {
-    // hideNavbar();
+    hideMenu();
     if (onClick) onClick();
   };
 

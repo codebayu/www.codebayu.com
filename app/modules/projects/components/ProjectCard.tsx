@@ -15,6 +15,8 @@ export default function ProjectCard({
   is_featured,
 }: IProjectItem) {
   const stacksArray = JSON.parse(stacks);
+  const trimmedContent =
+    description.slice(0, 70) + (description.length > 70 ? '...' : '');
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
@@ -31,13 +33,11 @@ export default function ProjectCard({
           className="rounded-t-xl h-48 object-cover object-left"
         />
         <div className="p-5 space-y-2">
-          <div className="flex justify-between">
-            <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
-              {title}
-            </div>
+          <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
+            {title}
           </div>
           <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">
-            {description}
+            {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {stacksArray?.map((stack: string, index: number) => (
