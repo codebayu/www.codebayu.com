@@ -4,10 +4,30 @@ import PageHeading from '@/app/common/components/elements/PageHeading';
 import { prisma } from '@/app/common/libs/prisma';
 import { IProjectItem } from '@/app/common/types/projects';
 import ProjectDetail from '@/app/modules/projects/components/ProjectDetail';
+import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 
 interface ProjectsDetailPageProps {
   params: { slug: string };
+}
+
+export async function generateMetadata(
+  { params }: ProjectsDetailPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const project = await getProjectDetail(params.slug);
+  return {
+    title: `${project.title} - Project Bayu Setiawan`,
+    description: project.description,
+    openGraph: {
+      images: project.image,
+      url: `https://v2.codebayu.com/${project.slug}`,
+      siteName: 'Bayu Setiawan',
+      locale: 'id-ID',
+      type: 'article',
+      authors: 'Bayu Setiawan',
+    },
+  };
 }
 
 export default async function ProjectDetailPage({

@@ -22,7 +22,7 @@ export default function ProfileHeader({
       )}
     >
       <Image
-        src="/profile.jpeg"
+        src="/bayu.webp"
         alt="profile"
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
