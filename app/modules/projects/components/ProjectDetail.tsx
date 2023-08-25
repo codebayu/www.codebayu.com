@@ -25,7 +25,9 @@ export default function ProjectDetail({
           <div className="flex flex-wrap items-center gap-3">
             {stacksArray?.map((stack: string, index: number) => (
               <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
+                <Tooltip title={stack}>
+                  <div className="w-5">{STACKS[stack]}</div>
+                </Tooltip>
               </div>
             ))}
           </div>
@@ -43,11 +45,11 @@ export default function ProjectDetail({
         alt={title}
         className="hover:scale-105 transition-all duration-300"
       />
-      {content && (
+      {/* {content && (
         <div className="space-y-6 leading-[1.8] dark:text-neutral-300 mt-5">
           <MDXComponent>{content}</MDXComponent>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

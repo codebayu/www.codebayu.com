@@ -87,7 +87,11 @@ const ContentDetailHeader = ({
               </div>
             </Tooltip>
           )}
-          {language && <Tooltip title={language}>{STACKS[language]}</Tooltip>}
+          {language && (
+            <Tooltip title={language}>
+              <div className="w-5">{STACKS[language]}</div>
+            </Tooltip>
+          )}
         </div>
       </div>
     </>
