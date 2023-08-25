@@ -5,6 +5,7 @@ import Image from '@/app/common/components/elements/Image';
 import MDXComponent from '@/app/common/components/elements/MDXComponent';
 import { BlogDetailProps } from '@/app/common/types/blog';
 import BlogHeader from './BlogHeader';
+import { PLACEHOLDER_URL } from '@/app/common/constant';
 
 interface BlogDetail {
   blog: BlogDetailProps;
@@ -21,8 +22,6 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
     reading_time_minutes,
   } = blog;
 
-  const defaultImage = '/placeholder.png';
-
   return (
     <>
       <BlogHeader
@@ -34,7 +33,7 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
       />
       <div className="space-y-6 leading-[1.8] dark:text-neutral-300 ">
         <Image
-          src={cover_image ?? defaultImage}
+          src={cover_image || PLACEHOLDER_URL}
           width={800}
           height={500}
           alt={title}

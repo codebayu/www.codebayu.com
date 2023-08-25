@@ -7,7 +7,8 @@ import SectionHeading from '@/app/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/app/common/components/elements/SectionSubHeading';
 import { CAREERS } from '@/app/common/constant/careers';
 
-const RESUME_URL = '/Bayu-Setiawan-Frontend-Developer-CV.pdf';
+const RESUME_URL =
+  'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr';
 
 const CareerList = () => {
   return (

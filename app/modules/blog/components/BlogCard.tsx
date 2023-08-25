@@ -1,5 +1,6 @@
 import Card from '@/app/common/components/elements/Card';
 import Image from '@/app/common/components/elements/Image';
+import { PLACEHOLDER_URL } from '@/app/common/constant';
 import { formatBlogSlug, formatDate } from '@/app/common/helpers';
 import clsxm from '@/app/common/libs/clsxm';
 import { BlogItem } from '@/app/common/types/blog';
@@ -42,8 +43,6 @@ export default function BlogCard({
   const trimmedContent =
     description.slice(0, 100) + (description.length > 100 ? '...' : '');
 
-  const defaultImage = '/placeholder.png';
-
   const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
     view === 'grid' ? 'sm:w-full sm:!px-6' : ''
@@ -67,7 +66,7 @@ export default function BlogCard({
       >
         <div className="w-fit">
           <Image
-            src={cover_image || defaultImage}
+            src={cover_image || PLACEHOLDER_URL}
             width={isMobile || viewOption === 'grid' ? 400 : 240}
             height={100}
             alt={title}

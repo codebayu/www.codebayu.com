@@ -14,6 +14,8 @@ export default function ProfileHeader({
   expandMenu,
   imageSize,
 }: ProfileHeaderProps) {
+  const PROFILE_URL =
+    'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692937496/codebayu/y4ksq3lo4a9ldxeh2t1o.webp';
   return (
     <div
       className={clsx(
@@ -22,7 +24,7 @@ export default function ProfileHeader({
       )}
     >
       <Image
-        src="/bayu.webp"
+        src={PROFILE_URL}
         alt="profile"
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}

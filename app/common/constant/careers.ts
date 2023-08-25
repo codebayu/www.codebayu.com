@@ -2,7 +2,7 @@ export const CAREERS = [
   {
     position: 'Frontend Developer',
     company: 'Harian Kompas',
-    logo: '/careers/kompas.jpeg',
+    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692938101/codebayu/careers/pl2ugnv6lryp41vhowpl.jpg',
     location: 'Jakarta',
     location_type: 'Hybrid',
     type: 'Fulltime',
@@ -13,7 +13,7 @@ export const CAREERS = [
   {
     position: 'Frontend Developer',
     company: 'AlteaCare',
-    logo: '/careers/alteacare.png',
+    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692938098/codebayu/careers/rfxxqzv7x84zsgc9gof1.png',
     location: 'Tangerang Selatan',
     location_type: 'Hybrid',
     type: 'Fulltime',
@@ -24,7 +24,7 @@ export const CAREERS = [
   {
     position: 'Fullstack Developer',
     company: 'importir.org',
-    logo: '/careers/importir.jpeg',
+    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692938099/codebayu/careers/qznu1vfzad9ridp2la1u.jpg',
     location: 'Tangerang',
     location_type: 'On Site',
     type: 'Fulltime',
@@ -35,7 +35,7 @@ export const CAREERS = [
   {
     position: 'IT Management Trainee',
     company: 'importir.org',
-    logo: '/careers/importir.jpeg',
+    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692938099/codebayu/careers/qznu1vfzad9ridp2la1u.jpg',
     location: 'Tangerang',
     location_type: 'On Site',
     type: 'Fulltime',
