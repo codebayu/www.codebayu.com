@@ -17,12 +17,14 @@ const BlogListHeader = ({ viewOption, setViewOption }: BlogListHeaderProps) => {
           setViewOption={setViewOption}
           type="list"
           icon={<ListIcon size={24} className="p-0.5" />}
-        />{' '}
+          label="list-icon"
+        />
         <ViewOptions
           option={viewOption}
           setViewOption={setViewOption}
           type="grid"
           icon={<GridIcon size={24} className="p-0.5" />}
+          label="grid-icon"
         />
       </div>
     </div>

@@ -7,14 +7,12 @@ export default function Introduction() {
       </div>
 
       <div className="space-y-4">
-        <>
-          <ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
-            <li>software enginner</li>
-            <li>
-              Based in Jakarta <span className="ml-1">🇮🇩</span>
-            </li>
-          </ul>
-        </>
+        <ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
+          <li>Software Enginner</li>
+          <li>
+            Based in Jakarta <span className="ml-1">🇮🇩</span>
+          </li>
+        </ul>
         <p className="leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300">
           Passionate and seasoned Software Engineer with a strong focus on
           frontend development. Proficient in TypeScript and well-versed in all

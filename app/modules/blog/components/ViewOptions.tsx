@@ -5,6 +5,7 @@ type ViewOptionsProps = {
   setViewOption: (option: string) => void;
   type: string;
   icon: JSX.Element;
+  label: string;
 };
 
 const ViewOptions = ({
@@ -12,6 +13,7 @@ const ViewOptions = ({
   setViewOption,
   icon,
   type,
+  label,
 }: ViewOptionsProps) => {
   const isActive = option === type;
 
@@ -23,6 +25,7 @@ const ViewOptions = ({
       )}
       onClick={() => setViewOption(type)}
       data-umami-event={`Change Blog View to ${type}`}
+      aria-label={label}
     >
       {icon}
     </button>

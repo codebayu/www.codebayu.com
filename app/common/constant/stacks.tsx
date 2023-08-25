@@ -18,6 +18,16 @@ import {
   SiGulp,
   SiFirebase,
   SiFramer,
+  SiNuxtdotjs,
+  SiVuedotjs,
+  SiJest,
+  SiExpress,
+  SiRedux,
+  SiReactquery,
+  SiHtml5,
+  SiCss3,
+  SiPrisma,
+  SiNodedotjs,
 } from 'react-icons/si';
 import { BiLogoPostgresql } from 'react-icons/bi';
 
@@ -25,7 +35,7 @@ type stacksProps = {
   [key: string]: JSX.Element;
 };
 
-const iconSize = 24;
+const iconSize = '100%';
 
 export const STACKS: stacksProps = {
   PHP: <SiPhp size={iconSize} className="text-blue-500" />,
@@ -51,4 +61,14 @@ export const STACKS: stacksProps = {
   Gulp: <SiGulp size={iconSize} className="text-red-500" />,
   Firebase: <SiFirebase size={iconSize} className="text-yellow-500" />,
   'Framer Motion': <SiFramer size={iconSize} />,
+  'Nuxt.js': <SiNuxtdotjs size={iconSize} className="text-green-600" />,
+  'Vue.js': <SiVuedotjs size={iconSize} className="text-green-500" />,
+  Jest: <SiJest size={iconSize} className="text-orange-600" />,
+  'Express.js': <SiExpress size={iconSize} />,
+  Redux: <SiRedux size={iconSize} className="text-purple-500" />,
+  'React Query': <SiReactquery size={iconSize} className="text-red-600" />,
+  HTML: <SiHtml5 size={iconSize} className="text-orange-500" />,
+  CSS: <SiCss3 size={iconSize} className="text-blue-500" />,
+  Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
+  'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
 };
