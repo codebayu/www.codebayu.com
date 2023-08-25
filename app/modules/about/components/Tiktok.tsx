@@ -12,12 +12,14 @@ export default async function Tiktok() {
     <>
       <SectionHeading title="Tiktok" icon={<SiTiktok className="mr-1" />} />
       <SectionSubHeading>
-        <p className="dark:text-neutral-400">Find me on tiktok</p>
+        <p className="text-neutral-600 dark:text-neutral-400">
+          Find me on tiktok
+        </p>
         <Link
           href={`https://www.tiktok.com/${TIKTOK_USERNAME}`}
           target="_blank"
           passHref
-          className="text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400"
+          className="text-sm font-code text-neutral-600 dark:text-neutral-400 hover:text-neutral-700 hover:dark:text-neutral-400"
         >
           {TIKTOK_USERNAME}
         </Link>

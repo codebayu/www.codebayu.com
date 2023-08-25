@@ -3,6 +3,7 @@ import Image from '@/app/common/components/elements/Image';
 import { formatBlogSlug, formatDate } from '@/app/common/helpers';
 import clsxm from '@/app/common/libs/clsxm';
 import { BlogItem } from '@/app/common/types/blog';
+import { getBlogViews } from '@/services/view';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
@@ -21,14 +22,14 @@ export default function BlogCard({
   cover_image,
   published_at,
   description,
-  total_views_count,
+  page_views_count,
   slug,
   comments_count,
-  view = 'list',
+  view,
   isExcerpt = true,
   isCarousel = false,
 }: BlogCardProps) {
-  const [viewOption, setViewOption] = useState<string>(view);
+  const [viewOption, setViewOption] = useState<string>();
   const { width } = useWindowSize();
   const isMobile = width < 468;
 
@@ -88,7 +89,7 @@ export default function BlogCard({
             </div>
             <div className="flex gap-1 items-center">
               <ViewIcon size={14} />
-              <span className="text-xs ml-0.5">{total_views_count} Views</span>
+              <span className="text-xs ml-0.5">{page_views_count} Views</span>
             </div>
             <div className="flex gap-1 items-center">
               <CommentIcon size={16} />

@@ -27,8 +27,12 @@ export default async function BlogPage() {
 }
 
 async function getBlogData(): Promise<BlogItem[]> {
-  const DEV_TO_URL = 'https://dev.to/api/articles?username=codebayu';
-  const response = await axios.get(DEV_TO_URL);
+  const DEV_TO_URL = 'https://dev.to/api/articles/me/all';
+  const response = await axios.get(DEV_TO_URL, {
+    headers: {
+      'api-key': process.env.DEVTO_KEY,
+    },
+  });
   if (response?.status !== 200) return {} as BlogItem[];
   return response.data;
 }
