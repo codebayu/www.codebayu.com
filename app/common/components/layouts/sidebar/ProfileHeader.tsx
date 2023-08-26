@@ -15,7 +15,7 @@ export default function ProfileHeader({
   imageSize,
 }: ProfileHeaderProps) {
   const PROFILE_URL =
-    'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692937496/codebayu/y4ksq3lo4a9ldxeh2t1o.webp';
+    'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693008885/codebayu/ab0kfkhjgymzthooxiea.webp';
   return (
     <div
       className={clsx(

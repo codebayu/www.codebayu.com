@@ -1,10 +1,6 @@
 import BackButton from '@/app/common/components/elements/BackButton';
 import Container from '@/app/common/components/elements/Container';
-import {
-  BlogDetailProps,
-  BlogItem,
-  CommentItemProps,
-} from '@/app/common/types/blog';
+import { BlogDetailProps, CommentItemProps } from '@/app/common/types/blog';
 import BlogDetail from '@/app/modules/blog/components/BlogDetail';
 import { getBlogViews } from '@/services/view';
 import axios from 'axios';
