@@ -1,17 +1,23 @@
 'use client';
 
 import Breakline from '@/app/common/components/elements/Breakline';
-import Image from '@/app/common/components/elements/Image';
 import MDXComponent from '@/app/common/components/elements/MDXComponent';
-import { BlogDetailProps } from '@/app/common/types/blog';
+import { BlogDetailProps, CommentItemProps } from '@/app/common/types/blog';
 import BlogHeader from './BlogHeader';
 import { PLACEHOLDER_URL } from '@/app/common/constant';
+import CommentList from './CommentList';
+import Image from 'next/image';
 
 interface BlogDetail {
   blog: BlogDetailProps;
   pageViewCount: number;
+  comments: CommentItemProps[];
 }
-export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
+export default function BlogDetail({
+  blog,
+  pageViewCount,
+  comments,
+}: BlogDetail) {
   const {
     cover_image,
     title,
@@ -20,6 +26,7 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
     published_at,
     tags,
     reading_time_minutes,
+    id,
   } = blog;
 
   return (
@@ -32,13 +39,16 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
         page_views_count={pageViewCount}
       />
       <div className="space-y-6 leading-[1.8] dark:text-neutral-300 ">
-        <Image
-          src={cover_image || PLACEHOLDER_URL}
-          width={800}
-          height={500}
-          alt={title}
-          className="hover:scale-105"
-        />
+        <div className="overflow-hidden">
+          <Image
+            src={cover_image || PLACEHOLDER_URL}
+            width={800}
+            height={500}
+            alt={title}
+            className="hover:scale-105 transition-all duration-700"
+            priority
+          />
+        </div>
         {body_markdown && <MDXComponent>{body_markdown}</MDXComponent>}
       </div>
       {tags?.length >= 1 && (
@@ -57,6 +67,7 @@ export default function BlogDetail({ blog, pageViewCount }: BlogDetail) {
         </div>
       )}
       <Breakline className="!my-10" />
+      <CommentList id={id} totalComments={comments_count} comments={comments} />
     </>
   );
 }
