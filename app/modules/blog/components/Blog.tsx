@@ -8,13 +8,44 @@ import { useBlogViewStore } from '@/app/context/useBlogViewStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import BlogCard from './BlogCard';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import LoadingCard from '@/app/common/components/elements/LoadingCard';
 
-export default function Blog({ blogs }: BlogProps) {
+export default function Blog() {
   const { width } = useWindowSize();
   const isMobile = width < 468;
   const { viewOption, setViewOption } = useBlogViewStore();
+  const [blogs, setBlogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (blogs?.length === 0) {
+  async function getBlogData() {
+    const response = await axios.get('/api/blog');
+    setBlogs(response.data);
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    getBlogData();
+  }, []);
+
+  if (isLoading)
+    return (
+      <div
+        className={clsx(
+          'gap-5 sm:gap-4',
+          viewOption === 'list' || isMobile
+            ? 'flex flex-col'
+            : 'grid grid-cols-2 sm:!gap-5'
+        )}
+      >
+        {[1, 2].map((item) => (
+          <LoadingCard key={item} view={viewOption} />
+        ))}
+      </div>
+    );
+
+  if (blogs?.length === 0 && !isLoading) {
     return <EmptyState message="No Data" />;
   }
 

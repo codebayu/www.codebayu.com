@@ -2,7 +2,7 @@ export const CAREERS = [
   {
     position: 'Frontend Developer',
     company: 'Harian Kompas',
-    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692938101/codebayu/careers/pl2ugnv6lryp41vhowpl.jpg',
+    logo: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693046138/codebayu/careers/twdpsacbxnbzgcvebftm.png',
     location: 'Jakarta',
     location_type: 'Hybrid',
     type: 'Fulltime',
