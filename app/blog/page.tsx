@@ -16,7 +16,6 @@ const PAGE_DESCRIPTION =
 
 export default async function BlogPage() {
   const blogs = await getBlogData();
-  //test
   return (
     <>
       <Container data-aos="fade-up">

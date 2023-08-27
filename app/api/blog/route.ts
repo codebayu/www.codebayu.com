@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-  const DEV_TO_URL = 'https://dev.to/api/articles?username=codebayu';
+  const DEV_TO_URL = 'https://dev.to/api/articles/me';
   const headers = {
     'api-key': process.env.DEVTO_KEY,
   };

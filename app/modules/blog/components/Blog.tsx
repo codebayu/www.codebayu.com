@@ -1,15 +1,14 @@
 'use client';
 
 import EmptyState from '@/app/common/components/elements/EmptyState';
-import { BlogItem, BlogProps } from '@/app/common/types/blog';
+import { BlogItem } from '@/app/common/types/blog';
 import BlogListHeader from './BlogListHeader';
 import { useWindowSize } from 'usehooks-ts';
 import { useBlogViewStore } from '@/app/context/useBlogViewStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import BlogCard from './BlogCard';
-import { useEffect, useMemo, useState } from 'react';
-import axios from 'axios';
+import { useMemo } from 'react';
 import LoadingCard from '@/app/common/components/elements/LoadingCard';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
