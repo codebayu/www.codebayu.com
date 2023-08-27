@@ -20,11 +20,7 @@ export default function Blog() {
   const [isLoading, setIsLoading] = useState(true);
 
   async function getBlogData() {
-    const response = await axios.get('/api/blog', {
-      headers: {
-        'Cache-Control': 'max-age=1',
-      },
-    });
+    const response = await axios.get('/api/blog');
     setBlogs(response.data);
     setIsLoading(false);
   }
