@@ -10,8 +10,11 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
     const response = await axios.get(DEV_TO_URL, {
       headers,
     });
-    return NextResponse.json(response.data, { status: 200 });
+    return NextResponse.json(
+      { status: true, data: response.data },
+      { status: 200 }
+    );
   } catch (error) {
-    return NextResponse.json(error, { status: 400 });
+    return NextResponse.json({ status: false, error }, { status: 400 });
   }
 };

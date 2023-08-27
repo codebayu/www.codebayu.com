@@ -8,26 +8,24 @@ import { useBlogViewStore } from '@/app/context/useBlogViewStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import BlogCard from './BlogCard';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import LoadingCard from '@/app/common/components/elements/LoadingCard';
+import useSWR from 'swr';
+import { fetcher } from '@/services/fetcher';
 
 export default function Blog() {
   const { width } = useWindowSize();
   const isMobile = width < 468;
   const { viewOption, setViewOption } = useBlogViewStore();
-  const [blogs, setBlogs] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { data, isLoading } = useSWR('/api/blog', fetcher);
 
-  async function getBlogData() {
-    const response = await axios.get('/api/blog');
-    setBlogs(response.data);
-    setIsLoading(false);
-  }
-
-  useEffect(() => {
-    getBlogData();
-  }, []);
+  const blogData: BlogItem[] = useMemo(() => {
+    if (data?.status && data?.data && Array.isArray(data?.data)) {
+      return data.data;
+    }
+    return [];
+  }, [data]);
 
   if (isLoading)
     return (
@@ -45,7 +43,7 @@ export default function Blog() {
       </div>
     );
 
-  if (blogs?.length === 0 && !isLoading) {
+  if (blogData.length === 0 && !isLoading) {
     return <EmptyState message="No Data" />;
   }
 
@@ -62,7 +60,7 @@ export default function Blog() {
             : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
-        {blogs?.map((item: BlogItem, index: number) => (
+        {blogData?.map((item: BlogItem, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
