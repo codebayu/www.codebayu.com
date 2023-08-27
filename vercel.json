@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/*.ts": {
+    "app/api/blog/route.ts": {
       "memory": 1024,
       "maxDuration": 10
     }
   },
   "headers": [
     {
-      "source": "api/*.ts",
+      "source": "app/api/blog/route.ts",
       "headers": [
         {
           "key": "Cache-Control",
