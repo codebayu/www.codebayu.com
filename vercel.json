@@ -7,7 +7,7 @@
   },
   "headers": [
     {
-      "source": "/api/*.ts",
+      "source": "api/*.ts",
       "headers": [
         {
           "key": "Cache-Control",
