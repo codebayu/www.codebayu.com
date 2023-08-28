@@ -28,6 +28,7 @@ import {
   SiCss3,
   SiPrisma,
   SiNodedotjs,
+  SiGithub,
 } from 'react-icons/si';
 import { BiLogoPostgresql } from 'react-icons/bi';
 
@@ -71,4 +72,5 @@ export const STACKS: stacksProps = {
   CSS: <SiCss3 size={iconSize} className="text-blue-500" />,
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
+  Github: <SiGithub size={iconSize} />,
 };

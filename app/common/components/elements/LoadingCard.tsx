@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useWindowSize } from 'usehooks-ts';
 import clsxm from '../../libs/clsxm';
+import useIsMobile from '@/hooks/useIsMobile';
 
 export default function LoadingCard({ view }: { view: string }) {
   const [viewOption, setViewOption] = useState<string>();
-  const { width } = useWindowSize();
-  const isMobile = width < 468;
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     isMobile ? setViewOption('grid') : setViewOption(view);

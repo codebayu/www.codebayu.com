@@ -3,7 +3,6 @@
 import EmptyState from '@/app/common/components/elements/EmptyState';
 import { BlogItem } from '@/app/common/types/blog';
 import BlogListHeader from './BlogListHeader';
-import { useWindowSize } from 'usehooks-ts';
 import { useBlogViewStore } from '@/app/context/useBlogViewStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
@@ -12,10 +11,10 @@ import { useMemo } from 'react';
 import LoadingCard from '@/app/common/components/elements/LoadingCard';
 import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
+import useIsMobile from '@/hooks/useIsMobile';
 
 export default function Blog() {
-  const { width } = useWindowSize();
-  const isMobile = width < 468;
+  const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
   const { data, isLoading } = useSWR('/api/blog', fetcher);
 

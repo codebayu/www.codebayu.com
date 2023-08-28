@@ -4,12 +4,11 @@ import { PLACEHOLDER_URL } from '@/app/common/constant';
 import { formatBlogSlug, formatDate } from '@/app/common/helpers';
 import clsxm from '@/app/common/libs/clsxm';
 import { BlogItem } from '@/app/common/types/blog';
-import { getBlogViews } from '@/services/view';
+import useIsMobile from '@/hooks/useIsMobile';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
-import { useWindowSize } from 'usehooks-ts';
 
 interface BlogCardProps extends BlogItem {
   view?: string;
@@ -31,8 +30,7 @@ export default function BlogCard({
   isCarousel = false,
 }: BlogCardProps) {
   const [viewOption, setViewOption] = useState<string>();
-  const { width } = useWindowSize();
-  const isMobile = width < 468;
+  const isMobile = useIsMobile();
 
   const newSlug = formatBlogSlug(slug);
 

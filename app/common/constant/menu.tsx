@@ -18,6 +18,7 @@ import {
   BsYoutube as YoutubeIcon,
   BsTiktok as TiktokIcon,
 } from 'react-icons/bs';
+import { LuWorkflow } from 'react-icons/lu';
 
 import { MenuItemProps } from '../types/menu';
 
@@ -71,6 +72,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Contact',
+  },
+  {
+    title: 'Roadmap',
+    href: '/roadmap?tribe=frontend-developer',
+    icon: <LuWorkflow size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Roadmap',
   },
   {
     title: 'Dashboard',
