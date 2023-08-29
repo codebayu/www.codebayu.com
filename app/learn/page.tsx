@@ -5,7 +5,7 @@ import LearnModule from '@/app/modules/learn';
 import { LEARN_CONTENTS } from '../common/constant/learn';
 
 export const metadata: Metadata = {
-  title: 'Learn - Code Bayu',
+  title: 'Learn | Code Bayu',
   description: 'Programming tips for software developer',
   keywords:
     'frontend developer, software engineer, react js, javascript, typescript',

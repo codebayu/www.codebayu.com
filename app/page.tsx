@@ -1,5 +1,10 @@
 import Container from '@/app/common/components/elements/Container';
 import Home from '@/app/modules/home';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bayu Setiawan | Personal Website',
+};
 
 export default async function HomePage() {
   return (
