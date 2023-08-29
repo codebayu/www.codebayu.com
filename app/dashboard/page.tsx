@@ -8,9 +8,10 @@ import {
   GITHUB_API_BASE_URL,
   GITHUB_USER_QUERY,
 } from '@/app/common/constant/github';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Dashboard | Code Bayu',
+  title: `Dashboard ${METADATA.exTitle}`,
   description: 'My activity dashboard as software engineer',
   alternates: {
     canonical: `${process.env.DOMAIN}/dashboard`,

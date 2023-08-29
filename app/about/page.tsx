@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import About from '@/app/modules/about';
 import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'About | Code Bayu',
-  description: 'A short story of Bayu Setiawan',
+  title: `About ${METADATA.exTitle}`,
+  description: `A short story of ${METADATA.creator}`,
   alternates: {
     canonical: `${process.env.DOMAIN}/about`,
   },

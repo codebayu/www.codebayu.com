@@ -3,9 +3,10 @@ import { Metadata } from 'next';
 import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 import Roadmap from '@/app/modules/roadmap';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Roadmap | Code Bayu',
+  title: `Roadmap ${METADATA.exTitle}`,
   description:
     'Learning path recomendation and free course playlist for software engineer',
   alternates: {

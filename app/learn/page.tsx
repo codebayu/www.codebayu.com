@@ -3,9 +3,10 @@ import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 import LearnModule from '@/app/modules/learn';
 import { LEARN_CONTENTS } from '../common/constant/learn';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Learn | Code Bayu',
+  title: `Learn ${METADATA.exTitle}`,
   description: 'Programming tips for software developer',
   keywords:
     'frontend developer, software engineer, react js, javascript, typescript',

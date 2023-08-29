@@ -1,9 +1,10 @@
 import Container from '@/app/common/components/elements/Container';
 import Home from '@/app/modules/home';
 import { Metadata } from 'next';
+import { METADATA } from './common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Bayu Setiawan | Personal Website',
+  title: `${METADATA.creator} | Personal Website`,
   alternates: {
     canonical: process.env.DOMAIN,
   },

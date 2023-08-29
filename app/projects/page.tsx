@@ -4,9 +4,10 @@ import PageHeading from '../common/components/elements/PageHeading';
 import { IProjectItem } from '../common/types/projects';
 import { prisma } from '../common/libs/prisma';
 import Container from '../common/components/elements/Container';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Projects | Code Bayu',
+  title: `Projects ${METADATA.exTitle}`,
   description: 'Software Engineer portfolio ideas',
   keywords: 'portfolio frontend developer',
   alternates: {

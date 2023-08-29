@@ -2,6 +2,7 @@ import BackButton from '@/app/common/components/elements/BackButton';
 import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/app/common/constant/learn';
+import { METADATA } from '@/app/common/constant/metadata';
 import loadMdxFiles from '@/app/common/libs/mdx';
 import ContentLists from '@/app/modules/learn/components/ContentLists';
 import { compareDesc, parseISO } from 'date-fns';
@@ -23,19 +24,19 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { content } = await getContent(params.content);
   return {
-    title: `${content?.title} | Code Bayu`,
-    description: `${content?.description} on codebayu`,
+    title: `${content?.title} ${METADATA.exTitle}`,
+    description: `${content?.description} on ${METADATA.openGraph.siteName}`,
     openGraph: {
       images: content?.image,
-      url: process.env.DOMAIN,
-      siteName: 'Code Bayu',
-      locale: 'id-ID',
+      url: METADATA.openGraph.url,
+      siteName: METADATA.openGraph.siteName,
+      locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: 'Bayu Setiawan',
+      authors: METADATA.creator,
     },
     keywords: content?.title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/learn/${params.content}`,
+      canonical: `${METADATA.openGraph.url}/learn/${params.content}`,
     },
   };
 }

@@ -1,5 +1,6 @@
 import BackButton from '@/app/common/components/elements/BackButton';
 import Container from '@/app/common/components/elements/Container';
+import { METADATA } from '@/app/common/constant/metadata';
 import { BlogDetailProps, CommentItemProps } from '@/app/common/types/blog';
 import BlogDetail from '@/app/modules/blog/components/BlogDetail';
 import { getBlogViews } from '@/services/view';
@@ -18,13 +19,13 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const blog = await getBlogDetail({ params, searchParams });
   return {
-    title: `${blog.title} | Code Bayu`,
+    title: `${blog.title} ${METADATA.exTitle}`,
     description: blog.description,
     openGraph: {
       images: blog.cover_image,
       url: `${process.env.DOMAIN}/${blog.slug}`,
-      siteName: 'Code Bayu',
-      locale: 'id-ID',
+      siteName: METADATA.openGraph.siteName,
+      locale: METADATA.openGraph.locale,
       type: 'article',
       authors: blog.user.name,
     },

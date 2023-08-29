@@ -4,9 +4,10 @@ import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 import axios from 'axios';
 import { BlogItem } from '../common/types/blog';
+import { METADATA } from '../common/constant/metadata';
 
 export const metadata: Metadata = {
-  title: 'Blog | Code Bayu',
+  title: `Blog ${METADATA.exTitle}`,
   description: 'My blogs content about programming and software development',
   keywords: 'blog code bayu, codebayu',
   alternates: {

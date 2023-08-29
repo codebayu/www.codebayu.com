@@ -1,6 +1,7 @@
 import BackButton from '@/app/common/components/elements/BackButton';
 import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
+import { METADATA } from '@/app/common/constant/metadata';
 import { prisma } from '@/app/common/libs/prisma';
 import { IProjectItem } from '@/app/common/types/projects';
 import ProjectDetail from '@/app/modules/projects/components/ProjectDetail';
@@ -17,15 +18,15 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const project = await getProjectDetail(params.slug);
   return {
-    title: `${project.title} | Project Code Bayu`,
+    title: `${project.title} ${METADATA.exTitle}`,
     description: project.description,
     openGraph: {
       images: project.image,
-      url: `${process.env.DOMAIN}/${project.slug}`,
-      siteName: 'Code Bayu',
-      locale: 'id-ID',
+      url: `${METADATA.openGraph.url}/${project.slug}`,
+      siteName: METADATA.openGraph.siteName,
+      locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: 'Bayu Setiawan',
+      authors: METADATA.creator,
     },
     keywords: project.title,
     alternates: {

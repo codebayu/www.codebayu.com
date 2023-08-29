@@ -1,6 +1,7 @@
 import BackButton from '@/app/common/components/elements/BackButton';
 import Breakline from '@/app/common/components/elements/Breakline';
 import Container from '@/app/common/components/elements/Container';
+import { METADATA } from '@/app/common/constant/metadata';
 import loadMdxFiles from '@/app/common/libs/mdx';
 import ContentDetail from '@/app/modules/learn/components/ContentDetail';
 import ContentDetailHeader from '@/app/modules/learn/components/ContentDetailHeader';
@@ -23,13 +24,13 @@ export async function generateMetadata(
   const data = await getContentDetail(params);
   const { frontMatter: meta } = data as any;
   return {
-    title: `${meta?.title} | Code Bayu`,
+    title: `${meta?.title} ${METADATA.exTitle}`,
     openGraph: {
-      url: process.env.DOMAIN,
-      siteName: 'Code Bayu',
-      locale: 'id-ID',
+      url: METADATA.openGraph.url,
+      siteName: METADATA.openGraph.siteName,
+      locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: 'Bayu Setiawan',
+      authors: METADATA.creator,
     },
     category: meta.category,
     keywords: meta.title,
