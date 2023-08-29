@@ -4,6 +4,7 @@ import NextTopLoader from 'nextjs-toploader';
 import Layouts from '@/app/common/components/layouts/index';
 import { soraSans } from './common/styles/fonts';
 import ThemeProviderContext from './context/theme';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   description:
@@ -47,6 +48,7 @@ export default function RootLayout({
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>
+        <Analytics />
       </body>
     </html>
   );

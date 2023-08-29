@@ -14,7 +14,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
   },
   {
     id: 2,
-    title: 'Typescript Tips',
+    title: 'TypeScript Tips',
     slug: 'ts-tips',
     description:
       'Learn and improve the typescript skill for beginner or advance',
