@@ -17,16 +17,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const project = await getProjectDetail(params.slug);
   return {
-    title: `${project.title} - Project Bayu Setiawan`,
+    title: `${project.title} | Project Code Bayu`,
     description: project.description,
     openGraph: {
       images: project.image,
       url: `https://v2.codebayu.com/${project.slug}`,
-      siteName: 'Bayu Setiawan',
+      siteName: 'Code Bayu',
       locale: 'id-ID',
       type: 'article',
       authors: 'Bayu Setiawan',
     },
+    keywords: project.title,
   };
 }
 

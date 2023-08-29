@@ -23,15 +23,16 @@ export async function generateMetadata(
   const data = await getContentDetail(params);
   const { frontMatter: meta } = data as any;
   return {
-    title: meta?.title,
+    title: `${meta?.title} | Code Bayu`,
     openGraph: {
       url: process.env.DOMAIN,
-      siteName: 'Bayu Setiawan',
+      siteName: 'Code Bayu',
       locale: 'id-ID',
       type: 'article',
       authors: 'Bayu Setiawan',
     },
     category: meta.category,
+    keywords: meta.title,
   };
 }
 

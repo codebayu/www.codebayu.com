@@ -18,16 +18,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const blog = await getBlogDetail({ params, searchParams });
   return {
-    title: blog.title,
+    title: `${blog.title} | Code Bayu`,
     description: blog.description,
     openGraph: {
       images: blog.cover_image,
       url: `https://v2.codebayu.com/${blog.slug}`,
-      siteName: 'Bayu Setiawan',
+      siteName: 'Code Bayu',
       locale: 'id-ID',
       type: 'article',
       authors: blog.user.name,
     },
+    keywords: blog.title,
   };
 }
 

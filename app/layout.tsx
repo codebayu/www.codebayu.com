@@ -6,8 +6,23 @@ import { soraSans } from './common/styles/fonts';
 import ThemeProviderContext from './context/theme';
 
 export const metadata: Metadata = {
-  title: 'Bayu Setiawan',
-  description: 'Awesome portfolio',
+  description:
+    'Personal website, portfolio, blog, software engineer roadmap, programming tips of Code Bayu',
+  keywords:
+    'codebayu, bayu setiawan, programming tips, belajar javascript, belajar typescript',
+  creator: 'Bayu Setiawan',
+  authors: {
+    name: 'Bayu Setiawan',
+    url: process.env.DOMAIN,
+  },
+  openGraph: {
+    images:
+      'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693008885/codebayu/ab0kfkhjgymzthooxiea.webp',
+    url: process.env.DOMAIN,
+    siteName: 'Code Bayu',
+    locale: 'id-ID',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

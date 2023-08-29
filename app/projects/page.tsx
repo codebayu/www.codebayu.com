@@ -6,8 +6,9 @@ import { prisma } from '../common/libs/prisma';
 import Container from '../common/components/elements/Container';
 
 export const metadata: Metadata = {
-  title: 'Projects - Bayu Setiawan',
-  description: 'Awesome portfolio',
+  title: 'Projects | Code Bayu',
+  description: 'Software Engineer portfolio ideas',
+  keywords: 'portfolio frontend developer',
 };
 
 const PAGE_TITLE = 'Projects';

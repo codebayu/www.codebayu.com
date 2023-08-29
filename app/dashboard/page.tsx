@@ -10,8 +10,8 @@ import {
 } from '@/app/common/constant/github';
 
 export const metadata: Metadata = {
-  title: 'Dashboard - Bayu Setiawan',
-  description: 'Awesome portfolio',
+  title: 'Dashboard | Code Bayu',
+  description: 'My activity dashboard as software engineer',
 };
 
 const PAGE_TITLE = 'Dashboard';

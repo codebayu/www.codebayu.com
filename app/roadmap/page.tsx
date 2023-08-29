@@ -5,8 +5,9 @@ import PageHeading from '@/app/common/components/elements/PageHeading';
 import Roadmap from '@/app/modules/roadmap';
 
 export const metadata: Metadata = {
-  title: 'Roadmap - Bayu Setiawan',
-  description: 'Learning path recomendation and free course playlist',
+  title: 'Roadmap | Code Bayu',
+  description:
+    'Learning path recomendation and free course playlist for software engineer',
 };
 
 const PAGE_TITLE = 'Roadmap';

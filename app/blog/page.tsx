@@ -6,8 +6,9 @@ import axios from 'axios';
 import { BlogItem } from '../common/types/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog - Bayu Setiawan',
-  description: 'Awesome portfolio',
+  title: 'Blog | Code Bayu',
+  description: 'My blogs content about programming and software development',
+  keywords: 'blog code bayu, codebayu',
 };
 
 const PAGE_TITLE = 'Blog';

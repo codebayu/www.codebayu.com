@@ -4,8 +4,8 @@ import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 
 export const metadata: Metadata = {
-  title: 'About - Bayu Setiawan',
-  description: 'Awesome portfolio',
+  title: 'About | Code Bayu',
+  description: 'A short story of Bayu Setiawan',
 };
 
 const PAGE_TITLE = 'About';

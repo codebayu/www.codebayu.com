@@ -23,16 +23,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { content } = await getContent(params.content);
   return {
-    title: content?.title,
-    description: content?.description,
+    title: `${content?.title} | Code Bayu`,
+    description: `${content?.description} on codebayu`,
     openGraph: {
       images: content?.image,
       url: process.env.DOMAIN,
-      siteName: 'Bayu Setiawan',
+      siteName: 'Code Bayu',
       locale: 'id-ID',
       type: 'article',
       authors: 'Bayu Setiawan',
     },
+    keywords: content?.title,
   };
 }
 
