@@ -6,6 +6,9 @@ import PageHeading from '@/app/common/components/elements/PageHeading';
 export const metadata: Metadata = {
   title: 'About | Code Bayu',
   description: 'A short story of Bayu Setiawan',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/about`,
+  },
 };
 
 const PAGE_TITLE = 'About';

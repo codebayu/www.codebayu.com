@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Projects | Code Bayu',
   description: 'Software Engineer portfolio ideas',
   keywords: 'portfolio frontend developer',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/projects`,
+  },
 };
 
 const PAGE_TITLE = 'Projects';

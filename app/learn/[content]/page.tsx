@@ -34,6 +34,9 @@ export async function generateMetadata(
       authors: 'Bayu Setiawan',
     },
     keywords: content?.title,
+    alternates: {
+      canonical: `${process.env.DOMAIN}/learn/${params.content}`,
+    },
   };
 }
 

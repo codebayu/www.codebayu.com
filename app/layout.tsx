@@ -48,7 +48,7 @@ export default function RootLayout({
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>
-        <Analytics />
+        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   );

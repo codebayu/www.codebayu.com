@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: 'Programming tips for software developer',
   keywords:
     'frontend developer, software engineer, react js, javascript, typescript',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/learn`,
+  },
 };
 
 const PAGE_TITLE = 'Learn';

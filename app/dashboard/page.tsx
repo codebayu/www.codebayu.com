@@ -12,6 +12,9 @@ import {
 export const metadata: Metadata = {
   title: 'Dashboard | Code Bayu',
   description: 'My activity dashboard as software engineer',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/dashboard`,
+  },
 };
 
 const PAGE_TITLE = 'Dashboard';

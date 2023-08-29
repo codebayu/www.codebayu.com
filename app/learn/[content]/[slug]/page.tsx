@@ -33,6 +33,9 @@ export async function generateMetadata(
     },
     category: meta.category,
     keywords: meta.title,
+    alternates: {
+      canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`,
+    },
   };
 }
 

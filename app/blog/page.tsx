@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Blog | Code Bayu',
   description: 'My blogs content about programming and software development',
   keywords: 'blog code bayu, codebayu',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/blog`,
+  },
 };
 
 const PAGE_TITLE = 'Blog';

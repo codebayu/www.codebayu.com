@@ -4,6 +4,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Bayu Setiawan | Personal Website',
+  alternates: {
+    canonical: process.env.DOMAIN,
+  },
 };
 
 export default async function HomePage() {

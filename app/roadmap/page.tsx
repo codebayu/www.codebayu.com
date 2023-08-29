@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Roadmap | Code Bayu',
   description:
     'Learning path recomendation and free course playlist for software engineer',
+  alternates: {
+    canonical: `${process.env.DOMAIN}/roadmap`,
+  },
 };
 
 const PAGE_TITLE = 'Roadmap';

@@ -21,13 +21,16 @@ export async function generateMetadata(
     description: project.description,
     openGraph: {
       images: project.image,
-      url: `https://v2.codebayu.com/${project.slug}`,
+      url: `${process.env.DOMAIN}/${project.slug}`,
       siteName: 'Code Bayu',
       locale: 'id-ID',
       type: 'article',
       authors: 'Bayu Setiawan',
     },
     keywords: project.title,
+    alternates: {
+      canonical: `${process.env.DOMAIN}/projects/${params.slug}`,
+    },
   };
 }
 

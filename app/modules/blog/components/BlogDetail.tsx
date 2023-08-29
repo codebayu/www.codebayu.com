@@ -53,7 +53,7 @@ export default function BlogDetail({
       </div>
       {tags?.length >= 1 && (
         <div className="my-10 space-y-2">
-          <h6 className="text-lg font-medium">Tags:</h6>
+          <h3 className="text-lg font-medium">Tags:</h3>
           <div className="flex flex-wrap gap-2 pt-2">
             {tags?.map((stack: string, index: number) => (
               <span
