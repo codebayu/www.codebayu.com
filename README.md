@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# v2.codebayu.com
+
+Welcome to the **Personal Website, Blogs, and Programming Tips** open-source repository! This project is built using Next.js, Tailwind CSS, Prisma, and PostgreSQL, and it's designed to help you create your own personal website, share insightful blogs, and offer programming tips to the community. You find this project a bit helpful? Then give me the start
+
+<img width="1440" alt="Screenshot 2023-08-30 at 12 02 31" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/180756f4-416c-4e74-86ad-200fc5b469e4">
+
+
+## Introduction
+
+In today's digital age, having a personal website is a fantastic way to showcase your work, share your thoughts through blogs, and contribute to the programming community by offering valuable tips and insights. This repository provides you with a solid foundation to create such a platform with ease.
+
+## Features
+
+- **Modern Stack**: Built with Next.js, a powerful React framework, Tailwind CSS for responsive and elegant styling, Prisma as the database toolkit, and PostgreSQL as the database system.
+- **Personal Website**: Display your professional information, portfolio, and achievements in a visually appealing manner.
+- **Blogs**: Share your thoughts, experiences, and expertise with the world through engaging blog posts.
+- **Programming Tips**: Provide programming tips, tricks, and tutorials to help fellow developers learn and grow.
+- **SEO Optimized**: Implement best practices for search engine optimization to increase your online visibility.
+- **Responsive Design**: Ensure a seamless experience across various devices and screen sizes.
 
 ## Getting Started
 
-First, run the development server:
+Before you begin, make sure you have Node.js and npm (Node Package Manager) installed on your system. Familiarity with Next.js, Tailwind CSS, Prisma, and PostgreSQL will be beneficial for customization.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone this repository to your local machine using:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   git clone https://github.com/Bayusetiawan45/v2.codebayu.com.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd v2.codebayu.com
+   ```
+3. Install the dependencies:
+   ```bash
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
+1. Configure your database settings in the .env file.
+2. Run the Prisma migration to set up your database schema:
+   ```bash
+   npx prisma migrate dev
+   ```
+3. Start the development server:
+   ```bash
+   yarn dev
+   ```
+4. Access the application in your browser at http://localhost:3000.
 
-## Learn More
+## Contributing
+Contributions to this project are welcome and encouraged! If you find any bugs, want to add new features, or improve the existing ones, feel free to open issues and pull requests.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
