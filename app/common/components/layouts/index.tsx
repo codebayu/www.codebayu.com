@@ -17,7 +17,7 @@ export default function Layouts({ children }: LayoutsProps) {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10 lg:h-screen overflow-hidden">
+    <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10">
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
         <header className="lg:w-1/5 lg:px-4">
           <Sidebar />
