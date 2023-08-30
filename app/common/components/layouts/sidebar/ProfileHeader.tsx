@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Tooltip from '../../elements/Tooltip';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
 import clsx from 'clsx';
+import { DEVTO_PROFILE } from '@/app/common/constant';
 
 interface ProfileHeaderProps {
   expandMenu: boolean;
@@ -41,9 +42,13 @@ export default function ProfileHeader({
           <VerifiedIcon size={18} className="text-blue-400" />
         </Tooltip>
       </div>
-      <div className="hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300">
+      <Link
+        href={DEVTO_PROFILE}
+        target="_blank"
+        className="hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
+      >
         @codebayu
-      </div>
+      </Link>
     </div>
   );
 }
