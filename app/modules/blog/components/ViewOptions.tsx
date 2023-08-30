@@ -8,13 +8,13 @@ type ViewOptionsProps = {
   label: string;
 };
 
-const ViewOptions = ({
+export default function ViewOptions({
   option,
   setViewOption,
   icon,
   type,
   label,
-}: ViewOptionsProps) => {
+}: ViewOptionsProps) {
   const isActive = option === type;
 
   return (
@@ -30,5 +30,4 @@ const ViewOptions = ({
       {icon}
     </button>
   );
-};
-export default ViewOptions;
+}

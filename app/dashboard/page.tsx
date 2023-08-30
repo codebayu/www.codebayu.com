@@ -8,7 +8,7 @@ import {
   GITHUB_API_BASE_URL,
   GITHUB_USER_QUERY,
 } from '@/app/common/constant/github';
-import { METADATA } from '../common/constant/metadata';
+import { METADATA } from '@/app/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `Dashboard ${METADATA.exTitle}`,

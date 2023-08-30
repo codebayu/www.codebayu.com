@@ -11,7 +11,7 @@ type ContributionsProps = {
   githubData: any;
 };
 
-const Contributions = ({ githubData }: ContributionsProps) => {
+export default function Contributions({ githubData }: ContributionsProps) {
   return (
     <section className="flex flex-col gap-y-2">
       <SectionHeading
@@ -42,6 +42,4 @@ const Contributions = ({ githubData }: ContributionsProps) => {
       )}
     </section>
   );
-};
-
-export default Contributions;
+}

@@ -14,13 +14,13 @@ interface BlogHeaderProps {
   published_at?: string;
 }
 
-const BlogHeader = ({
+export default function BlogHeader({
   title,
   comments_count = 0,
   page_views_count,
   published_at,
   reading_time_minutes,
-}: BlogHeaderProps) => {
+}: BlogHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection = () => {
@@ -122,6 +122,4 @@ const BlogHeader = ({
       </div>
     </>
   );
-};
-
-export default BlogHeader;
+}

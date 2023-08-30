@@ -10,7 +10,7 @@ import { CAREERS } from '@/app/common/constant/careers';
 const RESUME_URL =
   'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr';
 
-const CareerList = () => {
+export default function CareerList() {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -39,6 +39,4 @@ const CareerList = () => {
       </div>
     </section>
   );
-};
-
-export default CareerList;
+}

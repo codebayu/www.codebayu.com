@@ -7,7 +7,10 @@ interface BlogListHeaderProps {
   setViewOption: (option: string) => void;
 }
 
-const BlogListHeader = ({ viewOption, setViewOption }: BlogListHeaderProps) => {
+export default function BlogListHeader({
+  viewOption,
+  setViewOption,
+}: BlogListHeaderProps) {
   return (
     <div className="flex items-center justify-between text-[15px] mb-5">
       <SectionHeading title="Latest Articles" />
@@ -29,6 +32,4 @@ const BlogListHeader = ({ viewOption, setViewOption }: BlogListHeaderProps) => {
       </div>
     </div>
   );
-};
-
-export default BlogListHeader;
+}

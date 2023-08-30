@@ -9,14 +9,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 
-const ContentDetailHeader = ({
+export default function ContentDetailHeader({
   title,
   source,
   difficulty,
   language,
   source_url,
   updated_at,
-}: SubContentMetaProps) => {
+}: SubContentMetaProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -96,6 +96,4 @@ const ContentDetailHeader = ({
       </div>
     </>
   );
-};
-
-export default ContentDetailHeader;
+}

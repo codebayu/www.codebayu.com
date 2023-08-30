@@ -2,10 +2,10 @@ import './globals.css';
 import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 import Layouts from '@/app/common/components/layouts/index';
+import { METADATA } from '@/app/common/constant/metadata';
 import { soraSans } from './common/styles/fonts';
 import ThemeProviderContext from './context/theme';
 import { Analytics } from '@vercel/analytics/react';
-import { METADATA } from './common/constant/metadata';
 
 export const metadata: Metadata = {
   description: METADATA.description,

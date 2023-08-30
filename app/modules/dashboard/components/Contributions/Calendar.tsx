@@ -28,7 +28,7 @@ interface CalendarProps {
   };
 }
 
-const Calendar = ({ data }: CalendarProps) => {
+export default function Calendar({ data }: CalendarProps) {
   const [selectContribution, setSelectContribution] = useState<{
     count: number | null;
     date: string | null;
@@ -154,6 +154,4 @@ const Calendar = ({ data }: CalendarProps) => {
       </div>
     </>
   );
-};
-
-export default Calendar;
+}

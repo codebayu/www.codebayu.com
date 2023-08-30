@@ -6,13 +6,13 @@ import { SubContentProps } from '@/app/common/types/learn';
 import Link from 'next/link';
 import { BiFile as SubContentIcon } from 'react-icons/bi';
 
-const LearnSubContentItem = ({
+export default function LearnSubContentItem({
   contentSlug,
   subContentSlug,
   title,
   language,
   difficulty = '',
-}: SubContentProps) => {
+}: SubContentProps) {
   return (
     <Link href={`/learn/${contentSlug}/${subContentSlug}`}>
       <Card
@@ -41,6 +41,4 @@ const LearnSubContentItem = ({
       </Card>
     </Link>
   );
-};
-
-export default LearnSubContentItem;
+}

@@ -4,7 +4,7 @@ import { CareerProps } from '@/app/common/types/careers';
 import { differenceInMonths, differenceInYears, format } from 'date-fns';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
 
-const CareerCard = ({
+export default function CareerCard({
   position,
   company,
   logo,
@@ -12,7 +12,7 @@ const CareerCard = ({
   start_date,
   end_date,
   link,
-}: CareerProps) => {
+}: CareerProps) {
   const startDate = new Date(start_date);
   const endDate = end_date ? new Date(end_date) : new Date();
 
@@ -64,6 +64,4 @@ const CareerCard = ({
       </div>
     </Card>
   );
-};
-
-export default CareerCard;
+}
