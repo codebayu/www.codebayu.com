@@ -2,6 +2,7 @@ import BackButton from '@/app/common/components/elements/BackButton';
 import Container from '@/app/common/components/elements/Container';
 import PageHeading from '@/app/common/components/elements/PageHeading';
 import { METADATA } from '@/app/common/constant/metadata';
+import loadMdxFiles from '@/app/common/libs/mdx';
 import { prisma } from '@/app/common/libs/prisma';
 import { IProjectItem } from '@/app/common/types/projects';
 import ProjectDetail from '@/app/modules/projects/components/ProjectDetail';
@@ -54,6 +55,9 @@ async function getProjectDetail(slug: string): Promise<IProjectItem> {
   const response = await prisma.projects.findUnique({
     where: { slug },
   });
+  const contents = loadMdxFiles(slug, true);
   if (!response) return {} as IProjectItem;
-  return response;
+  const content = contents.find((item) => item.slug === slug);
+  const newResponse = { ...response, content: content?.content };
+  return newResponse;
 }

@@ -7,9 +7,13 @@ import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
 import { MdxFileProps } from '../types/mdx';
 
-const loadMdxFiles = (slug: string): MdxFileProps[] => {
-  const dirPath = path.join(process.cwd(), 'app', 'contents', 'learn', slug);
-
+const loadMdxFiles = (
+  slug: string,
+  isProject: boolean = false
+): MdxFileProps[] => {
+  const learnPath = path.join(process.cwd(), 'app', 'contents', 'learn', slug);
+  const projectPath = path.join(process.cwd(), 'app', 'contents', 'projects');
+  const dirPath = isProject ? projectPath : learnPath;
   if (!fs.existsSync(dirPath)) {
     return [];
   }

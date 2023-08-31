@@ -45,11 +45,11 @@ export default function ProjectDetail({
         alt={title}
         className="hover:scale-105 transition-all duration-300"
       />
-      {/* {content && (
+      {content && (
         <div className="space-y-6 leading-[1.8] dark:text-neutral-300 mt-5">
           <MDXComponent>{content}</MDXComponent>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
