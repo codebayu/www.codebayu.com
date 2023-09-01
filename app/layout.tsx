@@ -6,6 +6,7 @@ import { METADATA } from '@/app/common/constant/metadata';
 import { soraSans } from './common/styles/fonts';
 import ThemeProviderContext from './context/theme';
 import { Analytics } from '@vercel/analytics/react';
+import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 
 export const metadata: Metadata = {
   description: METADATA.description,
@@ -29,6 +30,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const GTM_ID = process.env.GTM_ID;
+
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={soraSans.className}>
@@ -47,6 +50,8 @@ export default function RootLayout({
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>
         {process.env.NODE_ENV === 'production' && <Analytics />}
+
+        <GoogleAnalytics measurementId={GTM_ID || ''} />
       </body>
     </html>
   );

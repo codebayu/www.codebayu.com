@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bradgarropy/next-google-analytics": "^1.0.2",
     "@prisma/client": "^5.2.0",
     "@types/node": "^20.5.3",
     "@types/react": "18.2.20",

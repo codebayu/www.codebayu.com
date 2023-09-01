@@ -62,6 +62,11 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
+"@bradgarropy/next-google-analytics@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@bradgarropy/next-google-analytics/-/next-google-analytics-1.0.2.tgz#057b77d77f590939da4dce3575255b1f37411910"
+  integrity sha512-Xhli9NkdJbmvs1QNAcC9At3w/GIlXunVIMQzcAYfVP8tQSX3Q4un0doZfQknNvRz+QO6we+8lDE4/dMOio0vzQ==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
