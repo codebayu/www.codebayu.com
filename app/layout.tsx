@@ -30,8 +30,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const GTM_ID = process.env.GTM_ID;
-
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={soraSans.className}>
@@ -51,7 +49,7 @@ export default function RootLayout({
         </ThemeProviderContext>
         {process.env.NODE_ENV === 'production' && <Analytics />}
 
-        <GoogleAnalytics measurementId={GTM_ID || ''} />
+        <GoogleAnalytics measurementId={process.env.GTM_ID || ''} />
       </body>
     </html>
   );
