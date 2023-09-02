@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+
 import { IProjectsItemProps } from '@/common/types/projects';
+
 import ProjectCard from './ProjectCard';
 
 export default function Projects({ projects }: IProjectsItemProps) {
-  const fiteredProjects = projects.filter((project) => project?.is_show);
+  const fiteredProjects = projects.filter(project => project?.is_show);
 
   if (fiteredProjects.length === 0) {
     return 'no data';

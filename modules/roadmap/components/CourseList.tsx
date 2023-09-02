@@ -1,11 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import CourseCard from './CourseCard';
-import { CourseCardProps } from '@/common/types/roadmap';
+
+import React, { useEffect, useState } from 'react';
+
 import { ROADMAP } from '@/common/constant/roadmap';
+import { CourseCardProps } from '@/common/types/roadmap';
+
+import CourseCard from './CourseCard';
+
+/* eslint-disable react-hooks/exhaustive-deps */
+
+/* eslint-disable react-hooks/exhaustive-deps */
+
+/* eslint-disable react-hooks/exhaustive-deps */
 
 export default function CourseList() {
   const params = useSearchParams();

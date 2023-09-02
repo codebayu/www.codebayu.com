@@ -1,23 +1,24 @@
 import { Metadata } from 'next';
-import Projects from '@/modules/projects';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { IProjectItem } from '@/common/types/projects';
-import { prisma } from '@/common/libs/prisma';
+
 import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
 import { METADATA } from '@/common/constant/metadata';
+import { prisma } from '@/common/libs/prisma';
+import { IProjectItem } from '@/common/types/projects';
+
+import Projects from '@/modules/projects';
 
 export const metadata: Metadata = {
   title: `Projects ${METADATA.exTitle}`,
   description: 'Software Engineer portfolio ideas',
   keywords: 'portfolio frontend developer',
   alternates: {
-    canonical: `${process.env.DOMAIN}/projects`,
-  },
+    canonical: `${process.env.DOMAIN}/projects`
+  }
 };
 
 const PAGE_TITLE = 'Projects';
-const PAGE_DESCRIPTION =
-  'Showcasing my passion for technology, design, and problem-solving through code.';
+const PAGE_DESCRIPTION = 'Showcasing my passion for technology, design, and problem-solving through code.';
 
 export default async function ProjectsPage() {
   const projects = await getProjets();
@@ -35,12 +36,12 @@ async function getProjets(): Promise<IProjectItem[]> {
   const response = await prisma.projects.findMany({
     orderBy: [
       {
-        is_featured: 'desc',
+        is_featured: 'desc'
       },
       {
-        updated_at: 'desc',
-      },
-    ],
+        updated_at: 'desc'
+      }
+    ]
   });
   return response;
 }

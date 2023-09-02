@@ -1,9 +1,11 @@
 import { HiCode } from 'react-icons/hi';
-import CareerCard from './CareerCard';
+
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { CAREERS } from '@/common/constant/careers';
 import { SKILLS } from '@/common/constant/skills';
+
+import CareerCard from './CareerCard';
 import SkillCard from './SkillCard';
 
 export default function SkillList() {
@@ -17,9 +19,7 @@ export default function SkillList() {
       </div>
 
       <div className="flex flex-wrap gap-6">
-        {SKILLS?.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
-        ))}
+        {SKILLS?.map((skill, index) => <SkillCard key={index} skill={skill} />)}
       </div>
     </section>
   );

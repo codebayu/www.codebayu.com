@@ -1,12 +1,15 @@
+import { Metadata, ResolvingMetadata } from 'next';
+
+import React from 'react';
+
 import BackButton from '@/common/components/elements/BackButton';
 import Breakline from '@/common/components/elements/Breakline';
 import Container from '@/common/components/elements/Container';
 import { METADATA } from '@/common/constant/metadata';
 import loadMdxFiles from '@/common/libs/mdx';
+
 import ContentDetail from '@/modules/learn/components/ContentDetail';
 import ContentDetailHeader from '@/modules/learn/components/ContentDetailHeader';
-import { Metadata, ResolvingMetadata } from 'next';
-import React from 'react';
 
 interface Params {
   content: string;
@@ -30,19 +33,17 @@ export async function generateMetadata(
       siteName: METADATA.openGraph.siteName,
       locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: METADATA.creator,
+      authors: METADATA.creator
     },
     category: meta.category,
     keywords: meta.title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`,
-    },
+      canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`
+    }
   };
 }
 
-export default async function LearnContentDetailPage({
-  params,
-}: LearnContentDetailPageProps) {
+export default async function LearnContentDetailPage({ params }: LearnContentDetailPageProps) {
   const data = await getContentDetail(params);
   const { content, frontMatter } = data as any;
   return (
@@ -63,13 +64,13 @@ export default async function LearnContentDetailPage({
 
 async function getContentDetail(params: Params) {
   const contentList = await loadMdxFiles(params.content);
-  const contentData = contentList.find((item) => item.slug === params.slug);
+  const contentData = contentList.find(item => item.slug === params.slug);
   if (!contentData) {
     return {
       redirect: {
         destination: '/404',
-        permanent: false,
-      },
+        permanent: false
+      }
     };
   }
   return contentData;

@@ -1,12 +1,15 @@
-import './globals.css';
 import type { Metadata } from 'next';
+
+import GoogleAnalytics from '@bradgarropy/next-google-analytics';
+import { Analytics } from '@vercel/analytics/react';
 import NextTopLoader from 'nextjs-toploader';
+
 import Layouts from '@/common/components/layouts/index';
 import { METADATA } from '@/common/constant/metadata';
+
 import { soraSans } from '../common/styles/fonts';
 import ThemeProviderContext from '../context/theme';
-import { Analytics } from '@vercel/analytics/react';
-import GoogleAnalytics from '@bradgarropy/next-google-analytics';
+import './globals.css';
 
 export const metadata: Metadata = {
   description: METADATA.description,
@@ -14,22 +17,18 @@ export const metadata: Metadata = {
   creator: METADATA.creator,
   authors: {
     name: METADATA.creator,
-    url: METADATA.openGraph.url,
+    url: METADATA.openGraph.url
   },
   openGraph: {
     images: METADATA.profile,
     url: METADATA.openGraph.url,
     siteName: METADATA.openGraph.siteName,
     locale: METADATA.openGraph.locale,
-    type: 'website',
-  },
+    type: 'website'
+  }
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={soraSans.className}>

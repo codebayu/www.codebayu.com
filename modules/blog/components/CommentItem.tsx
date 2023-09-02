@@ -1,13 +1,10 @@
+import React, { useEffect, useRef } from 'react';
+
 import Image from '@/common/components/elements/Image';
 import { formatDate } from '@/common/helpers';
 import { CommentItemProps } from '@/common/types/blog';
-import React, { useEffect, useRef } from 'react';
 
-export default function CommentItem({
-  body_html,
-  created_at,
-  user,
-}: CommentItemProps) {
+export default function CommentItem({ body_html, created_at, user }: CommentItemProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,15 +34,9 @@ export default function CommentItem({
         <div className="flex flex-col sm:flex-row sm:items-center gap-2">
           <div className="font-medium dark:text-neutral-300">{user?.name}</div>
           <div className="hidden sm:block dark:text-neutral-700">•</div>
-          <div className="text-xs dark:text-neutral-500">
-            {formatDate(created_at, 'MMM dd, yyyy, HH:mm')}
-          </div>
+          <div className="text-xs dark:text-neutral-500">{formatDate(created_at, 'MMM dd, yyyy, HH:mm')}</div>
         </div>
-        <div
-          ref={contentRef}
-          className="leading-[1.8] max-w-[600px]"
-          dangerouslySetInnerHTML={{ __html: body_html }}
-        />
+        <div ref={contentRef} className="leading-[1.8] max-w-[600px]" dangerouslySetInnerHTML={{ __html: body_html }} />
       </div>
     </div>
   );

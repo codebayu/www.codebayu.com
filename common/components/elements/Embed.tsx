@@ -6,7 +6,6 @@
 // export default function Embed({ html }: EmbedProps) {
 //   return <div dangerouslySetInnerHTML={{ __html: html }} />;
 // }
-
 import React, { useEffect } from 'react';
 
 export default function Embed() {
@@ -30,10 +29,7 @@ export default function Embed() {
       style={{ maxWidth: '780px', minWidth: '288px' }}
     >
       <section>
-        <a
-          target="_blank"
-          href="https://www.tiktok.com/@codebayu.com?refer=creator_embed"
-        >
+        <a target="_blank" href="https://www.tiktok.com/@codebayu.com?refer=creator_embed">
           @codebayu.com
         </a>
       </section>

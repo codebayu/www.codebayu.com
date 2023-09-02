@@ -1,21 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ContentProps } from '@/common/types/learn';
 import React from 'react';
-import LearnSubContentItem from './LearnSubContentItem';
+
+import { ContentProps } from '@/common/types/learn';
 import { MdxFileProps } from '@/common/types/mdx';
+
+import LearnSubContentItem from './LearnSubContentItem';
 
 interface ContentListsProps {
   sortedSubContents: MdxFileProps[];
   title: string;
   content: ContentProps;
 }
-export default function ContentLists({
-  sortedSubContents,
-  title,
-  content,
-}: ContentListsProps) {
+export default function ContentLists({ sortedSubContents, title, content }: ContentListsProps) {
   return (
     <div className="flex flex-col gap-3">
       {sortedSubContents?.map((item, index) => (

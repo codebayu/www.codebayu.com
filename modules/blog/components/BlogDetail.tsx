@@ -1,33 +1,22 @@
 'use client';
 
+import Image from 'next/image';
+
 import Breakline from '@/common/components/elements/Breakline';
 import MDXComponent from '@/common/components/elements/MDXComponent';
-import { BlogDetailProps, CommentItemProps } from '@/common/types/blog';
-import BlogHeader from './BlogHeader';
 import { PLACEHOLDER_URL } from '@/common/constant';
+import { BlogDetailProps, CommentItemProps } from '@/common/types/blog';
+
+import BlogHeader from './BlogHeader';
 import CommentList from './CommentList';
-import Image from 'next/image';
 
 interface BlogDetail {
   blog: BlogDetailProps;
   pageViewCount: number;
   comments: CommentItemProps[];
 }
-export default function BlogDetail({
-  blog,
-  pageViewCount,
-  comments,
-}: BlogDetail) {
-  const {
-    cover_image,
-    title,
-    body_markdown,
-    comments_count,
-    published_at,
-    tags,
-    reading_time_minutes,
-    id,
-  } = blog;
+export default function BlogDetail({ blog, pageViewCount, comments }: BlogDetail) {
+  const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id } = blog;
 
   return (
     <>

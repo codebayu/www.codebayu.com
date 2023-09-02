@@ -1,13 +1,15 @@
 'use client';
 
+import Link from 'next/link';
+
+import { format } from 'date-fns';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { FiExternalLink as LinkIcon } from 'react-icons/fi';
+
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { SubContentMetaProps } from '@/common/types/learn';
-import { format } from 'date-fns';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FiExternalLink as LinkIcon } from 'react-icons/fi';
 
 export default function ContentDetailHeader({
   title,
@@ -15,14 +17,13 @@ export default function ContentDetailHeader({
   difficulty,
   language,
   source_url,
-  updated_at,
+  updated_at
 }: SubContentMetaProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       setIsScrolled(scrollTop > 250);
     };
 
@@ -36,7 +37,7 @@ export default function ContentDetailHeader({
   const transition = { duration: 0.3, ease: 'easeInOut' };
   const titleVariants = {
     initial: { opacity: 0, y: -20 },
-    animate: { opacity: 1, y: 0 },
+    animate: { opacity: 1, y: 0 }
   };
 
   return (
@@ -65,9 +66,7 @@ export default function ContentDetailHeader({
       <div className="flex flex-col sm:flex-row items-start lg:items-center gap-2 justify-between mb-6 pt-3 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]">
         <div>
           Last update on
-          <span className="px-1 font-medium">
-            {format(new Date(updated_at), 'MMMM dd, yyyy')}
-          </span>
+          <span className="px-1 font-medium">{format(new Date(updated_at), 'MMMM dd, yyyy')}</span>
         </div>
         <div className="flex gap-4 items-center mt-1">
           {source && source_url && (

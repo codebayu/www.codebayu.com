@@ -34,27 +34,24 @@ export default function Calendar({ data }: CalendarProps) {
     date: string | null;
   }>({
     count: null,
-    date: null,
+    date: null
   });
 
   const weeks = data?.weeks ?? [];
   const months =
     data?.months?.map((month: Month) => {
       const filterContributionDay = weeks
-        .filter(
-          (week) => week.firstDay.slice(0, 7) === month.firstDay.slice(0, 7)
-        )
-        .map((item) => item.contributionDays)
+        .filter(week => week.firstDay.slice(0, 7) === month.firstDay.slice(0, 7))
+        .map(item => item.contributionDays)
         .flat(1);
       const getContributionsByMonth = filterContributionDay.reduce(
-        (previousValue, currentValue) =>
-          previousValue + currentValue.contributionCount,
+        (previousValue, currentValue) => previousValue + currentValue.contributionCount,
         0
       );
 
       return {
         ...month,
-        contributionsCount: getContributionsByMonth,
+        contributionsCount: getContributionsByMonth
       };
     }) ?? [];
 
@@ -64,7 +61,7 @@ export default function Calendar({ data }: CalendarProps) {
     <>
       <div className="relative flex flex-col">
         <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
-          {months.map((month) => (
+          {months.map(month => (
             <li
               key={month.firstDay}
               className={clsx(`${month.totalWeeks < 2 ? 'invisible' : ''}`)}
@@ -76,14 +73,12 @@ export default function Calendar({ data }: CalendarProps) {
         </ul>
 
         <div className="flex justify-start gap-[3px] overflow-hidden">
-          {weeks?.map((week) => (
+          {weeks?.map(week => (
             <div key={week.firstDay}>
-              {week.contributionDays.map((contribution) => {
-                const backgroundColor =
-                  contribution.contributionCount > 0 && contribution.color;
+              {week.contributionDays.map(contribution => {
+                const backgroundColor = contribution.contributionCount > 0 && contribution.color;
 
-                const getRandomDelayAnimate =
-                  Math.random() * week.contributionDays.length * 0.15;
+                const getRandomDelayAnimate = Math.random() * week.contributionDays.length * 0.15;
 
                 return (
                   <motion.span
@@ -95,20 +90,18 @@ export default function Calendar({ data }: CalendarProps) {
                       animate: {
                         opacity: 1,
                         translateY: 0,
-                        transition: { delay: getRandomDelayAnimate },
-                      },
+                        transition: { delay: getRandomDelayAnimate }
+                      }
                     }}
                     className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
                         count: contribution.contributionCount,
-                        date: contribution.date,
+                        date: contribution.date
                       })
                     }
-                    onMouseLeave={() =>
-                      setSelectContribution({ count: null, date: null })
-                    }
+                    onMouseLeave={() => setSelectContribution({ count: null, date: null })}
                   />
                 );
               })}
@@ -131,8 +124,8 @@ export default function Calendar({ data }: CalendarProps) {
                   initial: { opacity: 0 },
                   animate: {
                     opacity: 1,
-                    transition: { delay: index * 0.3 },
-                  },
+                    transition: { delay: index * 0.3 }
+                  }
                 }}
                 className="h-[10px] w-[10px] rounded-sm"
                 style={{ backgroundColor: item }}
@@ -148,8 +141,7 @@ export default function Calendar({ data }: CalendarProps) {
             'rounded bg-neutral-200 px-2 text-sm dark:bg-neutral-700'
           )}
         >
-          {selectContribution?.count} contributions on{' '}
-          {selectContribution?.date}
+          {selectContribution?.count} contributions on {selectContribution?.date}
         </div>
       </div>
     </>

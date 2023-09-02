@@ -1,17 +1,21 @@
 'use client';
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import { BlogItem } from '@/common/types/blog';
-import BlogListHeader from './BlogListHeader';
-import { useBlogViewStore } from '@/context/useBlogViewStore';
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
-import BlogCard from './BlogCard';
-import { useMemo } from 'react';
-import LoadingCard from '@/common/components/elements/LoadingCard';
-import useSWR from 'swr';
 import { fetcher } from '@/services/fetcher';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useMemo } from 'react';
+import useSWR from 'swr';
+
+import EmptyState from '@/common/components/elements/EmptyState';
+import LoadingCard from '@/common/components/elements/LoadingCard';
+import { BlogItem } from '@/common/types/blog';
+
+import { useBlogViewStore } from '@/context/useBlogViewStore';
+
 import useIsMobile from '@/hooks/useIsMobile';
+
+import BlogCard from './BlogCard';
+import BlogListHeader from './BlogListHeader';
 
 export default function Blog() {
   const isMobile = useIsMobile();
@@ -30,12 +34,10 @@ export default function Blog() {
       <div
         className={clsx(
           'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile
-            ? 'flex flex-col'
-            : 'grid grid-cols-2 sm:!gap-5'
+          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
-        {[1, 2].map((item) => (
+        {[1, 2].map(item => (
           <LoadingCard key={item} view={viewOption} />
         ))}
       </div>
@@ -47,15 +49,11 @@ export default function Blog() {
 
   return (
     <>
-      {!isMobile && (
-        <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />
-      )}
+      {!isMobile && <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />}
       <div
         className={clsx(
           'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile
-            ? 'flex flex-col'
-            : 'grid grid-cols-2 sm:!gap-5'
+          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
         {blogData?.map((item: BlogItem, index: number) => (

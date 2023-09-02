@@ -1,22 +1,16 @@
+import Link from 'next/link';
+
+import React from 'react';
+
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { IProjectItem } from '@/common/types/projects';
-import Link from 'next/link';
-import React from 'react';
 
-export default function ProjectCard({
-  title,
-  slug,
-  description,
-  image,
-  stacks,
-  is_featured,
-}: IProjectItem) {
+export default function ProjectCard({ title, slug, description, image, stacks, is_featured }: IProjectItem) {
   const stacksArray = JSON.parse(stacks);
-  const trimmedContent =
-    description.slice(0, 70) + (description.length > 70 ? '...' : '');
+  const trimmedContent = description.slice(0, 70) + (description.length > 70 ? '...' : '');
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
@@ -36,9 +30,7 @@ export default function ProjectCard({
           <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
             {title}
           </div>
-          <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">
-            {trimmedContent}
-          </p>
+          <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">{trimmedContent}</p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {stacksArray?.map((stack: string, index: number) => (
               <div key={index} className="w-6">

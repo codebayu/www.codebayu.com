@@ -1,6 +1,8 @@
 import React from 'react';
-import Badge from './Badge';
+
 import { TRIBES } from '@/common/constant/roadmap';
+
+import Badge from './Badge';
 
 export default function BadgeList() {
   return (

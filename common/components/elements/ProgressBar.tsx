@@ -1,14 +1,14 @@
 import Router from 'next/router';
-import NProgress from 'nprogress';
-import { FC } from 'react';
 
+import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import { FC } from 'react';
 
 NProgress.configure({
   minimum: 0.3,
   easing: 'ease',
   speed: 500,
-  showSpinner: false,
+  showSpinner: false
 });
 
 Router.events.on('routeChangeStart', () => NProgress.start());

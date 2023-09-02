@@ -8,13 +8,7 @@ type ViewOptionsProps = {
   label: string;
 };
 
-export default function ViewOptions({
-  option,
-  setViewOption,
-  icon,
-  type,
-  label,
-}: ViewOptionsProps) {
+export default function ViewOptions({ option, setViewOption, icon, type, label }: ViewOptionsProps) {
   const isActive = option === type;
 
   return (

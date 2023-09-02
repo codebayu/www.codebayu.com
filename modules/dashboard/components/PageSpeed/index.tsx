@@ -1,15 +1,18 @@
 'use client';
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
+import Link from 'next/link';
+
 import { fetcher } from '@/services/fetcher';
 import React, { useState } from 'react';
-import useSwr from 'swr';
 import { MdSpeed } from 'react-icons/md';
-import SpeedSection from './SpeedSection';
-import Link from 'next/link';
+import useSwr from 'swr';
+
+import SectionHeading from '@/common/components/elements/SectionHeading';
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { PAGESPEED_CATEGORIES, PAGESPEED_URL } from '@/common/constant';
+
 import BadgeSection from './BadgeSection';
+import SpeedSection from './SpeedSection';
 
 export default function PageSpeed() {
   const BASE_URL = process.env.NEXT_PUBLIC_PAGE_SPEED_API;
@@ -27,14 +30,9 @@ export default function PageSpeed() {
 
   return (
     <section>
-      <SectionHeading
-        title="Pagespeed Insight"
-        icon={<MdSpeed className="mr-1" />}
-      />
+      <SectionHeading title="Pagespeed Insight" icon={<MdSpeed className="mr-1" />} />
       <SectionSubHeading>
-        <p className="dark:text-neutral-400">
-          My pagespeed index by google APIs
-        </p>
+        <p className="dark:text-neutral-400">My pagespeed index by google APIs</p>
         <Link
           href={PAGESPEED_URL}
           target="_blank"

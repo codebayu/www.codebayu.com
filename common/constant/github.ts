@@ -4,7 +4,7 @@ export const GITHUB_ACCOUNTS = {
   token: process.env.GITHUB_TOKEN,
   endpoint: '/api/github?type=personal',
   type: 'personal',
-  is_active: true,
+  is_active: true
 };
 export const GITHUB_USER_QUERY = `query($username: String!) {
     user(login: $username) {

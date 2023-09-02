@@ -1,15 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import Status from '@/common/components/elements/Status';
-import useIsMobile from '@/hooks/useIsMobile';
-import ProfileHeader from './ProfileHeader';
-import ThemeToggle from '../../elements/ThemeToggle';
 import clsx from 'clsx';
-import MobileMenuButton from './MobileMenuButton';
-import MobileMenu from './MobileMenu';
+import { AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+
+import Status from '@/common/components/elements/Status';
+
 import { useMenu } from '@/context/menu';
+
+import useIsMobile from '@/hooks/useIsMobile';
+
+import ThemeToggle from '../../elements/ThemeToggle';
+import MobileMenu from './MobileMenu';
+import MobileMenuButton from './MobileMenuButton';
+import ProfileHeader from './ProfileHeader';
 
 export default function Profile() {
   const isMobile = useIsMobile();
@@ -47,8 +51,7 @@ export default function Profile() {
           <div
             className={clsx(
               'flex lg:hidden items-center gap-5 mt-2',
-              isOpen &&
-                '!items-end flex-col-reverse justify-between h-[120px] pb-1'
+              isOpen && '!items-end flex-col-reverse justify-between h-[120px] pb-1'
             )}
           >
             <ThemeToggle />
@@ -57,9 +60,7 @@ export default function Profile() {
         )}
       </div>
 
-      {isMobile && (
-        <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
-      )}
+      {isMobile && <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>}
     </div>
   );
 }

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"./**/*.{ts,tsx,json}\""
   },
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
@@ -49,9 +50,11 @@
   "devDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/aos": "^3.0.4",
     "@types/react-scroll": "^1.8.7",
     "@types/react-syntax-highlighter": "^15.5.7",
+    "prettier": "^3.0.3",
     "prisma": "^5.2.0",
     "ts-node": "^10.9.1"
   }
