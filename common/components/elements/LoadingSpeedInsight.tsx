@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function LoadingSpeedInsight() {
   return (
-    <div className="my-6 flex text-neutral-600 text-xs md:text-sm justify-center items-end space-x-10">
+    <div className="my-6 flex text-neutral-600 md:text-sm justify-center items-end space-x-6 md:space-x-10">
       {[1, 2, 3, 4].map((item) => (
         <div
           key={item}

@@ -18,7 +18,7 @@ export default function SpeedSection({ data, isLoading }: SpeedSectionProps) {
   if (isLoading) return <LoadingSpeedInsight />;
 
   return (
-    <div className="my-6 flex text-neutral-600 dark:text-neutral-300 text-xs md:text-sm justify-center items-end space-x-10">
+    <div className="my-6 flex text-neutral-600 dark:text-neutral-300 text-[10px] md:text-sm justify-center items-end space-x-6 md:space-x-10">
       <div className="flex flex-col items-center justify-center space-y-2">
         <h3>Performance</h3>
         <CircleProgress value={performance * 100} />
