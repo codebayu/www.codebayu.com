@@ -3,16 +3,27 @@
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { fetcher } from '@/services/fetcher';
-import React from 'react';
+import React, { useState } from 'react';
 import useSwr from 'swr';
 import { MdSpeed } from 'react-icons/md';
 import SpeedSection from './SpeedSection';
 import Link from 'next/link';
-import { PAGESPEED_URL } from '@/common/constant';
+import { PAGESPEED_CATEGORIES, PAGESPEED_URL } from '@/common/constant';
+import BadgeSection from './BadgeSection';
 
 export default function PageSpeed() {
-  const URL = process.env.NEXT_PUBLIC_PAGE_SPEED_API;
-  const { data, isLoading } = useSwr(URL, fetcher);
+  const BASE_URL = process.env.NEXT_PUBLIC_PAGE_SPEED_API;
+
+  const [url, setUrl] = useState(BASE_URL + PAGESPEED_CATEGORIES);
+  const [active, setActive] = useState('/');
+
+  const { data, isLoading, mutate } = useSwr(url, fetcher);
+
+  function refetch(path: string) {
+    setActive(path);
+    setUrl(BASE_URL + path + PAGESPEED_CATEGORIES);
+    mutate();
+  }
 
   return (
     <section>
@@ -33,6 +44,7 @@ export default function PageSpeed() {
           PageSpeed
         </Link>
       </SectionSubHeading>
+      <BadgeSection active={active} refetch={refetch} />
       <SpeedSection data={data} isLoading={isLoading} />
     </section>
   );
