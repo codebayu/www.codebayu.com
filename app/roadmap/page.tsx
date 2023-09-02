@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import Roadmap from '@/app/modules/roadmap';
-import { METADATA } from '@/app/common/constant/metadata';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import Roadmap from '@/modules/roadmap';
+import { METADATA } from '@/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `Roadmap ${METADATA.exTitle}`,

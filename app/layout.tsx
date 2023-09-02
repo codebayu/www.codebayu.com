@@ -1,10 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
-import Layouts from '@/app/common/components/layouts/index';
-import { METADATA } from '@/app/common/constant/metadata';
-import { soraSans } from './common/styles/fonts';
-import ThemeProviderContext from './context/theme';
+import Layouts from '@/common/components/layouts/index';
+import { METADATA } from '@/common/constant/metadata';
+import { soraSans } from '../common/styles/fonts';
+import ThemeProviderContext from '../context/theme';
 import { Analytics } from '@vercel/analytics/react';
 import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 

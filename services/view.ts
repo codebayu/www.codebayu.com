@@ -1,4 +1,4 @@
-import { BlogItem } from '@/app/common/types/blog';
+import { BlogItem } from '@/common/types/blog';
 import axios from 'axios';
 
 export async function getBlogViews(searchParams: string) {

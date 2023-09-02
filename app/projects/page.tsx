@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import Projects from '@/app/modules/projects';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import { IProjectItem } from '@/app/common/types/projects';
-import { prisma } from '@/app/common/libs/prisma';
-import Container from '@/app/common/components/elements/Container';
-import { METADATA } from '@/app/common/constant/metadata';
+import Projects from '@/modules/projects';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { IProjectItem } from '@/common/types/projects';
+import { prisma } from '@/common/libs/prisma';
+import Container from '@/common/components/elements/Container';
+import { METADATA } from '@/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `Projects ${METADATA.exTitle}`,

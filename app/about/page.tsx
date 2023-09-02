@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import About from '@/app/modules/about';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import { METADATA } from '@/app/common/constant/metadata';
+import About from '@/modules/about';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { METADATA } from '@/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `About ${METADATA.exTitle}`,

@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import LearnModule from '@/app/modules/learn';
-import { LEARN_CONTENTS } from '@/app/common/constant/learn';
-import { METADATA } from '@/app/common/constant/metadata';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import LearnModule from '@/modules/learn';
+import { LEARN_CONTENTS } from '@/common/constant/learn';
+import { METADATA } from '@/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `Learn ${METADATA.exTitle}`,

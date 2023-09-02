@@ -1,8 +1,8 @@
-import BackButton from '@/app/common/components/elements/BackButton';
-import Container from '@/app/common/components/elements/Container';
-import { METADATA } from '@/app/common/constant/metadata';
-import { BlogDetailProps, CommentItemProps } from '@/app/common/types/blog';
-import BlogDetail from '@/app/modules/blog/components/BlogDetail';
+import BackButton from '@/common/components/elements/BackButton';
+import Container from '@/common/components/elements/Container';
+import { METADATA } from '@/common/constant/metadata';
+import { BlogDetailProps, CommentItemProps } from '@/common/types/blog';
+import BlogDetail from '@/modules/blog/components/BlogDetail';
 import { getBlogViews } from '@/services/view';
 import axios from 'axios';
 import { Metadata, ResolvingMetadata } from 'next';

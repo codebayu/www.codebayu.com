@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@/app/common/components/elements/Container';
+import Container from '@/common/components/elements/Container';
 import Link from 'next/link';
 
 export default function NotFound() {
