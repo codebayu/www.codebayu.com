@@ -1,10 +1,10 @@
-import BackButton from '@/app/common/components/elements/BackButton';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import { LEARN_CONTENTS } from '@/app/common/constant/learn';
-import { METADATA } from '@/app/common/constant/metadata';
-import loadMdxFiles from '@/app/common/libs/mdx';
-import ContentLists from '@/app/modules/learn/components/ContentLists';
+import BackButton from '@/common/components/elements/BackButton';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { LEARN_CONTENTS } from '@/common/constant/learn';
+import { METADATA } from '@/common/constant/metadata';
+import loadMdxFiles from '@/common/libs/mdx';
+import ContentLists from '@/modules/learn/components/ContentLists';
 import { compareDesc, parseISO } from 'date-fns';
 import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';

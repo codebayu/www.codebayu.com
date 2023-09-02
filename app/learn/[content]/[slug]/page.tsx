@@ -1,10 +1,10 @@
-import BackButton from '@/app/common/components/elements/BackButton';
-import Breakline from '@/app/common/components/elements/Breakline';
-import Container from '@/app/common/components/elements/Container';
-import { METADATA } from '@/app/common/constant/metadata';
-import loadMdxFiles from '@/app/common/libs/mdx';
-import ContentDetail from '@/app/modules/learn/components/ContentDetail';
-import ContentDetailHeader from '@/app/modules/learn/components/ContentDetailHeader';
+import BackButton from '@/common/components/elements/BackButton';
+import Breakline from '@/common/components/elements/Breakline';
+import Container from '@/common/components/elements/Container';
+import { METADATA } from '@/common/constant/metadata';
+import loadMdxFiles from '@/common/libs/mdx';
+import ContentDetail from '@/modules/learn/components/ContentDetail';
+import ContentDetailHeader from '@/modules/learn/components/ContentDetailHeader';
 import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 

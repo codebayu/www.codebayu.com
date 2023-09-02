@@ -1,11 +1,11 @@
-import BackButton from '@/app/common/components/elements/BackButton';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import { METADATA } from '@/app/common/constant/metadata';
-import loadMdxFiles from '@/app/common/libs/mdx';
-import { prisma } from '@/app/common/libs/prisma';
-import { IProjectItem } from '@/app/common/types/projects';
-import ProjectDetail from '@/app/modules/projects/components/ProjectDetail';
+import BackButton from '@/common/components/elements/BackButton';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { METADATA } from '@/common/constant/metadata';
+import loadMdxFiles from '@/common/libs/mdx';
+import { prisma } from '@/common/libs/prisma';
+import { IProjectItem } from '@/common/types/projects';
+import ProjectDetail from '@/modules/projects/components/ProjectDetail';
 import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 

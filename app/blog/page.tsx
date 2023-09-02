@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import Blog from '@/app/modules/blog';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import { METADATA } from '@/app/common/constant/metadata';
+import Blog from '@/modules/blog';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { METADATA } from '@/common/constant/metadata';
 import axios from 'axios';
-import { BlogItem } from '../common/types/blog';
+import { BlogItem } from '../../common/types/blog';
 
 export const metadata: Metadata = {
   title: `Blog ${METADATA.exTitle}`,

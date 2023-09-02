@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
-import Container from '@/app/common/components/elements/Container';
-import PageHeading from '@/app/common/components/elements/PageHeading';
-import Dashboard from '@/app/modules/dashboard';
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import Dashboard from '@/modules/dashboard';
 import axios from 'axios';
 import {
   GITHUB_ACCOUNTS,
   GITHUB_API_BASE_URL,
   GITHUB_USER_QUERY,
-} from '@/app/common/constant/github';
-import { METADATA } from '@/app/common/constant/metadata';
+} from '@/common/constant/github';
+import { METADATA } from '@/common/constant/metadata';
 
 export const metadata: Metadata = {
   title: `Dashboard ${METADATA.exTitle}`,
