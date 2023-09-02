@@ -10,10 +10,10 @@ interface SpeedSectionProps {
 export default function SpeedSection({ data, isLoading }: SpeedSectionProps) {
   const categories = data?.lighthouseResult?.categories || [];
 
-  const performance = parseInt(categories?.performance?.score) || 0;
-  const accessibility = parseInt(categories?.accessibility?.score) || 0;
-  const seo = parseInt(categories?.seo?.score) || 0;
-  const bestPractice = parseInt(categories?.['best-practices']?.score) || 0;
+  const performance = Number(categories?.performance?.score) || 0;
+  const accessibility = Number(categories?.accessibility?.score) || 0;
+  const seo = Number(categories?.seo?.score) || 0;
+  const bestPractice = Number(categories?.['best-practices']?.score) || 0;
 
   if (isLoading) return <LoadingSpeedInsight />;
 
