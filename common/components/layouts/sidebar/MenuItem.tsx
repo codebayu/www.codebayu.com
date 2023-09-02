@@ -2,19 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { useState } from 'react';
 import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs';
+
 import { MenuItemProps } from '@/common/types/menu';
+
 import { useMenu } from '@/context/menu';
 
-export default function MenuItem({
-  title,
-  href,
-  icon,
-  onClick,
-  className = '',
-  children,
-}: MenuItemProps) {
+export default function MenuItem({ title, href, icon, onClick, className = '', children }: MenuItemProps) {
   //   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
   const { hideMenu } = useMenu();
@@ -46,7 +42,7 @@ export default function MenuItem({
     className: `${activeClasses} ${className}`,
     onClick: handleClick,
     onMouseEnter: handleMouseEnter,
-    onMouseLeave: handleMouseLeave,
+    onMouseLeave: handleMouseLeave
   };
 
   const itemComponent = () => {
@@ -56,10 +52,7 @@ export default function MenuItem({
         <div className="flex-grow ml-0.5">{title}</div>
         {children && <>{children}</>}
         {isExternalUrl && isHovered && (
-          <ExternalLinkIcon
-            size={22}
-            className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300"
-          />
+          <ExternalLinkIcon size={22} className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300" />
         )}
       </div>
     );
@@ -68,13 +61,7 @@ export default function MenuItem({
   return isHashLink ? (
     <div className="cursor-pointer">{itemComponent()}</div>
   ) : (
-    <Link
-      aria-label={title}
-      tabIndex={0}
-      href={href}
-      target={isExternalUrl ? '_blank' : ''}
-      onClick={handleClick}
-    >
+    <Link aria-label={title} tabIndex={0} href={href} target={isExternalUrl ? '_blank' : ''} onClick={handleClick}>
       {itemComponent()}
     </Link>
   );

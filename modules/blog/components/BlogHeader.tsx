@@ -1,10 +1,11 @@
-import { formatDate } from '@/common/helpers';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 import { scroller } from 'react-scroll';
+
+import { formatDate } from '@/common/helpers';
 
 interface BlogHeaderProps {
   title: string;
@@ -19,7 +20,7 @@ export default function BlogHeader({
   comments_count = 0,
   page_views_count,
   published_at,
-  reading_time_minutes,
+  reading_time_minutes
 }: BlogHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,14 +28,13 @@ export default function BlogHeader({
     scroller.scrollTo('comments', {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart',
+      smooth: 'easeInOutQuart'
     });
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       setIsScrolled(scrollTop > 250);
     };
 
@@ -48,7 +48,7 @@ export default function BlogHeader({
   const transition = { duration: 0.3, ease: 'easeInOut' };
   const titleVariants = {
     initial: { opacity: 0, y: -20 },
-    animate: { opacity: 1, y: 0 },
+    animate: { opacity: 1, y: 0 }
   };
 
   return (
@@ -77,9 +77,7 @@ export default function BlogHeader({
       <div className="flex flex-col sm:flex-row gap-2 justify-between mb-6 pt-5 pb-6 border-b border-dashed border-neutral-600 text-neutral-600 dark:text-neutral-400 text-[14px]">
         <div>
           Published on
-          <span className="px-1 font-medium">
-            {published_at ? formatDate(published_at) : ''}
-          </span>
+          <span className="px-1 font-medium">{published_at ? formatDate(published_at) : ''}</span>
         </div>
 
         <div className="flex items-center gap-5">

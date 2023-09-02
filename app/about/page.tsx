@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
-import About from '@/modules/about';
+
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { METADATA } from '@/common/constant/metadata';
+
+import About from '@/modules/about';
 
 export const metadata: Metadata = {
   title: `About ${METADATA.exTitle}`,
   description: `A short story of ${METADATA.creator}`,
   alternates: {
-    canonical: `${process.env.DOMAIN}/about`,
-  },
+    canonical: `${process.env.DOMAIN}/about`
+  }
 };
 
 const PAGE_TITLE = 'About';

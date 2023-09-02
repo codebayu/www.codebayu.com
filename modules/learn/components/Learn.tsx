@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 
-import LearnCard from './LearnCard';
 import { ContentProps } from '@/common/types/learn';
+
+import LearnCard from './LearnCard';
 
 interface LearnModuleProps {
   contents: ContentProps[];

@@ -1,22 +1,22 @@
 import {
-  BiArchive as ProjectIcon,
-  BiAt as ThreadsIcon,
-  BiBookBookmark as LearnIcon,
-  BiCategoryAlt as DashboardIcon,
+  BiLineChart as AnalyticsIcon,
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
+  BiCategoryAlt as DashboardIcon,
   BiHomeSmile as HomeIcon,
+  BiBookBookmark as LearnIcon,
   BiLeaf as ProfileIcon,
-  BiLineChart as AnalyticsIcon,
+  BiArchive as ProjectIcon,
+  BiAt as ThreadsIcon
 } from 'react-icons/bi';
 import {
+  BsDiscord as DiscordIcon,
   BsGithub as GithubIcon,
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
-  BsTwitter as TwitterIcon,
-  BsDiscord as DiscordIcon,
-  BsYoutube as YoutubeIcon,
   BsTiktok as TiktokIcon,
+  BsTwitter as TwitterIcon,
+  BsYoutube as YoutubeIcon
 } from 'react-icons/bs';
 import { LuWorkflow } from 'react-icons/lu';
 
@@ -31,7 +31,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Home',
+    eventName: 'Pages: Home'
   },
   {
     title: 'Projects',
@@ -39,7 +39,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Projects',
+    eventName: 'Pages: Projects'
   },
   {
     title: 'Blog',
@@ -47,7 +47,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <BlogIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Blog',
+    eventName: 'Pages: Blog'
   },
   {
     title: 'Learn',
@@ -55,7 +55,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <LearnIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Learn',
+    eventName: 'Pages: Learn'
   },
   {
     title: 'About',
@@ -63,7 +63,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ProfileIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: About',
+    eventName: 'Pages: About'
   },
   {
     title: 'Contact',
@@ -71,7 +71,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <ContactIcon size={iconSize} />,
     isShow: false,
     isExternal: false,
-    eventName: 'Pages: Contact',
+    eventName: 'Pages: Contact'
   },
   {
     title: 'Roadmap',
@@ -79,7 +79,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <LuWorkflow size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Roadmap',
+    eventName: 'Pages: Roadmap'
   },
   {
     title: 'Dashboard',
@@ -87,8 +87,8 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Dashboard',
-  },
+    eventName: 'Pages: Dashboard'
+  }
 ];
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
@@ -98,7 +98,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Github',
+    eventName: 'Social: Github'
   },
   {
     title: 'Linkedin',
@@ -106,7 +106,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Linkedin',
+    eventName: 'Social: Linkedin'
   },
   {
     title: 'Twitter',
@@ -114,7 +114,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TwitterIcon size={iconSize} />,
     isShow: false,
     isExternal: true,
-    eventName: 'Social: Twitter',
+    eventName: 'Social: Twitter'
   },
   {
     title: 'Instagram',
@@ -122,7 +122,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Instagram',
+    eventName: 'Social: Instagram'
   },
   {
     title: 'Threads',
@@ -130,7 +130,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <ThreadsIcon size={iconSize} />,
     isShow: false,
     isExternal: true,
-    eventName: 'Social: Threads',
+    eventName: 'Social: Threads'
   },
   {
     title: 'Discord',
@@ -138,7 +138,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <DiscordIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Discord',
+    eventName: 'Social: Discord'
   },
   {
     title: 'Youtube',
@@ -146,7 +146,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <YoutubeIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Youtube',
+    eventName: 'Social: Youtube'
   },
   {
     title: 'TikTok',
@@ -154,6 +154,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TiktokIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Tiktok',
-  },
+    eventName: 'Social: Tiktok'
+  }
 ];

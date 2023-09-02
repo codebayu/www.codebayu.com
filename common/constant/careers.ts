@@ -8,7 +8,7 @@ export const CAREERS = [
     type: 'Fulltime',
     start_date: '2023-04',
     end_date: null,
-    link: 'https://www.kompas.id',
+    link: 'https://www.kompas.id'
   },
   {
     position: 'Frontend Developer',
@@ -19,7 +19,7 @@ export const CAREERS = [
     type: 'Fulltime',
     start_date: '2022-08',
     end_date: '2023-04',
-    link: 'https://alteacare.com',
+    link: 'https://alteacare.com'
   },
   {
     position: 'Fullstack Developer',
@@ -30,7 +30,7 @@ export const CAREERS = [
     type: 'Fulltime',
     start_date: '2022-02',
     end_date: '2022-08',
-    link: 'https://importir.org',
+    link: 'https://importir.org'
   },
   {
     position: 'IT Management Trainee',
@@ -41,6 +41,6 @@ export const CAREERS = [
     type: 'Fulltime',
     start_date: '2022-04',
     end_date: '2022-08',
-    link: 'https://importir.org',
-  },
+    link: 'https://importir.org'
+  }
 ];

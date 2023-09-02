@@ -1,7 +1,8 @@
 import React from 'react';
 
-import MenuItem from './MenuItem';
 import { MenuItemProps } from '@/common/types/menu';
+
+import MenuItem from './MenuItem';
 
 type MenuProps = {
   title?: string;
@@ -15,9 +16,7 @@ export default function Menu({ title, list }: MenuProps) {
           {title}
         </div>
       )}
-      {list?.map((item: MenuItemProps, index: number) => (
-        <MenuItem key={index} {...item} />
-      ))}
+      {list?.map((item: MenuItemProps, index: number) => <MenuItem key={index} {...item} />)}
     </div>
   );
 }

@@ -1,10 +1,13 @@
+import Link from 'next/link';
+
+import React from 'react';
+
 import Card from '@/common/components/elements/Card';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
 import { CourseCardProps } from '@/common/types/roadmap';
+
 import useIsMobile from '@/hooks/useIsMobile';
-import Link from 'next/link';
-import React from 'react';
 
 export default function CourseCard(props: CourseCardProps) {
   const { icon, title, linkEnglish, linkIndonesia } = props;

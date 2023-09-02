@@ -1,15 +1,10 @@
 import Link from 'next/link';
+
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { ContentProps } from '@/common/types/learn';
 
-export default function LearnCard({
-  title,
-  slug,
-  description,
-  image,
-  is_new,
-}: ContentProps) {
+export default function LearnCard({ title, slug, description, image, is_new }: ContentProps) {
   return (
     <Link href={`/learn/${slug}`}>
       <Card className="relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
@@ -31,9 +26,7 @@ export default function LearnCard({
               {title}
             </div>
           </div>
-          <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">
-            {description}
-          </p>
+          <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">{description}</p>
         </div>
       </Card>
     </Link>

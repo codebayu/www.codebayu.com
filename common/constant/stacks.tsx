@@ -1,36 +1,36 @@
+import { BiLogoPostgresql } from 'react-icons/bi';
 import { BsFillBootstrapFill } from 'react-icons/bs';
 import {
   SiApollographql,
+  SiChakraui,
+  SiCss3,
+  SiExpo,
+  SiExpress,
+  SiFirebase,
+  SiFramer,
+  SiGithub,
   SiGraphql,
+  SiGulp,
+  SiHtml5,
   SiJavascript,
+  SiJest,
   SiLaravel,
   SiMui,
   SiNextdotjs,
+  SiNodedotjs,
+  SiNuxtdotjs,
   SiPhp,
+  SiPrisma,
   SiReact,
+  SiReactquery,
+  SiRedux,
+  SiSass,
   SiTailwindcss,
   SiTypescript,
   SiVite,
-  SiWordpress,
-  SiChakraui,
-  SiExpo,
-  SiSass,
-  SiGulp,
-  SiFirebase,
-  SiFramer,
-  SiNuxtdotjs,
   SiVuedotjs,
-  SiJest,
-  SiExpress,
-  SiRedux,
-  SiReactquery,
-  SiHtml5,
-  SiCss3,
-  SiPrisma,
-  SiNodedotjs,
-  SiGithub,
+  SiWordpress
 } from 'react-icons/si';
-import { BiLogoPostgresql } from 'react-icons/bi';
 
 type stacksProps = {
   [key: string]: JSX.Element;
@@ -45,9 +45,7 @@ export const STACKS: stacksProps = {
   'Next.js': <SiNextdotjs size={iconSize} />,
   'React.js': <SiReact size={iconSize} className="text-sky-500" />,
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
-  Bootstrap: (
-    <BsFillBootstrapFill size={iconSize} className="text-purple-500" />
-  ),
+  Bootstrap: <BsFillBootstrapFill size={iconSize} className="text-purple-500" />,
   GraphQL: <SiGraphql size={iconSize} className="text-pink-600" />,
   Apollo: <SiApollographql size={iconSize} />,
   WordPress: <SiWordpress size={iconSize} />,
@@ -72,5 +70,5 @@ export const STACKS: stacksProps = {
   CSS: <SiCss3 size={iconSize} className="text-blue-500" />,
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
-  Github: <SiGithub size={iconSize} />,
+  Github: <SiGithub size={iconSize} />
 };

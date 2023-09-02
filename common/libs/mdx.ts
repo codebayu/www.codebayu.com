@@ -5,12 +5,10 @@ import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
+
 import { MdxFileProps } from '../types/mdx';
 
-const loadMdxFiles = (
-  slug: string,
-  isProject: boolean = false
-): MdxFileProps[] => {
+const loadMdxFiles = (slug: string, isProject: boolean = false): MdxFileProps[] => {
   const learnPath = path.join(process.cwd(), 'contents', 'learn', slug);
   const projectPath = path.join(process.cwd(), 'contents', 'projects');
   const dirPath = isProject ? projectPath : learnPath;
@@ -20,7 +18,7 @@ const loadMdxFiles = (
 
   const files = fs.readdirSync(dirPath);
 
-  const contents = files.map((file) => {
+  const contents = files.map(file => {
     const filePath = path.join(dirPath, file);
     const source = fs.readFileSync(filePath, 'utf-8');
     const { content, data } = matter(source);
@@ -31,7 +29,7 @@ const loadMdxFiles = (
     return {
       slug: file.replace('.mdx', ''),
       frontMatter: data,
-      content: mdxContent,
+      content: mdxContent
     };
   });
 

@@ -1,6 +1,8 @@
 import Breakline from '@/common/components/elements/Breakline';
+
 import Contributions from './Contributions';
 import PageSpeed from './PageSpeed';
+
 interface DashboardProps {
   githubData: any;
 }

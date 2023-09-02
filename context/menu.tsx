@@ -7,9 +7,9 @@ export interface InitialModalState {
   toggleMenu(): void;
 }
 
-export const useMenu = create<InitialModalState>()((set) => ({
+export const useMenu = create<InitialModalState>()(set => ({
   isOpen: false,
   showMenu: () => set({ isOpen: true }),
   hideMenu: () => set({ isOpen: false }),
-  toggleMenu: () => set((prev) => ({ isOpen: !prev.isOpen })),
+  toggleMenu: () => set(prev => ({ isOpen: !prev.isOpen }))
 }));

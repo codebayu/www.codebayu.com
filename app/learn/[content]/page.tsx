@@ -1,13 +1,16 @@
+import { Metadata, ResolvingMetadata } from 'next';
+
+import { compareDesc, parseISO } from 'date-fns';
+import React from 'react';
+
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { METADATA } from '@/common/constant/metadata';
 import loadMdxFiles from '@/common/libs/mdx';
+
 import ContentLists from '@/modules/learn/components/ContentLists';
-import { compareDesc, parseISO } from 'date-fns';
-import { Metadata, ResolvingMetadata } from 'next';
-import React from 'react';
 
 interface LearnContentPage {
   params: { content: string };
@@ -18,10 +21,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { content } = await getContent(params.content);
   return {
     title: `${content?.title} ${METADATA.exTitle}`,
@@ -32,12 +32,12 @@ export async function generateMetadata(
       siteName: METADATA.openGraph.siteName,
       locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: METADATA.creator,
+      authors: METADATA.creator
     },
     keywords: content?.title,
     alternates: {
-      canonical: `${METADATA.openGraph.url}/learn/${params.content}`,
-    },
+      canonical: `${METADATA.openGraph.url}/learn/${params.content}`
+    }
   };
 }
 
@@ -58,31 +58,26 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
       <Container data-aos="fade-up">
         <BackButton url="/learn" />
         <PageHeading title={title} description={description} />
-        <ContentLists
-          title={title}
-          content={content}
-          sortedSubContents={sortedSubContents}
-        />
+        <ContentLists title={title} content={content} sortedSubContents={sortedSubContents} />
       </Container>
     </>
   );
 }
 
 async function getContent(contentSlug: string) {
-  const content =
-    LEARN_CONTENTS.find((item) => item?.slug === contentSlug) || null;
+  const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null;
 
   if (!content) {
     return {
       redirect: {
         destination: '/404',
-        permanent: false,
-      },
+        permanent: false
+      }
     };
   }
   const subContentList = loadMdxFiles(content?.slug);
   return {
     content,
-    subContents: subContentList,
+    subContents: subContentList
   };
 }

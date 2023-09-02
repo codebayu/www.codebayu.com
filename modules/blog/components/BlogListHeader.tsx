@@ -1,5 +1,7 @@
-import SectionHeading from '@/common/components/elements/SectionHeading';
 import { BsGrid as GridIcon, BsListUl as ListIcon } from 'react-icons/bs';
+
+import SectionHeading from '@/common/components/elements/SectionHeading';
+
 import ViewOptions from './ViewOptions';
 
 interface BlogListHeaderProps {
@@ -7,10 +9,7 @@ interface BlogListHeaderProps {
   setViewOption: (option: string) => void;
 }
 
-export default function BlogListHeader({
-  viewOption,
-  setViewOption,
-}: BlogListHeaderProps) {
+export default function BlogListHeader({ viewOption, setViewOption }: BlogListHeaderProps) {
   return (
     <div className="flex items-center justify-between text-[15px] mb-5">
       <SectionHeading title="Latest Articles" />

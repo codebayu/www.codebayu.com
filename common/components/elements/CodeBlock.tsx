@@ -1,11 +1,9 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+
 import { useEffect, useState } from 'react';
-import {
-  HiCheckCircle as CheckIcon,
-  HiOutlineClipboardCopy as CopyIcon,
-} from 'react-icons/hi';
+import { HiCheckCircle as CheckIcon, HiOutlineClipboardCopy as CopyIcon } from 'react-icons/hi';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
@@ -21,7 +19,7 @@ const languages = {
   typescript: 'typescript',
   diff: 'diff',
   tsx: 'tsx',
-  css: 'css',
+  css: 'css'
 };
 
 SyntaxHighlighter.registerLanguage(languages.javascript, javascript);
@@ -30,12 +28,7 @@ SyntaxHighlighter.registerLanguage(languages.diff, diff);
 SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
 SyntaxHighlighter.registerLanguage(languages.css, css);
 
-const CodeBlock = ({
-  className = '',
-  children,
-  inline,
-  ...props
-}: CodeProps) => {
+const CodeBlock = ({ className = '', children, inline, ...props }: CodeProps) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [value, copy] = useCopyToClipboard();
   const match = /language-(\w+)/.exec(className || '');
@@ -80,7 +73,7 @@ const CodeBlock = ({
               padding: '20px',
               fontSize: '14px',
               borderRadius: '8px',
-              paddingRight: '50px',
+              paddingRight: '50px'
             }}
             PreTag="div"
             language={match ? match[1] : 'javascript'}
@@ -102,5 +95,5 @@ const LoadingPlaceholder = () => <div className="w-full mt-12 mb-12 h-36" />;
 
 export default dynamic(() => Promise.resolve(CodeBlock), {
   ssr: false,
-  loading: LoadingPlaceholder,
+  loading: LoadingPlaceholder
 });

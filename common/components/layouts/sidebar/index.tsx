@@ -1,8 +1,10 @@
 import Breakline from '@/common/components/elements/Breakline';
 import Copyright from '@/common/components/elements/Copyright';
+
+import useIsMobile from '@/hooks/useIsMobile';
+
 import Navigation from './Navigation';
 import Profile from './Profile';
-import useIsMobile from '@/hooks/useIsMobile';
 
 export default function Sidebar() {
   const isMobile = useIsMobile();

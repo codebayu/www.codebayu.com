@@ -6,10 +6,7 @@ interface MobileMenuButtonProps {
   setExpandMenu: (expand: boolean) => void;
 }
 
-const MobileMenuButton = ({
-  expandMenu,
-  setExpandMenu,
-}: MobileMenuButtonProps) => {
+const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) => {
   const handleMenuToggle = () => {
     setExpandMenu(!expandMenu);
   };
@@ -18,13 +15,10 @@ const MobileMenuButton = ({
 
   return (
     <StyledMenu className="flex lg:hidden" onClick={handleMenuToggle}>
-      {menuSpanData.map((item) => (
+      {menuSpanData.map(item => (
         <StyledMenuSpan
           key={item.index}
-          className={clsx(
-            'bg-neutral-950 dark:bg-neutral-100 ',
-            expandMenu && 'active'
-          )}
+          className={clsx('bg-neutral-950 dark:bg-neutral-100 ', expandMenu && 'active')}
         />
       ))}
     </StyledMenu>

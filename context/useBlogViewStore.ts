@@ -9,12 +9,12 @@ type BlogViewState = {
 export const useBlogViewStore = create<BlogViewState>()(
   devtools(
     persist(
-      (set) => ({
+      set => ({
         viewOption: 'grid',
-        setViewOption: (option) => set(() => ({ viewOption: option })),
+        setViewOption: option => set(() => ({ viewOption: option }))
       }),
       {
-        name: 'blog-view',
+        name: 'blog-view'
       }
     )
   )

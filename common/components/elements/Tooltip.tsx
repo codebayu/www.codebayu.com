@@ -21,16 +21,12 @@ const Tooltip = ({ title, children }: TooltipProps) => {
 
   const tooltipVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
     <div className="relative inline-block">
-      <div
-        className="tooltip-container relative"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="tooltip-container relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {children}
       </div>
       {isTooltipVisible && (

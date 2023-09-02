@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -15,7 +14,7 @@ export default function CircleProgress({ value }: CircleProgressProps) {
         styles={buildStyles({
           textColor: '#008800',
           pathColor: '#00cc66',
-          backgroundColor: '#ebf9f0',
+          backgroundColor: '#ebf9f0'
         })}
       />
     </div>

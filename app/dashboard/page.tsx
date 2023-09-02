@@ -1,21 +1,20 @@
 import { Metadata } from 'next';
+
+import axios from 'axios';
+
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
-import Dashboard from '@/modules/dashboard';
-import axios from 'axios';
-import {
-  GITHUB_ACCOUNTS,
-  GITHUB_API_BASE_URL,
-  GITHUB_USER_QUERY,
-} from '@/common/constant/github';
+import { GITHUB_ACCOUNTS, GITHUB_API_BASE_URL, GITHUB_USER_QUERY } from '@/common/constant/github';
 import { METADATA } from '@/common/constant/metadata';
+
+import Dashboard from '@/modules/dashboard';
 
 export const metadata: Metadata = {
   title: `Dashboard ${METADATA.exTitle}`,
   description: 'My activity dashboard as software engineer',
   alternates: {
-    canonical: `${process.env.DOMAIN}/dashboard`,
-  },
+    canonical: `${process.env.DOMAIN}/dashboard`
+  }
 };
 
 const PAGE_TITLE = 'Dashboard';
@@ -40,13 +39,13 @@ async function getGithubData() {
     {
       query: GITHUB_USER_QUERY,
       variables: {
-        username: GITHUB_ACCOUNTS.username,
-      },
+        username: GITHUB_ACCOUNTS.username
+      }
     },
     {
       headers: {
-        Authorization: `bearer ${GITHUB_ACCOUNTS.token}`,
-      },
+        Authorization: `bearer ${GITHUB_ACCOUNTS.token}`
+      }
     }
   );
   return response.data?.data.user.contributionsCollection.contributionCalendar;

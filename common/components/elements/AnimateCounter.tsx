@@ -1,6 +1,6 @@
 'use client';
 
-import { animate, AnimationPlaybackControls } from 'framer-motion';
+import { AnimationPlaybackControls, animate } from 'framer-motion';
 import { HTMLProps, useEffect, useRef } from 'react';
 
 interface AnimateCounterProps extends HTMLProps<HTMLSpanElement> {
@@ -16,11 +16,11 @@ const AnimateCounter = ({ total, ...rest }: AnimateCounterProps) => {
 
     const controls: AnimationPlaybackControls = animate(initialCount, total, {
       duration: 1,
-      onUpdate: (value) => {
+      onUpdate: value => {
         if (count) {
           count.textContent = Math.floor(value).toString();
         }
-      },
+      }
     });
 
     return () => controls.stop();

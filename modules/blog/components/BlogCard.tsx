@@ -1,14 +1,17 @@
+import Link from 'next/link';
+
+import { useEffect, useState } from 'react';
+import { FaRegEye as ViewIcon } from 'react-icons/fa';
+import { TbMessage2 as CommentIcon } from 'react-icons/tb';
+
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { PLACEHOLDER_URL } from '@/common/constant';
 import { formatBlogSlug, formatDate } from '@/common/helpers';
 import clsxm from '@/common/libs/clsxm';
 import { BlogItem } from '@/common/types/blog';
+
 import useIsMobile from '@/hooks/useIsMobile';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 
 interface BlogCardProps extends BlogItem {
   view?: string;
@@ -27,19 +30,15 @@ export default function BlogCard({
   comments_count,
   view,
   isExcerpt = true,
-  isCarousel = false,
+  isCarousel = false
 }: BlogCardProps) {
   const [viewOption, setViewOption] = useState<string>();
   const isMobile = useIsMobile();
 
   const newSlug = formatBlogSlug(slug);
 
-  const trimmedTitle =
-    viewOption === 'grid'
-      ? title.slice(0, 70) + (title.length > 70 ? '...' : '')
-      : title;
-  const trimmedContent =
-    description.slice(0, 100) + (description.length > 100 ? '...' : '');
+  const trimmedTitle = viewOption === 'grid' ? title.slice(0, 70) + (title.length > 70 ? '...' : '') : title;
+  const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '');
 
   const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
@@ -55,9 +54,7 @@ export default function BlogCard({
       <Card
         className={clsxm(
           'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full',
-          viewOption === 'grid'
-            ? '!flex-col sm:h-[400px] w-full'
-            : '!flex-row sm:p-5 sm:px-6',
+          viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
           !isExcerpt && 'sm:h-[320px]'
         )}
@@ -80,9 +77,7 @@ export default function BlogCard({
           </h2>
           <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
             <div className="flex gap-1 items-center ">
-              <span className="text-xs">
-                {formatDate(published_at, 'MMM dd, yyyy')}
-              </span>
+              <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
             </div>
             <div className="flex gap-1 items-center">
               <ViewIcon size={14} />
@@ -93,9 +88,7 @@ export default function BlogCard({
               <span className="text-xs">
                 <div className="flex gap-1">
                   <span>{comments_count}</span>
-                  <span className="hidden lg:block">
-                    Comment{comments_count > 1 && 's'}
-                  </span>
+                  <span className="hidden lg:block">Comment{comments_count > 1 && 's'}</span>
                 </div>
               </span>
             </div>

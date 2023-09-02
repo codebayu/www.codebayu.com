@@ -1,20 +1,20 @@
+import Link from 'next/link';
+
+import axios from 'axios';
+import React from 'react';
+import { SiTiktok } from 'react-icons/si';
+
 import Embed from '@/common/components/elements/Embed';
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { TIKTOK_USERNAME } from '@/common/constant/tiktok';
-import axios from 'axios';
-import Link from 'next/link';
-import React from 'react';
-import { SiTiktok } from 'react-icons/si';
 
 export default async function Tiktok() {
   return (
     <>
       <SectionHeading title="Tiktok" icon={<SiTiktok className="mr-1" />} />
       <SectionSubHeading>
-        <p className="text-neutral-600 dark:text-neutral-400">
-          Find me on tiktok
-        </p>
+        <p className="text-neutral-600 dark:text-neutral-400">Find me on tiktok</p>
         <Link
           href={`https://www.tiktok.com/${TIKTOK_USERNAME}`}
           target="_blank"
@@ -40,12 +40,12 @@ async function getTiktokToken() {
       client_secret: SECRET,
       grant_type: 'authorization_code',
       code: 'user.info.basic',
-      redirect_uri: DOMAIN,
+      redirect_uri: DOMAIN
     },
     {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     }
   );
   return response.data;
@@ -53,9 +53,8 @@ async function getTiktokToken() {
 
 async function getTiktokProfile() {
   const access_token = await getTiktokToken();
-  const response = await axios.get(
-    'https://www.tiktok.com/oembed?url=https://www.tiktok.com/@codebayu.com',
-    { headers: { Authorization: `Bearer` } }
-  );
+  const response = await axios.get('https://www.tiktok.com/oembed?url=https://www.tiktok.com/@codebayu.com', {
+    headers: { Authorization: `Bearer` }
+  });
   return response.data;
 }

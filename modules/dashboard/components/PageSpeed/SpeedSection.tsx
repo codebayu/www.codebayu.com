@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CircleProgress from '@/common/components/elements/CircleProgress';
 import LoadingSpeedInsight from '@/common/components/elements/LoadingSpeedInsight';
 
