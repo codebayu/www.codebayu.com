@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
 
-import { DEVTO_PROFILE } from '@/common/constant';
+import { DEVTO_PROFILE, PROFILE_URL } from '@/common/constant';
 
 import Image from '../../elements/Image';
 import Tooltip from '../../elements/Tooltip';
@@ -15,8 +15,6 @@ interface ProfileHeaderProps {
 }
 
 export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderProps) {
-  const PROFILE_URL =
-    'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693008885/codebayu/ab0kfkhjgymzthooxiea.webp';
   return (
     <div
       className={clsx(
