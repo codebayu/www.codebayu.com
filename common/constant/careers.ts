@@ -28,7 +28,7 @@ export const CAREERS = [
     location: 'Tangerang',
     location_type: 'On Site',
     type: 'Fulltime',
-    start_date: '2022-02',
+    start_date: '2022-04',
     end_date: '2022-08',
     link: 'https://importir.org'
   },
@@ -39,8 +39,8 @@ export const CAREERS = [
     location: 'Tangerang',
     location_type: 'On Site',
     type: 'Fulltime',
-    start_date: '2022-04',
-    end_date: '2022-08',
+    start_date: '2022-02',
+    end_date: '2022-04',
     link: 'https://importir.org'
   }
 ];

@@ -1,18 +1,20 @@
 import Link from 'next/link';
 
+import clsxm from '@/common/libs/clsxm';
 import { MenuItemProps } from '@/common/types/menu';
 
 import Tooltip from './Tooltip';
 
 type SocialMediaProps = {
   items: MenuItemProps[];
+  isMePage?: boolean;
 };
 
-export default function SocialMedia({ items }: SocialMediaProps) {
+export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
   return (
-    <div className="flex flex-col space-y-1">
+    <div className={clsxm('flex flex-col space-y-1', isMePage && 'items-center mt-6')}>
       <div className="text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora">Let`s Connect</div>
-      <div className="flex justify-around lg:justify-between px-5 pt-2">
+      <div className={clsxm('flex justify-around lg:justify-between px-5 pt-2', isMePage && 'space-x-6')}>
         {items?.map((item: MenuItemProps, index: number) => (
           <Link
             key={index}
