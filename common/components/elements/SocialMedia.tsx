@@ -11,10 +11,11 @@ type SocialMediaProps = {
 };
 
 export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
+  const dataAos = isMePage ? 'zoom-in-down' : '';
   return (
-    <div className={clsxm('flex flex-col space-y-1', isMePage && 'items-center mt-6')}>
+    <div data-aos={dataAos} className={clsxm('flex flex-col space-y-1', isMePage && 'items-center mt-6')}>
       <div className="text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora">Let`s Connect</div>
-      <div className={clsxm('flex justify-around lg:justify-between px-5 pt-2', isMePage && 'space-x-6')}>
+      <div className={clsxm('flex justify-around lg:justify-between px-5 pt-2', isMePage && 'space-x-8')}>
         {items?.map((item: MenuItemProps, index: number) => (
           <Link
             key={index}
