@@ -6,7 +6,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { ReactNode, useEffect } from 'react';
 
-import CursorDots from '../elements/CursorDots';
 import Sidebar from './sidebar';
 
 interface LayoutsProps {
@@ -24,7 +23,6 @@ export default function Layouts({ children }: LayoutsProps) {
   }, []);
   return (
     <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10">
-      <CursorDots />
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
         {pathName !== '/me' && (
           <header className="lg:w-1/5 lg:px-4">
