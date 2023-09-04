@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import { useSearchParams } from 'next/navigation';
@@ -9,10 +8,6 @@ import { ROADMAP } from '@/common/constant/roadmap';
 import { CourseCardProps } from '@/common/types/roadmap';
 
 import CourseCard from './CourseCard';
-
-/* eslint-disable react-hooks/exhaustive-deps */
-
-/* eslint-disable react-hooks/exhaustive-deps */
 
 /* eslint-disable react-hooks/exhaustive-deps */
 
