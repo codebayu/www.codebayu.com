@@ -6,7 +6,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     title: 'JavasScript Tips',
     slug: 'js-tips',
     description: 'Unleash the Power of JavaScript Skill for Developers',
-    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1692937293/codebayu/learn/krz2jp0uokctceav0tkp.webp',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693840816/codebayu/learn/icjsd7geguh3no3dphlt.webp',
     is_new: true,
     level: 'beginner',
     is_show: true
@@ -16,7 +16,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     title: 'TypeScript Tips',
     slug: 'ts-tips',
     description: 'Learn and improve the typescript skill for beginner or advance',
-    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693262682/codebayu/learn/aqfper56gwkldjx5ws0y.webp',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693840826/codebayu/learn/zj6qcopfbwqow6b8phxi.webp',
     is_new: true,
     level: 'beginner',
     is_show: true

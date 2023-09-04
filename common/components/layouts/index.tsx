@@ -25,7 +25,7 @@ export default function Layouts({ children }: LayoutsProps) {
     <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10">
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
         {pathName !== '/me' && (
-          <header className="lg:w-1/5 lg:px-4">
+          <header>
             <Sidebar />
           </header>
         )}
