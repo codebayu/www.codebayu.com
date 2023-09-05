@@ -7,7 +7,7 @@ export const LEARN_CONTENTS: ContentProps[] = [
     slug: 'js-tips',
     description: 'Unleash the Power of JavaScript Skill for Developers',
     image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693840816/codebayu/learn/icjsd7geguh3no3dphlt.webp',
-    is_new: true,
+    is_new: false,
     level: 'beginner',
     is_show: true
   },
@@ -19,6 +19,16 @@ export const LEARN_CONTENTS: ContentProps[] = [
     image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693840826/codebayu/learn/zj6qcopfbwqow6b8phxi.webp',
     is_new: true,
     level: 'beginner',
+    is_show: true
+  },
+  {
+    id: 3,
+    title: 'Learn Vue js',
+    slug: 'learn-vue-js',
+    description: 'Learn vue js for beginner and intermediate',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693891051/codebayu/learn/s8n8in5rhtwstwpbwypl.webp',
+    is_new: true,
+    level: 'intermediate',
     is_show: true
   }
 ];

@@ -1,0 +1,225 @@
+---
+id: 1
+title: 'How to data binding in vue js'
+category: 'Learn Vue js'
+language: 'vue'
+difficulty: 'Medium'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-05'
+updated_at: '2023-09-05'
+---
+
+> Introduction
+
+Prerequisite
+
+1. HTML, CSS, JavaScript Fundamentals
+2. ES6+ Features
+3. Modern JavaScript
+
+Development Tool
+
+1. Node Js
+2. VS Code - Extention Vetur
+
+> Problem
+
+When developing web applications, you often need to keep the user interface synchronized with your application's data. Manually updating the DOM to reflect changes in data can be error-prone and time-consuming. This is where data binding comes into play. However, it's not always smooth sailing.
+
+&nbsp;
+
+> Solution
+
+## 1. Binding Text
+
+```html
+<template>
+  <div>Hello {{name}}</div>
+  <div v-text="position" />
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        name: 'bayu',
+        position: 'frontend developer'
+      };
+    }
+  };
+</script>
+```
+
+## 2. Binding HTML
+
+```html
+<template>
+  <div v-html="skill" />
+  <div v-html="hack" />
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        skill: '<b>vue js<b/>',
+        hack: `<a href="#" onclick="alert('you have been hack')">Win a price</a>`
+      };
+    }
+  };
+</script>
+```
+
+## 3. Binding to Attribute
+
+```html
+<template>
+  <h2 v-bind:id="headingId">Heading</h2>
+  <button v-bind:disable="isDisable">Bind</button>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        headingId: 'heading',
+        isDisable: true
+      };
+    }
+  };
+</script>
+```
+
+## 4. Binding Classes
+
+```html
+<template>
+  <h2 class="underline">Underlined Text</h2>
+  <h2 class="underline" v-bind:class="status">Status</h2>
+  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 v-bind:class="isSoldout ? 'sold-out' : 'new'">Soldout? Movie</h2>
+  <h2 v-bind:class="['new', 'promoted']">Newly Promoted Movie</h2>
+  <h2 v-bind:class="[isPromoted && 'promoted', isSoldout ? 'sold-out' : 'new']">Array Conditional Movie</h2>
+  <h2
+    v-bind:class="{
+    promoted: isPromoted,
+    new: !isSoldout,
+    'sold-out': isSoldout
+  }"
+  >
+    Object Conditional Movie
+  </h2>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        status: 'success',
+        isPromoted: true,
+        isSoldout: true
+      };
+    }
+  };
+</script>
+
+<style>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .promoted {
+    font-style: italic;
+  }
+
+  .new {
+    color: rgb(38, 197, 144);
+  }
+
+  .sold-out {
+    color: red;
+  }
+</style>
+```
+
+## 5. Binding style
+
+```html
+<template>
+  <h2
+    v-bind:style="{
+    color: highLightColor,
+    fontSize: headerSize + 'px',
+    padding: '10px'
+  }"
+  >
+    Inline style
+  </h2>
+  <h2 v-bind:style="headerStyleObject">Style Object</h2>
+  <h2 v-bind:style="[baseStyleObject, errorStyleObject]">Style Array</h2>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        highLightColor: 'orange',
+        headerSize: 50,
+        headerStyleObject: {
+          color: 'orange',
+          fontSize: '50px',
+          padding: '10px'
+        },
+        baseStyleObject: {
+          fontSize: '50px',
+          padding: '10px'
+        },
+        errorStyleObject: {
+          color: 'red',
+          border: '1px solid red'
+        }
+      };
+    }
+  };
+</script>
+
+<style>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+</style>
+```
+
+## 6. Shorthand V-bind
+
+```html
+<h2 :style="headerStyleObject">Style Object</h2>
+// Some code
+```
+
+> Summary
+
+Data binding is a fundamental concept in Vue.js, and mastering it will greatly enhance your ability to build interactive and efficient web applications.
+
+Hope this helps!

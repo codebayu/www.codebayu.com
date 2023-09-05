@@ -1,0 +1,55 @@
+---
+id: 2
+title: 'How to conditional rendering in Vue js'
+category: 'Learn Vue js'
+language: 'vue'
+difficulty: 'Medium'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-05'
+updated_at: '2023-09-05'
+---
+
+> Introduction
+
+Conditional rendering in Vue.js is a powerful feature that allows you to display or hide elements in your application's user interface based on certain conditions. This flexibility is essential for building dynamic and responsive web applications. In this blog post, we will explore various techniques for conditional rendering in Vue.js and understand how to use them effectively.
+
+> Problem
+
+When building web applications, you often encounter scenarios where you need to show or hide elements based on user interactions, data availability, or other conditions.
+
+> Solution
+
+```html
+<template>
+  <h2 v-if="num === 0">The number is Zero</h2>
+  <h2 v-else-if="num > 0">The Number is Positif</h2>
+  <h2 v-else-if="num < 0">The Number is Negatif</h2>
+  <h2 v-else>Not a number</h2>
+  <template v-if="display">
+    <h2>Bayu</h2>
+    <h2>Frontend Developer</h2>
+  </template>
+  <h2 v-show="showElement">V show element</h2>
+</template>
+
+<script>
+  export default {
+    name: 'App',
+    data() {
+      return {
+        num: 0,
+        display: true,
+        showElement: true
+      };
+    }
+  };
+</script>
+```
+
+> Summary
+
+Conditional rendering is a fundamental concept in Vue.js that empowers you to create interactive and dynamic user interfaces. By addressing common problems with techniques like v-if, v-show, and computed properties, you can build more responsive and efficient Vue.js applications. These solutions help you manage complex conditions, improve performance, and enhance maintainability as your project evolves.
+
+Hope this helps!
