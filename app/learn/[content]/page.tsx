@@ -48,7 +48,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
   const sortedSubContents = subContents.sort((a, b) => {
     const dateA = parseISO(a.frontMatter.created_at as string);
     const dateB = parseISO(b.frontMatter.created_at as string);
-    return compareDesc(dateA, dateB);
+    return compareDesc(dateB, dateA);
   });
 
   const { title, description } = content;
