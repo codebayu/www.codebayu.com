@@ -14,7 +14,7 @@ export default function GoHome() {
     >
       <Link
         href="/"
-        className="flex border w-full h-max md:w-max shadow-sm border-neutral-200 justify-center items-center px-6 py-3 rounded-xl gap-2 hover:gap-3 delay-75 hover:transition-all hover:duration-300 transition-all duration-300"
+        className="flex border w-full h-max md:w-max shadow-sm border-neutral-200 dark:border-neutral-700 justify-center items-center px-6 py-3 rounded-xl gap-2 hover:gap-3 delay-75 hover:transition-all hover:duration-300 transition-all duration-300"
       >
         <FcMindMap />
         <span>Awesome Magic</span>
