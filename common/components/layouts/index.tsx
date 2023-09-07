@@ -29,7 +29,7 @@ export default function Layouts({ children }: LayoutsProps) {
             <Sidebar />
           </header>
         )}
-        <main className="lg:max-w-[854px] transition-all duration-300 w-full lg:h-screen overflow-y-auto no-scrollbar">
+        <main className="lg:max-w-[854px] transition-all duration-300 w-full lg:min-h-screen overflow-y-auto no-scrollbar">
           {children}
         </main>
       </div>
