@@ -9,15 +9,17 @@ interface BadgeSectionProps {
 }
 
 export default function BadgeSection({ active, refetch }: BadgeSectionProps) {
-  const Routes = MENU_ITEMS.filter(item => item.isShow);
+  const routes = MENU_ITEMS.filter(item => item.isShow);
   return (
     <div className="mt-4 flex space-x-1 overflow-x-auto">
-      {Routes.map(route => (
+      {routes.map(route => (
         <button
           key={route.href}
           className={clsxm(
             'text-xs py-1 px-2 rounded-lg',
-            active === route.href ? 'bg-neutral-300 dark:bg-neutral-700' : 'bg-neutral-100 dark:bg-neutral-800'
+            active === route.href
+              ? 'bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+              : 'bg-neutral-100 dark:bg-neutral-800'
           )}
           onClick={() => refetch(route.href)}
         >

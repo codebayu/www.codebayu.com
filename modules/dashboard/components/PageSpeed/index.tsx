@@ -37,7 +37,7 @@ export default function PageSpeed() {
           href={PAGESPEED_URL}
           target="_blank"
           passHref
-          className="text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400"
+          className="text-sm font-code text-neutral-600 dark:text-neutral-400 hover:text-neutral-700 hover:dark:text-neutral-400"
         >
           PageSpeed
         </Link>

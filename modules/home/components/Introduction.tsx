@@ -11,7 +11,7 @@ export default function Introduction() {
         <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-sora">
           <h1>Hi, I&apos;m Bayu</h1> <div className="ml-1 animate-waving-hand">👋</div>
         </div>
-        <Link href={SAWERIA_URL} target="_blank" className="">
+        <Link href={SAWERIA_URL} target="_blank" aria-label="buy-me-cofey">
           <TbCoffee size={25} />
         </Link>
       </div>

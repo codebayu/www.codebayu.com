@@ -16,7 +16,7 @@ export default function LearnSubContentItem({
   difficulty = ''
 }: SubContentProps) {
   return (
-    <Link href={`/learn/${contentSlug}/${subContentSlug}`}>
+    <Link href={`/learn/${contentSlug}/${subContentSlug}?read-mode=true`}>
       <Card
         className={clsxm(
           'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full py-4 px-5'
