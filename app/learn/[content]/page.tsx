@@ -1,5 +1,6 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
+import { getBlogData } from '@/services/blog';
 import { compareDesc, parseISO } from 'date-fns';
 import React from 'react';
 
@@ -45,12 +46,6 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
   const { content, subContents } = await getContent(params.content);
   if (!content) return null;
 
-  const sortedSubContents = subContents.sort((a, b) => {
-    const dateA = parseISO(a.frontMatter.created_at as string);
-    const dateB = parseISO(b.frontMatter.created_at as string);
-    return compareDesc(dateB, dateA);
-  });
-
   const { title, description } = content;
 
   return (
@@ -58,7 +53,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
       <Container data-aos="fade-up">
         <BackButton url="/learn" />
         <PageHeading title={title} description={description} />
-        <ContentLists title={title} content={content} sortedSubContents={sortedSubContents} />
+        <ContentLists content={content} sortedSubContents={subContents} />
       </Container>
     </>
   );
@@ -67,6 +62,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
 async function getContent(contentSlug: string) {
   const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null;
 
+  const blogs = await getBlogData();
   if (!content) {
     return {
       redirect: {
@@ -75,7 +71,7 @@ async function getContent(contentSlug: string) {
       }
     };
   }
-  const subContentList = loadMdxFiles(content?.slug);
+  const subContentList = blogs.filter(blog => blog.collection_id === content.id);
   return {
     content,
     subContents: subContentList

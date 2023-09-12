@@ -3,11 +3,11 @@
 import { fetcher } from '@/services/fetcher';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
 import useSWR from 'swr';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import LoadingCard from '@/common/components/elements/LoadingCard';
+import { DEVTO_BLOG_API } from '@/common/constant';
 import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
@@ -17,14 +17,12 @@ import useIsMobile from '@/hooks/useIsMobile';
 import BlogCard from './BlogCard';
 import BlogListHeader from './BlogListHeader';
 
-interface BlogProps {
-  blogs: BlogItem[];
-}
-
-export default function Blog({ blogs }: BlogProps) {
+export default function Blog() {
   const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
-  const { data, isLoading } = useSWR('https://dev.to/api/articles?username=codebayu', fetcher);
+  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher);
+
+  const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null);
 
   if (isLoading)
     return (
@@ -40,7 +38,7 @@ export default function Blog({ blogs }: BlogProps) {
       </div>
     );
 
-  if (data.length === 0 && !isLoading) {
+  if (blogs.length === 0 && !isLoading) {
     return <EmptyState message="No Data" />;
   }
 
@@ -53,7 +51,7 @@ export default function Blog({ blogs }: BlogProps) {
           viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
-        {data?.map((item: BlogItem, index: number) => (
+        {blogs?.map((item: BlogItem, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}

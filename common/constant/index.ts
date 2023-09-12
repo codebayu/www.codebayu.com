@@ -6,3 +6,4 @@ export const PAGESPEED_CATEGORIES = '&category=accessibility&category=performanc
 export const PROFILE_URL =
   'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693008885/codebayu/ab0kfkhjgymzthooxiea.webp';
 export const SAWERIA_URL = 'https://saweria.co/codebayu';
+export const DEVTO_BLOG_API = 'https://dev.to/api/articles?username=codebayu';

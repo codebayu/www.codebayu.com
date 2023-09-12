@@ -3,17 +3,16 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 
+import { BlogItem } from '@/common/types/blog';
 import { ContentProps } from '@/common/types/learn';
-import { MdxFileProps } from '@/common/types/mdx';
 
 import LearnSubContentItem from './LearnSubContentItem';
 
 interface ContentListsProps {
-  sortedSubContents: MdxFileProps[];
-  title: string;
+  sortedSubContents: BlogItem[];
   content: ContentProps;
 }
-export default function ContentLists({ sortedSubContents, title, content }: ContentListsProps) {
+export default function ContentLists({ sortedSubContents, content }: ContentListsProps) {
   return (
     <div className="flex flex-col gap-3">
       {sortedSubContents?.map((item, index) => (
@@ -24,12 +23,13 @@ export default function ContentLists({ sortedSubContents, title, content }: Cont
           transition={{ duration: 0.3, delay: index * 0.1 }}
         >
           <LearnSubContentItem
-            parent={title}
+            parent={content.title}
             contentSlug={content?.slug}
             subContentSlug={item?.slug}
-            title={item?.frontMatter?.title as string}
-            language={item?.frontMatter?.language as string}
-            difficulty={item?.frontMatter?.difficulty as string}
+            title={item.title}
+            language={content.language}
+            difficulty={content.level}
+            postId={`${item.id}`}
           />
         </motion.div>
       ))}

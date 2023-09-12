@@ -10,8 +10,9 @@ export interface ContentProps {
   description: string;
   image: string;
   is_new: boolean;
-  level: 'beginner' | 'intermediate' | 'advanced' | 'all-levels';
+  level: 'Easy' | 'Medium' | 'Hard';
   is_show: boolean;
+  language: string;
 }
 
 export interface SubContentProps {
@@ -21,6 +22,7 @@ export interface SubContentProps {
   title: string;
   language?: string;
   difficulty?: string;
+  postId?: string;
 }
 
 export interface SubContentMetaProps {

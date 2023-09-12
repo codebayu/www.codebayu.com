@@ -32,6 +32,7 @@ export type BlogItem = {
   user: UserProps;
   db_views_count: number;
   total_views_count: number;
+  collection_id: number;
 };
 
 export type BlogDetailProps = {
