@@ -1,21 +1,31 @@
 'use client';
 
+import { fetcher } from '@/services/fetcher';
 import { motion } from 'framer-motion';
 import React from 'react';
+import useSWR from 'swr';
 
+import EmptyState from '@/common/components/elements/EmptyState';
+import { DEVTO_BLOG_API } from '@/common/constant';
 import { BlogItem } from '@/common/types/blog';
 import { ContentProps } from '@/common/types/learn';
 
 import LearnSubContentItem from './LearnSubContentItem';
 
 interface ContentListsProps {
-  sortedSubContents: BlogItem[];
   content: ContentProps;
 }
-export default function ContentLists({ sortedSubContents, content }: ContentListsProps) {
+export default function ContentLists({ content }: ContentListsProps) {
+  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher);
+  const learns: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === content.id);
+
+  if (learns?.length === 0 && !isLoading) {
+    return <EmptyState message="No Data" />;
+  }
+
   return (
     <div className="flex flex-col gap-3">
-      {sortedSubContents?.map((item, index) => (
+      {learns?.map((item, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, scale: 0.8 }}

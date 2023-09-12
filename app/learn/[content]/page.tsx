@@ -1,7 +1,6 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
 import { getBlogData } from '@/services/blog';
-import { compareDesc, parseISO } from 'date-fns';
 import React from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
@@ -9,7 +8,6 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { METADATA } from '@/common/constant/metadata';
-import loadMdxFiles from '@/common/libs/mdx';
 
 import ContentLists from '@/modules/learn/components/ContentLists';
 
@@ -43,7 +41,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 export default async function LearnContentPage({ params }: LearnContentPage) {
-  const { content, subContents } = await getContent(params.content);
+  const { content } = await getContent(params.content);
   if (!content) return null;
 
   const { title, description } = content;
@@ -53,7 +51,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
       <Container data-aos="fade-up">
         <BackButton url="/learn" />
         <PageHeading title={title} description={description} />
-        <ContentLists content={content} sortedSubContents={subContents} />
+        <ContentLists content={content} />
       </Container>
     </>
   );
@@ -62,7 +60,6 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
 async function getContent(contentSlug: string) {
   const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null;
 
-  const blogs = await getBlogData();
   if (!content) {
     return {
       redirect: {
@@ -71,9 +68,7 @@ async function getContent(contentSlug: string) {
       }
     };
   }
-  const subContentList = blogs.filter(blog => blog.collection_id === content.id);
   return {
-    content,
-    subContents: subContentList
+    content
   };
 }
