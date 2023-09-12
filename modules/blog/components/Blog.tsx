@@ -1,13 +1,9 @@
 'use client';
 
-import { fetcher } from '@/services/fetcher';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
-import useSWR from 'swr';
 
 import EmptyState from '@/common/components/elements/EmptyState';
-import LoadingCard from '@/common/components/elements/LoadingCard';
 import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
@@ -24,34 +20,8 @@ interface BlogProps {
 export default function Blog({ blogs }: BlogProps) {
   const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
-  const { data, isLoading } = useSWR('https://dev.to/api/articles?username=codebayu', fetcher);
 
-  console.log({ data, blogs });
-
-  // const blogData: BlogItem[] = useMemo(() => {
-  //   if (data?.status && data?.data && Array.isArray(data?.data)) {
-  //     return data.data;
-  //   }
-  //   return [];
-  // }, [data]);
-
-  // if (isLoading)
-  //   return (
-  //     <div
-  //       className={clsx(
-  //         'gap-5 sm:gap-4',
-  //         viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
-  //       )}
-  //     >
-  //       {[1, 2].map(item => (
-  //         <LoadingCard key={item} view={viewOption} />
-  //       ))}
-  //     </div>
-  //   );
-
-  // if (blogData.length === 0 && !isLoading) {
-  //   return <EmptyState message="No Data" />;
-  // }
+  if (blogs.length === 0) return <EmptyState message="No Data" />;
 
   return (
     <>

@@ -25,7 +25,6 @@ export default function BlogCard({
   cover_image,
   published_at,
   description,
-  page_views_count,
   slug,
   comments_count,
   view,
@@ -79,10 +78,10 @@ export default function BlogCard({
             <div className="flex gap-1 items-center ">
               <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
             </div>
-            <div className="flex gap-1 items-center">
+            {/* <div className="flex gap-1 items-center">
               <ViewIcon size={14} />
               <span className="text-xs ml-0.5">{page_views_count} Views</span>
-            </div>
+            </div> */}
             <div className="flex gap-1 items-center">
               <CommentIcon size={16} />
               <span className="text-xs">
