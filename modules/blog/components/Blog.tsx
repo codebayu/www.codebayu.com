@@ -26,13 +26,6 @@ export default function Blog({ blogs }: BlogProps) {
   const { viewOption, setViewOption } = useBlogViewStore();
   const { data, isLoading } = useSWR('https://dev.to/api/articles?username=codebayu', fetcher);
 
-  const blogData: BlogItem[] = useMemo(() => {
-    if (data?.status && data?.data && Array.isArray(data?.data)) {
-      return data.data;
-    }
-    return [];
-  }, [data]);
-
   if (isLoading)
     return (
       <div
@@ -47,11 +40,9 @@ export default function Blog({ blogs }: BlogProps) {
       </div>
     );
 
-  if (blogData.length === 0 && !isLoading) {
+  if (data.length === 0 && !isLoading) {
     return <EmptyState message="No Data" />;
   }
-
-  console.log(blogData);
 
   return (
     <>
@@ -62,7 +53,7 @@ export default function Blog({ blogs }: BlogProps) {
           viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
-        {blogData?.map((item: BlogItem, index: number) => (
+        {data?.map((item: BlogItem, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
