@@ -24,9 +24,9 @@ interface BlogProps {
 export default function Blog({ blogs }: BlogProps) {
   const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
-  // const { data, isLoading } = useSWR('/api/blog', fetcher);
+  const { data, isLoading } = useSWR('https://dev.to/api/articles?username=codebayu', fetcher);
 
-  console.log(blogs);
+  console.log({ data, blogs });
 
   // const blogData: BlogItem[] = useMemo(() => {
   //   if (data?.status && data?.data && Array.isArray(data?.data)) {
