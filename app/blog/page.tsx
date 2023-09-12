@@ -28,7 +28,7 @@ export default async function BlogPage() {
     <>
       <Container data-aos="fade-up">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Blog />
+        <Blog blogs={blogs} />
       </Container>
     </>
   );

@@ -17,35 +17,41 @@ import useIsMobile from '@/hooks/useIsMobile';
 import BlogCard from './BlogCard';
 import BlogListHeader from './BlogListHeader';
 
-export default function Blog() {
+interface BlogProps {
+  blogs: BlogItem[];
+}
+
+export default function Blog({ blogs }: BlogProps) {
   const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
-  const { data, isLoading } = useSWR('/api/blog', fetcher);
+  // const { data, isLoading } = useSWR('/api/blog', fetcher);
 
-  const blogData: BlogItem[] = useMemo(() => {
-    if (data?.status && data?.data && Array.isArray(data?.data)) {
-      return data.data;
-    }
-    return [];
-  }, [data]);
+  console.log(blogs);
 
-  if (isLoading)
-    return (
-      <div
-        className={clsx(
-          'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
-        )}
-      >
-        {[1, 2].map(item => (
-          <LoadingCard key={item} view={viewOption} />
-        ))}
-      </div>
-    );
+  // const blogData: BlogItem[] = useMemo(() => {
+  //   if (data?.status && data?.data && Array.isArray(data?.data)) {
+  //     return data.data;
+  //   }
+  //   return [];
+  // }, [data]);
 
-  if (blogData.length === 0 && !isLoading) {
-    return <EmptyState message="No Data" />;
-  }
+  // if (isLoading)
+  //   return (
+  //     <div
+  //       className={clsx(
+  //         'gap-5 sm:gap-4',
+  //         viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
+  //       )}
+  //     >
+  //       {[1, 2].map(item => (
+  //         <LoadingCard key={item} view={viewOption} />
+  //       ))}
+  //     </div>
+  //   );
+
+  // if (blogData.length === 0 && !isLoading) {
+  //   return <EmptyState message="No Data" />;
+  // }
 
   return (
     <>
@@ -56,7 +62,7 @@ export default function Blog() {
           viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
         )}
       >
-        {blogData?.map((item: BlogItem, index: number) => (
+        {blogs?.map((item: BlogItem, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
