@@ -19,7 +19,17 @@ export default function ContentLists({ content }: ContentListsProps) {
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher);
   const learns: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === content.id);
 
-  if (learns?.length === 0 && !isLoading) {
+  if (isLoading) {
+    return (
+      <div>
+        {[1, 2, 3].map(item => (
+          <div key={item} className="h-14 animate-pulse bg-neutral-300 dark:bg-neutral-700 rounded-xl" />
+        ))}
+      </div>
+    );
+  }
+
+  if (learns.length === 0 && !isLoading) {
     return <EmptyState message="No Data" />;
   }
 
