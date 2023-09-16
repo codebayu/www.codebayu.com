@@ -2,7 +2,7 @@
 
 import { fetcher } from '@/services/fetcher';
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useMemo } from 'react';
 import useSWR from 'swr';
 
 import EmptyState from '@/common/components/elements/EmptyState';
@@ -16,8 +16,20 @@ interface ContentListsProps {
   content: ContentProps;
 }
 export default function ContentLists({ content }: ContentListsProps) {
-  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher);
-  const learns: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === content.id);
+  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
+    revalidateOnMount: true
+  });
+
+  const learns: BlogItem[] = useMemo(() => {
+    if (!data) return [];
+    const filteredLearns = data.filter((blog: BlogItem) => blog.collection_id === content.id);
+    filteredLearns.sort((a: BlogItem, b: BlogItem) => {
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+      return dateA.getTime() - dateB.getTime();
+    });
+    return filteredLearns;
+  }, [data, content.id]);
 
   if (isLoading) {
     return (

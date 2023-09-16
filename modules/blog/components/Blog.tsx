@@ -20,7 +20,9 @@ import BlogListHeader from './BlogListHeader';
 export default function Blog() {
   const isMobile = useIsMobile();
   const { viewOption, setViewOption } = useBlogViewStore();
-  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher);
+  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
+    revalidateOnMount: true
+  });
 
   const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null);
 

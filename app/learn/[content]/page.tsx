@@ -1,6 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
-import { getBlogData } from '@/services/blog';
 import React from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
