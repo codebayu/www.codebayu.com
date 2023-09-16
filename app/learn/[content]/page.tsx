@@ -1,6 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
-import { compareDesc, parseISO } from 'date-fns';
 import React from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
@@ -8,7 +7,6 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { METADATA } from '@/common/constant/metadata';
-import loadMdxFiles from '@/common/libs/mdx';
 
 import ContentLists from '@/modules/learn/components/ContentLists';
 
@@ -42,14 +40,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 }
 
 export default async function LearnContentPage({ params }: LearnContentPage) {
-  const { content, subContents } = await getContent(params.content);
+  const { content } = await getContent(params.content);
   if (!content) return null;
-
-  const sortedSubContents = subContents.sort((a, b) => {
-    const dateA = parseISO(a.frontMatter.created_at as string);
-    const dateB = parseISO(b.frontMatter.created_at as string);
-    return compareDesc(dateB, dateA);
-  });
 
   const { title, description } = content;
 
@@ -58,7 +50,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
       <Container data-aos="fade-up">
         <BackButton url="/learn" />
         <PageHeading title={title} description={description} />
-        <ContentLists title={title} content={content} sortedSubContents={sortedSubContents} />
+        <ContentLists content={content} />
       </Container>
     </>
   );
@@ -75,9 +67,7 @@ async function getContent(contentSlug: string) {
       }
     };
   }
-  const subContentList = loadMdxFiles(content?.slug);
   return {
-    content,
-    subContents: subContentList
+    content
   };
 }

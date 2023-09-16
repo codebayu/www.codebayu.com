@@ -1,15 +1,13 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
+import { getBlogDetail, getComments } from '@/services/blog';
+import { getBlogViews } from '@/services/view';
 import React from 'react';
 
 import BackButton from '@/common/components/elements/BackButton';
-import Breakline from '@/common/components/elements/Breakline';
 import Container from '@/common/components/elements/Container';
+import ReaderPage from '@/common/components/elements/ReaderPage';
 import { METADATA } from '@/common/constant/metadata';
-import loadMdxFiles from '@/common/libs/mdx';
-
-import ContentDetail from '@/modules/learn/components/ContentDetail';
-import ContentDetailHeader from '@/modules/learn/components/ContentDetailHeader';
 
 interface Params {
   content: string;
@@ -18,16 +16,16 @@ interface Params {
 
 interface LearnContentDetailPageProps {
   params: Params;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(
-  { params }: LearnContentDetailPageProps,
+  { params, searchParams }: LearnContentDetailPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const data = await getContentDetail(params);
-  const { frontMatter: meta } = data as any;
+  const data = await getBlogDetail({ params, searchParams });
   return {
-    title: `${meta?.title} ${METADATA.exTitle}`,
+    title: `${data.title} ${METADATA.exTitle}`,
     openGraph: {
       url: METADATA.openGraph.url,
       siteName: METADATA.openGraph.siteName,
@@ -35,43 +33,23 @@ export async function generateMetadata(
       type: 'article',
       authors: METADATA.creator
     },
-    category: meta.category,
-    keywords: meta.title,
+    keywords: data.title,
     alternates: {
       canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`
     }
   };
 }
 
-export default async function LearnContentDetailPage({ params }: LearnContentDetailPageProps) {
-  const data = await getContentDetail(params);
-  const { content, frontMatter } = data as any;
+export default async function LearnContentDetailPage({ params, searchParams }: LearnContentDetailPageProps) {
+  const content = await getBlogDetail({ params, searchParams });
+  const pageViewCount = await getBlogViews(searchParams.id as string);
+  const comments = await getComments(searchParams.id as string);
   return (
     <>
       <Container data-aos="fade-up">
         <BackButton />
-        <ContentDetailHeader {...frontMatter} />
-        {content && (
-          <>
-            <ContentDetail content={content} />
-            <Breakline className="mt-14 mb-14" />
-          </>
-        )}
+        <ReaderPage comments={comments} content={content} pageViewCount={pageViewCount} />
       </Container>
     </>
   );
-}
-
-async function getContentDetail(params: Params) {
-  const contentList = await loadMdxFiles(params.content);
-  const contentData = contentList.find(item => item.slug === params.slug);
-  if (!contentData) {
-    return {
-      redirect: {
-        destination: '/404',
-        permanent: false
-      }
-    };
-  }
-  return contentData;
 }

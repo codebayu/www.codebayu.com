@@ -7,7 +7,7 @@ import { scroller } from 'react-scroll';
 
 import { formatDate } from '@/common/helpers';
 
-interface BlogHeaderProps {
+interface ReaderHeaderProps {
   title: string;
   comments_count?: number;
   reading_time_minutes?: number;
@@ -15,13 +15,13 @@ interface BlogHeaderProps {
   published_at?: string;
 }
 
-export default function BlogHeader({
+export default function ReaderHeader({
   title,
   comments_count = 0,
   page_views_count,
   published_at,
   reading_time_minutes
-}: BlogHeaderProps) {
+}: ReaderHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection = () => {

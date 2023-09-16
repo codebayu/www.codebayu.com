@@ -3,24 +3,24 @@
 import Image from 'next/image';
 
 import Breakline from '@/common/components/elements/Breakline';
+import CommentList from '@/common/components/elements/CommentList';
 import MDXComponent from '@/common/components/elements/MDXComponent';
 import { PLACEHOLDER_URL } from '@/common/constant';
 import { BlogDetailProps, CommentItemProps } from '@/common/types/blog';
 
-import BlogHeader from './BlogHeader';
-import CommentList from './CommentList';
+import ReaderHeader from './ReaderHeader';
 
-interface BlogDetail {
-  blog: BlogDetailProps;
-  pageViewCount: number;
+interface ReaderProps {
+  content: BlogDetailProps;
   comments: CommentItemProps[];
+  pageViewCount: number;
 }
-export default function BlogDetail({ blog, pageViewCount, comments }: BlogDetail) {
-  const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id } = blog;
 
+export default function ReaderPage({ content, comments, pageViewCount }: ReaderProps) {
+  const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id } = content;
   return (
     <>
-      <BlogHeader
+      <ReaderHeader
         title={title}
         comments_count={comments_count}
         reading_time_minutes={reading_time_minutes}
