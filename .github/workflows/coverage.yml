@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Running test coverage
-        run: npx vitest --coverage
+        run: npx vitest --coverage.enabled --coverage.provider=v8 --coverage.reporter=json-summary --coverage.reporter=json
       - name: Report code coverage
         if: always() # Also generate the report if tests are failing
         uses: davelosert/vitest-coverage-report-action@v2
