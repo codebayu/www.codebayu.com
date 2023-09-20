@@ -22,9 +22,13 @@ import {
   SiPhp,
   SiPrisma,
   SiReact,
+  SiReacthookform,
   SiReactquery,
+  SiReactrouter,
+  SiReacttable,
   SiRedux,
   SiSass,
+  SiStorybook,
   SiTailwindcss,
   SiTypescript,
   SiVite,
@@ -70,5 +74,9 @@ export const STACKS: stacksProps = {
   CSS: <SiCss3 size={iconSize} className="text-blue-500" />,
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
-  Github: <SiGithub size={iconSize} />
+  Github: <SiGithub size={iconSize} />,
+  Storybook: <SiStorybook size={iconSize} className="text-pink-500" />,
+  'React Router': <SiReactrouter size={iconSize} className="text-pink-500" />,
+  'React Hook Form': <SiReacthookform size={iconSize} className="text-pink-500" />,
+  'React Table': <SiReacttable size={iconSize} className="text-rose-600" />
 };

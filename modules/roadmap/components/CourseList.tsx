@@ -15,7 +15,7 @@ export default function CourseList() {
   const params = useSearchParams();
   const tribe = params.get('tribe');
   const [renderCourse, setRenderCourse] = useState<CourseCardProps[]>([]);
-  const { frontend, backend } = ROADMAP;
+  const { frontend, backend, masteringReact } = ROADMAP;
 
   useEffect(() => {
     let selectTribe: CourseCardProps[] = [];
@@ -23,6 +23,8 @@ export default function CourseList() {
       selectTribe = frontend;
     } else if (tribe === 'backend-developer') {
       selectTribe = backend;
+    } else if (tribe === 'mastering-react-js') {
+      selectTribe = masteringReact;
     }
     setRenderCourse(selectTribe);
   }, [tribe]);

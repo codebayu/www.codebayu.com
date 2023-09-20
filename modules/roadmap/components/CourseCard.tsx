@@ -20,7 +20,7 @@ export default function CourseCard(props: CourseCardProps) {
       </div>
       <div className="flex space-x-2">
         {linkIndonesia && (
-          <Tooltip title="Bahasa Indonesia">
+          <Tooltip title="Free course!">
             <Link
               href={linkIndonesia}
               target="_blank"
@@ -31,7 +31,7 @@ export default function CourseCard(props: CourseCardProps) {
           </Tooltip>
         )}
         {linkEnglish && (
-          <Tooltip title="Bahasa Inggris">
+          <Tooltip title="Free course!">
             <Link
               href={linkEnglish}
               target="_blank"
