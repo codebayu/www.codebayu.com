@@ -17,8 +17,8 @@ jobs:
         run: npm install yarn@latest -g
       - name: Install dependencies
         run: yarn
-      - name: Generate Test Coverage
-        run: yarn coverage
+      - name: Running test coverage
+        run: npx vitest --coverage
       - name: Report code coverage
         if: always() # Also generate the report if tests are failing
         uses: davelosert/vitest-coverage-report-action@v2

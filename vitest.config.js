@@ -6,5 +6,8 @@ export default defineConfig({
   test: {
     global: true,
     environment: 'jsdom'
+  },
+  coverage: {
+    reporter: ['text', 'json-summary', 'json']
   }
 });
