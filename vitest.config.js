@@ -5,9 +5,10 @@ export default defineConfig({
   plugins: [react()],
   test: {
     global: true,
-    environment: 'jsdom'
-  },
-  coverage: {
-    reporter: ['text', 'json', 'json-summary', 'json']
+    environment: 'jsdom',
+    coverage: {
+      provider: 'istanbul',
+      reporter: ['text', 'json', 'json-summary', 'json']
+    }
   }
 });
