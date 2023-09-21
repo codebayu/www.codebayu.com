@@ -27,5 +27,9 @@ jobs:
       - name: Running test coverage
         run: npx vitest --coverage
       - name: Report code coverage
-        if: always() # Also generate the report if tests are failing
-        uses: davelosert/vitest-coverage-report-action@v2
+        uses: romeovs/lcov-reporter-action@v0.3.1
+          with:
+            lcov-file: ./coverage/lcov.info
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            filter-changed-files: true
+            delete-old-comments: true
