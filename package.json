@@ -9,7 +9,7 @@
     "lint": "next lint",
     "format": "prettier --write \"./**/*.{ts,tsx,json}\"",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest --coverage"
   },
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
