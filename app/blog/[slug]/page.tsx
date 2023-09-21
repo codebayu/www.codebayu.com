@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 import { getBlogDetail, getComments } from '@/services/blog';
 import { getBlogViews } from '@/services/view';
@@ -13,7 +13,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const blog = await getBlogDetail({ params, searchParams });
   return {
     title: `${blog.title} ${METADATA.exTitle}`,
