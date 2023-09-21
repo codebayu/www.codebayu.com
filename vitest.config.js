@@ -8,6 +8,6 @@ export default defineConfig({
     environment: 'jsdom'
   },
   coverage: {
-    reporter: ['text', 'json-summary', 'json']
+    reporter: ['text', 'json', 'json-summary', 'json']
   }
 });
