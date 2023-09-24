@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 import React from 'react';
 
@@ -16,10 +16,7 @@ interface ProjectsDetailPageProps {
   params: { slug: string };
 }
 
-export async function generateMetadata(
-  { params }: ProjectsDetailPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: ProjectsDetailPageProps): Promise<Metadata> {
   const project = await getProjectDetail(params.slug);
   return {
     title: `${project.title} ${METADATA.exTitle}`,

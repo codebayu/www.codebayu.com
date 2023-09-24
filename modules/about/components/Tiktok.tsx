@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import axios from 'axios';
 import React from 'react';
 import { SiTiktok } from 'react-icons/si';
 
@@ -27,34 +26,4 @@ export default async function Tiktok() {
       <Embed />
     </>
   );
-}
-
-async function getTiktokToken() {
-  const KEY = process.env.TIKTOK_KEY;
-  const SECRET = process.env.TIKTOK_SECRET;
-  const DOMAIN = process.env.DOMAIN;
-  const response = await axios.post(
-    'https://open.tiktokapis.com/v2/oauth/token/',
-    {
-      client_key: KEY,
-      client_secret: SECRET,
-      grant_type: 'authorization_code',
-      code: 'user.info.basic',
-      redirect_uri: DOMAIN
-    },
-    {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    }
-  );
-  return response.data;
-}
-
-async function getTiktokProfile() {
-  const access_token = await getTiktokToken();
-  const response = await axios.get('https://www.tiktok.com/oembed?url=https://www.tiktok.com/@codebayu.com', {
-    headers: { Authorization: `Bearer` }
-  });
-  return response.data;
 }

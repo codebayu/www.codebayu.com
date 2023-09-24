@@ -1,5 +1,4 @@
 import {
-  BiLineChart as AnalyticsIcon,
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
   BiCategoryAlt as DashboardIcon,

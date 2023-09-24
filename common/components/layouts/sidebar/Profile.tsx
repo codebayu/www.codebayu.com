@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Status from '@/common/components/elements/Status';
 
