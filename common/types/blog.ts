@@ -1,7 +1,7 @@
 export type UserProps = {
   name: string;
   username: string;
-  twitter_username: string;
+  twitter_username: string | null;
   github_username: string;
   user_id: number;
   website_url: string;
@@ -77,5 +77,5 @@ export type CommentItemProps = {
   created_at: string;
   body_html: string;
   user: UserProps;
-  children: Comment[];
+  children: CommentItemProps[];
 };
