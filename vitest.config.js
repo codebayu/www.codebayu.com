@@ -9,6 +9,9 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'lcov', 'json-summary', 'json']
+    },
+    alias: {
+      '@/': './'
     }
   }
 });
