@@ -8,7 +8,7 @@ import { PROFILE_URL } from '@/common/constant';
 
 export default function MeProfile() {
   return (
-    <div className="flex flex-col items-center space-y-2 mt-6" data-aos="zoom-in-down">
+    <div className="flex flex-col px-6 items-center space-y-2 mt-6" data-aos="zoom-in-down">
       <div className="rounded-full p-2 border border-neutral-200 dark:border-neutral-700">
         <div className="overflow-hidden rounded-full">
           <Image
