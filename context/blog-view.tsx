@@ -1,12 +1,14 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-type BlogViewState = {
+interface BlogViewState {
   viewOption: string;
+}
+interface BlogViewAction {
   setViewOption: (option: string) => void;
-};
+}
 
-export const useBlogViewStore = create<BlogViewState>()(
+export const useBlogView = create<BlogViewState & BlogViewAction>()(
   devtools(
     persist(
       set => ({

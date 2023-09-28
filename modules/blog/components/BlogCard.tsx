@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import { useEffect, useState } from 'react';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 
 import Card from '@/common/components/elements/Card';

@@ -14,7 +14,7 @@ export async function getBlogData(): Promise<BlogItem[]> {
   return response.data;
 }
 
-export async function getBlogDetail({ params, searchParams }: Props): Promise<BlogDetailProps> {
+export async function getBlogDetail({ searchParams }: Props): Promise<BlogDetailProps> {
   const URL = `https://dev.to/api/articles/${searchParams.id}`;
   const response = await axios.get(URL, {
     headers: {

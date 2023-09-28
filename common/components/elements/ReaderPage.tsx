@@ -1,6 +1,5 @@
-'use client';
-
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Breakline from '@/common/components/elements/Breakline';
 import CommentList from '@/common/components/elements/CommentList';
@@ -17,7 +16,8 @@ interface ReaderProps {
 }
 
 export default function ReaderPage({ content, comments, pageViewCount }: ReaderProps) {
-  const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id } = content;
+  const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id, url } =
+    content;
   return (
     <>
       <ReaderHeader
@@ -56,6 +56,12 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
         </div>
       )}
       <Breakline className="!my-10" />
+      <div className="flex flex-col mb-4 space-y-2">
+        <h3 className="text-lg font-medium">Comment on DEV Community:</h3>
+        <Link href={url} target="_blank" className="text-teal-700">
+          {url}
+        </Link>
+      </div>
       <CommentList id={id} totalComments={comments_count} comments={comments} />
     </>
   );

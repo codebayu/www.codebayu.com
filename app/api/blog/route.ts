@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 import axios from 'axios';
 
-export const GET = async (req: NextRequest, res: NextResponse) => {
+export const GET = async () => {
   const DEV_TO_URL = 'https://dev.to/api/articles/me';
   const headers = {
     'api-key': process.env.DEVTO_KEY

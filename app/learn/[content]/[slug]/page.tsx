@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 import { getBlogDetail, getComments } from '@/services/blog';
 import { getBlogViews } from '@/services/view';
@@ -19,10 +19,7 @@ interface LearnContentDetailPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateMetadata(
-  { params, searchParams }: LearnContentDetailPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: LearnContentDetailPageProps): Promise<Metadata> {
   const data = await getBlogDetail({ params, searchParams });
   return {
     title: `${data.title} ${METADATA.exTitle}`,

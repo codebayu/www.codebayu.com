@@ -16,7 +16,7 @@ export default function CommentList({ totalComments, comments }: CommentListProp
     <section className="space-y-5 pt-4 pb-6">
       {totalComments >= 1 ? (
         <>
-          <div className="font-semibold text-xl pb-5">
+          <div data-testid="comment-count" className="font-semibold text-xl pb-5">
             {totalComments} Comment{totalComments > 1 && 's'}
           </div>
           {comments?.map(comment => <CommentItem key={comment?.id_code} {...comment} />)}

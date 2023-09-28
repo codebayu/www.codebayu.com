@@ -1,5 +1,4 @@
 import {
-  BiLineChart as AnalyticsIcon,
   BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
   BiCategoryAlt as DashboardIcon,
@@ -58,6 +57,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     eventName: 'Pages: Learn'
   },
   {
+    title: 'Roadmap',
+    href: '/roadmap?tribe=frontend-developer',
+    icon: <LuWorkflow size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Roadmap'
+  },
+  {
     title: 'About',
     href: '/about',
     icon: <ProfileIcon size={iconSize} />,
@@ -72,14 +79,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Contact'
-  },
-  {
-    title: 'Roadmap',
-    href: '/roadmap?tribe=frontend-developer',
-    icon: <LuWorkflow size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Roadmap'
   },
   {
     title: 'Dashboard',
