@@ -10,7 +10,7 @@ import LoadingCard from '@/common/components/elements/LoadingCard';
 import { DEVTO_BLOG_API } from '@/common/constant';
 import { BlogItem } from '@/common/types/blog';
 
-import { useBlogViewStore } from '@/context/useBlogViewStore';
+import { useBlogView } from '@/context/blog-view';
 
 import useIsMobile from '@/hooks/useIsMobile';
 
@@ -19,7 +19,7 @@ import BlogListHeader from './BlogListHeader';
 
 export default function Blog() {
   const isMobile = useIsMobile();
-  const { viewOption, setViewOption } = useBlogViewStore();
+  const { viewOption, setViewOption } = useBlogView();
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
     revalidateOnMount: true
   });
