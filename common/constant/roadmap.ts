@@ -214,17 +214,17 @@ export const ROADMAP = {
 export const TRIBES = [
   {
     label: 'Frontend Developer',
-    path: '/roadmap?tribe=frontend-developer',
+    path: '?tribe=frontend-developer',
     isShow: true
   },
   {
     label: 'Backend Developer',
-    path: '/roadmap?tribe=backend-developer',
+    path: '?tribe=backend-developer',
     isShow: false
   },
   {
     label: 'Mastering React Js',
-    path: '/roadmap?tribe=mastering-react-js',
+    path: '?tribe=mastering-react-js',
     isShow: true
   }
 ];
