@@ -13,7 +13,7 @@ interface CommentListProps {
 
 export default function CommentList({ totalComments, comments }: CommentListProps) {
   return (
-    <section className="space-y-5 pt-4 pb-6">
+    <section id="comments" className="space-y-5 pt-4 pb-6">
       {totalComments >= 1 ? (
         <>
           <div data-testid="comment-count" className="font-semibold text-xl pb-5">

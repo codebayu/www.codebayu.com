@@ -58,7 +58,7 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
       <Breakline className="!my-10" />
       <div className="flex flex-col mb-4 space-y-2">
         <h3 className="text-lg font-medium">Comment on DEV Community:</h3>
-        <Link href={url} target="_blank" className="text-teal-700">
+        <Link href={url} target="_blank" className="text-blue-600">
           {url}
         </Link>
       </div>

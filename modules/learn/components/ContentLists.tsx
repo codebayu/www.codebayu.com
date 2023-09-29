@@ -33,7 +33,7 @@ export default function ContentLists({ content }: ContentListsProps) {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="flex flex-col gap-3">
         {[1, 2, 3].map(item => (
           <div key={item} className="h-14 animate-pulse bg-neutral-300 dark:bg-neutral-700 rounded-xl" />
         ))}
