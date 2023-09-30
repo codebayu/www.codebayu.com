@@ -14,6 +14,6 @@ describe('Breakline Component', () => {
   it('Should render breakline element', () => {
     const breakline = screen.getByTestId('breakline');
     expect(breakline).toBeTruthy();
-    expect(breakline.className).toBe(`border-t border-gray-300 my-4 ${props.className}`);
+    expect(breakline.className).toBe(`border-t border-gray-300 dark:border-neutral-700 my-4 ${props.className}`);
   });
 });
