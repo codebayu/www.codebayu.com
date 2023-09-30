@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import React from 'react';
 
+import Image from '@/common/components/elements/Image';
 import { PLACEHOLDER_URL } from '@/common/constant';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { formatDate } from '@/common/helpers';
@@ -24,7 +24,7 @@ export default function LatestArticleCard({ data }: LatestArticleCardProps) {
   return (
     <Link
       href={generateDetailUrl()}
-      className="min-w-[250px] h-max animate-slide-card flex flex-col space-y-2 hover:scale-95 duration-500"
+      className="min-w-[250px] h-max animate-slide-card flex flex-col space-y-1 hover:scale-95 duration-500"
     >
       <div className="w-full h-28 overflow-hidden rounded-md">
         <Image

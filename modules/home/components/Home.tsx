@@ -1,9 +1,12 @@
+import { lazy } from 'react';
+
 import Breakline from '@/common/components/elements/Breakline';
 
 import CareerList from './CareerList';
 import Introduction from './Introduction';
 import LatestArticle from './LatestArticle';
-import SkillList from './SkillList';
+
+const SkillList = lazy(() => import('./SkillList'));
 
 export default function Home() {
   return (
