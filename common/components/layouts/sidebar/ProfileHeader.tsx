@@ -8,6 +8,7 @@ import { BACKDROP_IMAGE, DEVTO_PROFILE, PROFILE_URL } from '@/common/constant';
 
 import Image from '../../elements/Image';
 import Status from '../../elements/Status';
+import ToggleThemeIcon from '../../elements/ToggleThemeIcon';
 import Tooltip from '../../elements/Tooltip';
 
 interface ProfileHeaderProps {
@@ -24,20 +25,21 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       )}
     >
       <div className="relative overflow-hidden hidden w-full pb-2 lg:flex flex-col items-center">
-        <div className="absolute inverted-border-radius z-10 left-0 py-2 pr-2 rounded-xl bg-white">
-          <Status />
-        </div>
-        <div className="w-full">
+        <Status />
+        <div className="w-full dark:brightness-50">
           <Image
             src={BACKDROP_IMAGE}
             alt="profile"
             width={100}
             height={100}
             rounded="rounded-lg"
-            className="w-full h-24"
+            className="w-full h-24 scale-125 -ml-4"
           />
         </div>
-        <div className="-mt-11 shadow-md border-2 z-10 border-white rounded-full">
+        <div className="absolute z-10 -right-1 bottom-[55px] py-2 pr-2 rounded-xl">
+          <ToggleThemeIcon />
+        </div>
+        <div className="-mt-11 shadow-md border-2 z-10 border-white dark:border-neutral-800 rounded-full">
           <Image
             src={PROFILE_URL}
             alt="profile"
