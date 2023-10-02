@@ -39,12 +39,20 @@ const config: Config = {
             transform: 'scaleY(1.7) scaleX(1.25)',
             opacity: '0'
           }
+        },
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '20%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateX(-100%)' },
+          '90%': { transform: 'translateX(5%)' },
+          '100%': { transform: 'translateX(0)' }
         }
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
-        'badge-pulse': 'badge 1.5s ease-out infinite'
+        'badge-pulse': 'badge 1.5s ease-out infinite',
+        'slide-card': 'slide 3s 1s ease-in-out'
       }
     }
   },

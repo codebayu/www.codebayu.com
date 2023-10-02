@@ -4,13 +4,11 @@ import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
 import React, { useEffect } from 'react';
 
-import Status from '@/common/components/elements/Status';
-
 import { useMenu } from '@/context/menu';
 
 import useIsMobile from '@/hooks/useIsMobile';
 
-import ThemeToggle from '../../elements/ThemeToggle';
+import ToggleThemeIcon from '../../elements/ToggleThemeIcon';
 import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';
 import ProfileHeader from './ProfileHeader';
@@ -41,12 +39,6 @@ export default function Profile() {
     >
       <div className="flex items-start justify-between lg:flex-col lg:space-y-4 ">
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
-        {!isMobile && (
-          <div className="flex items-center mt-4 w-full justify-between">
-            <Status />
-            <ThemeToggle />
-          </div>
-        )}
         {isMobile && (
           <div
             className={clsx(
@@ -54,7 +46,7 @@ export default function Profile() {
               isOpen && '!items-end flex-col-reverse justify-between h-[120px] pb-1'
             )}
           >
-            <ThemeToggle />
+            <ToggleThemeIcon />
             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
           </div>
         )}
