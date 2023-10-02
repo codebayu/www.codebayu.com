@@ -1,8 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import React from 'react';
 
-import Image from '@/common/components/elements/Image';
 import { PLACEHOLDER_URL } from '@/common/constant';
 import { LEARN_CONTENTS } from '@/common/constant/learn';
 import { formatDate } from '@/common/helpers';
@@ -30,9 +30,10 @@ export default function LatestArticleCard({ data }: LatestArticleCardProps) {
         <Image
           src={data.cover_image || PLACEHOLDER_URL}
           alt={data.title}
-          width={300}
-          height={300}
+          width={200}
+          height={200}
           className="rounded-md w-full h-full object-cover"
+          priority
         />
       </div>
       <p className=" text-sm text-neutral-800 dark:text-neutral-300">{title}</p>

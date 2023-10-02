@@ -1,3 +1,4 @@
+import NextImage from 'next/image';
 import Link from 'next/link';
 
 import clsx from 'clsx';
@@ -26,14 +27,14 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
     >
       <div className="relative overflow-hidden hidden w-full pb-2 lg:flex flex-col items-center">
         <Status />
-        <div className="w-full dark:brightness-50">
-          <Image
+        <div className="w-full h-24 overflow-hidden dark:brightness-50 rounded-lg">
+          <NextImage
             src={BACKDROP_IMAGE}
             alt="profile"
             width={100}
             height={100}
-            rounded="rounded-lg"
-            className="w-full h-24 scale-125 -ml-4"
+            className="w-full scale-125 -ml-4"
+            priority
           />
         </div>
         <div className="absolute z-10 -right-1 bottom-[55px] py-2 pr-2 rounded-xl">
