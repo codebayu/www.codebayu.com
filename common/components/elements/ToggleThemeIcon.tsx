@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React from 'react';
 import { BsCloudMoon, BsCloudSun } from 'react-icons/bs';
@@ -16,8 +17,15 @@ export default function ToggleThemeIcon() {
 
   if (!mounted) return null;
   return (
-    <button onClick={toggleTheme} className="bg-white dark:bg-neutral-800 p-2 rounded-xl">
+    <motion.button
+      aria-label="Toggle Theme"
+      onClick={toggleTheme}
+      className="bg-white dark:bg-neutral-800 p-2 rounded-xl"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
       {resolvedTheme === 'light' ? <BsCloudSun /> : <BsCloudMoon />}
-    </button>
+    </motion.button>
   );
 }
