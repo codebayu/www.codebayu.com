@@ -34,6 +34,7 @@
     "nextjs-toploader": "^1.4.2",
     "postcss": "8.4.28",
     "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
@@ -48,6 +49,7 @@
     "tailwindcss": "3.3.3",
     "typescript": "^5.1.6",
     "usehooks-ts": "^2.9.1",
+    "uuid": "^9.0.1",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
@@ -57,8 +59,10 @@
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/aos": "^3.0.4",
+    "@types/react-beautiful-dnd": "^13.1.5",
     "@types/react-scroll": "^1.8.7",
     "@types/react-syntax-highlighter": "^15.5.7",
+    "@types/uuid": "^9.0.4",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@vitejs/plugin-react": "^4.0.4",
     "@vitest/coverage-istanbul": "^0.34.4",

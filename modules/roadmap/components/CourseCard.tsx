@@ -1,7 +1,6 @@
-import Link from 'next/link';
-
 import React from 'react';
 
+import Badge from '@/common/components/elements/Badge';
 import Card from '@/common/components/elements/Card';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/constant/stacks';
@@ -21,24 +20,16 @@ export default function CourseCard(props: CourseCardProps) {
       <div className="flex space-x-2">
         {linkIndonesia && (
           <Tooltip title="Free course!">
-            <Link
-              href={linkIndonesia}
-              target="_blank"
-              className="px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700"
-            >
+            <Badge href={linkIndonesia} target="_blank">
               {isMobile ? 'ID' : 'Indonesia'}
-            </Link>
+            </Badge>
           </Tooltip>
         )}
         {linkEnglish && (
           <Tooltip title="Free course!">
-            <Link
-              href={linkEnglish}
-              target="_blank"
-              className="px-2 py-1 text-xs font-medium rounded-full bg-neutral-200 dark:bg-neutral-700"
-            >
+            <Badge href={linkEnglish} target="_blank">
               {isMobile ? 'EN' : 'English'}
-            </Link>
+            </Badge>
           </Tooltip>
         )}
       </div>
