@@ -1,7 +1,7 @@
 'use client';
 
+import { DragDropContext, DropResult, Droppable } from '@hello-pangea/dnd';
 import React from 'react';
-import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
 import { BsPlus } from 'react-icons/bs';
 
 import BackButton from '@/common/components/elements/BackButton';
@@ -25,15 +25,18 @@ export default function RequestBoard() {
   const hydrate = useHydration(useTaskBoard);
 
   const onDragEnd = (result: DropResult, columns: IColumn, setColumns: (columns: IColumn) => void) => {
-    if (!result.destination) return;
+    if (!result.destination) return; // Jika Tidak ada kolom Tujuan
+
     const { source, destination } = result;
+    const sourceColumn = columns[source.droppableId]; // Kolom Sumber
+    const destColumn = columns[destination.droppableId]; // Kolom Tujuan
+    const sourceItems = [...sourceColumn.items]; // Items Sumber
+    const destItems = [...destColumn.items]; // Items Tujuan
+    const [removed] = sourceItems.splice(source.index, 1); // Item Sumber yang dihapus
+    destItems.splice(destination.index, 0, removed); // Item Tujuan yang ditambah
+
     if (source.droppableId !== destination.droppableId) {
-      const sourceColumn = columns[source.droppableId];
-      const destColumn = columns[destination.droppableId];
-      const sourceItems = [...sourceColumn.items];
-      const destItems = [...destColumn.items];
-      const [removed] = sourceItems.splice(source.index, 1);
-      destItems.splice(destination.index, 0, removed);
+      // Jika Kolom Sumber dan Tujuan tidak sama
       setColumns({
         ...columns,
         [source.droppableId]: {
@@ -46,15 +49,13 @@ export default function RequestBoard() {
         }
       });
     } else {
-      const column = columns[source.droppableId];
-      const copiedItems = [...column.items];
-      const [removed] = copiedItems.splice(source.index, 1);
-      copiedItems.splice(destination.index, 0, removed);
+      // Jika Kolom Sumber dan Tujuan sama
+      sourceItems.splice(destination.index, 0, removed);
       setColumns({
         ...columns,
         [source.droppableId]: {
-          ...column,
-          items: copiedItems
+          ...sourceColumn,
+          items: sourceItems
         }
       });
     }

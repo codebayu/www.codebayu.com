@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -18,15 +17,15 @@ export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
   persist(
     set => ({
       columns: {
-        [uuidv4()]: {
+        backlog: {
           title: 'Backlog',
           items: mockDataTask
         },
-        [uuidv4()]: {
+        ongoing: {
           title: 'Ongoing',
           items: []
         },
-        [uuidv4()]: {
+        done: {
           title: 'Done',
           items: []
         }

@@ -1,5 +1,5 @@
+import { Draggable } from '@hello-pangea/dnd';
 import React from 'react';
-import { Draggable } from 'react-beautiful-dnd';
 import { BsThreeDots } from 'react-icons/bs';
 
 import Badge from '@/common/components/elements/Badge';
