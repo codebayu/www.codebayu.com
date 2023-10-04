@@ -2,14 +2,16 @@ import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { BsThreeDots } from 'react-icons/bs';
 
+import Badge from '@/common/components/elements/Badge';
 import { ITask } from '@/common/types/board';
 
 interface RquestCardProps {
   item: ITask;
   index: number;
+  columnTitle: string;
 }
 
-export default function RquestCard({ item, index }: RquestCardProps) {
+export default function RquestCard({ item, index, columnTitle }: RquestCardProps) {
   return (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {provided => (
@@ -20,7 +22,7 @@ export default function RquestCard({ item, index }: RquestCardProps) {
           {...provided.dragHandleProps}
         >
           <div className="flex justify-between items-center">
-            <span>helo</span>
+            <Badge>{columnTitle}</Badge>
             <button aria-label="Action">
               <BsThreeDots />
             </button>

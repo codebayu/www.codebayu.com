@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { IColumn, ITask } from '@/common/types/board';
 
-export const data: ITask[] = [
+export const mockDataTask: ITask[] = [
   {
     id: '1',
     task: 'Create section trello board'
@@ -20,7 +20,7 @@ export const data: ITask[] = [
 export const columnsFromBackend: IColumn = {
   [uuidv4()]: {
     title: 'Backlog',
-    items: data
+    items: mockDataTask
   },
   [uuidv4()]: {
     title: 'Ongoing',

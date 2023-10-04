@@ -9,3 +9,8 @@ export interface IColumn {
     items: ITask[];
   };
 }
+
+export interface IAddTaskPayload {
+  columnId: string;
+  data: ITask;
+}

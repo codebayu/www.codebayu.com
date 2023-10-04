@@ -1,32 +1,30 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
 import { BsPlus } from 'react-icons/bs';
 
+import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import EmptyState from '@/common/components/elements/EmptyState';
 import PageHeading from '@/common/components/elements/PageHeading';
+import ToggleThemeIcon from '@/common/components/elements/ToggleThemeIcon';
 import { IColumn } from '@/common/types/board';
 
-import TaskCard from './RequestCard';
+import { useTaskBoard } from '@/context/board';
 
-interface RequestBoardProps {
-  data: IColumn;
-}
+import { useHydration } from '@/hooks/useHydration';
+
+import TaskCard from './RequestCard';
 
 const PAGE_TITLE = 'Request Board';
 const PAGE_DESCRIPTION = 'The request board to enhance or fixing bug in this website';
 
-export default function RequestBoard(props: RequestBoardProps) {
-  const { data } = props;
-  const [columns, setColumns] = useState(data);
+export default function RequestBoard() {
+  const { columns, setColumns } = useTaskBoard();
+  const hydrate = useHydration(useTaskBoard);
 
-  const onDragEnd = (
-    result: DropResult,
-    columns: IColumn,
-    setColumns: React.Dispatch<React.SetStateAction<IColumn>>
-  ) => {
+  const onDragEnd = (result: DropResult, columns: IColumn, setColumns: (columns: IColumn) => void) => {
     if (!result.destination) return;
     const { source, destination } = result;
     if (source.droppableId !== destination.droppableId) {
@@ -63,12 +61,16 @@ export default function RequestBoard(props: RequestBoardProps) {
   };
 
   return (
-    <>
-      <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
-        <Container>
-          <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-          <div className="flex w-full min-h-[70vh] space-x-10 mt-8">
-            {Object.entries(columns).map(([columnId, column]) => {
+    <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
+      <Container>
+        <div className="flex items-center justify-between">
+          <BackButton />
+          <ToggleThemeIcon />
+        </div>
+        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        <div className="flex w-full min-h-[70vh] space-x-10 mt-8">
+          {hydrate &&
+            Object.entries(columns).map(([columnId, column]) => {
               return (
                 <Droppable key={columnId} droppableId={columnId}>
                   {provided => (
@@ -85,7 +87,9 @@ export default function RequestBoard(props: RequestBoardProps) {
                       </div>
                       <div className="flex flex-col space-y-4 pt-5">
                         {column.items.length > 0 ? (
-                          column.items.map((item, index) => <TaskCard key={item.id} item={item} index={index} />)
+                          column.items.map((item, index) => (
+                            <TaskCard key={item.id} item={item} index={index} columnTitle={column.title} />
+                          ))
                         ) : (
                           <EmptyState message="There`s no activity made" />
                         )}
@@ -96,9 +100,8 @@ export default function RequestBoard(props: RequestBoardProps) {
                 </Droppable>
               );
             })}
-          </div>
-        </Container>
-      </DragDropContext>
-    </>
+        </div>
+      </Container>
+    </DragDropContext>
   );
 }

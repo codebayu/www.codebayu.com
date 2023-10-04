@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import React from 'react';
 
 import { METADATA } from '@/common/constant/metadata';
-import { columnsFromBackend } from '@/common/mocks/board';
 
 import RequestBoard from '@/modules/board';
 
@@ -17,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function BoardPage() {
-  return <RequestBoard data={columnsFromBackend} />;
+  return <RequestBoard />;
 }
