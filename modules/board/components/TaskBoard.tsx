@@ -62,13 +62,13 @@ export default function TaskBoard() {
 
   return (
     <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
-      <Container>
+      <Container withMarginTop={false}>
         <div className="flex items-center justify-between">
           <BackButton />
           <ToggleThemeIcon />
         </div>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <div className="flex w-full min-h-[70vh] space-x-10 mt-8">
+        <div className="flex flex-col md:flex-row w-full min-h-fullmd:min-h-[70vh] space-y-4 md:space-y-0 md:space-x-6 mt-8">
           {hydrate ? (
             Object.entries(columns).map(([columnId, column]) => (
               <TaskColumn key={columnId} columnId={columnId} column={column} />

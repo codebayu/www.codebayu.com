@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TaskLoading() {
   return (
-    <div className="flex w-full min-h-[70vh] space-x-10 mt-8">
+    <div className="flex flex-col md:flex-row w-full min-h-[70vh] md:space-x-10 mt-8">
       {[1, 2, 3].map(item => (
         <div key={item} className="flex flex-col w-full rounded-md">
           <div className="flex justify-between items-center text-neutral-700 dark:text-neutral-300">

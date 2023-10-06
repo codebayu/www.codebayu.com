@@ -32,13 +32,13 @@ export default function TaskColumn({ columnId, column }: TaskColumnProps) {
       {provided => (
         <div className="flex flex-col w-full rounded-md" ref={provided.innerRef} {...provided.droppableProps}>
           <div className="flex justify-between items-center text-neutral-700 dark:text-neutral-300">
-            <h2 className="text-sm font-medium">{column.title}</h2>
+            <h2 className="text-sm ml-3 font-medium">{column.title}</h2>
             <IconButton
               icon={openForm.isOpen && openForm.columnId === columnId ? <BsX size={24} /> : <BsPlus size={24} />}
               onClick={() => openTaskForm(columnId)}
             />
           </div>
-          <div className="flex flex-col pt-5">
+          <div className="flex flex-col pt-5 px-3 h-full md:h-[70vh] overflow-auto no-scrollbar">
             {openForm.isOpen && openForm.columnId === columnId && (
               <TaskForm columnId={columnId} closeTaskForm={closeTaskForm} />
             )}

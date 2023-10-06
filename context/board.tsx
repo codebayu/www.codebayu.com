@@ -21,15 +21,15 @@ export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
       columns: {
         backlog: {
           title: 'Backlog',
-          items: mockDataTask
+          items: [mockDataTask[0]]
         },
         ongoing: {
           title: 'Ongoing',
-          items: []
+          items: [mockDataTask[1]]
         },
         done: {
           title: 'Done',
-          items: []
+          items: [mockDataTask[2]]
         }
       },
       addTask: ({ columnId, data }: IAddTaskPayload) =>
