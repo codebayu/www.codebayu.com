@@ -1,30 +1,35 @@
 'use client';
 
 import { DragDropContext, DropResult, Droppable } from '@hello-pangea/dnd';
-import React from 'react';
-import { BsPlus } from 'react-icons/bs';
+import React, { useState } from 'react';
+import { BsPlus, BsX } from 'react-icons/bs';
 
 import BackButton from '@/common/components/elements/BackButton';
 import Container from '@/common/components/elements/Container';
 import EmptyState from '@/common/components/elements/EmptyState';
 import PageHeading from '@/common/components/elements/PageHeading';
 import ToggleThemeIcon from '@/common/components/elements/ToggleThemeIcon';
-import { IColumn } from '@/common/types/board';
+import { IColumns } from '@/common/types/board';
 
 import { useTaskBoard } from '@/context/board';
 
 import { useHydration } from '@/hooks/useHydration';
 
-import TaskCard from './RequestCard';
+import TaskCard from './TaskCard';
+import TaskForm from './TaskForm';
 
-const PAGE_TITLE = 'Request Board';
-const PAGE_DESCRIPTION = 'The request board to enhance or fixing bug in this website';
+const PAGE_TITLE = 'Task Board';
+const PAGE_DESCRIPTION = 'The task board to keep track of your tasks.';
 
-export default function RequestBoard() {
+export default function TaskBoard() {
+  const [openForm, setOpenForm] = useState({
+    isOpen: false,
+    columnId: ''
+  });
   const { columns, setColumns } = useTaskBoard();
   const hydrate = useHydration(useTaskBoard);
 
-  const onDragEnd = (result: DropResult, columns: IColumn, setColumns: (columns: IColumn) => void) => {
+  const onDragEnd = (result: DropResult, columns: IColumns, setColumns: (columns: IColumns) => void) => {
     if (!result.destination) return; // Jika Tidak ada kolom Tujuan
 
     const { source, destination } = result;
@@ -61,6 +66,15 @@ export default function RequestBoard() {
     }
   };
 
+  function openTaskForm(columnId: string) {
+    const isOpen = openForm.columnId === columnId ? !openForm.isOpen : true;
+    setOpenForm({ isOpen, columnId });
+  }
+
+  function closeTaskForm() {
+    setOpenForm({ isOpen: false, columnId: '' });
+  }
+
   return (
     <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
       <Container>
@@ -82,14 +96,17 @@ export default function RequestBoard() {
                     >
                       <div className="flex justify-between items-center text-neutral-700 dark:text-neutral-300">
                         <h2 className="text-sm font-medium">{column.title}</h2>
-                        <button aria-label="More">
-                          <BsPlus size={24} />
+                        <button aria-label="More" onClick={() => openTaskForm(columnId)}>
+                          {openForm.isOpen && openForm.columnId === columnId ? <BsX size={24} /> : <BsPlus size={24} />}
                         </button>
                       </div>
-                      <div className="flex flex-col space-y-4 pt-5">
+                      <div className="flex flex-col pt-5">
+                        {openForm.isOpen && openForm.columnId === columnId && (
+                          <TaskForm columnId={columnId} closeTaskForm={closeTaskForm} />
+                        )}
                         {column.items.length > 0 ? (
                           column.items.map((item, index) => (
-                            <TaskCard key={item.id} item={item} index={index} columnTitle={column.title} />
+                            <TaskCard key={item.id} item={item} index={index} columnId={columnId} />
                           ))
                         ) : (
                           <EmptyState message="There`s no activity made" />

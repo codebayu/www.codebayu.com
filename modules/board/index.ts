@@ -1,3 +1,3 @@
-import RequestBoard from './components/RequestBoard';
+import TaskBoard from './components/TaskBoard';
 
-export default RequestBoard;
+export default TaskBoard;

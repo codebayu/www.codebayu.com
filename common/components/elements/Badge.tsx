@@ -2,11 +2,13 @@ import Link from 'next/link';
 
 import React from 'react';
 
+import { IBadgeVariant } from '@/common/types';
+
 interface BadgeProps {
   children: React.ReactNode;
   href?: string;
   target?: React.HTMLAttributeAnchorTarget | undefined;
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+  variant?: IBadgeVariant;
   size?: 'small' | 'medium' | 'large';
 }
 

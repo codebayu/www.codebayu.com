@@ -1,32 +1,33 @@
-import { v4 as uuidv4 } from 'uuid';
-
-import { IColumn, ITask } from '@/common/types/board';
+import { IColumns, ITask } from '@/common/types/board';
 
 export const mockDataTask: ITask[] = [
   {
     id: '1',
-    task: 'Create section trello board'
+    task: 'Create section trello board',
+    type: 'feature'
   },
   {
     id: '2',
-    task: 'Implement artificial intelligence'
+    task: 'Fix issue dark mode',
+    type: 'bug'
   },
   {
     id: '3',
-    task: 'Enhance performance'
+    task: 'Enhance Pagespeed performance',
+    type: 'refactor'
   }
 ];
 
-export const columnsFromBackend: IColumn = {
-  [uuidv4()]: {
+export const columnsFromBackend: IColumns = {
+  backlog: {
     title: 'Backlog',
     items: mockDataTask
   },
-  [uuidv4()]: {
+  ongoing: {
     title: 'Ongoing',
     items: []
   },
-  [uuidv4()]: {
+  done: {
     title: 'Done',
     items: []
   }
