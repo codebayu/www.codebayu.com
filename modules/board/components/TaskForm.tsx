@@ -40,7 +40,7 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
     <motion.form
       key="collapse"
       initial={{ height: 0 }}
-      animate={{ height: '100%' }}
+      animate={{ height: 'max-content' }}
       exit={{ height: 0 }}
       transition={{ duration: 0.4 }}
       onSubmit={handleSubmit(handleFormSubmit)}
@@ -52,7 +52,7 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
         className={`flex flex-col p-4 ${!isCreated && 'pt-0'} space-y-2`}
       >
         <textarea
