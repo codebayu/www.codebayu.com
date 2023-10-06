@@ -11,6 +11,11 @@ export interface IColumns {
   };
 }
 
+export interface IColumn {
+  title: string;
+  items: ITask[];
+}
+
 export interface IAddTaskPayload {
   columnId: string;
   data: ITask;

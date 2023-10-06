@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form';
 import { BsX } from 'react-icons/bs';
 import { v4 as uuid } from 'uuid';
 
+import Button from '@/common/components/elements/Button';
+import IconButton from '@/common/components/elements/IconButton';
+import RadioInput from '@/common/components/elements/RadioInput';
 import { ITask } from '@/common/types/board';
 
 import { useTaskBoard } from '@/context/board';
@@ -29,6 +32,10 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
     closeTaskForm();
   }
 
+  function handleDeleteTask() {
+    deleteTask({ columnId, taskId: defaultValues?.id ?? '' });
+  }
+
   return (
     <motion.form
       key="collapse"
@@ -39,16 +46,7 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
       onSubmit={handleSubmit(handleFormSubmit)}
       className="mb-4 text-xs flex flex-col shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] rounded-xl text-neutral-600 dark:text-neutral-400 bg-white dark:bg-neutral-800"
     >
-      {!isCreated && (
-        <button
-          aria-label="close"
-          type="reset"
-          className="self-end m-1 p-1 rounded-md dark:hover:bg-neutral-900 hover:bg-neutral-100"
-          onClick={closeTaskForm}
-        >
-          <BsX size={24} />
-        </button>
-      )}
+      {!isCreated && <IconButton icon={<BsX size={24} />} onClick={closeTaskForm} />}
       <motion.div
         key="collapse-content"
         initial={{ opacity: 0 }}
@@ -72,53 +70,19 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
           </p>
         )}
         <div className="flex space-x-1 justify-between pb-2">
-          <div className="flex space-x-1">
-            <input
-              {...register('type', { required: true })}
-              type="radio"
-              value="feature"
-              id="feature"
-              className="accent-slate-700"
-            />
-            <label htmlFor="feature">Feature</label>
-          </div>
-          <div className="flex space-x-1">
-            <input
-              {...register('type', { required: true })}
-              type="radio"
-              value="refactor"
-              id="refactor"
-              className="accent-slate-700"
-            />
-            <label htmlFor="refactor">Refactor</label>
-          </div>
-          <div className="flex space-x-1">
-            <input
-              {...register('type', { required: true })}
-              type="radio"
-              value="bug"
-              id="bug"
-              className="accent-slate-700"
-            />
-            <label htmlFor="bug">Bug</label>
-          </div>
+          {['bug', 'feature', 'refactor'].map(type => (
+            <RadioInput key={type} id={type} name="type" rule={{ required: true }} register={register} />
+          ))}
         </div>
         <div className="flex justify-end space-x-2">
           {!isCreated && (
-            <button
-              type="reset"
-              className="bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-white dark:hover:bg-neutral-800 w-max text-neutral-800 px-3 py-1 rounded"
-              onClick={() => deleteTask({ columnId, taskId: defaultValues?.id ?? '' })}
-            >
+            <Button theme="text" type="reset" onClick={handleDeleteTask}>
               Delete
-            </button>
+            </Button>
           )}
-          <button
-            type="submit"
-            className="bg-neutral-700 hover:bg-neutral-800 w-max dark:bg-neutral-100 dark:text-neutral-800 dark:hover:bg-neutral-200 text-white px-3 py-1 rounded"
-          >
+          <Button theme="filled" type="submit">
             Save
-          </button>
+          </Button>
         </div>
       </motion.div>
     </motion.form>

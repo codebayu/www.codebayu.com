@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BsThreeDots } from 'react-icons/bs';
 
 import Badge from '@/common/components/elements/Badge';
+import IconButton from '@/common/components/elements/IconButton';
 import { IBadgeVariant } from '@/common/types';
 import { ITask } from '@/common/types/board';
 
@@ -53,13 +54,7 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
                 <Badge size="small" variant={badgeVariant}>
                   {item.type}
                 </Badge>
-                <button
-                  aria-label="Action"
-                  className="p-2 rounded-md dark:hover:bg-neutral-900 hover:bg-neutral-100"
-                  onClick={toggleCollapse}
-                >
-                  <BsThreeDots />
-                </button>
+                <IconButton icon={<BsThreeDots size={16} />} onClick={toggleCollapse} />
               </div>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">{item.task}</p>
             </div>
