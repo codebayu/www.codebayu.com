@@ -17,7 +17,7 @@ import {
   BsTwitter as TwitterIcon,
   BsYoutube as YoutubeIcon
 } from 'react-icons/bs';
-import { LuWorkflow } from 'react-icons/lu';
+import { LuTrello, LuWorkflow } from 'react-icons/lu';
 
 import { MenuItemProps } from '../types/menu';
 
@@ -63,6 +63,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Roadmap'
+  },
+  {
+    title: 'Task Board',
+    href: '/board',
+    icon: <LuTrello size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Task Board'
   },
   {
     title: 'About',
