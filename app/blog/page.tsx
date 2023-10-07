@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { METADATA } from '@/common/constant/metadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { METADATA } from '@/common/constant/metadata'
 
-import Blog from '@/modules/blog';
+import Blog from '@/modules/blog'
 
 export const metadata: Metadata = {
   title: `Blog ${METADATA.exTitle}`,
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/blog`
   }
-};
+}
 
-const PAGE_TITLE = 'Blog';
-const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant learning.';
+const PAGE_TITLE = 'Blog'
+const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant learning.'
 
 export default async function BlogPage() {
   return (
@@ -26,5 +26,5 @@ export default async function BlogPage() {
         <Blog />
       </Container>
     </>
-  );
+  )
 }

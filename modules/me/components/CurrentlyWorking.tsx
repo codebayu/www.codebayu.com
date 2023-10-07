@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import React from 'react';
+import React from 'react'
 
-import { CAREERS } from '@/common/constant/careers';
+import { CAREERS } from '@/common/constant/careers'
 
 export default function CurrentlyWorking() {
-  const currentlyCompany = CAREERS[0];
+  const currentlyCompany = CAREERS[0]
   return (
     <div
       className="flex flex-col space-y-3 md:space-x-3 px-6 w-full items-center justify-center my-8"
@@ -19,7 +19,7 @@ export default function CurrentlyWorking() {
         </h4>
       </div>
     </div>
-  );
+  )
 }
 
 // shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]

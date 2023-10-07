@@ -1,12 +1,12 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { METADATA } from '@/common/constant/metadata';
-import { prisma } from '@/common/libs/prisma';
-import { IProjectItem } from '@/common/types/projects';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { METADATA } from '@/common/constant/metadata'
+import { prisma } from '@/common/libs/prisma'
+import { IProjectItem } from '@/common/types/projects'
 
-import Projects from '@/modules/projects';
+import Projects from '@/modules/projects'
 
 export const metadata: Metadata = {
   title: `Projects ${METADATA.exTitle}`,
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/projects`
   }
-};
+}
 
-const PAGE_TITLE = 'Projects';
-const PAGE_DESCRIPTION = 'Showcasing my passion for technology, design, and problem-solving through code.';
+const PAGE_TITLE = 'Projects'
+const PAGE_DESCRIPTION = 'Showcasing my passion for technology, design, and problem-solving through code.'
 
 export default async function ProjectsPage() {
-  const projects = await getProjets();
+  const projects = await getProjets()
   return (
     <>
       <Container data-aos="fade-up">
@@ -29,7 +29,7 @@ export default async function ProjectsPage() {
         <Projects projects={projects} />
       </Container>
     </>
-  );
+  )
 }
 
 async function getProjets(): Promise<IProjectItem[]> {
@@ -42,6 +42,6 @@ async function getProjets(): Promise<IProjectItem[]> {
         updated_at: 'desc'
       }
     ]
-  });
-  return response;
+  })
+  return response
 }

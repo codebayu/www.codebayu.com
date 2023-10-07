@@ -1,5 +1,5 @@
-import { BiLogoPostgresql } from 'react-icons/bi';
-import { BsFillBootstrapFill } from 'react-icons/bs';
+import { BiLogoPostgresql } from 'react-icons/bi'
+import { BsFillBootstrapFill } from 'react-icons/bs'
 import {
   SiApollographql,
   SiChakraui,
@@ -34,13 +34,13 @@ import {
   SiVite,
   SiVuedotjs,
   SiWordpress
-} from 'react-icons/si';
+} from 'react-icons/si'
 
 type stacksProps = {
-  [key: string]: JSX.Element;
-};
+  [key: string]: JSX.Element
+}
 
-const iconSize = '100%';
+const iconSize = '100%'
 
 export const STACKS: stacksProps = {
   PHP: <SiPhp size={iconSize} className="text-blue-500" />,
@@ -79,4 +79,4 @@ export const STACKS: stacksProps = {
   'React Router': <SiReactrouter size={iconSize} className="text-pink-500" />,
   'React Hook Form': <SiReacthookform size={iconSize} className="text-pink-500" />,
   'React Table': <SiReacttable size={iconSize} className="text-rose-600" />
-};
+}

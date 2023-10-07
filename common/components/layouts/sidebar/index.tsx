@@ -1,8 +1,8 @@
-import Breakline from '@/common/components/elements/Breakline';
-import Copyright from '@/common/components/elements/Copyright';
+import Breakline from '@/common/components/elements/Breakline'
+import Copyright from '@/common/components/elements/Copyright'
 
-import Navigation from './Navigation';
-import Profile from './Profile';
+import Navigation from './Navigation'
+import Profile from './Profile'
 
 export default function Sidebar() {
   return (
@@ -15,5 +15,5 @@ export default function Sidebar() {
         <Copyright />
       </nav>
     </div>
-  );
+  )
 }

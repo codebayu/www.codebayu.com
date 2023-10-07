@@ -1,24 +1,24 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
-import React from 'react';
+import React from 'react'
 
-import { PLACEHOLDER_URL } from '@/common/constant';
-import { LEARN_CONTENTS } from '@/common/constant/learn';
-import { formatDate } from '@/common/helpers';
-import { BlogItem } from '@/common/types/blog';
+import { PLACEHOLDER_URL } from '@/common/constant'
+import { LEARN_CONTENTS } from '@/common/constant/learn'
+import { formatDate } from '@/common/helpers'
+import { BlogItem } from '@/common/types/blog'
 
 interface LatestArticleCardProps {
-  data: BlogItem;
+  data: BlogItem
 }
 
 export default function LatestArticleCard({ data }: LatestArticleCardProps) {
-  const title = data?.title.slice(0, 30) + (data.title.length > 20 ? '...' : '');
+  const title = data?.title.slice(0, 30) + (data.title.length > 20 ? '...' : '')
 
   function generateDetailUrl() {
-    if (!data.collection_id) return `/blog/${data.slug}?id=${data.id}&read-mode=true`;
-    const collection = LEARN_CONTENTS.find(collection => collection.id === data.collection_id);
-    return `/learn/${collection?.slug}/${data.slug}?id=${data.id}&read-mode=true`;
+    if (!data.collection_id) return `/blog/${data.slug}?id=${data.id}&read-mode=true`
+    const collection = LEARN_CONTENTS.find(collection => collection.id === data.collection_id)
+    return `/learn/${collection?.slug}/${data.slug}?id=${data.id}&read-mode=true`
   }
 
   return (
@@ -41,5 +41,5 @@ export default function LatestArticleCard({ data }: LatestArticleCardProps) {
         {formatDate(data.published_at, 'MMM dd, yyyy')}
       </span>
     </Link>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi';
-import { LuDownload as DownloadIcon } from 'react-icons/lu';
+import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi'
+import { LuDownload as DownloadIcon } from 'react-icons/lu'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { CAREERS } from '@/common/constant/careers';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { CAREERS } from '@/common/constant/careers'
 
-import CareerCard from './CareerCard';
+import CareerCard from './CareerCard'
 
-const RESUME_URL = 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr';
+const RESUME_URL = 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr'
 
 export default function CareerList() {
   return (
@@ -35,5 +35,5 @@ export default function CareerList() {
         {CAREERS?.map((career, index) => <CareerCard key={index} {...career} />)}
       </div>
     </section>
-  );
+  )
 }

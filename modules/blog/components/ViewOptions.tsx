@@ -1,15 +1,15 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 type ViewOptionsProps = {
-  option: string;
-  setViewOption: (option: string) => void;
-  type: string;
-  icon: JSX.Element;
-  label: string;
-};
+  option: string
+  setViewOption: (option: string) => void
+  type: string
+  icon: JSX.Element
+  label: string
+}
 
 export default function ViewOptions({ option, setViewOption, icon, type, label }: ViewOptionsProps) {
-  const isActive = option === type;
+  const isActive = option === type
 
   return (
     <button
@@ -23,5 +23,5 @@ export default function ViewOptions({ option, setViewOption, icon, type, label }
     >
       {icon}
     </button>
-  );
+  )
 }

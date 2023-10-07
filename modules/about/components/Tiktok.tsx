@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import React from 'react';
-import { SiTiktok } from 'react-icons/si';
+import React from 'react'
+import { SiTiktok } from 'react-icons/si'
 
-import Embed from '@/common/components/elements/Embed';
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { TIKTOK_USERNAME } from '@/common/constant/tiktok';
+import Embed from '@/common/components/elements/Embed'
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { TIKTOK_USERNAME } from '@/common/constant/tiktok'
 
 export default async function Tiktok() {
   return (
@@ -25,5 +25,5 @@ export default async function Tiktok() {
       </SectionSubHeading>
       <Embed />
     </>
-  );
+  )
 }

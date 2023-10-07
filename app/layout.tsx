@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
-import GoogleAnalytics from '@bradgarropy/next-google-analytics';
-import NextTopLoader from 'nextjs-toploader';
+import GoogleAnalytics from '@bradgarropy/next-google-analytics'
+import NextTopLoader from 'nextjs-toploader'
 
-import Layouts from '@/common/components/layouts/index';
-import { METADATA } from '@/common/constant/metadata';
+import Layouts from '@/common/components/layouts/index'
+import { METADATA } from '@/common/constant/metadata'
 
-import { soraSans } from '../common/styles/fonts';
-import ThemeProviderContext from '../context/theme';
-import './globals.css';
+import { soraSans } from '../common/styles/fonts'
+import ThemeProviderContext from '../context/theme'
+import './globals.css'
 
 export const metadata: Metadata = {
   description: METADATA.description,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: METADATA.openGraph.locale,
     type: 'website'
   }
-};
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -49,5 +49,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GoogleAnalytics measurementId={process.env.GTM_ID || ''} />
       </body>
     </html>
-  );
+  )
 }

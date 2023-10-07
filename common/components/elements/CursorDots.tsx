@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
-import React, { useRef } from 'react';
+import { motion } from 'framer-motion'
+import React, { useRef } from 'react'
 
-import { useFollowPointer } from '@/hooks/useFollowPointer';
+import { useFollowPointer } from '@/hooks/useFollowPointer'
 
 export default function CursorDots() {
-  const ref = useRef(null);
-  const { x, y } = useFollowPointer(ref);
+  const ref = useRef(null)
+  const { x, y } = useFollowPointer(ref)
   return (
     <motion.div
       ref={ref}
@@ -18,5 +18,5 @@ export default function CursorDots() {
         restDelta: 0.001
       }}
     />
-  );
+  )
 }

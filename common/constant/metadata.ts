@@ -13,4 +13,4 @@ export const METADATA = {
   },
   exTitle: '| Code Bayu',
   profile: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693008885/codebayu/ab0kfkhjgymzthooxiea.webp'
-};
+}

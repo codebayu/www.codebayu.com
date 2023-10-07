@@ -1,11 +1,11 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { create } from 'zustand'
+import { devtools, persist } from 'zustand/middleware'
 
 interface BlogViewState {
-  viewOption: string;
+  viewOption: string
 }
 interface BlogViewAction {
-  setViewOption: (option: string) => void;
+  setViewOption: (option: string) => void
 }
 
 export const useBlogView = create<BlogViewState & BlogViewAction>()(
@@ -20,4 +20,4 @@ export const useBlogView = create<BlogViewState & BlogViewAction>()(
       }
     )
   )
-);
+)

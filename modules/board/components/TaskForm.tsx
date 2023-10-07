@@ -1,20 +1,20 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { BsX } from 'react-icons/bs';
-import { v4 as uuid } from 'uuid';
+import { motion } from 'framer-motion'
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { BsX } from 'react-icons/bs'
+import { v4 as uuid } from 'uuid'
 
-import Button from '@/common/components/elements/Button';
-import IconButton from '@/common/components/elements/IconButton';
-import RadioInput from '@/common/components/elements/RadioInput';
-import { ITask } from '@/common/types/board';
+import Button from '@/common/components/elements/Button'
+import IconButton from '@/common/components/elements/IconButton'
+import RadioInput from '@/common/components/elements/RadioInput'
+import { ITask } from '@/common/types/board'
 
-import { useTaskBoard } from '@/context/board';
+import { useTaskBoard } from '@/context/board'
 
 interface ITaskCardProps {
-  columnId: string;
-  defaultValue?: ITask;
-  closeTaskForm(): void;
+  columnId: string
+  defaultValue?: ITask
+  closeTaskForm(): void
 }
 
 export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITaskCardProps) {
@@ -22,18 +22,18 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
     register,
     handleSubmit,
     formState: { errors, defaultValues }
-  } = useForm<ITask>({ defaultValues: defaultValue });
-  const { addTask, updateTask, deleteTask } = useTaskBoard();
-  const isCreated = !defaultValues?.task;
+  } = useForm<ITask>({ defaultValues: defaultValue })
+  const { addTask, updateTask, deleteTask } = useTaskBoard()
+  const isCreated = !defaultValues?.task
 
   function handleFormSubmit(payload: ITask) {
-    const data: ITask = isCreated ? { ...payload, id: uuid() } : { ...defaultValues, ...payload };
-    isCreated ? addTask({ columnId, data }) : updateTask({ columnId, taskId: defaultValues?.id ?? '', data });
-    closeTaskForm();
+    const data: ITask = isCreated ? { ...payload, id: uuid() } : { ...defaultValues, ...payload }
+    isCreated ? addTask({ columnId, data }) : updateTask({ columnId, taskId: defaultValues?.id ?? '', data })
+    closeTaskForm()
   }
 
   function handleDeleteTask() {
-    deleteTask({ columnId, taskId: defaultValues?.id ?? '' });
+    deleteTask({ columnId, taskId: defaultValues?.id ?? '' })
   }
 
   return (
@@ -74,6 +74,19 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
             <RadioInput key={type} id={type} name="type" rule={{ required: true }} register={register} />
           ))}
         </div>
+
+        <div className="font-medium">Priority</div>
+        {errors.priority?.type === 'required' && (
+          <p role="alert" className="text-red-400 text-[10px]">
+            Priority type is required
+          </p>
+        )}
+        <div className="flex space-x-1 justify-between pb-2">
+          {['low', 'medium', 'high'].map(type => (
+            <RadioInput key={type} id={type} name="priority" rule={{ required: true }} register={register} />
+          ))}
+        </div>
+
         <div className="flex justify-end space-x-2">
           {!isCreated && (
             <Button theme="text" type="reset" onClick={handleDeleteTask}>
@@ -86,5 +99,5 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
         </div>
       </motion.div>
     </motion.form>
-  );
+  )
 }

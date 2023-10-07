@@ -1,26 +1,26 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import React from 'react';
+import React from 'react'
 
-import BackButton from '@/common/components/elements/BackButton';
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { LEARN_CONTENTS } from '@/common/constant/learn';
-import { METADATA } from '@/common/constant/metadata';
+import BackButton from '@/common/components/elements/BackButton'
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { LEARN_CONTENTS } from '@/common/constant/learn'
+import { METADATA } from '@/common/constant/metadata'
 
-import ContentLists from '@/modules/learn/components/ContentLists';
+import ContentLists from '@/modules/learn/components/ContentLists'
 
 interface LearnContentPage {
-  params: { content: string };
+  params: { content: string }
 }
 
 type Props = {
-  params: { content: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  params: { content: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { content } = await getContent(params.content);
+  const { content } = await getContent(params.content)
   return {
     title: `${content?.title} ${METADATA.exTitle}`,
     description: `${content?.description} on ${METADATA.openGraph.siteName}`,
@@ -36,14 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${METADATA.openGraph.url}/learn/${params.content}`
     }
-  };
+  }
 }
 
 export default async function LearnContentPage({ params }: LearnContentPage) {
-  const { content } = await getContent(params.content);
-  if (!content) return null;
+  const { content } = await getContent(params.content)
+  if (!content) return null
 
-  const { title, description } = content;
+  const { title, description } = content
 
   return (
     <>
@@ -53,11 +53,11 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
         <ContentLists content={content} />
       </Container>
     </>
-  );
+  )
 }
 
 async function getContent(contentSlug: string) {
-  const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null;
+  const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null
 
   if (!content) {
     return {
@@ -65,9 +65,9 @@ async function getContent(contentSlug: string) {
         destination: '/404',
         permanent: false
       }
-    };
+    }
   }
   return {
     content
-  };
+  }
 }

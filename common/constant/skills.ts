@@ -21,4 +21,4 @@ export const SKILLS = [
   'TypeScript',
   'HTML',
   'CSS'
-];
+]

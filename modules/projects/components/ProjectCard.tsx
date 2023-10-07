@@ -1,16 +1,16 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import React from 'react';
+import React from 'react'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { STACKS } from '@/common/constant/stacks';
-import { IProjectItem } from '@/common/types/projects';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { STACKS } from '@/common/constant/stacks'
+import { IProjectItem } from '@/common/types/projects'
 
 export default function ProjectCard({ title, slug, description, image, stacks, is_featured }: IProjectItem) {
-  const stacksArray = JSON.parse(stacks);
-  const trimmedContent = description.slice(0, 70) + (description.length > 70 ? '...' : '');
+  const stacksArray = JSON.parse(stacks)
+  const trimmedContent = description.slice(0, 70) + (description.length > 70 ? '...' : '')
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
@@ -41,5 +41,5 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
         </div>
       </Card>
     </Link>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 interface IconButtonProps {
-  icon: React.ReactNode;
-  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  icon: React.ReactNode
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 export default function IconButton({ icon, onClick }: IconButtonProps) {
@@ -15,5 +15,5 @@ export default function IconButton({ icon, onClick }: IconButtonProps) {
     >
       {icon}
     </button>
-  );
+  )
 }

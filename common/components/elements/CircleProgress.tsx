@@ -1,9 +1,9 @@
-import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import React from 'react'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 
 interface CircleProgressProps {
-  value: number;
+  value: number
 }
 export default function CircleProgress({ value }: CircleProgressProps) {
   return (
@@ -18,5 +18,5 @@ export default function CircleProgress({ value }: CircleProgressProps) {
         })}
       />
     </div>
-  );
+  )
 }

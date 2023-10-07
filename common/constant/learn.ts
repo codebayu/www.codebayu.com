@@ -1,4 +1,4 @@
-import { ContentProps } from '../types/learn';
+import { ContentProps } from '../types/learn'
 
 export const LEARN_CONTENTS: ContentProps[] = [
   {
@@ -43,4 +43,4 @@ export const LEARN_CONTENTS: ContentProps[] = [
   //   level: 'beginner',
   //   is_show: true
   // }
-];
+]

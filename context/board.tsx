@@ -1,18 +1,18 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
-import { mockDataTask } from '@/common/mocks/board';
-import { IAddTaskPayload, IColumns, IDeleteTaskPayload, IUpdateTaskPayload } from '@/common/types/board';
+import { mockDataTask } from '@/common/mocks/board'
+import { IAddTaskPayload, IColumns, IDeleteTaskPayload, IUpdateTaskPayload } from '@/common/types/board'
 
 export interface InitialTaskState {
-  columns: IColumns;
+  columns: IColumns
 }
 
 export interface InitialTaskAction {
-  addTask({ columnId, data }: IAddTaskPayload): void;
-  updateTask({ columnId, taskId, data }: IUpdateTaskPayload): void;
-  deleteTask({ columnId, taskId }: IDeleteTaskPayload): void;
-  setColumns(payload: IColumns): void;
+  addTask({ columnId, data }: IAddTaskPayload): void
+  updateTask({ columnId, taskId, data }: IUpdateTaskPayload): void
+  deleteTask({ columnId, taskId }: IDeleteTaskPayload): void
+  setColumns(payload: IColumns): void
 }
 
 export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
@@ -50,7 +50,7 @@ export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
             [columnId]: {
               ...state.columns[columnId],
               items: state.columns[columnId].items.map(item => {
-                return taskId === item.id ? { ...item, ...data } : item;
+                return taskId === item.id ? { ...item, ...data } : item
               })
             }
           }
@@ -71,4 +71,4 @@ export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
       name: 'task-board'
     }
   )
-);
+)

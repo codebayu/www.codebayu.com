@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import React from 'react';
+import React from 'react'
 
-import { METADATA } from '@/common/constant/metadata';
+import { METADATA } from '@/common/constant/metadata'
 
-import RequestBoard from '@/modules/board';
+import RequestBoard from '@/modules/board'
 
 export const metadata: Metadata = {
   title: `Task Board ${METADATA.exTitle}`,
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/board`
   }
-};
+}
 
 export default function BoardPage() {
-  return <RequestBoard />;
+  return <RequestBoard />
 }

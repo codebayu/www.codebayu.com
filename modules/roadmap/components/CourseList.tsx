@@ -1,33 +1,33 @@
-'use client';
+'use client'
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import { ROADMAP } from '@/common/constant/roadmap';
-import { CourseCardProps } from '@/common/types/roadmap';
+import { ROADMAP } from '@/common/constant/roadmap'
+import { CourseCardProps } from '@/common/types/roadmap'
 
-import CourseCard from './CourseCard';
+import CourseCard from './CourseCard'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 
 export default function CourseList() {
-  const params = useSearchParams();
-  const tribe = params.get('tribe');
-  const [renderCourse, setRenderCourse] = useState<CourseCardProps[]>([]);
-  const { frontend, backend, masteringReact } = ROADMAP;
+  const params = useSearchParams()
+  const tribe = params.get('tribe')
+  const [renderCourse, setRenderCourse] = useState<CourseCardProps[]>([])
+  const { frontend, backend, masteringReact } = ROADMAP
 
   useEffect(() => {
-    let selectTribe: CourseCardProps[] = [];
+    let selectTribe: CourseCardProps[] = []
     if (tribe === 'frontend-developer') {
-      selectTribe = frontend;
+      selectTribe = frontend
     } else if (tribe === 'backend-developer') {
-      selectTribe = backend;
+      selectTribe = backend
     } else if (tribe === 'mastering-react-js') {
-      selectTribe = masteringReact;
+      selectTribe = masteringReact
     }
-    setRenderCourse(selectTribe);
-  }, [tribe]);
+    setRenderCourse(selectTribe)
+  }, [tribe])
 
   return (
     <div className="mt-6 flex flex-col space-y-2">
@@ -35,5 +35,5 @@ export default function CourseList() {
         <CourseCard key={index} {...course} />
       ))}
     </div>
-  );
+  )
 }

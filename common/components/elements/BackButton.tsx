@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-import { FiArrowLeftCircle as BackButtonIcon } from 'react-icons/fi';
+import { FiArrowLeftCircle as BackButtonIcon } from 'react-icons/fi'
 
 type BackButtonProps = {
-  url?: string;
-};
+  url?: string
+}
 
 export default function BackButton({ url }: BackButtonProps) {
-  const router = useRouter();
+  const router = useRouter()
 
   const handleOnClick = () => {
     if (url) {
-      window.location.href = url;
+      window.location.href = url
     } else {
-      router.back();
+      router.back()
     }
-  };
+  }
 
   const className =
-    'flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer';
+    'flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer'
 
   const BackButtonChildComponent = () => {
     return (
@@ -29,8 +29,8 @@ export default function BackButton({ url }: BackButtonProps) {
         <BackButtonIcon size={20} data-testid="back-icon" />
         <span>Back</span>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <div className="w-fit">
@@ -46,5 +46,5 @@ export default function BackButton({ url }: BackButtonProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

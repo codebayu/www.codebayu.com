@@ -1,31 +1,31 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { fetcher } from '@/services/fetcher';
-import React, { useState } from 'react';
-import { MdSpeed } from 'react-icons/md';
-import useSwr from 'swr';
+import { fetcher } from '@/services/fetcher'
+import React, { useState } from 'react'
+import { MdSpeed } from 'react-icons/md'
+import useSwr from 'swr'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { PAGESPEED_CATEGORIES, PAGESPEED_URL } from '@/common/constant';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { PAGESPEED_CATEGORIES, PAGESPEED_URL } from '@/common/constant'
 
-import BadgeSection from './BadgeSection';
-import SpeedSection from './SpeedSection';
+import BadgeSection from './BadgeSection'
+import SpeedSection from './SpeedSection'
 
 export default function PageSpeed() {
-  const BASE_URL = process.env.NEXT_PUBLIC_PAGE_SPEED_API;
+  const BASE_URL = process.env.NEXT_PUBLIC_PAGE_SPEED_API
 
-  const [url, setUrl] = useState(BASE_URL + PAGESPEED_CATEGORIES);
-  const [active, setActive] = useState('/');
+  const [url, setUrl] = useState(BASE_URL + PAGESPEED_CATEGORIES)
+  const [active, setActive] = useState('/')
 
-  const { data, isLoading, mutate } = useSwr(url, fetcher);
+  const { data, isLoading, mutate } = useSwr(url, fetcher)
 
   function refetch(path: string) {
-    setActive(path);
-    setUrl(BASE_URL + path + PAGESPEED_CATEGORIES);
-    mutate();
+    setActive(path)
+    setUrl(BASE_URL + path + PAGESPEED_CATEGORIES)
+    mutate()
   }
 
   return (
@@ -45,5 +45,5 @@ export default function PageSpeed() {
       <BadgeSection active={active} refetch={refetch} />
       <SpeedSection data={data} isLoading={isLoading} />
     </section>
-  );
+  )
 }

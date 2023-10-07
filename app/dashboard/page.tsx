@@ -1,13 +1,13 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import axios from 'axios';
+import axios from 'axios'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { GITHUB_ACCOUNTS, GITHUB_API_BASE_URL, GITHUB_USER_QUERY } from '@/common/constant/github';
-import { METADATA } from '@/common/constant/metadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { GITHUB_ACCOUNTS, GITHUB_API_BASE_URL, GITHUB_USER_QUERY } from '@/common/constant/github'
+import { METADATA } from '@/common/constant/metadata'
 
-import Dashboard from '@/modules/dashboard';
+import Dashboard from '@/modules/dashboard'
 
 export const metadata: Metadata = {
   title: `Dashboard ${METADATA.exTitle}`,
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/dashboard`
   }
-};
+}
 
-const PAGE_TITLE = 'Dashboard';
+const PAGE_TITLE = 'Dashboard'
 const PAGE_DESCRIPTION =
-  'This is my personal dashboard, built with Next.js API routes deployed as serverless functions.';
+  'This is my personal dashboard, built with Next.js API routes deployed as serverless functions.'
 
 export default async function DahboardPage() {
-  const githubData = await getGithubData();
+  const githubData = await getGithubData()
   return (
     <>
       <Container data-aos="fade-up">
@@ -30,7 +30,7 @@ export default async function DahboardPage() {
         <Dashboard githubData={githubData} />
       </Container>
     </>
-  );
+  )
 }
 
 async function getGithubData() {
@@ -47,6 +47,6 @@ async function getGithubData() {
         Authorization: `bearer ${GITHUB_ACCOUNTS.token}`
       }
     }
-  );
-  return response.data?.data.user.contributionsCollection.contributionCalendar;
+  )
+  return response.data?.data.user.contributionsCollection.contributionCalendar
 }

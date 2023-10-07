@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import React from 'react';
-import { MdVerified as VerifiedIcon } from 'react-icons/md';
+import React from 'react'
+import { MdVerified as VerifiedIcon } from 'react-icons/md'
 
-import Tooltip from '@/common/components/elements/Tooltip';
-import { PROFILE_URL } from '@/common/constant';
+import Tooltip from '@/common/components/elements/Tooltip'
+import { PROFILE_URL } from '@/common/constant'
 
 export default function MeProfile() {
   return (
@@ -30,5 +30,5 @@ export default function MeProfile() {
         Software Engineer who focus on frontend development.
       </p>
     </div>
-  );
+  )
 }

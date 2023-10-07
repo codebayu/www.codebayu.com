@@ -1,23 +1,23 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
-import Breakline from '@/common/components/elements/Breakline';
-import CommentList from '@/common/components/elements/CommentList';
-import MDXComponent from '@/common/components/elements/MDXComponent';
-import { PLACEHOLDER_URL } from '@/common/constant';
-import { BlogDetailProps, CommentItemProps } from '@/common/types/blog';
+import Breakline from '@/common/components/elements/Breakline'
+import CommentList from '@/common/components/elements/CommentList'
+import MDXComponent from '@/common/components/elements/MDXComponent'
+import { PLACEHOLDER_URL } from '@/common/constant'
+import { BlogDetailProps, CommentItemProps } from '@/common/types/blog'
 
-import ReaderHeader from './ReaderHeader';
+import ReaderHeader from './ReaderHeader'
 
 interface ReaderProps {
-  content: BlogDetailProps;
-  comments: CommentItemProps[];
-  pageViewCount: number;
+  content: BlogDetailProps
+  comments: CommentItemProps[]
+  pageViewCount: number
 }
 
 export default function ReaderPage({ content, comments, pageViewCount }: ReaderProps) {
   const { cover_image, title, body_markdown, comments_count, published_at, tags, reading_time_minutes, id, url } =
-    content;
+    content
   return (
     <>
       <ReaderHeader
@@ -64,5 +64,5 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
       </div>
       <CommentList id={id} totalComments={comments_count} comments={comments} />
     </>
-  );
+  )
 }

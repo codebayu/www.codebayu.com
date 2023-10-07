@@ -1,20 +1,20 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { FaRegEye as ViewIcon } from 'react-icons/fa';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
-import { TbMessage2 as CommentIcon } from 'react-icons/tb';
-import { scroller } from 'react-scroll';
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { FaRegEye as ViewIcon } from 'react-icons/fa'
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi'
+import { TbMessage2 as CommentIcon } from 'react-icons/tb'
+import { scroller } from 'react-scroll'
 
-import { formatDate } from '@/common/helpers';
+import { formatDate } from '@/common/helpers'
 
 interface ReaderHeaderProps {
-  title: string;
-  comments_count?: number;
-  reading_time_minutes?: number;
-  page_views_count?: number | null;
-  published_at?: string;
+  title: string
+  comments_count?: number
+  reading_time_minutes?: number
+  page_views_count?: number | null
+  published_at?: string
 }
 
 export default function ReaderHeader({
@@ -24,34 +24,34 @@ export default function ReaderHeader({
   published_at,
   reading_time_minutes
 }: ReaderHeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const scrollToSection = () => {
     scroller.scrollTo('comments', {
       duration: 800,
       delay: 0,
       smooth: 'easeInOutQuart'
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsScrolled(scrollTop > 250);
-    };
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      setIsScrolled(scrollTop > 250)
+    }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  const transition = { duration: 0.3, ease: 'easeInOut' };
+  const transition = { duration: 0.3, ease: 'easeInOut' }
   const titleVariants = {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 }
-  };
+  }
 
   return (
     <>
@@ -121,5 +121,5 @@ export default function ReaderHeader({
         </div>
       </div>
     </>
-  );
+  )
 }

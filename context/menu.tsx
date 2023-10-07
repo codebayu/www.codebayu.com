@@ -1,13 +1,13 @@
-import { create } from 'zustand';
+import { create } from 'zustand'
 
 export interface InitialModalState {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 export interface InitialModalAction {
-  showMenu(): void;
-  hideMenu(): void;
-  toggleMenu(): void;
+  showMenu(): void
+  hideMenu(): void
+  toggleMenu(): void
 }
 
 export const useMenu = create<InitialModalState & InitialModalAction>()(set => ({
@@ -15,4 +15,4 @@ export const useMenu = create<InitialModalState & InitialModalAction>()(set => (
   showMenu: () => set({ isOpen: true }),
   hideMenu: () => set({ isOpen: false }),
   toggleMenu: () => set(prev => ({ isOpen: !prev.isOpen }))
-}));
+}))

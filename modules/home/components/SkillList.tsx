@@ -1,10 +1,10 @@
-import { HiCode } from 'react-icons/hi';
+import { HiCode } from 'react-icons/hi'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { SKILLS } from '@/common/constant/skills';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { SKILLS } from '@/common/constant/skills'
 
-import SkillCard from './SkillCard';
+import SkillCard from './SkillCard'
 
 export default function SkillList() {
   return (
@@ -20,5 +20,5 @@ export default function SkillList() {
         {SKILLS?.map((skill, index) => <SkillCard key={index} skill={skill} />)}
       </div>
     </section>
-  );
+  )
 }

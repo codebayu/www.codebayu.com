@@ -7,7 +7,7 @@ import {
   BiLeaf as ProfileIcon,
   BiArchive as ProjectIcon,
   BiAt as ThreadsIcon
-} from 'react-icons/bi';
+} from 'react-icons/bi'
 import {
   BsDiscord as DiscordIcon,
   BsGithub as GithubIcon,
@@ -16,12 +16,12 @@ import {
   BsTiktok as TiktokIcon,
   BsTwitter as TwitterIcon,
   BsYoutube as YoutubeIcon
-} from 'react-icons/bs';
-import { LuTrello, LuWorkflow } from 'react-icons/lu';
+} from 'react-icons/bs'
+import { LuTrello, LuWorkflow } from 'react-icons/lu'
 
-import { MenuItemProps } from '../types/menu';
+import { MenuItemProps } from '../types/menu'
 
-const iconSize = 20;
+const iconSize = 20
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
@@ -96,7 +96,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isExternal: false,
     eventName: 'Pages: Dashboard'
   }
-];
+]
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
@@ -163,4 +163,4 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Tiktok'
   }
-];
+]
