@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: v2.codebayu.com
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
