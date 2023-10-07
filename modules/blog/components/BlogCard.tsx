@@ -1,21 +1,21 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { useEffect, useState } from 'react';
-import { TbMessage2 as CommentIcon } from 'react-icons/tb';
+import { useEffect, useState } from 'react'
+import { TbMessage2 as CommentIcon } from 'react-icons/tb'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { PLACEHOLDER_URL } from '@/common/constant';
-import { formatBlogSlug, formatDate } from '@/common/helpers';
-import clsxm from '@/common/libs/clsxm';
-import { BlogItem } from '@/common/types/blog';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { PLACEHOLDER_URL } from '@/common/constant'
+import { formatBlogSlug, formatDate } from '@/common/helpers'
+import clsxm from '@/common/libs/clsxm'
+import { BlogItem } from '@/common/types/blog'
 
-import useIsMobile from '@/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile'
 
 interface BlogCardProps extends BlogItem {
-  view?: string;
-  isExcerpt?: boolean;
-  isCarousel?: boolean;
+  view?: string
+  isExcerpt?: boolean
+  isCarousel?: boolean
 }
 
 export default function BlogCard({
@@ -30,22 +30,22 @@ export default function BlogCard({
   isExcerpt = true,
   isCarousel = false
 }: BlogCardProps) {
-  const [viewOption, setViewOption] = useState<string>();
-  const isMobile = useIsMobile();
+  const [viewOption, setViewOption] = useState<string>()
+  const isMobile = useIsMobile()
 
-  const newSlug = formatBlogSlug(slug);
+  const newSlug = formatBlogSlug(slug)
 
-  const trimmedTitle = viewOption === 'grid' ? title.slice(0, 70) + (title.length > 70 ? '...' : '') : title;
-  const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '');
+  const trimmedTitle = viewOption === 'grid' ? title.slice(0, 70) + (title.length > 70 ? '...' : '') : title
+  const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '')
 
   const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
     view === 'grid' ? 'sm:w-full sm:!px-6' : ''
-  );
+  )
 
   useEffect(() => {
-    isMobile ? setViewOption('grid') : setViewOption(view);
-  }, [isMobile, view]);
+    isMobile ? setViewOption('grid') : setViewOption(view)
+  }, [isMobile, view])
 
   return (
     <Link href={`/blog/${newSlug}?id=${id}&read-mode=true`}>
@@ -99,5 +99,5 @@ export default function BlogCard({
         </article>
       </Card>
     </Link>
-  );
+  )
 }

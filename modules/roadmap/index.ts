@@ -1,3 +1,3 @@
-import Roadmap from './components/Roadmap';
+import Roadmap from './components/Roadmap'
 
-export default Roadmap;
+export default Roadmap

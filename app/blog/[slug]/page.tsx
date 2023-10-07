@@ -1,20 +1,20 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import { getBlogDetail, getComments } from '@/services/blog';
-import { getBlogViews } from '@/services/view';
+import { getBlogDetail, getComments } from '@/services/blog'
+import { getBlogViews } from '@/services/view'
 
-import BackButton from '@/common/components/elements/BackButton';
-import Container from '@/common/components/elements/Container';
-import ReaderPage from '@/common/components/elements/ReaderPage';
-import { METADATA } from '@/common/constant/metadata';
+import BackButton from '@/common/components/elements/BackButton'
+import Container from '@/common/components/elements/Container'
+import ReaderPage from '@/common/components/elements/ReaderPage'
+import { METADATA } from '@/common/constant/metadata'
 
 type Props = {
-  params: { content: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  params: { content: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const blog = await getBlogDetail({ params, searchParams });
+  const blog = await getBlogDetail({ params, searchParams })
   return {
     title: `${blog.title} ${METADATA.exTitle}`,
     description: blog.description,
@@ -30,13 +30,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     alternates: {
       canonical: `${process.env.DOMAIN}/${blog.slug}`
     }
-  };
+  }
 }
 
 export default async function BlogDetailPage({ params, searchParams }: Props) {
-  const blog = await getBlogDetail({ params, searchParams });
-  const pageViewCount = await getBlogViews(searchParams.id as string);
-  const comments = await getComments(searchParams.id as string);
+  const blog = await getBlogDetail({ params, searchParams })
+  const pageViewCount = await getBlogViews(searchParams.id as string)
+  const comments = await getComments(searchParams.id as string)
   return (
     <>
       <Container data-aos="fade-up">
@@ -44,5 +44,5 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />
       </Container>
     </>
-  );
+  )
 }

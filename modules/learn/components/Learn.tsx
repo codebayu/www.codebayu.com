@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-import { ContentProps } from '@/common/types/learn';
+import { ContentProps } from '@/common/types/learn'
 
-import LearnCard from './LearnCard';
+import LearnCard from './LearnCard'
 
 interface LearnModuleProps {
-  contents: ContentProps[];
+  contents: ContentProps[]
 }
 
 export default function LearnModule({ contents }: LearnModuleProps) {
@@ -24,5 +24,5 @@ export default function LearnModule({ contents }: LearnModuleProps) {
         </motion.div>
       ))}
     </div>
-  );
+  )
 }

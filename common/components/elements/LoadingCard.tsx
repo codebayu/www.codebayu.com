@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import useIsMobile from '@/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile'
 
-import clsxm from '../../libs/clsxm';
+import clsxm from '../../libs/clsxm'
 
 export default function LoadingCard({ view }: { view: string }) {
-  const [viewOption, setViewOption] = useState<string>();
-  const isMobile = useIsMobile();
+  const [viewOption, setViewOption] = useState<string>()
+  const isMobile = useIsMobile()
 
   useEffect(() => {
-    isMobile ? setViewOption('grid') : setViewOption(view);
-  }, [isMobile, view]);
+    isMobile ? setViewOption('grid') : setViewOption(view)
+  }, [isMobile, view])
   return (
     <div
       className={clsxm(
@@ -53,5 +53,5 @@ export default function LoadingCard({ view }: { view: string }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

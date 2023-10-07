@@ -1,3 +1,3 @@
-import TaskBoard from './components/TaskBoard';
+import TaskBoard from './components/TaskBoard'
 
-export default TaskBoard;
+export default TaskBoard

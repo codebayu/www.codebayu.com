@@ -1,7 +1,7 @@
-import Breakline from '@/common/components/elements/Breakline';
+import Breakline from '@/common/components/elements/Breakline'
 
-import Summary from './Summary';
-import Tiktok from './Tiktok';
+import Summary from './Summary'
+import Tiktok from './Tiktok'
 
 export default function About() {
   return (
@@ -10,5 +10,5 @@ export default function About() {
       <Breakline />
       <Tiktok />
     </section>
-  );
+  )
 }

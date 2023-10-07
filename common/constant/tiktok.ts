@@ -1,1 +1,1 @@
-export const TIKTOK_USERNAME = '@codebayu.com';
+export const TIKTOK_USERNAME = '@codebayu.com'

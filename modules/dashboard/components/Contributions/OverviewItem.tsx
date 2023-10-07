@@ -1,9 +1,9 @@
-import AnimateCounter from '@/common/components/elements/AnimateCounter';
+import AnimateCounter from '@/common/components/elements/AnimateCounter'
 
 interface OverviewItemProps {
-  label: string;
-  value: number;
-  unit?: string;
+  label: string
+  value: number
+  unit?: string
 }
 
 export default function OverviewItem({ label, value, unit = '' }: OverviewItemProps) {
@@ -15,5 +15,5 @@ export default function OverviewItem({ label, value, unit = '' }: OverviewItemPr
         {unit && <span className="text-sm dark:text-neutral-400"> {unit}</span>}
       </div>
     </div>
-  );
+  )
 }

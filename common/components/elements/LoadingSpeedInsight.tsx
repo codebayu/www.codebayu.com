@@ -1,5 +1,5 @@
-import React from 'react';
-import { BsThreeDots } from 'react-icons/bs';
+import React from 'react'
+import { BsThreeDots } from 'react-icons/bs'
 
 export default function LoadingSpeedInsight() {
   return (
@@ -15,5 +15,5 @@ export default function LoadingSpeedInsight() {
         </div>
       ))}
     </div>
-  );
+  )
 }

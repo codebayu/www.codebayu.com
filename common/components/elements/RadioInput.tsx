@@ -1,12 +1,12 @@
-import React from 'react';
-import { FieldValues, Path, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import React from 'react'
+import { FieldValues, Path, RegisterOptions, UseFormRegister } from 'react-hook-form'
 
 type RadioInputProps<TFormValue extends FieldValues> = {
-  register: UseFormRegister<TFormValue>;
-  name: Path<TFormValue>;
-  id: string;
-  rule?: RegisterOptions;
-};
+  register: UseFormRegister<TFormValue>
+  name: Path<TFormValue>
+  id: string
+  rule?: RegisterOptions
+}
 
 export default function RadioInput<TFormValue extends FieldValues>({
   name,
@@ -21,5 +21,5 @@ export default function RadioInput<TFormValue extends FieldValues>({
         {id}
       </label>
     </div>
-  );
+  )
 }

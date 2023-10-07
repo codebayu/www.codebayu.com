@@ -1,10 +1,10 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import React from 'react';
-import { FcMindMap } from 'react-icons/fc';
-import { TbCoffee } from 'react-icons/tb';
+import React from 'react'
+import { FcMindMap } from 'react-icons/fc'
+import { TbCoffee } from 'react-icons/tb'
 
-import { SAWERIA_URL } from '@/common/constant';
+import { SAWERIA_URL } from '@/common/constant'
 
 export default function GoHome() {
   return (
@@ -28,5 +28,5 @@ export default function GoHome() {
         <span>Buy me a Coffee</span>
       </Link>
     </div>
-  );
+  )
 }

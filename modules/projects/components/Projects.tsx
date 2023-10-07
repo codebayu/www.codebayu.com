@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-import { IProjectsItemProps } from '@/common/types/projects';
+import { IProjectsItemProps } from '@/common/types/projects'
 
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard'
 
 export default function Projects({ projects }: IProjectsItemProps) {
-  const fiteredProjects = projects.filter(project => project?.is_show);
+  const fiteredProjects = projects.filter(project => project?.is_show)
 
   if (fiteredProjects.length === 0) {
-    return 'no data';
+    return 'no data'
   }
   return (
     <section className="grid sm:grid-cols-2 gap-5 pt-2">
@@ -25,5 +25,5 @@ export default function Projects({ projects }: IProjectsItemProps) {
         </motion.div>
       ))}
     </section>
-  );
+  )
 }

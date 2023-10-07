@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function Summary() {
   return (
@@ -26,5 +26,5 @@ export default function Summary() {
       </p>
       <p>Thank you for visiting, and I look forward to embarking on this knowledge-sharing adventure</p>
     </div>
-  );
+  )
 }

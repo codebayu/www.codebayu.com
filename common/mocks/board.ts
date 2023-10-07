@@ -1,19 +1,22 @@
-import { ITask } from '@/common/types/board';
+import { ITask } from '@/common/types/board'
 
 export const mockDataTask: ITask[] = [
   {
     id: '1',
     task: 'Default backlog task',
-    type: 'feature'
+    type: 'feature',
+    priority: 'low'
   },
   {
     id: '2',
     task: 'Default ongoing task',
-    type: 'bug'
+    type: 'bug',
+    priority: 'medium'
   },
   {
     id: '3',
     task: 'Default done task',
-    type: 'refactor'
+    type: 'refactor',
+    priority: 'high'
   }
-];
+]

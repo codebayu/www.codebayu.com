@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { MenuItemProps } from '@/common/types/menu';
+import { MenuItemProps } from '@/common/types/menu'
 
-import MenuItem from './MenuItem';
+import MenuItem from './MenuItem'
 
 type MenuProps = {
-  title?: string;
-  list: MenuItemProps[];
-};
+  title?: string
+  list: MenuItemProps[]
+}
 export default function Menu({ title, list }: MenuProps) {
   return (
     <div className="flex flex-col space-y-1 lg:p-0">
@@ -18,5 +18,5 @@ export default function Menu({ title, list }: MenuProps) {
       )}
       {list?.map((item: MenuItemProps, index: number) => <MenuItem key={index} {...item} />)}
     </div>
-  );
+  )
 }

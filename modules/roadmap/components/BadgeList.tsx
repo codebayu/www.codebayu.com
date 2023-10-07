@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation'
 
-import React from 'react';
+import React from 'react'
 
-import Badge from '@/common/components/elements/Badge';
-import { TRIBES } from '@/common/constant/roadmap';
+import Badge from '@/common/components/elements/Badge'
+import { TRIBES } from '@/common/constant/roadmap'
 
 export default function BadgeList() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const url = `${pathname}?${searchParams}`;
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const url = `${pathname}?${searchParams}`
   return (
     <div className="flex space-x-2 overflow-x-auto">
       {TRIBES.map(
@@ -28,5 +28,5 @@ export default function BadgeList() {
           )
       )}
     </div>
-  );
+  )
 }

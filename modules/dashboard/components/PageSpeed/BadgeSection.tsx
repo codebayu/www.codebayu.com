@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import { MENU_ITEMS } from '@/common/constant/menu';
-import clsxm from '@/common/libs/clsxm';
+import { MENU_ITEMS } from '@/common/constant/menu'
+import clsxm from '@/common/libs/clsxm'
 
 interface BadgeSectionProps {
-  active: string;
-  refetch(path: string): void;
+  active: string
+  refetch(path: string): void
 }
 
 export default function BadgeSection({ active, refetch }: BadgeSectionProps) {
-  const routes = MENU_ITEMS.filter(item => item.isShow);
+  const routes = MENU_ITEMS.filter(item => item.isShow)
   return (
     <div className="mt-4 flex space-x-1 overflow-x-auto">
       {routes.map(route => (
@@ -27,5 +27,5 @@ export default function BadgeSection({ active, refetch }: BadgeSectionProps) {
         </button>
       ))}
     </div>
-  );
+  )
 }

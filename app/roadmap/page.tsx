@@ -1,12 +1,12 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import React from 'react';
+import React from 'react'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { METADATA } from '@/common/constant/metadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { METADATA } from '@/common/constant/metadata'
 
-import Roadmap from '@/modules/roadmap';
+import Roadmap from '@/modules/roadmap'
 
 export const metadata: Metadata = {
   title: `Roadmap ${METADATA.exTitle}`,
@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/roadmap`
   }
-};
+}
 
-const PAGE_TITLE = 'Roadmap';
-const PAGE_DESCRIPTION = 'Learning path recomendation and free course playlist';
+const PAGE_TITLE = 'Roadmap'
+const PAGE_DESCRIPTION = 'Learning path recomendation and free course playlist'
 
 export default function RoadmapPage() {
   return (
@@ -27,5 +27,5 @@ export default function RoadmapPage() {
         <Roadmap />
       </Container>
     </>
-  );
+  )
 }

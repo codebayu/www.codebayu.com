@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import styled from '@emotion/styled';
-import { useTheme } from 'next-themes';
+import styled from '@emotion/styled'
+import { useTheme } from 'next-themes'
 
 export default function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme()
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
-  };
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
+  }
 
   return (
     <StyledToggle className="flex">
@@ -44,7 +44,7 @@ export default function ThemeToggle() {
         </svg>
       </label>
     </StyledToggle>
-  );
+  )
 }
 
 const StyledToggle = styled.div`
@@ -160,4 +160,4 @@ const StyledToggle = styled.div`
       opacity: 0.25;
     }
   }
-`;
+`

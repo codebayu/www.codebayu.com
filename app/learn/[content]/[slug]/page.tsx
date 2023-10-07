@@ -1,26 +1,26 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import { getBlogDetail, getComments } from '@/services/blog';
-import { getBlogViews } from '@/services/view';
-import React from 'react';
+import { getBlogDetail, getComments } from '@/services/blog'
+import { getBlogViews } from '@/services/view'
+import React from 'react'
 
-import BackButton from '@/common/components/elements/BackButton';
-import Container from '@/common/components/elements/Container';
-import ReaderPage from '@/common/components/elements/ReaderPage';
-import { METADATA } from '@/common/constant/metadata';
+import BackButton from '@/common/components/elements/BackButton'
+import Container from '@/common/components/elements/Container'
+import ReaderPage from '@/common/components/elements/ReaderPage'
+import { METADATA } from '@/common/constant/metadata'
 
 interface Params {
-  content: string;
-  slug: string;
+  content: string
+  slug: string
 }
 
 interface LearnContentDetailPageProps {
-  params: Params;
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Params
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function generateMetadata({ params, searchParams }: LearnContentDetailPageProps): Promise<Metadata> {
-  const data = await getBlogDetail({ params, searchParams });
+  const data = await getBlogDetail({ params, searchParams })
   return {
     title: `${data.title} ${METADATA.exTitle}`,
     openGraph: {
@@ -34,13 +34,13 @@ export async function generateMetadata({ params, searchParams }: LearnContentDet
     alternates: {
       canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`
     }
-  };
+  }
 }
 
 export default async function LearnContentDetailPage({ params, searchParams }: LearnContentDetailPageProps) {
-  const content = await getBlogDetail({ params, searchParams });
-  const pageViewCount = await getBlogViews(searchParams.id as string);
-  const comments = await getComments(searchParams.id as string);
+  const content = await getBlogDetail({ params, searchParams })
+  const pageViewCount = await getBlogViews(searchParams.id as string)
+  const comments = await getComments(searchParams.id as string)
   return (
     <>
       <Container data-aos="fade-up">
@@ -48,5 +48,5 @@ export default async function LearnContentDetailPage({ params, searchParams }: L
         <ReaderPage comments={comments} content={content} pageViewCount={pageViewCount} />
       </Container>
     </>
-  );
+  )
 }

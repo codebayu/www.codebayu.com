@@ -1,12 +1,12 @@
-import { BsGrid as GridIcon, BsListUl as ListIcon } from 'react-icons/bs';
+import { BsGrid as GridIcon, BsListUl as ListIcon } from 'react-icons/bs'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
+import SectionHeading from '@/common/components/elements/SectionHeading'
 
-import ViewOptions from './ViewOptions';
+import ViewOptions from './ViewOptions'
 
 interface BlogListHeaderProps {
-  viewOption: string;
-  setViewOption: (option: string) => void;
+  viewOption: string
+  setViewOption: (option: string) => void
 }
 
 export default function BlogListHeader({ viewOption, setViewOption }: BlogListHeaderProps) {
@@ -30,5 +30,5 @@ export default function BlogListHeader({ viewOption, setViewOption }: BlogListHe
         />
       </div>
     </div>
-  );
+  )
 }

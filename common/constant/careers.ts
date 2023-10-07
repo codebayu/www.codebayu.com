@@ -43,4 +43,4 @@ export const CAREERS = [
     end_date: '2022-04',
     link: 'https://importir.org'
   }
-];
+]

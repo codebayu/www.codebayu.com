@@ -1,40 +1,40 @@
-import { Draggable } from '@hello-pangea/dnd';
-import React, { useState } from 'react';
-import { BsThreeDots } from 'react-icons/bs';
+import { Draggable } from '@hello-pangea/dnd'
+import React, { useState } from 'react'
+import { BsThreeDots } from 'react-icons/bs'
 
-import Badge from '@/common/components/elements/Badge';
-import IconButton from '@/common/components/elements/IconButton';
-import { IBadgeVariant } from '@/common/types';
-import { ITask } from '@/common/types/board';
+import Badge from '@/common/components/elements/Badge'
+import IconButton from '@/common/components/elements/IconButton'
+import { IBadgeVariant } from '@/common/types'
+import { ITask } from '@/common/types/board'
 
-import TaskForm from './TaskForm';
+import TaskForm from './TaskForm'
 
 interface TaskCardProps {
-  item: ITask;
-  index: number;
-  columnId: string;
+  item: ITask
+  index: number
+  columnId: string
 }
 
 export default function TaskCard({ item, index, columnId }: TaskCardProps) {
-  let badgeVariant: IBadgeVariant = 'secondary';
-  const [collapseEdit, setCollapseEdit] = useState(false);
+  let badgeVariant: IBadgeVariant = 'secondary'
+  const [collapseEdit, setCollapseEdit] = useState(false)
   switch (item.type) {
     case 'bug':
-      badgeVariant = 'danger';
-      break;
+      badgeVariant = 'danger'
+      break
     case 'refactor':
-      badgeVariant = 'warning';
-      break;
+      badgeVariant = 'warning'
+      break
     case 'feature':
-      badgeVariant = 'success';
-      break;
+      badgeVariant = 'success'
+      break
     default:
-      badgeVariant = 'secondary';
-      break;
+      badgeVariant = 'secondary'
+      break
   }
 
   function toggleCollapse() {
-    setCollapseEdit(!collapseEdit);
+    setCollapseEdit(!collapseEdit)
   }
 
   return (
@@ -51,9 +51,14 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
               {...provided.dragHandleProps}
             >
               <div className="flex justify-between items-center">
-                <Badge size="small" variant={badgeVariant}>
-                  {item.type}
-                </Badge>
+                <div className="flex space-x-1">
+                  <Badge size="small" variant={badgeVariant}>
+                    {item.type}
+                  </Badge>
+                  <Badge size="small" variant="primary">
+                    {item.priority}
+                  </Badge>
+                </div>
                 <IconButton icon={<BsThreeDots size={16} />} onClick={toggleCollapse} />
               </div>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">{item.task}</p>
@@ -62,5 +67,5 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
         </Draggable>
       )}
     </>
-  );
+  )
 }
