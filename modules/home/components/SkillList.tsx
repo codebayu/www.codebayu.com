@@ -16,8 +16,12 @@ export default function SkillList() {
         </SectionSubHeading>
       </div>
 
-      <div className="flex flex-wrap gap-6">
-        {SKILLS?.map((skill, index) => <SkillCard key={index} skill={skill} />)}
+      <div className="flex flex-col overflow-x-hidden">
+        <div className="flex animate-slide-infinite py-4 gap-5">
+          {SKILLS.map((skill, index) => (
+            <SkillCard key={index} skill={skill} />
+          ))}
+        </div>
       </div>
     </section>
   )

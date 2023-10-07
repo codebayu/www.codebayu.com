@@ -46,13 +46,18 @@ const config: Config = {
           '50%': { transform: 'translateX(-100%)' },
           '90%': { transform: 'translateX(5%)' },
           '100%': { transform: 'translateX(0)' }
+        },
+        slideInfinite: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-300%)' }
         }
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
-        'slide-card': 'slide 3s 1s ease-in-out'
+        'slide-card': 'slide 3s 1s ease-in-out',
+        'slide-infinite': 'slideInfinite 50s linear infinite'
       }
     }
   },
