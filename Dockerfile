@@ -8,4 +8,8 @@ RUN yarn install
 
 COPY . .
 
-CMD [ "yarn", "dev" ]
+RUN npx prisma generate
+
+RUN yarn build
+
+CMD [ "yarn", "start" ]

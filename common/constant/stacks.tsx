@@ -1,7 +1,6 @@
 import { BiLogoPostgresql } from 'react-icons/bi'
 import { BsFillBootstrapFill } from 'react-icons/bs'
 import {
-  SiApollographql,
   SiChakraui,
   SiCss3,
   SiExpo,
@@ -14,7 +13,6 @@ import {
   SiHtml5,
   SiJavascript,
   SiJest,
-  SiLaravel,
   SiMui,
   SiNextdotjs,
   SiNodedotjs,
@@ -32,8 +30,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVite,
-  SiVuedotjs,
-  SiWordpress
+  SiVuedotjs
 } from 'react-icons/si'
 
 type stacksProps = {
@@ -51,9 +48,6 @@ export const STACKS: stacksProps = {
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
   Bootstrap: <BsFillBootstrapFill size={iconSize} className="text-purple-500" />,
   GraphQL: <SiGraphql size={iconSize} className="text-pink-600" />,
-  Apollo: <SiApollographql size={iconSize} />,
-  WordPress: <SiWordpress size={iconSize} />,
-  Laravel: <SiLaravel size={iconSize} className="text-red-500" />,
   'Material UI': <SiMui size={iconSize} className="text-sky-400" />,
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
   PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,

@@ -50,6 +50,12 @@ const config: Config = {
         slideInfinite: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-300%)' }
+        },
+        rainArrow: {
+          '0%': { transform: 'translateY(-100%)' },
+          '40%': { transform: 'translateY(-20%)' },
+          '50%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(100%)' }
         }
       },
       animation: {
@@ -57,7 +63,8 @@ const config: Config = {
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
         'slide-card': 'slide 3s 1s ease-in-out',
-        'slide-infinite': 'slideInfinite 50s linear infinite'
+        'slide-infinite': 'slideInfinite 100s linear infinite',
+        'rain-arrow': 'rainArrow 1s ease-out infinite'
       }
     }
   },
