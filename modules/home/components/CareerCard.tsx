@@ -1,23 +1,23 @@
-import { differenceInMonths, differenceInYears, format } from 'date-fns';
-import { BsBuildings as CompanyIcon } from 'react-icons/bs';
+import { differenceInMonths, differenceInYears, format } from 'date-fns'
+import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { CareerProps } from '@/common/types/careers';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { CareerProps } from '@/common/types/careers'
 
 export default function CareerCard({ position, company, logo, location, start_date, end_date, link }: CareerProps) {
-  const startDate = new Date(start_date);
-  const endDate = end_date ? new Date(end_date) : new Date();
+  const startDate = new Date(start_date)
+  const endDate = end_date ? new Date(end_date) : new Date()
 
-  const durationYears = differenceInYears(endDate, startDate);
-  const durationMonths = differenceInMonths(endDate, startDate) % 12;
+  const durationYears = differenceInYears(endDate, startDate)
+  const durationMonths = differenceInMonths(endDate, startDate) % 12
 
-  let durationText = '';
+  let durationText = ''
   if (durationYears > 0) {
-    durationText += `${durationYears} Year${durationYears > 1 ? 's' : ''} `;
+    durationText += `${durationYears} Year${durationYears > 1 ? 's' : ''} `
   }
   if (durationMonths > 0 || durationYears === 0) {
-    durationText += `${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
+    durationText += `${durationMonths} Month${durationMonths > 1 ? 's' : ''}`
   }
 
   return (
@@ -44,5 +44,5 @@ export default function CareerCard({ position, company, logo, location, start_da
         </div>
       </div>
     </Card>
-  );
+  )
 }

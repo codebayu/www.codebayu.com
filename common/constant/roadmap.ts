@@ -89,7 +89,7 @@ const FRONTEND = [
     linkIndonesia: 'https://www.youtube.com/watch?v=HNXYveOJPio&list=PLU4DS8KR-LJ3-zouYHHknPq1G5VTB8PRf',
     linkEnglish: 'https://www.youtube.com/watch?v=RY6B7JSBRRg&list=PLC3y8-rFHvwgC9mj0qv972IO5DmD-H0ZH&index=2'
   }
-];
+]
 
 const BACKEND = [
   {
@@ -98,7 +98,7 @@ const BACKEND = [
     linkIndonesia: 'https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F',
     linkEnglish: ''
   }
-];
+]
 
 const MASTERING_REACT = [
   {
@@ -203,13 +203,13 @@ const MASTERING_REACT = [
     linkIndonesia: 'https://www.youtube.com/watch?v=HNXYveOJPio&list=PLU4DS8KR-LJ3-zouYHHknPq1G5VTB8PRf',
     linkEnglish: 'https://www.youtube.com/watch?v=RY6B7JSBRRg&list=PLC3y8-rFHvwgC9mj0qv972IO5DmD-H0ZH&index=2'
   }
-];
+]
 
 export const ROADMAP = {
   frontend: FRONTEND,
   backend: BACKEND,
   masteringReact: MASTERING_REACT
-};
+}
 
 export const TRIBES = [
   {
@@ -227,4 +227,4 @@ export const TRIBES = [
     path: '?tribe=mastering-react-js',
     isShow: true
   }
-];
+]

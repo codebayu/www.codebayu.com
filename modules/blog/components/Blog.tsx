@@ -1,30 +1,30 @@
-'use client';
+'use client'
 
-import { fetcher } from '@/services/fetcher';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import useSWR from 'swr';
+import { fetcher } from '@/services/fetcher'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import useSWR from 'swr'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import LoadingCard from '@/common/components/elements/LoadingCard';
-import { DEVTO_BLOG_API } from '@/common/constant';
-import { BlogItem } from '@/common/types/blog';
+import EmptyState from '@/common/components/elements/EmptyState'
+import LoadingCard from '@/common/components/elements/LoadingCard'
+import { DEVTO_BLOG_API } from '@/common/constant'
+import { BlogItem } from '@/common/types/blog'
 
-import { useBlogView } from '@/context/blog-view';
+import { useBlogView } from '@/context/blog-view'
 
-import useIsMobile from '@/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile'
 
-import BlogCard from './BlogCard';
-import BlogListHeader from './BlogListHeader';
+import BlogCard from './BlogCard'
+import BlogListHeader from './BlogListHeader'
 
 export default function Blog() {
-  const isMobile = useIsMobile();
-  const { viewOption, setViewOption } = useBlogView();
+  const isMobile = useIsMobile()
+  const { viewOption, setViewOption } = useBlogView()
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
     revalidateOnMount: true
-  });
+  })
 
-  const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null);
+  const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null)
 
   if (isLoading)
     return (
@@ -38,10 +38,10 @@ export default function Blog() {
           <LoadingCard key={item} view={viewOption} />
         ))}
       </div>
-    );
+    )
 
   if (blogs.length === 0 && !isLoading) {
-    return <EmptyState message="No Data" />;
+    return <EmptyState message="No Data" />
   }
 
   return (
@@ -65,5 +65,5 @@ export default function Blog() {
         ))}
       </div>
     </>
-  );
+  )
 }

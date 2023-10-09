@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { ContentProps } from '@/common/types/learn';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { ContentProps } from '@/common/types/learn'
 
 export default function LearnCard({ title, slug, description, image, is_new }: ContentProps) {
   return (
@@ -30,5 +30,5 @@ export default function LearnCard({ title, slug, description, image, is_new }: C
         </div>
       </Card>
     </Link>
-  );
+  )
 }

@@ -1,31 +1,31 @@
-import { Droppable } from '@hello-pangea/dnd';
-import React, { useState } from 'react';
-import { BsPlus, BsX } from 'react-icons/bs';
+import { Droppable } from '@hello-pangea/dnd'
+import React, { useState } from 'react'
+import { BsPlus, BsX } from 'react-icons/bs'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import IconButton from '@/common/components/elements/IconButton';
-import { IColumn } from '@/common/types/board';
+import EmptyState from '@/common/components/elements/EmptyState'
+import IconButton from '@/common/components/elements/IconButton'
+import { IColumn } from '@/common/types/board'
 
-import TaskCard from './TaskCard';
-import TaskForm from './TaskForm';
+import TaskCard from './TaskCard'
+import TaskForm from './TaskForm'
 
 interface TaskColumnProps {
-  columnId: string;
-  column: IColumn;
+  columnId: string
+  column: IColumn
 }
 
 export default function TaskColumn({ columnId, column }: TaskColumnProps) {
   const [openForm, setOpenForm] = useState({
     isOpen: false,
     columnId: ''
-  });
+  })
   function openTaskForm(columnId: string) {
-    const isOpen = openForm.columnId === columnId ? !openForm.isOpen : true;
-    setOpenForm({ isOpen, columnId });
+    const isOpen = openForm.columnId === columnId ? !openForm.isOpen : true
+    setOpenForm({ isOpen, columnId })
   }
 
   function closeTaskForm() {
-    setOpenForm({ isOpen: false, columnId: '' });
+    setOpenForm({ isOpen: false, columnId: '' })
   }
   return (
     <Droppable key={columnId} droppableId={columnId}>
@@ -54,5 +54,5 @@ export default function TaskColumn({ columnId, column }: TaskColumnProps) {
         </div>
       )}
     </Droppable>
-  );
+  )
 }

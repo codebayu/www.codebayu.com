@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface CardProps {
-  children: ReactNode;
-  className?: string;
-  [propName: string]: unknown;
+  children: ReactNode
+  className?: string
+  [propName: string]: unknown
 }
 
 export default function Card({ children, className = '', ...others }: CardProps) {
@@ -11,5 +11,5 @@ export default function Card({ children, className = '', ...others }: CardProps)
     <div className={`rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md ${className} `} {...others}>
       {children}
     </div>
-  );
+  )
 }

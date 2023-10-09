@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { METADATA } from '@/common/constant/metadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { METADATA } from '@/common/constant/metadata'
 
-import About from '@/modules/about';
+import About from '@/modules/about'
 
 export const metadata: Metadata = {
   title: `About ${METADATA.exTitle}`,
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/about`
   }
-};
+}
 
-const PAGE_TITLE = 'About';
-const PAGE_DESCRIPTION = 'A short story of me';
+const PAGE_TITLE = 'About'
+const PAGE_DESCRIPTION = 'A short story of me'
 
 export default function AboutPage() {
   return (
@@ -25,5 +25,5 @@ export default function AboutPage() {
         <About />
       </Container>
     </>
-  );
+  )
 }

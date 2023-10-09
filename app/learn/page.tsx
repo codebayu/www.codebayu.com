@@ -1,11 +1,11 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { LEARN_CONTENTS } from '@/common/constant/learn';
-import { METADATA } from '@/common/constant/metadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { LEARN_CONTENTS } from '@/common/constant/learn'
+import { METADATA } from '@/common/constant/metadata'
 
-import LearnModule from '@/modules/learn';
+import LearnModule from '@/modules/learn'
 
 export const metadata: Metadata = {
   title: `Learn ${METADATA.exTitle}`,
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/learn`
   }
-};
+}
 
-const PAGE_TITLE = 'Learn';
+const PAGE_TITLE = 'Learn'
 const PAGE_DESCRIPTION =
-  "It's not a course, it's my personal learning notes. But if you are interested, let's learn together.";
-const filteredContents = LEARN_CONTENTS.filter(content => content.is_show) || [];
+  "It's not a course, it's my personal learning notes. But if you are interested, let's learn together."
+const filteredContents = LEARN_CONTENTS.filter(content => content.is_show) || []
 
 export default function LearnPage() {
   return (
@@ -29,5 +29,5 @@ export default function LearnPage() {
         <LearnModule contents={filteredContents} />
       </Container>
     </>
-  );
+  )
 }

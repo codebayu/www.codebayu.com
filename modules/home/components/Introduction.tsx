@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { TbCoffee } from 'react-icons/tb';
+import { TbCoffee } from 'react-icons/tb'
 
-import { SAWERIA_URL } from '@/common/constant';
+import { SAWERIA_URL } from '@/common/constant'
 
 export default function Introduction() {
   return (
@@ -30,5 +30,5 @@ export default function Introduction() {
         </p>
       </div>
     </section>
-  );
+  )
 }

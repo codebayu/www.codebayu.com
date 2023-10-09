@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function LoadingLatestArticle() {
   return (
@@ -7,5 +7,5 @@ export default function LoadingLatestArticle() {
       <div className="h-4 w-full animate-pulse bg-neutral-300 dark:bg-neutral-700 rounded"></div>
       <div className="h-2 w-24 animate-pulse bg-neutral-300 dark:bg-neutral-700 rounded"></div>
     </div>
-  );
+  )
 }

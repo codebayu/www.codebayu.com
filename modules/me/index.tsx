@@ -1,3 +1,3 @@
-import MeSection from './components/Me';
+import MeSection from './components/Me'
 
-export default MeSection;
+export default MeSection

@@ -1,34 +1,34 @@
-'use client';
+'use client'
 
-import clsx from 'clsx';
-import { AnimatePresence } from 'framer-motion';
-import React, { useEffect } from 'react';
+import clsx from 'clsx'
+import { AnimatePresence } from 'framer-motion'
+import React, { useEffect } from 'react'
 
-import { useMenu } from '@/context/menu';
+import { useMenu } from '@/context/menu'
 
-import useIsMobile from '@/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile'
 
-import ToggleThemeIcon from '../../elements/ToggleThemeIcon';
-import MobileMenu from './MobileMenu';
-import MobileMenuButton from './MobileMenuButton';
-import ProfileHeader from './ProfileHeader';
+import ToggleThemeIcon from '../../elements/ToggleThemeIcon'
+import MobileMenu from './MobileMenu'
+import MobileMenuButton from './MobileMenuButton'
+import ProfileHeader from './ProfileHeader'
 
 export default function Profile() {
-  const isMobile = useIsMobile();
-  const imageSize = isMobile ? 40 : 100;
-  const { isOpen, toggleMenu } = useMenu();
+  const isMobile = useIsMobile()
+  const imageSize = isMobile ? 40 : 100
+  const { isOpen, toggleMenu } = useMenu()
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto'
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
 
   return (
     <div
@@ -54,5 +54,5 @@ export default function Profile() {
 
       {isMobile && <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>}
     </div>
-  );
+  )
 }

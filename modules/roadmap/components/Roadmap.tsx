@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import BadgeList from './BadgeList';
-import CourseList from './CourseList';
+import BadgeList from './BadgeList'
+import CourseList from './CourseList'
 
 export default function Roadmap() {
   return (
@@ -9,5 +9,5 @@ export default function Roadmap() {
       <BadgeList />
       <CourseList />
     </>
-  );
+  )
 }

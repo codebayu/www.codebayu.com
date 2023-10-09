@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -46,17 +46,29 @@ const config: Config = {
           '50%': { transform: 'translateX(-100%)' },
           '90%': { transform: 'translateX(5%)' },
           '100%': { transform: 'translateX(0)' }
+        },
+        slideInfinite: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-300%)' }
+        },
+        rainArrow: {
+          '0%': { transform: 'translateY(-100%)' },
+          '40%': { transform: 'translateY(-20%)' },
+          '50%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(100%)' }
         }
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
-        'slide-card': 'slide 3s 1s ease-in-out'
+        'slide-card': 'slide 3s 1s ease-in-out',
+        'slide-infinite': 'slideInfinite 100s linear infinite',
+        'rain-arrow': 'rainArrow 1s ease-out infinite'
       }
     }
   },
   plugins: [],
   darkMode: 'class'
-};
-export default config;
+}
+export default config

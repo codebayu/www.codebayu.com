@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 // interface EmbedProps {
 //   html: string | TrustedHTML;
@@ -6,19 +6,19 @@
 // export default function Embed({ html }: EmbedProps) {
 //   return <div dangerouslySetInnerHTML={{ __html: html }} />;
 // }
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 export default function Embed() {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
+    const script = document.createElement('script')
+    script.src = 'https://www.tiktok.com/embed.js'
+    script.async = true
+    document.body.appendChild(script)
 
     return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+      document.body.removeChild(script)
+    }
+  }, [])
 
   return (
     <blockquote
@@ -34,5 +34,5 @@ export default function Embed() {
         </a>
       </section>
     </blockquote>
-  );
+  )
 }

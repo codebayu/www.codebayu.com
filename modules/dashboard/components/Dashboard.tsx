@@ -1,10 +1,10 @@
-import Breakline from '@/common/components/elements/Breakline';
+import Breakline from '@/common/components/elements/Breakline'
 
-import Contributions from './Contributions';
-import PageSpeed from './PageSpeed';
+import Contributions from './Contributions'
+import PageSpeed from './PageSpeed'
 
 interface DashboardProps {
-  githubData: any;
+  githubData: any
 }
 export default function Dashboard({ githubData }: DashboardProps) {
   return (
@@ -13,5 +13,5 @@ export default function Dashboard({ githubData }: DashboardProps) {
       <Breakline />
       <Contributions githubData={githubData} />
     </section>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
-import React from 'react';
+import React from 'react'
 
-import { METADATA } from '@/common/constant/metadata';
+import { METADATA } from '@/common/constant/metadata'
 
-import MeSection from '@/modules/me';
+import MeSection from '@/modules/me'
 
 export const metadata: Metadata = {
   title: `Hi! ${METADATA.exTitle}`,
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${process.env.DOMAIN}/me`
   }
-};
+}
 
 export default function MePage() {
-  return <MeSection />;
+  return <MeSection />
 }

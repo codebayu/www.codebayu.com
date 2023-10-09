@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import Badge from '@/common/components/elements/Badge';
-import Card from '@/common/components/elements/Card';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { STACKS } from '@/common/constant/stacks';
-import { CourseCardProps } from '@/common/types/roadmap';
+import Badge from '@/common/components/elements/Badge'
+import Card from '@/common/components/elements/Card'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { STACKS } from '@/common/constant/stacks'
+import { CourseCardProps } from '@/common/types/roadmap'
 
-import useIsMobile from '@/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile'
 
 export default function CourseCard(props: CourseCardProps) {
-  const { icon, title, linkEnglish, linkIndonesia } = props;
-  const isMobile = useIsMobile();
+  const { icon, title, linkEnglish, linkIndonesia } = props
+  const isMobile = useIsMobile()
   return (
     <Card className="flex justify-between p-4 border text-sm border-neutral-300 text-neutral-700 dark:border-neutral-700 dark:text-neutral-400">
       <div className="flex space-x-2">
@@ -34,5 +34,5 @@ export default function CourseCard(props: CourseCardProps) {
         )}
       </div>
     </Card>
-  );
+  )
 }

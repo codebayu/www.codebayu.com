@@ -1,17 +1,17 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { BsGithub as GithubIcon } from 'react-icons/bs';
+import { BsGithub as GithubIcon } from 'react-icons/bs'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { GITHUB_ACCOUNTS } from '@/common/constant/github';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { GITHUB_ACCOUNTS } from '@/common/constant/github'
 
-import Calendar from './Calendar';
-import Overview from './Overview';
+import Calendar from './Calendar'
+import Overview from './Overview'
 
 type ContributionsProps = {
-  githubData: any;
-};
+  githubData: any
+}
 
 export default function Contributions({ githubData }: ContributionsProps) {
   return (
@@ -38,5 +38,5 @@ export default function Contributions({ githubData }: ContributionsProps) {
         </div>
       )}
     </section>
-  );
+  )
 }

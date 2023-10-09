@@ -1,32 +1,30 @@
 export interface ITask {
-  id: string;
-  task: string;
-  type: 'feature' | 'bug' | 'refactor';
+  id: string
+  task: string
+  type: 'feature' | 'bug' | 'refactor'
+  priority: 'low' | 'medium' | 'high'
 }
 
 export interface IColumns {
-  [x: string]: {
-    title: string;
-    items: ITask[];
-  };
+  [x: string]: IColumn
 }
 
 export interface IColumn {
-  title: string;
-  items: ITask[];
+  title: string
+  items: ITask[]
 }
 
 export interface IAddTaskPayload {
-  columnId: string;
-  data: ITask;
+  columnId: string
+  data: ITask
 }
 export interface IUpdateTaskPayload {
-  columnId: string;
-  taskId: string;
-  data: ITask;
+  columnId: string
+  taskId: string
+  data: ITask
 }
 
 export interface IDeleteTaskPayload {
-  columnId: string;
-  taskId: string;
+  columnId: string
+  taskId: string
 }

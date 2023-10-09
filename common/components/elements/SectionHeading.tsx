@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface SectionHeadingProps {
-  title: string;
-  className?: string;
-  icon?: ReactNode;
+  title: string
+  className?: string
+  icon?: ReactNode
 }
 
 export default function SectionHeading({ title, icon, className = '' }: SectionHeadingProps) {
@@ -12,5 +12,5 @@ export default function SectionHeading({ title, icon, className = '' }: SectionH
       {icon && <>{icon}</>}
       <h2 className="capitalize">{title}</h2>
     </div>
-  );
+  )
 }

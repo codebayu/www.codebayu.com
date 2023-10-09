@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 interface ButtonProps {
-  children: React.ReactNode;
-  type?: 'button' | 'submit' | 'reset';
-  theme: 'text' | 'filled';
-  onClick?(e?: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
-  disable?: boolean;
+  children: React.ReactNode
+  type?: 'button' | 'submit' | 'reset'
+  theme: 'text' | 'filled'
+  onClick?(e?: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
+  disable?: boolean
 }
 export default function Button(props: ButtonProps) {
-  const { children, theme, type, disable = false, onClick } = props;
+  const { children, theme, type, disable = false, onClick } = props
   return (
     <button
       type={type}
@@ -22,5 +22,5 @@ export default function Button(props: ButtonProps) {
     >
       {children}
     </button>
-  );
+  )
 }

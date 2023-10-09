@@ -1,14 +1,14 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import MDXComponent from '@/common/components/elements/MDXComponent';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { STACKS } from '@/common/constant/stacks';
-import { IProjectItem } from '@/common/types/projects';
+import MDXComponent from '@/common/components/elements/MDXComponent'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { STACKS } from '@/common/constant/stacks'
+import { IProjectItem } from '@/common/types/projects'
 
-import ProjectLink from './ProjectLink';
+import ProjectLink from './ProjectLink'
 
 export default function ProjectDetail({ title, image, stacks, link_demo, link_github, content }: IProjectItem) {
-  const stacksArray = JSON.parse(stacks);
+  const stacksArray = JSON.parse(stacks)
 
   return (
     <div className="space-y-8 overflow-hidden">
@@ -34,5 +34,5 @@ export default function ProjectDetail({ title, image, stacks, link_demo, link_gi
         </div>
       )}
     </div>
-  );
+  )
 }
