@@ -7,7 +7,7 @@ interface IEmailForm {
 }
 
 export const POST = async (request: Request) => {
-  const EMAIL_SERVICE_SECRET = process.env.NEXT_PUBLIC_EMAIL_SERVICE_SECRET || ''
+  const EMAIL_SERVICE_SECRET = process.env.EMAIL_SERVICE_SECRET || ''
   const body: IEmailForm = await request.json()
 
   const newFormBody = new FormData()
