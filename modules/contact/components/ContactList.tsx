@@ -18,7 +18,7 @@ export default function ContactList() {
             target="_blank"
             key={media.title}
             className={clsxm(
-              'flex text-white shadow-xl w-full md:w-max justify-center items-center px-4 py-2 space-x-2 rounded-lg',
+              'flex text-white shadow-lg w-full md:w-max justify-center items-center px-4 py-2 space-x-2 rounded-lg',
               media.backgroundColor
             )}
           >

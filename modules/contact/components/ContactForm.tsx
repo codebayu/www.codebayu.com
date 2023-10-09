@@ -1,7 +1,7 @@
 'use client'
 
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import InputField from '@/common/components/elements/InputField'
@@ -20,11 +20,14 @@ export default function ContactForm() {
     formState: { errors }
   } = useForm<IFormEmail>()
   const [isLoading, setIsLoading] = useState(false)
+  const [buttonText, setButtonText] = useState('Send Email')
+  const [isSuccess, setIsSuccess] = useState(false)
 
   async function handleFormSubmit(payload: IFormEmail) {
     setIsLoading(true)
     try {
-      await axios.post('/api/email', payload)
+      const response = await axios.post('/api/email', payload)
+      if (response.status === 200) setIsSuccess(true)
       reset()
       setIsLoading(false)
     } catch (error) {
@@ -32,6 +35,15 @@ export default function ContactForm() {
       setIsLoading(false)
     }
   }
+
+  useEffect(() => {
+    setButtonText(isLoading ? 'Sending your message...' : 'Send Email')
+    if (!isLoading && isSuccess) setButtonText('Your email sent successfully')
+    const timeout = setTimeout(() => {
+      setButtonText('Send Email')
+    }, 5000)
+    return () => clearTimeout(timeout)
+  }, [isLoading, isSuccess])
 
   return (
     <div className="flex flex-col space-y-4">
@@ -47,7 +59,7 @@ export default function ContactForm() {
           type="submit"
           className="bg-neutral-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-neutral-800 hover:shadow-lg"
         >
-          {isLoading ? 'Sending your message...' : 'Send Email'}
+          {buttonText}
         </button>
       </form>
     </div>
