@@ -1,6 +1,6 @@
 import {
   BiEditAlt as BlogIcon,
-  BiEnvelope as ContactIcon,
+  BiPaperPlane as ContactIcon,
   BiCategoryAlt as DashboardIcon,
   BiHomeSmile as HomeIcon,
   BiBookBookmark as LearnIcon,
@@ -84,7 +84,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: 'Contact',
     href: '/contact',
     icon: <ContactIcon size={iconSize} />,
-    isShow: false,
+    isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact'
   },
@@ -105,7 +105,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Github'
+    eventName: 'Social: Github',
+    backgroundColor: 'bg-gray-800'
   },
   {
     title: 'Linkedin',
@@ -113,7 +114,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Linkedin'
+    eventName: 'Social: Linkedin',
+    backgroundColor: 'bg-blue-500'
   },
   {
     title: 'Twitter',
@@ -129,7 +131,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Instagram'
+    eventName: 'Social: Instagram',
+    backgroundColor: 'bg-pink-600'
   },
   {
     title: 'Threads',
@@ -145,7 +148,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <DiscordIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Discord'
+    eventName: 'Social: Discord',
+    backgroundColor: 'bg-purple-700'
   },
   {
     title: 'Youtube',
@@ -153,7 +157,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <YoutubeIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Youtube'
+    eventName: 'Social: Youtube',
+    backgroundColor: 'bg-red-700'
   },
   {
     title: 'TikTok',
@@ -161,6 +166,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TiktokIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Tiktok'
+    eventName: 'Social: Tiktok',
+    backgroundColor: 'bg-black'
   }
 ]
