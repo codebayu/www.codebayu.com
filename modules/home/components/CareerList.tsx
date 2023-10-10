@@ -5,11 +5,10 @@ import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi'
 
 import SectionHeading from '@/common/components/elements/SectionHeading'
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { RESUME_URL } from '@/common/constant'
 import { CAREERS } from '@/common/constant/careers'
 
 import CareerCard from './CareerCard'
-
-const RESUME_URL = 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr'
 
 export default function CareerList() {
   return (
