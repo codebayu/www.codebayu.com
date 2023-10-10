@@ -7,7 +7,7 @@ import Layouts from '@/common/components/layouts/index'
 import { METADATA } from '@/common/constant/metadata'
 
 import { soraSans } from '../common/styles/fonts'
-import ThemeProviderContext from '../context/theme'
+import ThemeProviderContext from '../stores/theme'
 import './globals.css'
 
 export const metadata: Metadata = {

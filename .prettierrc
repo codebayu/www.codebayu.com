@@ -4,7 +4,7 @@
     "<THIRD_PARTY_MODULES>",
     "^@/common/(.*)$",
     "^@/modules/(.*)$",
-    "^@/context/(.*)$",
+    "^@/stores/(.*)$",
     "^@/hooks/(.*)$",
     "^@/contents/(.*)$",
     "^[./]"

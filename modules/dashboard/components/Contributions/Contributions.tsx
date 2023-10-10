@@ -10,7 +10,7 @@ import Calendar from './Calendar'
 import Overview from './Overview'
 
 type ContributionsProps = {
-  githubData: any
+  githubData: never
 }
 
 export default function Contributions({ githubData }: ContributionsProps) {

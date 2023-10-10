@@ -10,7 +10,7 @@ import LoadingCard from '@/common/components/elements/LoadingCard'
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
 
-import { useBlogView } from '@/context/blog-view'
+import { useBlogView } from '@/stores/blog-view'
 
 import useIsMobile from '@/hooks/useIsMobile'
 

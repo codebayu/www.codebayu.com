@@ -9,7 +9,7 @@ import PageHeading from '@/common/components/elements/PageHeading'
 import ToggleThemeIcon from '@/common/components/elements/ToggleThemeIcon'
 import { IColumns } from '@/common/types/board'
 
-import { useTaskBoard } from '@/context/board'
+import { useTaskBoard } from '@/stores/board'
 
 import { useHydration } from '@/hooks/useHydration'
 

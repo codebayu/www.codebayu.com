@@ -4,7 +4,7 @@ import Contributions from './Contributions'
 import PageSpeed from './PageSpeed'
 
 interface DashboardProps {
-  githubData: any
+  githubData: never
 }
 export default function Dashboard({ githubData }: DashboardProps) {
   return (
