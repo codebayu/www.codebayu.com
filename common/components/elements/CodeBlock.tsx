@@ -19,6 +19,8 @@ import { useCopyToClipboard } from 'usehooks-ts'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 const languages = {
   javascript: 'javascript',
   typescript: 'typescript',
