@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
 import dynamic from 'next/dynamic'
@@ -14,10 +13,6 @@ import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
 import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { useCopyToClipboard } from 'usehooks-ts'
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 const languages = {
   javascript: 'javascript',
@@ -35,6 +30,7 @@ SyntaxHighlighter.registerLanguage(languages.css, css)
 
 const CodeBlock = ({ className = '', children, inline, ...props }: CodeProps) => {
   const [isCopied, setIsCopied] = useState<boolean>(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [value, copy] = useCopyToClipboard()
   const match = /language-(\w+)/.exec(className || '')
 

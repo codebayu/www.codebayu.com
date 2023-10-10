@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Breakline from '@/common/components/elements/Breakline'
 
 import Contributions from './Contributions'
 import PageSpeed from './PageSpeed'
 
 interface DashboardProps {
-  githubData: never
+  githubData: any
 }
 export default function Dashboard({ githubData }: DashboardProps) {
   return (

@@ -1,9 +1,9 @@
 import { HiCode } from 'react-icons/hi'
 
+import MarqueeElement from '@/common/components/elements/MarqueeElement'
 import SectionHeading from '@/common/components/elements/SectionHeading'
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { STACKS } from '@/common/constant/stacks'
-import clsxm from '@/common/libs/clsxm'
 
 import SkillCard from './SkillCard'
 
@@ -22,14 +22,11 @@ export default function SkillList() {
         {Array.from({ length: 2 }, (_, index) => {
           const slider = [...stacksInArray].sort(() => Math.random() - 0.5)
           return (
-            <div
-              key={index}
-              className={clsxm('flex animate-slide-infinite py-3 space-x-4', index === 1 && 'animation-reverse')}
-            >
+            <MarqueeElement key={index} direction={index % 2 === 0 ? 'left' : 'right'}>
               {slider.map(([name, icon], index) => (
                 <SkillCard key={index} name={name} icon={icon} />
               ))}
-            </div>
+            </MarqueeElement>
           )
         })}
       </div>

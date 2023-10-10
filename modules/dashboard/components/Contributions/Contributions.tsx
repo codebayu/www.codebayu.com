@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link'
 
 import { BsGithub as GithubIcon } from 'react-icons/bs'
@@ -10,7 +11,7 @@ import Calendar from './Calendar'
 import Overview from './Overview'
 
 type ContributionsProps = {
-  githubData: never
+  githubData: any
 }
 
 export default function Contributions({ githubData }: ContributionsProps) {
