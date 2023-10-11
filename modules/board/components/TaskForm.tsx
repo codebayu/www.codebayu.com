@@ -9,7 +9,7 @@ import IconButton from '@/common/components/elements/IconButton'
 import RadioInput from '@/common/components/elements/RadioInput'
 import { ITask } from '@/common/types/board'
 
-import { useTaskBoard } from '@/context/board'
+import { useTaskBoard } from '@/stores/board'
 
 interface ITaskCardProps {
   columnId: string

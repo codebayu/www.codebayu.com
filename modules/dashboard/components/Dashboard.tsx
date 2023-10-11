@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Breakline from '@/common/components/elements/Breakline'
 
 import Contributions from './Contributions'

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link'
 
 import { BsGithub as GithubIcon } from 'react-icons/bs'

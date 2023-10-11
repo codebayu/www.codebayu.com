@@ -9,3 +9,5 @@ export const SAWERIA_URL = 'https://saweria.co/codebayu'
 export const DEVTO_BLOG_API = 'https://dev.to/api/articles?username=codebayu'
 export const BACKDROP_IMAGE =
   'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1696122641/codebayu/hxbt52djgplqqzbrux93.webp'
+
+export const RESUME_URL = 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/resume'
