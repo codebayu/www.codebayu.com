@@ -115,7 +115,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Linkedin',
-    backgroundColor: 'bg-blue-500'
+    backgroundColor: 'bg-blue-600'
   },
   {
     title: 'Twitter',

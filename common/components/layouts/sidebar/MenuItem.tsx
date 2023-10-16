@@ -11,7 +11,6 @@ import { MenuItemProps } from '@/common/types/menu'
 import { useMenu } from '@/stores/menu'
 
 export default function MenuItem({ title, href, icon, onClick, className = '', children }: MenuItemProps) {
-  //   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false)
   const { hideMenu } = useMenu()
   const isExternalUrl = href?.includes('http')
