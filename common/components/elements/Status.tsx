@@ -11,6 +11,7 @@ export default function Status() {
   if (!mounted) return null
   return (
     <motion.div
+      data-testid="available-hire-container"
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: 42, opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -26,6 +27,7 @@ export default function Status() {
         className="flex relative items-center gap-2 bg-white dark:bg-dark rounded-xl py-1 px-2 border border-neutral-300 dark:border-neutral-700"
       >
         <motion.div
+          data-testid="dots"
           className="h-2 w-2 rounded-full bg-green-400"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 0.5, repeat: Infinity }}

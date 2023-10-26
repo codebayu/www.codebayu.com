@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import { FC } from 'react'
 
+import { MENU_ITEMS } from '@/common/constant/menu'
+
 import Breakline from '../../elements/Breakline'
-import Navigation from './Navigation'
+import Menu from './Menu'
 
 const MobileMenu: FC = () => {
+  const filterdMenu = MENU_ITEMS?.filter(item => item?.isShow)
   return (
     <motion.div
       className="h-screen flex flex-col my-3"
@@ -14,7 +17,7 @@ const MobileMenu: FC = () => {
     >
       <div>
         <Breakline className="mt-2" />
-        <Navigation />
+        <Menu list={filterdMenu} />
       </div>
     </motion.div>
   )

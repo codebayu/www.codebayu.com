@@ -24,6 +24,7 @@ export default function CommentItem({ body_html, created_at, user }: CommentItem
     <div data-testid="comment-item" className="flex gap-5 dark:text-neutral-400 break-all">
       <div className="flex-shrink-0">
         <Image
+          data-testid="user-comment-image"
           src={user?.profile_image_90}
           alt={user?.name}
           width={40}
@@ -38,7 +39,12 @@ export default function CommentItem({ body_html, created_at, user }: CommentItem
           <div className="hidden sm:block dark:text-neutral-700">•</div>
           <div className="text-xs dark:text-neutral-500">{formatDate(created_at, 'MMM dd, yyyy, HH:mm')}</div>
         </div>
-        <div ref={contentRef} className="leading-[1.8] max-w-[600px]" dangerouslySetInnerHTML={{ __html: body_html }} />
+        <div
+          data-testid="comment-body"
+          ref={contentRef}
+          className="leading-[1.8] max-w-[600px]"
+          dangerouslySetInnerHTML={{ __html: body_html }}
+        />
       </div>
     </div>
   )
