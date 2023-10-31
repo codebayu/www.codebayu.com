@@ -6,8 +6,8 @@ import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
+import { PROJECTS } from '@/common/constant/projects'
 import loadMdxFiles from '@/common/libs/mdx'
-import { prisma } from '@/common/libs/prisma'
 import { IProjectItem } from '@/common/types/projects'
 
 import ProjectDetail from '@/modules/projects/components/ProjectDetail'
@@ -50,11 +50,11 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
 }
 
 async function getProjectDetail(slug: string): Promise<IProjectItem> {
-  const response = await prisma.projects.findUnique({
-    where: { slug }
-  })
+  // const response = await prisma.projects.findUnique({
+  //   where: { slug }
+  // })
+  const response = PROJECTS.find(item => item.slug === slug) as IProjectItem
   const contents = loadMdxFiles(slug, true)
-  if (!response) return {} as IProjectItem
   const content = contents.find(item => item.slug === slug)
   const newResponse = { ...response, content: content?.content }
   return newResponse
