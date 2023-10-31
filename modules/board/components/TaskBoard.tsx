@@ -7,10 +7,13 @@ import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import ToggleThemeIcon from '@/common/components/elements/ToggleThemeIcon'
+import { tourTaskBoard } from '@/common/constant/drivers'
+import createDrivers from '@/common/libs/drivers'
 import { IColumns } from '@/common/types/board'
 
 import { useTaskBoard } from '@/stores/board'
 
+import useHasMounted from '@/hooks/useHasMounted'
 import { useHydration } from '@/hooks/useHydration'
 
 import TaskColumn from './TaskColumn'
@@ -22,6 +25,9 @@ const PAGE_DESCRIPTION = 'The task board to keep track of your tasks.'
 export default function TaskBoard() {
   const { columns, setColumns } = useTaskBoard()
   const hydrate = useHydration(useTaskBoard)
+  const mounted = useHasMounted()
+
+  const { runDriver, isProductTour } = createDrivers({ steps: tourTaskBoard })
 
   function onDragEnd(result: DropResult, columns: IColumns, setColumns: (columns: IColumns) => void) {
     if (!result.destination) return // Jika Tidak ada kolom Tujuan
@@ -58,6 +64,12 @@ export default function TaskBoard() {
         }
       })
     }
+  }
+
+  if (mounted && isProductTour) {
+    setTimeout(() => {
+      runDriver()
+    }, 1000)
   }
 
   return (
