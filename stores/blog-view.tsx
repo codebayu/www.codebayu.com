@@ -16,7 +16,7 @@ export const useBlogView = create<BlogViewState & BlogViewAction>()(
         setViewOption: option => set(() => ({ viewOption: option }))
       }),
       {
-        name: 'blog-view'
+        name: 'cb-blog-view'
       }
     )
   )

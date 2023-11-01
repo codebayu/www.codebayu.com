@@ -68,7 +68,7 @@ export const useTaskBoard = create<InitialTaskState & InitialTaskAction>()(
       setColumns: (columns: IColumns) => set({ columns })
     }),
     {
-      name: 'task-board'
+      name: 'cb-task-board'
     }
   )
 )

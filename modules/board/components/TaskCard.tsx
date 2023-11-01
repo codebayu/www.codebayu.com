@@ -45,6 +45,7 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
         <Draggable key={item.id} draggableId={item.id} index={index}>
           {provided => (
             <div
+              id="draggable-card"
               className="p-4 mb-4  h-max shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] space-y-2 rounded-xl bg-white dark:bg-neutral-800"
               ref={provided.innerRef}
               {...provided.draggableProps}
@@ -59,7 +60,7 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
                     {item.priority}
                   </Badge>
                 </div>
-                <IconButton icon={<BsThreeDots size={16} />} onClick={toggleCollapse} />
+                <IconButton id="task-card-options" icon={<BsThreeDots size={16} />} onClick={toggleCollapse} />
               </div>
               <p className="line-clamp-1 w-52 text-sm text-neutral-600 dark:text-neutral-400">{item.task}</p>
             </div>
