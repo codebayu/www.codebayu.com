@@ -18,6 +18,7 @@ export default function ToggleThemeIcon() {
   if (!mounted) return null
   return (
     <motion.button
+      id="dark-mode-switcher"
       aria-label="Toggle Theme"
       onClick={toggleTheme}
       className="bg-white dark:bg-neutral-800 p-2 rounded-xl"

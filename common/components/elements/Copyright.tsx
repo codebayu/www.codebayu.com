@@ -4,7 +4,9 @@ export default function Copyright() {
       <span>©</span>
       <span>{new Date().getFullYear()}</span>
       <span>with</span>
-      <span className="text-red-500 animate-pulse">❤</span>
+      <span data-testid="love" className="text-red-500 animate-pulse">
+        ❤
+      </span>
       <span>by</span>
       <span className="hover:dark:text-neutral-400 cursor-pointer">codebayu</span>
     </div>

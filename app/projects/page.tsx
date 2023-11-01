@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
-import { prisma } from '@/common/libs/prisma'
+import { PROJECTS } from '@/common/constant/projects'
 import { IProjectItem } from '@/common/types/projects'
 
 import Projects from '@/modules/projects'
@@ -33,15 +33,5 @@ export default async function ProjectsPage() {
 }
 
 async function getProjets(): Promise<IProjectItem[]> {
-  const response = await prisma.projects.findMany({
-    orderBy: [
-      {
-        is_featured: 'desc'
-      },
-      {
-        updated_at: 'desc'
-      }
-    ]
-  })
-  return response
+  return PROJECTS
 }
