@@ -39,12 +39,12 @@ export const PROJECTS: IProjectItem[] = [
   },
   {
     id: 4,
-    title: 'codebayucss package',
-    slug: 'code-bayu-css',
-    description: 'Open source css library which is published on npmjs',
-    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693448226/codebayu/projects/cekjkwvlge7nzt3nq7ep.webp',
-    link_demo: 'https://www.npmjs.com/package/codebayucss',
-    link_github: 'https://github.com/Bayusetiawan45/codebayucss',
+    title: '@codebayu/sass',
+    slug: 'code-bayu-sass',
+    description: 'Open source SASS library which is published on npmjs',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/projects/zrwxvd5xbjw3uam9f9gc',
+    link_demo: 'https://www.npmjs.com/package/@codebayu/sass',
+    link_github: 'https://github.com/Bayusetiawan45/sass',
     stacks: ['SASS', 'Gulp'],
     is_show: true,
     is_featured: false

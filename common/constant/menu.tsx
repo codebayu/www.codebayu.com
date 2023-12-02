@@ -18,6 +18,7 @@ import {
   BsYoutube as YoutubeIcon
 } from 'react-icons/bs'
 import { LuTrello, LuWorkflow } from 'react-icons/lu'
+import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
 import { MenuItemProps } from '../types/menu'
 
@@ -107,6 +108,15 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Github',
     backgroundColor: 'bg-gray-800'
+  },
+  {
+    title: 'NPM',
+    href: 'https://www.npmjs.com/settings/codebayu/packages',
+    icon: <NpmIcon size={iconSize} />,
+    isShow: true,
+    isExternal: true,
+    eventName: 'Social: Npm',
+    backgroundColor: 'bg-red-700'
   },
   {
     title: 'Linkedin',
