@@ -111,7 +111,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'NPM',
-    href: 'https://www.npmjs.com/search?q=%40codebayu',
+    href: 'https://www.npmjs.com/~bayu-setiawan',
     icon: <NpmIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
