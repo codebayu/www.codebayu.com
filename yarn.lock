@@ -411,6 +411,11 @@
   resolved "https://registry.yarnpkg.com/@bradgarropy/next-google-analytics/-/next-google-analytics-1.0.2.tgz#057b77d77f590939da4dce3575255b1f37411910"
   integrity sha512-Xhli9NkdJbmvs1QNAcC9At3w/GIlXunVIMQzcAYfVP8tQSX3Q4un0doZfQknNvRz+QO6we+8lDE4/dMOio0vzQ==
 
+"@codebayu/use-hydration-zustand@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@codebayu/use-hydration-zustand/-/use-hydration-zustand-1.0.2.tgz#c2e1c9947bb9875bfd5b34c15f6f7e75b70974c0"
+  integrity sha512-V+GzQwti7G45yImaOqPxEd5+Ltd2iS92lfLDD4WK6T9m41Tg6welzrBYEWxxK+BMR88tsM6l3SHM3wMl8fcElA==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -879,11 +884,6 @@
   integrity sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==
   dependencies:
     tslib "^2.4.0"
-
-"@tailwindcss/line-clamp@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz#767cf8e5d528a5d90c9740ca66eb079f5e87d423"
-  integrity sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==
 
 "@testing-library/dom@^9.0.0":
   version "9.3.1"

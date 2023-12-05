@@ -1,5 +1,6 @@
 'use client'
 
+import { useHydrationZustand } from '@codebayu/use-hydration-zustand'
 import { DragDropContext, DropResult } from '@hello-pangea/dnd'
 import React from 'react'
 
@@ -14,7 +15,6 @@ import { IColumns } from '@/common/types/board'
 import { useTaskBoard } from '@/stores/board'
 
 import useHasMounted from '@/hooks/useHasMounted'
-import { useHydration } from '@/hooks/useHydration'
 
 import TaskColumn from './TaskColumn'
 import TaskLoading from './TaskLoading'
@@ -24,7 +24,7 @@ const PAGE_DESCRIPTION = 'The task board to keep track of your tasks.'
 
 export default function TaskBoard() {
   const { columns, setColumns } = useTaskBoard()
-  const hydrate = useHydration(useTaskBoard)
+  const hydrate = useHydrationZustand(useTaskBoard)
   const mounted = useHasMounted()
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourTaskBoard })
