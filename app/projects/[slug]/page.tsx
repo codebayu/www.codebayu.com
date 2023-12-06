@@ -50,11 +50,8 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
 }
 
 async function getProjectDetail(slug: string): Promise<IProjectItem> {
-  // const response = await prisma.projects.findUnique({
-  //   where: { slug }
-  // })
   const response = PROJECTS.find(item => item.slug === slug) as IProjectItem
-  const contents = loadMdxFiles(slug, true)
+  const contents = loadMdxFiles(slug, 'projects')
   const content = contents.find(item => item.slug === slug)
   const newResponse = { ...response, content: content?.content }
   return newResponse
