@@ -2,6 +2,18 @@ import { IProjectItem } from '../types/projects'
 
 export const PROJECTS: IProjectItem[] = [
   {
+    id: 8,
+    title: '@codebayu/use-hydration-zustand',
+    slug: 'code-bayu-use-hydration-zustand',
+    description: 'A React Hook for Zustand state management library to simplify hydration handling.',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/projects/hxuow866isbawxv4frpp',
+    link_demo: 'https://www.npmjs.com/package/@codebayu/use-hydration-zustand',
+    link_github: 'https://github.com/Bayusetiawan45/use-hydration-zustand',
+    stacks: ['Node JS', 'TypeScript'],
+    is_show: true,
+    is_featured: true
+  },
+  {
     id: 7,
     title: 'Next App Router Starter Kit',
     slug: 'next-app-router-starter-kit',
@@ -23,7 +35,7 @@ export const PROJECTS: IProjectItem[] = [
     link_github: 'https://github.com/Bayusetiawan45/v2.codebayu.com',
     stacks: ['Next.js', 'TailwindCSS', 'TypeScript'],
     is_show: true,
-    is_featured: true
+    is_featured: false
   },
   {
     id: 5,
