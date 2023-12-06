@@ -18,7 +18,7 @@ export const PROJECTS: IProjectItem[] = [
     title: 'codebayu.com',
     slug: 'code-bayu-com',
     description: 'Personal website, portfolio and blog built with Next Js, Tailwind CSS, and Typescript',
-    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/v1693474641/codebayu/projects/hmrspahddlh3ps2dsltg.webp',
+    image: 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/projects/nq5c3al3ngaeaw9tbjx2',
     link_demo: 'https://www.codebayu.com/',
     link_github: 'https://github.com/Bayusetiawan45/v2.codebayu.com',
     stacks: ['Next.js', 'TailwindCSS', 'TypeScript'],
