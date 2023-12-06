@@ -26,11 +26,11 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
         a: props => (
           <a className="text-teal-600 hover:text-teal-400 hover:underline cursor-pointer" target="_blank" {...props} />
         ),
-        p: props => <div {...props} />,
-        h2: props => <h2 className="text-xl font-medium dark:text-neutral-300" {...props} />,
+        p: props => <div {...props} className="font-sans" />,
+        h2: props => <h2 className="text-xl font-medium dark:text-neutral-300 font-sans" {...props} />,
         h3: props => <h3 className="text-[18px] leading-snug pt-4 font-medium dark:text-neutral-300" {...props} />,
-        ul: props => <ul className="pl-10 space-y-3 list-disc pb-5" {...props} />,
-        ol: props => <ol className="pl-10 space-y-3 list-decimal pb-5" {...props} />,
+        ul: props => <ul className="pl-10 space-y-3 list-disc pb-5 font-sans" {...props} />,
+        ol: props => <ol className="pl-10 space-y-3 list-decimal pb-5 font-sans" {...props} />,
         code: props => <CodeBlock {...props} />,
         blockquote: props => (
           <blockquote

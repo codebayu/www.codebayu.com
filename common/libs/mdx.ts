@@ -8,10 +8,21 @@ import remarkParse from 'remark-parse'
 
 import { MdxFileProps } from '../types/mdx'
 
-const loadMdxFiles = (slug: string, isProject: boolean = false): MdxFileProps[] => {
-  const learnPath = path.join(process.cwd(), 'contents', 'learn', slug)
-  const projectPath = path.join(process.cwd(), 'contents', 'projects')
-  const dirPath = isProject ? projectPath : learnPath
+const loadMdxFiles = (slug: string, folder: string): MdxFileProps[] => {
+  function generateDirPath() {
+    switch (folder) {
+      case 'learn':
+        return path.join(process.cwd(), 'contents', 'learn', slug)
+      case 'projects':
+        return path.join(process.cwd(), 'contents', 'projects')
+      case 'experience':
+        return path.join(process.cwd(), 'contents', 'experience')
+      default:
+        return path.join(process.cwd(), 'contents', 'learn', slug)
+    }
+  }
+
+  const dirPath = generateDirPath()
   if (!fs.existsSync(dirPath)) {
     return []
   }
