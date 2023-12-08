@@ -6,11 +6,11 @@ import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi'
 import SectionHeading from '@/common/components/elements/SectionHeading'
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { RESUME_URL } from '@/common/constant'
-import { CAREERS } from '@/common/constant/careers'
+import { CareerProps } from '@/common/types/careers'
 
 import CareerCard from './CareerCard'
 
-export default function CareerList() {
+export default function CareerList({ careers }: { careers: CareerProps[] }) {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -33,7 +33,7 @@ export default function CareerList() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
-        {CAREERS?.map((career, index) => <CareerCard key={index} {...career} />)}
+        {careers?.map((career, index) => <CareerCard key={index} {...career} />)}
       </div>
     </section>
   )

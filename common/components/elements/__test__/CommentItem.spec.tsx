@@ -12,7 +12,7 @@ vi.mock('next/image', () => ({
   __esModule: true,
   default: (
     props: JSX.IntrinsicAttributes & ClassAttributes<HTMLImageElement> & ImgHTMLAttributes<HTMLImageElement>
-  ) => <img {...props} />
+  ) => <img {...props} alt="Bayu Setiawan" />
 }))
 
 describe('CommentItem Component', () => {

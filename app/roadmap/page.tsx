@@ -1,10 +1,12 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
 import React from 'react'
 
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
+import { IRoadmap } from '@/common/types/roadmap'
 
 import Roadmap from '@/modules/roadmap'
 
@@ -19,13 +21,19 @@ export const metadata: Metadata = {
 const PAGE_TITLE = 'Roadmap'
 const PAGE_DESCRIPTION = 'Learning path recomendation and free course playlist'
 
-export default function RoadmapPage() {
+export default async function RoadmapPage() {
+  const roadmaps = await getRoadmaps()
   return (
     <>
       <Container data-aos="fade-up">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Roadmap />
+        <Roadmap roadmaps={roadmaps} />
       </Container>
     </>
   )
+}
+
+async function getRoadmaps(): Promise<IRoadmap> {
+  const response = await getCodeBayuData()
+  return response.roadmaps
 }

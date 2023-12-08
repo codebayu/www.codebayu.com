@@ -5,6 +5,7 @@ import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
+import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { CareerProps } from '@/common/types/careers'
 
 export default function CareerCard({ position, company, logo, location, start_date, end_date, slug }: CareerProps) {
@@ -25,7 +26,7 @@ export default function CareerCard({ position, company, logo, location, start_da
   return (
     <Link href={`/experience/${slug}`}>
       <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 hover:scale-95 duration-500">
-        {logo ? <Image src={logo} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
+        {logo ? <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
 
         <div className="space-y-1">
           <h2>{position}</h2>

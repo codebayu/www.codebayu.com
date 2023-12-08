@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
+
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
-import { PROJECTS } from '@/common/constant/projects'
 import { IProjectItem } from '@/common/types/projects'
 
 import Projects from '@/modules/projects'
@@ -33,5 +34,6 @@ export default async function ProjectsPage() {
 }
 
 async function getProjets(): Promise<IProjectItem[]> {
-  return PROJECTS
+  const response = await getCodeBayuData()
+  return response.projects
 }
