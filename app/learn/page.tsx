@@ -27,7 +27,7 @@ export default async function LearnPage() {
   const filteredContents = learns.filter(content => content.is_show) || []
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <LearnModule contents={filteredContents} />
       </Container>

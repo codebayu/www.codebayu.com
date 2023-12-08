@@ -23,7 +23,7 @@ export default async function ExperienceDetailPage({ params }: { params: { slug:
   const career: CareerProps = careers.find(item => item.slug === params.slug) as CareerProps
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton />
         <ExperienceDetail {...career} />
       </Container>

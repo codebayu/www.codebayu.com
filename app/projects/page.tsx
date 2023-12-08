@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
   const projects = await getProjets()
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Projects projects={projects} />
       </Container>

@@ -43,7 +43,7 @@ export default async function LearnContentDetailPage({ params, searchParams }: L
   const comments = await getComments(searchParams.id as string)
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton />
         <ReaderPage comments={comments} content={content} pageViewCount={pageViewCount} />
       </Container>

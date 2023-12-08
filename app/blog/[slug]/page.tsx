@@ -39,7 +39,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   const comments = await getComments(searchParams.id as string)
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton url="/blog" />
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />
       </Container>

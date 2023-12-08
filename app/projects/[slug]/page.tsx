@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
   const detail = await getProjectDetail(params.slug)
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton url="/projects" />
         <PageHeading title={detail.title} description={detail.description} />
         <ProjectDetail {...detail} />
