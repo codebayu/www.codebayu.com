@@ -7,7 +7,7 @@ describe('Copyright Component', () => {
   const currentYear = new Date().getFullYear()
 
   beforeEach(() => {
-    render(<Copyright />)
+    render(<Copyright isHover />)
   })
 
   it('Should render copyright icon element', () => {
