@@ -6,7 +6,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import React, { ReactNode, useEffect } from 'react'
 
-import Sidebar from './sidebar'
+import BottomNavigation from './LeftCollapseNavigation'
+import MobileHeader from './MobileHeader'
 
 interface LayoutsProps {
   children: ReactNode
@@ -26,17 +27,14 @@ export default function Layouts({ children }: LayoutsProps) {
     })
   }, [])
   return (
-    <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10">
+    <div className="flex flex-col justify-center">
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
-        {!hideSidebar && (
-          <header>
-            <Sidebar />
-          </header>
-        )}
-        <main className="lg:max-w-[854px] transition-all scroll-smooth duration-300 w-full lg:min-h-screen no-scrollbar">
+        <MobileHeader />
+        <main className="lg:max-w-[854px] lg:ml-10 transition-all scroll-smooth duration-300 w-full lg:min-h-screen no-scrollbar">
           {children}
         </main>
       </div>
+      {!hideSidebar && <BottomNavigation />}
     </div>
   )
 }

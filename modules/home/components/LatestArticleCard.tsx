@@ -4,20 +4,21 @@ import Link from 'next/link'
 import React from 'react'
 
 import { PLACEHOLDER_URL } from '@/common/constant'
-import { LEARN_CONTENTS } from '@/common/constant/learn'
 import { formatDate } from '@/common/helpers'
 import { BlogItem } from '@/common/types/blog'
+import { ContentProps } from '@/common/types/learn'
 
 interface LatestArticleCardProps {
   data: BlogItem
+  learns: ContentProps[]
 }
 
-export default function LatestArticleCard({ data }: LatestArticleCardProps) {
+export default function LatestArticleCard({ data, learns }: LatestArticleCardProps) {
   const title = data?.title.slice(0, 30) + (data.title.length > 20 ? '...' : '')
 
   function generateDetailUrl() {
     if (!data.collection_id) return `/blog/${data.slug}?id=${data.id}&read-mode=true`
-    const collection = LEARN_CONTENTS.find(collection => collection.id === data.collection_id)
+    const collection = learns.find(collection => collection.id === data.collection_id)
     return `/learn/${collection?.slug}/${data.slug}?id=${data.id}&read-mode=true`
   }
 

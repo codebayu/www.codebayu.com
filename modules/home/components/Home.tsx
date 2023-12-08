@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 
 import Breakline from '@/common/components/elements/Breakline'
+import { CareerProps } from '@/common/types/careers'
+import { ContentProps } from '@/common/types/learn'
 
 import CareerList from './CareerList'
 import Introduction from './Introduction'
@@ -8,14 +10,19 @@ import LatestArticle from './LatestArticle'
 
 const SkillList = lazy(() => import('./SkillList'))
 
-export default function Home() {
+interface HomeProps {
+  careers: CareerProps[]
+  learns: ContentProps[]
+}
+
+export default function Home({ careers, learns }: HomeProps) {
   return (
     <>
       <Introduction />
       <Breakline className="my-6" />
-      <LatestArticle />
+      <LatestArticle learns={learns} />
       <Breakline className="my-6" />
-      <CareerList />
+      <CareerList careers={careers} />
       <Breakline className="my-6" />
       <SkillList />
     </>

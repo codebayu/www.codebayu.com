@@ -21,7 +21,7 @@ const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant 
 export default async function BlogPage() {
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Blog />
       </Container>

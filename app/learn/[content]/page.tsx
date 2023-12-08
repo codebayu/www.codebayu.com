@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
 import React from 'react'
 
 import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
-import { LEARN_CONTENTS } from '@/common/constant/learn'
 import { METADATA } from '@/common/constant/metadata'
+import { ContentProps } from '@/common/types/learn'
 
 import ContentLists from '@/modules/learn/components/ContentLists'
 
@@ -47,7 +48,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
 
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton url="/learn" />
         <PageHeading title={title} description={description} />
         <ContentLists content={content} />
@@ -56,8 +57,14 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
   )
 }
 
+async function getLearns(): Promise<ContentProps[]> {
+  const response = await getCodeBayuData()
+  return response.learns
+}
+
 async function getContent(contentSlug: string) {
-  const content = LEARN_CONTENTS.find(item => item?.slug === contentSlug) || null
+  const learns = await getLearns()
+  const content = learns.find(item => item?.slug === contentSlug) || null
 
   if (!content) {
     return {

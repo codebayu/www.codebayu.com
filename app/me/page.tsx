@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
 import React from 'react'
 
 import { METADATA } from '@/common/constant/metadata'
+import { CareerProps } from '@/common/types/careers'
 
 import MeSection from '@/modules/me'
 
@@ -15,6 +17,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function MePage() {
-  return <MeSection />
+export default async function MePage() {
+  const careers = await getCareers()
+  return <MeSection careers={careers} />
+}
+
+async function getCareers(): Promise<CareerProps[]> {
+  const response = await getCodeBayuData()
+  return response.careers
 }

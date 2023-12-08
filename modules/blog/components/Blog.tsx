@@ -47,12 +47,7 @@ export default function Blog() {
   return (
     <>
       {!isMobile && <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />}
-      <div
-        className={clsx(
-          'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
-        )}
-      >
+      <div className={clsx('gap-5 sm:gap-4', viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2')}>
         {blogs?.map((item: BlogItem, index: number) => (
           <motion.div
             key={index}

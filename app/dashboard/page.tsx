@@ -25,7 +25,7 @@ export default async function DahboardPage() {
   const githubData = await getGithubData()
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Dashboard githubData={githubData} />
       </Container>

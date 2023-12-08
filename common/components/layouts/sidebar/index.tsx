@@ -16,7 +16,7 @@ export default function Sidebar() {
           <Menu list={filterdMenu} />
         </div>
         <Breakline />
-        <Copyright />
+        <Copyright isHover={false} />
       </nav>
     </div>
   )

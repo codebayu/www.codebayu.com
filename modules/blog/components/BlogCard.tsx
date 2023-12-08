@@ -40,7 +40,7 @@ export default function BlogCard({
 
   const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
-    view === 'grid' ? 'sm:w-full sm:!px-6' : ''
+    view === 'grid' ? 'sm:w-full sm:!p-6' : ''
   )
 
   useEffect(() => {
@@ -52,19 +52,19 @@ export default function BlogCard({
       <Card
         className={clsxm(
           'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full',
-          viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
+          viewOption === 'grid' ? '!flex-col sm:h-full w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
           !isExcerpt && 'sm:h-[320px]'
         )}
       >
-        <div className="w-fit">
+        <div className={`${viewOption === 'grid' ? 'w-full' : 'w-fit'}`}>
           <Image
             src={cover_image || PLACEHOLDER_URL}
             width={isMobile || viewOption === 'grid' ? 400 : 240}
             height={100}
             alt={title}
             className={clsxm(
-              'sm:rounded-xl sm:h-[8.5rem] object-cover',
+              'sm:rounded-xl sm:h-[8.5rem] w-full object-cover',
               viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
             )}
           />
@@ -77,10 +77,6 @@ export default function BlogCard({
             <div className="flex gap-1 items-center ">
               <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
             </div>
-            {/* <div className="flex gap-1 items-center">
-              <ViewIcon size={14} />
-              <span className="text-xs ml-0.5">{page_views_count} Views</span>
-            </div> */}
             <div className="flex gap-1 items-center">
               <CommentIcon size={16} />
               <span className="text-xs">

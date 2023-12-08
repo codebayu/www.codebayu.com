@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
 import React from 'react'
 
 import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
-import { PROJECTS } from '@/common/constant/projects'
 import loadMdxFiles from '@/common/libs/mdx'
 import { IProjectItem } from '@/common/types/projects'
 
@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
   const detail = await getProjectDetail(params.slug)
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <BackButton url="/projects" />
         <PageHeading title={detail.title} description={detail.description} />
         <ProjectDetail {...detail} />
@@ -50,9 +50,12 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
 }
 
 async function getProjectDetail(slug: string): Promise<IProjectItem> {
-  const response = PROJECTS.find(item => item.slug === slug) as IProjectItem
+  const response = await getCodeBayuData()
+  const projects = response.projects
+
+  const project = projects.find(item => item.slug === slug) as IProjectItem
   const contents = loadMdxFiles(slug, 'projects')
   const content = contents.find(item => item.slug === slug)
-  const newResponse = { ...response, content: content?.content }
+  const newResponse = { ...project, content: content?.content }
   return newResponse
 }

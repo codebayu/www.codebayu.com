@@ -2,8 +2,7 @@
 
 Welcome to the **Personal Website, Blogs, and Programming Tips** open-source repository! This project is built using Next.js, Tailwind CSS, Prisma, and PostgreSQL, and it's designed to help you create your own personal website, share insightful blogs, and offer programming tips to the community. You find this project a bit helpful? Then give me the start
 
-<img width="1440" alt="Screenshot 2023-12-08 at 21 56 27" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/6148d30b-40db-40c5-ae7f-c0ab9f181479">
-
+<img width="1440" alt="codebayu" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/6148d30b-40db-40c5-ae7f-c0ab9f181479">
 
 ## Introduction
 

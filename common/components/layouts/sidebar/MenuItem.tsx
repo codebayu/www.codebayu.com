@@ -10,7 +10,7 @@ import { MenuItemProps } from '@/common/types/menu'
 
 import { useMenu } from '@/stores/menu'
 
-export default function MenuItem({ title, href, icon, onClick, className = '', children }: MenuItemProps) {
+export default function MenuItem({ title, href, icon, onClick, className = '', children, isHover }: MenuItemProps) {
   const [isHovered, setIsHovered] = useState(false)
   const { hideMenu } = useMenu()
   const isExternalUrl = href?.includes('http')
@@ -18,10 +18,12 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
   const pathname = usePathname()
   const url = new URL(href, 'https://codebayu.com')
 
-  const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
+  const activeClasses = `flex ${
+    !isHover ? 'justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2' : 'lg:rounded-lg lg:py-2 lg:px-4'
+  } gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 ${
     pathname === url.pathname
       ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300'
-      : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-100 hover:lg:rounded-lg lg:hover:scale-105 lg:hover:gap-3 lg:transition-all lg:duration-300'
+      : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-100 hover:lg:rounded-lg lg:hover:gap-3 lg:transition-all lg:duration-300'
   }`
 
   const handleClick = () => {
@@ -48,7 +50,8 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
     return (
       <div {...elementProps}>
         <div>{icon}</div>
-        <div className="flex-grow ml-0.5">{title}</div>
+        {isHover && <div className="text-sm ml-1 animate-enter-left delay-1000 whitespace-nowrap">{title}</div>}
+        <div className="flex-grow lg:hidden">{title}</div>
         {children && <>{children}</>}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon size={22} className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300" />
