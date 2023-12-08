@@ -11,4 +11,5 @@ export type MenuItemProps = {
   children?: ReactNode
   eventName?: string
   backgroundColor?: string
+  isHover?: boolean
 }

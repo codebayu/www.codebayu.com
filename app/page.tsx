@@ -21,7 +21,7 @@ export default async function HomePage() {
   const learns = await getLearns()
   return (
     <>
-      <Container data-aos="fade-up">
+      <Container data-aos="fade-left">
         <Home careers={careers} learns={learns} />
       </Container>
     </>
