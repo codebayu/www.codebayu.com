@@ -5,7 +5,9 @@ import React from 'react'
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
 import Tooltip from '@/common/components/elements/Tooltip'
+import { PLACEHOLDER_URL } from '@/common/constant'
 import { STACKS } from '@/common/constant/stacks'
+import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { IProjectItem } from '@/common/types/projects'
 
 export default function ProjectCard({ title, slug, description, image, stacks, is_featured }: IProjectItem) {
@@ -19,7 +21,7 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
           </div>
         )}
         <Image
-          src={image}
+          src={getCloudinaryUrl(image) || PLACEHOLDER_URL}
           width={400}
           height={200}
           alt={title}

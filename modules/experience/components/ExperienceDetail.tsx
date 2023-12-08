@@ -4,6 +4,7 @@ import { format } from 'date-fns'
 import React from 'react'
 
 import MDXComponent from '@/common/components/elements/MDXComponent'
+import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import loadMdxFiles from '@/common/libs/mdx'
 import { CareerProps } from '@/common/types/careers'
 
@@ -26,7 +27,7 @@ export default function ExperienceDetail(props: CareerProps) {
             <span>{end_date ? format(endDate, 'MMM yyyy') : 'Present'}</span>
           </div>
         </div>
-        <Image src={logo} alt={company} width={60} height={60} />
+        <Image src={getCloudinaryUrl(logo)} alt={company} width={60} height={60} />
       </div>
       <p className="text-neutral-700 dark:text-neutral-300 font-sans">
         At {company}, I proudly served as <strong>{position}</strong> based in {location}, contributing my expertise

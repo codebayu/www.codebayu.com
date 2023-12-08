@@ -4,27 +4,24 @@ import { useSearchParams } from 'next/navigation'
 
 import React, { useEffect, useState } from 'react'
 
-import { ROADMAP } from '@/common/constant/roadmap'
-import { CourseCardProps } from '@/common/types/roadmap'
+import { CourseCardProps, IRoadmap } from '@/common/types/roadmap'
 
 import CourseCard from './CourseCard'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 
-export default function CourseList() {
+export default function CourseList({ roadmaps }: { roadmaps: IRoadmap }) {
   const params = useSearchParams()
   const tribe = params.get('tribe')
   const [renderCourse, setRenderCourse] = useState<CourseCardProps[]>([])
-  const { frontend, backend, masteringReact } = ROADMAP
+  const { frontend, mastering_react } = roadmaps
 
   useEffect(() => {
     let selectTribe: CourseCardProps[] = []
     if (tribe === 'frontend-developer') {
       selectTribe = frontend
-    } else if (tribe === 'backend-developer') {
-      selectTribe = backend
     } else if (tribe === 'mastering-react-js') {
-      selectTribe = masteringReact
+      selectTribe = mastering_react
     }
     setRenderCourse(selectTribe)
   }, [tribe])

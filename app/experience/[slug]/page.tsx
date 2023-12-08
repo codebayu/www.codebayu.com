@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 
+import { getCodeBayuData } from '@/services/codebayu'
+
 import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
-import { CAREERS } from '@/common/constant/careers'
 import { METADATA } from '@/common/constant/metadata'
 import { CareerProps } from '@/common/types/careers'
 
@@ -18,13 +19,19 @@ export const metadata: Metadata = {
 }
 
 export default async function ExperienceDetailPage({ params }: { params: { slug: string } }) {
-  const careers: CareerProps = CAREERS.find(item => item.slug === params.slug) as CareerProps
+  const careers = await getCareers()
+  const career: CareerProps = careers.find(item => item.slug === params.slug) as CareerProps
   return (
     <>
       <Container data-aos="fade-up">
         <BackButton />
-        <ExperienceDetail {...careers} />
+        <ExperienceDetail {...career} />
       </Container>
     </>
   )
+}
+
+async function getCareers(): Promise<CareerProps[]> {
+  const response = await getCodeBayuData()
+  return response.careers
 }

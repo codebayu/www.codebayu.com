@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
+import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { ContentProps } from '@/common/types/learn'
 
 export default function LearnCard({ title, slug, description, image, is_new }: ContentProps) {
@@ -14,7 +15,7 @@ export default function LearnCard({ title, slug, description, image, is_new }: C
           </div>
         )}
         <Image
-          src={image}
+          src={getCloudinaryUrl(image)}
           width={400}
           height={200}
           alt={title}

@@ -10,3 +10,8 @@ export interface BadgeProps {
   path: string
   isShow: boolean
 }
+
+export interface IRoadmap {
+  frontend: CourseCardProps[]
+  mastering_react: CourseCardProps[]
+}
