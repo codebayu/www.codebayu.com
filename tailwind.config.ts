@@ -56,6 +56,10 @@ const config: Config = {
           '40%': { transform: 'translateY(-20%)' },
           '50%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(100%)' }
+        },
+        enterLeft: {
+          '0%': { transform: 'translateX(100px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' }
         }
       },
       animation: {
@@ -64,7 +68,8 @@ const config: Config = {
         'badge-pulse': 'badge 1.5s ease-out infinite',
         'slide-card': 'slide 3s 1s ease-in-out',
         'slide-infinite': 'slideInfinite 100s linear infinite',
-        'rain-arrow': 'rainArrow 1s ease-out infinite'
+        'rain-arrow': 'rainArrow 1s ease-out infinite',
+        'enter-left': 'enterLeft 0.5s ease-in-out'
       }
     }
   },
