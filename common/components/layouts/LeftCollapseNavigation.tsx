@@ -17,7 +17,7 @@ export default function LeftCollapseNavigation() {
     <div
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className="fixed z-30 w-16 hover:w-64 overflow-hidden hover:transition-all hover:duration-500 transition-all duration-500 rounded-r-2xl bottom-0 top-0 left-0 shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-neutral-800 px-2 py-4 hover:p-4 hidden lg:flex flex-col items-center hover:items-stretch"
+      className="fixed z-30 w-16 hover:w-64 overflow-hidden hover:transition-all hover:duration-500 transition-all duration-500 rounded-r-2xl bottom-0 top-0 left-0 shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-neutral-800 px-2 py-4 hover:p-4 hidden lg:flex flex-col justify-between items-center hover:items-stretch"
     >
       <div className={`h-64 flex ${isHover ? 'items-start' : 'items-center'}`}>
         {isHover ? (
@@ -31,7 +31,7 @@ export default function LeftCollapseNavigation() {
           </div>
         )}
       </div>
-      <nav className="flex flex-col gap-4 pt-4 mb-6 border-t border-neutral-300">
+      <nav className="flex flex-col gap-3 pt-4 mb-6 border-t mt-4 border-neutral-300">
         {filterdMenu.map((item, index) => (
           <MenuItem key={index} {...item} isHover={isHover} />
         ))}

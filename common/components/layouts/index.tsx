@@ -29,7 +29,7 @@ export default function Layouts({ children }: LayoutsProps) {
   return (
     <div className="flex flex-col justify-center">
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
-        <MobileHeader />
+        {!hideSidebar && <MobileHeader />}
         <main className="lg:max-w-[854px] lg:ml-10 transition-all scroll-smooth duration-300 w-full lg:min-h-screen no-scrollbar">
           {children}
         </main>
