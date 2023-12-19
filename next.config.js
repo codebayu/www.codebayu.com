@@ -2,6 +2,9 @@
 const nextConfig = {
   images: {
     domains: ['picsum.photos', 'res.cloudinary.com']
+  },
+  env: {
+    GTM_ID: process.env.GTM_ID
   }
 }
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
-import GoogleAnalytics from '@bradgarropy/next-google-analytics'
 import NextTopLoader from 'nextjs-toploader'
 
+import Analytics from '@/common/components/elements/Analytics'
 import Layouts from '@/common/components/layouts/index'
 import { METADATA } from '@/common/constant/metadata'
 
@@ -46,8 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>
-
-        <GoogleAnalytics measurementId={process.env.GTM_ID || ''} />
+        <Analytics />
       </body>
     </html>
   )
