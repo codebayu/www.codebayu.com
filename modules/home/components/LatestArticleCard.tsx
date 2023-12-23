@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import React from 'react'
 
@@ -16,6 +16,7 @@ interface LatestArticleCardProps {
 
 export default function LatestArticleCard({ data, learns }: LatestArticleCardProps) {
   const router = useRouter()
+  const pathname = usePathname()
   const title = data?.title.slice(0, 30) + (data.title.length > 20 ? '...' : '')
 
   function handleCardClick() {
@@ -23,7 +24,8 @@ export default function LatestArticleCard({ data, learns }: LatestArticleCardPro
       event: 'article_clicked',
       article_id: data.id,
       article_title: data.title,
-      article_collection_id: data.collection_id || ''
+      article_collection_id: data.collection_id || '',
+      page_path: pathname
     })
     router.push(generateDetailUrl())
   }
