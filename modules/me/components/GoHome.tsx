@@ -2,9 +2,8 @@ import Link from 'next/link'
 
 import React from 'react'
 import { FcMindMap } from 'react-icons/fc'
-import { TbCoffee } from 'react-icons/tb'
 
-import { SAWERIA_URL } from '@/common/constant'
+import Saweria from '@/common/components/elements/Saweria'
 
 export default function GoHome() {
   return (
@@ -19,14 +18,7 @@ export default function GoHome() {
         <FcMindMap />
         <span>Website & Portfolio</span>
       </Link>
-      <Link
-        href={SAWERIA_URL}
-        target="_blank"
-        className="flex w-full h-max md:w-max bg-slate-900 text-white shadow-sm justify-center items-center px-6 py-3 rounded-xl gap-2 hover:gap-3 delay-75 hover:transition-all hover:duration-300 transition-all duration-300"
-      >
-        <TbCoffee />
-        <span>Buy me a Coffee</span>
-      </Link>
+      <Saweria withText />
     </div>
   )
 }

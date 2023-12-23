@@ -1,4 +1,6 @@
-import Link from 'next/link'
+'use client'
+
+import { useRouter } from 'next/navigation'
 
 import { differenceInMonths, differenceInYears, format } from 'date-fns'
 import { BsBuildings as CompanyIcon } from 'react-icons/bs'
@@ -6,9 +8,12 @@ import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
+import { sendDataLayer } from '@/common/libs/gtm'
 import { CareerProps } from '@/common/types/careers'
 
 export default function CareerCard({ position, company, logo, location, start_date, end_date, slug }: CareerProps) {
+  const router = useRouter()
+
   const startDate = new Date(start_date)
   const endDate = end_date ? new Date(end_date) : new Date()
 
@@ -23,29 +28,40 @@ export default function CareerCard({ position, company, logo, location, start_da
     durationText += `${durationMonths} Month${durationMonths > 1 ? 's' : ''}`
   }
 
-  return (
-    <Link href={`/experience/${slug}`}>
-      <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 hover:scale-95 duration-500">
-        {logo ? <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
+  function handleCardClick() {
+    sendDataLayer({
+      event: 'career_clicked',
+      career_position: position,
+      career_company: company,
+      career_duration: durationText
+    })
+    router.push(`/experience/${slug}`)
+  }
 
-        <div className="space-y-1">
-          <h2>{position}</h2>
-          <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
-            <div className="flex items-center gap-1 md:gap-2">
-              <span>{company}</span>
-              <span className="text-neutral-300 dark:text-neutral-700">•</span>
-              <span>{location}</span>
+  return (
+    <Card
+      onClick={handleCardClick}
+      className="flex items-center gap-5 py-4 cursor-pointer px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 hover:scale-95 duration-500"
+    >
+      {logo ? <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
+
+      <div className="space-y-1 flex flex-col items-start">
+        <h2>{position}</h2>
+        <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
+          <div className="flex items-center gap-1 md:gap-2">
+            <span>{company}</span>
+            <span className="text-neutral-300 dark:text-neutral-700">•</span>
+            <span>{location}</span>
+          </div>
+          <div className="flex flex-col items-start md:text-[13px]">
+            <div className="flex gap-1">
+              <span>{format(startDate, 'MMM yyyy')}</span> -{' '}
+              <span>{end_date ? format(endDate, 'MMM yyyy') : 'Present'}</span>
             </div>
-            <div className="flex flex-col md:text-[13px]">
-              <div className="flex gap-1">
-                <span>{format(startDate, 'MMM yyyy')}</span> -{' '}
-                <span>{end_date ? format(endDate, 'MMM yyyy') : 'Present'}</span>
-              </div>
-              <span className="text-neutral-500 dark:text-neutral-500">~ {durationText}</span>
-            </div>
+            <span className="text-neutral-500 dark:text-neutral-500">~ {durationText}</span>
           </div>
         </div>
-      </Card>
-    </Link>
+      </div>
+    </Card>
   )
 }
