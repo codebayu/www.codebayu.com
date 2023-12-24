@@ -18,7 +18,7 @@ export default function CareerList({ careers }: { careers: CareerProps[] }) {
         </SectionSubHeading>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="flex flex-row overflow-y-hidden space-x-3 mt-6 overflow-x-scroll no-scrollbar">
         {careers?.map((career, index) => <CareerCard key={index} {...career} />)}
       </div>
     </section>

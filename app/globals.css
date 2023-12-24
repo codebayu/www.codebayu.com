@@ -79,3 +79,69 @@
 .animation-reverse {
   animation-direction: reverse;
 }
+
+.inverted-image-left {
+  background: #fff;
+  height: 100px;
+  width: 80px;
+}
+
+.inverted-image-left::before {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  bottom: -50px;
+  height: 50px;
+  width: 35px;
+  left: -4px;
+  border-top-left-radius: 50px;
+  box-shadow: 0 -25px 0 0 #fff;
+  z-index: 0;
+}
+
+.inverted-image-left::after {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  top: -50px;
+  height: 50px;
+  width: 35px;
+  left: -4px;
+  border-top-left-radius: 50px;
+  box-shadow: 0 -25px 0 0 #fff;
+  z-index: 0;
+  transform: scaleY(-1);
+}
+
+.inverted-image-left-dark {
+  background: #121212;
+  height: 100px;
+  width: 80px;
+}
+
+.inverted-image-left-dark::before {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  bottom: -50px;
+  height: 50px;
+  width: 35px;
+  left: -4px;
+  border-top-left-radius: 50px;
+  box-shadow: 0 -25px 0 0 #121212;
+  z-index: 0;
+}
+
+.inverted-image-left-dark::after {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  top: -50px;
+  height: 50px;
+  width: 35px;
+  left: -4px;
+  border-top-left-radius: 50px;
+  box-shadow: 0 -25px 0 0 #121212;
+  z-index: 0;
+  transform: scaleY(-1);
+}

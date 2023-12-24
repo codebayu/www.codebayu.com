@@ -52,10 +52,9 @@ const config: Config = {
           '100%': { transform: 'translateX(-300%)' }
         },
         rainArrow: {
-          '0%': { transform: 'translateY(-100%)' },
-          '40%': { transform: 'translateY(-20%)' },
-          '50%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(100%)' }
+          '0%': { transform: 'translateY(-10%)' },
+          '50%': { transform: 'translateY(10%)' },
+          '100%': { transform: 'translateY(-10%)' }
         },
         enterLeft: {
           '0%': { transform: 'translateX(100px)', opacity: '0' },
