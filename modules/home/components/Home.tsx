@@ -10,6 +10,7 @@ import Introduction from './Introduction'
 import LatestArticle from './LatestArticle'
 
 const ServicesList = lazy(() => import('./ServicesList'))
+const SkillList = lazy(() => import('./SkillList'))
 
 interface HomeProps {
   careers: CareerProps[]
@@ -27,7 +28,8 @@ export default function Home({ careers, learns, services }: HomeProps) {
       <CareerList careers={careers} />
       <Breakline className="my-6" />
       <ServicesList services={services} />
-      {/* <SkillList /> */}
+      <Breakline className="my-6" />
+      <SkillList />
     </>
   )
 }
