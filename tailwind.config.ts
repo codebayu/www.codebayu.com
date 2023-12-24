@@ -65,7 +65,7 @@ const config: Config = {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
         'badge-pulse': 'badge 1.5s ease-out infinite',
-        'slide-card': 'slide 3s 1s ease-in-out',
+        'slide-card': 'slide 3s 3s ease-in-out',
         'slide-infinite': 'slideInfinite 100s linear infinite',
         'rain-arrow': 'rainArrow 1s ease-out infinite',
         'enter-left': 'enterLeft 0.5s ease-in-out'
