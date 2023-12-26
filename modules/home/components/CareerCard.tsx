@@ -3,16 +3,21 @@
 import { useRouter } from 'next/navigation'
 
 import { differenceInMonths, differenceInYears, format } from 'date-fns'
+import { useTheme } from 'next-themes'
 import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
+import clsxm from '@/common/libs/clsxm'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { CareerProps } from '@/common/types/careers'
 
+import useHasMounted from '@/hooks/useHasMounted'
+
 export default function CareerCard({ position, company, logo, location, start_date, end_date, slug }: CareerProps) {
   const router = useRouter()
+  const { resolvedTheme } = useTheme()
 
   const startDate = new Date(start_date)
   const endDate = end_date ? new Date(end_date) : new Date()
@@ -38,12 +43,28 @@ export default function CareerCard({ position, company, logo, location, start_da
     router.push(`/experience/${slug}`)
   }
 
+  const mounted = useHasMounted()
+  if (!mounted) return null
+
   return (
     <Card
       onClick={handleCardClick}
-      className="flex items-center gap-5 py-4 cursor-pointer px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 hover:scale-95 duration-500"
+      className="flex min-w-[350px] border border-l-0 border-neutral-300 dark:border-neutral-600 rounded-r-xl rounded-l-sm !shadow-none py-2 overflow-hidden items-center gap-5 h-max cursor-pointer dark:bg-neutral-900 hover:scale-95 duration-500"
     >
-      {logo ? <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
+      <div className="relative h-max my-2">
+        <div
+          className={clsxm(
+            'rounded-r-full shadow-lg border border-neutral-300 dark:border-neutral-600 border-l-0 dark:shadow-neutral-800 flex items-center',
+            resolvedTheme === 'light' ? 'inverted-image-left' : 'inverted-image-left-dark'
+          )}
+        >
+          {logo ? (
+            <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} className="z-10 relative" />
+          ) : (
+            <CompanyIcon size={30} />
+          )}
+        </div>
+      </div>
 
       <div className="space-y-1 flex flex-col items-start">
         <h2>{position}</h2>
