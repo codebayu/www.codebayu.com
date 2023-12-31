@@ -36,6 +36,11 @@ export default function InputField<TFormValue extends FieldValues>({
           *{name} is required
         </p>
       )}
+      {error[name]?.type === 'pattern' && (
+        <p role="alert" className="text-red-400 text-[10px]">
+          *{String(error[name]?.message)}
+        </p>
+      )}
     </div>
   )
 }
