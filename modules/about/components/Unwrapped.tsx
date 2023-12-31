@@ -1,0 +1,24 @@
+import React from 'react'
+import { FaPhotoVideo } from 'react-icons/fa'
+
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import VideoPlayer from '@/common/components/elements/VideoPlayer'
+
+export default function Unwrapped() {
+  const url = 'https://youtube.com/shorts/AMFdITJFhhM?si=2iHFcUYCa3lQckJE'
+  const years = new Date().getFullYear()
+  return (
+    <section>
+      <div className="space-y-2">
+        <SectionHeading title="Github Unwrapped" icon={<FaPhotoVideo className="mr-1" />} />
+        <SectionSubHeading>
+          <p className="dark:text-neutral-400">My coding journey on {years}</p>
+        </SectionSubHeading>
+      </div>
+      <div className="flex flex-row aspect-video mt-6 items-center justify-center">
+        <VideoPlayer url={url} />
+      </div>
+    </section>
+  )
+}

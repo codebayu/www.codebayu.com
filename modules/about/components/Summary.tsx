@@ -15,11 +15,6 @@ export default function Summary() {
         but also a humble attitude that values every members input.
       </p>
       <p>
-        When I am not immersed in lines of code, you might find me exploring the latest trends in the tech world,
-        tinkering with personal coding projects, or engaging in thought-provoking discussions on software architecture
-        and design patterns.
-      </p>
-      <p>
         This blog is my platform to share insights, experiences, and discoveries from my journey as a software engineer.
         Join me as we delve into the ever-exciting realm of technology, where each line of code has the potential to
         shape the digital landscape in remarkable ways.
