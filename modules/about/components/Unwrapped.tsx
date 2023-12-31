@@ -7,13 +7,12 @@ import VideoPlayer from '@/common/components/elements/VideoPlayer'
 
 export default function Unwrapped() {
   const url = 'https://youtube.com/shorts/AMFdITJFhhM?si=2iHFcUYCa3lQckJE'
-  const years = new Date().getFullYear()
   return (
     <section>
       <div className="space-y-2">
         <SectionHeading title="Github Unwrapped" icon={<FaPhotoVideo className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">My coding journey on {years}</p>
+          <p className="dark:text-neutral-400">My coding journey on 2023</p>
         </SectionSubHeading>
       </div>
       <div className="flex flex-row aspect-video mt-6 items-center justify-center">
