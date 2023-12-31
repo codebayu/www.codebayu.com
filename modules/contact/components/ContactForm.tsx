@@ -22,6 +22,8 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Send Email')
   const [isSuccess, setIsSuccess] = useState(false)
+  const regexEmail =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   async function handleFormSubmit(payload: IFormEmail) {
     setIsLoading(true)
@@ -51,7 +53,18 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col space-y-4 transition-all duration-300">
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 w-full">
           <InputField name="name" rule={{ required: true }} register={register} error={errors} />
-          <InputField name="email" rule={{ required: true }} register={register} error={errors} />
+          <InputField
+            name="email"
+            rule={{
+              required: true,
+              pattern: {
+                value: regexEmail,
+                message: 'please enter a valid email'
+              }
+            }}
+            register={register}
+            error={errors}
+          />
         </div>
         <InputField name="message" rule={{ required: true }} register={register} error={errors} isTextArea />
         <button
