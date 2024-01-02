@@ -18,6 +18,7 @@ import {
   BsYoutube as YoutubeIcon
 } from 'react-icons/bs'
 import { LuTrello, LuWorkflow } from 'react-icons/lu'
+import { PiChatTeardropDotsBold as ChatIcon } from 'react-icons/pi'
 import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
 import { MenuItemProps } from '../types/menu'
@@ -72,6 +73,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Task Board'
+  },
+  {
+    title: 'Chat Room',
+    href: '/chat',
+    icon: <ChatIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Chat Room'
   },
   {
     title: 'About',
