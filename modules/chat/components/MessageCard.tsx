@@ -50,12 +50,12 @@ export default function MessageCard({
         </div>
 
         <div
-          className="flex space-x-1 items-end"
+          className="flex space-x-2 items-end"
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <div className="font-sans bg-neutral-100 py-2 px-3 rounded-xl rounded-tl-none">
-            <p className="text-neutral-700">
+          <div className="font-sans bg-neutral-100 dark:bg-neutral-800 max-w-[90%] py-2 px-3 rounded-xl rounded-tl-none">
+            <p className="text-neutral-700 dark:text-neutral-200">
               {is_reply && (
                 <>
                   <span className="text-teal-600">@{reply_to}</span> {message}

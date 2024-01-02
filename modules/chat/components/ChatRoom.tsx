@@ -109,7 +109,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
     <div>
       <div
         ref={chatListRef}
-        className="h-[60vh] scroll-smooth md:h-[65vh] no-scrollbar overflow-y-auto border-b border-neutral-200 pb-2 mb-4 space-y-6"
+        className="h-[60vh] scroll-smooth md:h-[65vh] no-scrollbar overflow-y-auto border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-4 space-y-6"
       >
         {messages?.map(message => (
           <MessageCard

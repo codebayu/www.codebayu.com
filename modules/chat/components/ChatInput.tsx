@@ -48,10 +48,14 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center space-x-2 text-xs text-neutral-500 w-max bg-neutral-200 rounded-lg py-1 px-2"
+            className="flex items-center justify-center space-x-2 text-xs text-neutral-500 dark:text-neutral-200 w-max bg-neutral-200 dark:bg-neutral-800 rounded-lg py-1 px-2"
           >
             <p>Replying to {reply.name}</p>
-            <button onClick={cancleReply} aria-label="Close Reply" className="rounded-full bg-neutral-50">
+            <button
+              onClick={cancleReply}
+              aria-label="Close Reply"
+              className="rounded-full bg-neutral-50 dark:bg-neutral-600"
+            >
               <CloseIcon size={14} />
             </button>
           </motion.div>

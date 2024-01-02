@@ -42,7 +42,7 @@ export default function ChatAuth({ user, reply, sendMessage, cancleReply }: Chat
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center space-y-2">
-          <p className="text-neutral-600 text-sm">Please sign in to chat</p>
+          <p className="text-neutral-600 dark:text-neutral-200 text-sm">Please sign in to chat</p>
           <SignInGoogleButton />
         </div>
       )}
