@@ -5,11 +5,16 @@ import { User } from 'next-auth'
 import React, { useEffect, useRef, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
+import { tourChatRoom } from '@/common/constant/drivers'
+import createDrivers from '@/common/libs/drivers'
 import { firebase } from '@/common/libs/firebase'
 import { IMessage, IRawMessages } from '@/common/types/messages'
 
+import useHasMounted from '@/hooks/useHasMounted'
+
 import ChatAuth from './ChatAuth'
-import MessageCard from './MessageCard'
+import ChatItem from './ChatItem'
+import ChatItemSkeleton from './ChatItemSkeleton'
 
 interface ChatRoomProps {
   user: User
@@ -17,9 +22,13 @@ interface ChatRoomProps {
 
 export default function ChatRoom({ user }: ChatRoomProps) {
   const [messages, setMessages] = useState<IMessage[]>([])
+  const [loading, setLoading] = useState(true)
   const [reply, setReply] = useState({ isReply: false, name: '' })
   const [hasScrolledUp, setHasScrolledUp] = useState(false)
   const chatListRef = useRef<HTMLDivElement | null>(null)
+  const mounted = useHasMounted()
+
+  const { runDriver, isProductTour } = createDrivers({ steps: tourChatRoom, product: 'chat-room', timing: 2000 })
 
   const db = getDatabase(firebase)
   const dbMessages = process.env.NEXT_PUBLIC_FIREBASE_DATABASE_CHAT
@@ -73,6 +82,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
           return dateA.getTime() - dateB.getTime()
         })
       setMessages(transformMessages)
+      setLoading(false)
     })
   }, [db, dbMessages])
 
@@ -105,21 +115,29 @@ export default function ChatRoom({ user }: ChatRoomProps) {
     }
   }, [])
 
+  if (mounted && isProductTour) {
+    runDriver()
+  }
+
   return (
     <div>
       <div
         ref={chatListRef}
         className="h-[60vh] scroll-smooth md:h-[65vh] no-scrollbar overflow-y-auto border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-4 space-y-6"
       >
-        {messages?.map(message => (
-          <MessageCard
-            key={message.id}
-            {...message}
-            sessionEmail={String(user?.email)}
-            deleteMessage={deleteMessage}
-            clickReply={clickReply}
-          />
-        ))}
+        {loading ? (
+          <ChatItemSkeleton />
+        ) : (
+          messages?.map(message => (
+            <ChatItem
+              key={message.id}
+              {...message}
+              sessionEmail={String(user?.email)}
+              deleteMessage={deleteMessage}
+              clickReply={clickReply}
+            />
+          ))
+        )}
       </div>
       <ChatAuth user={user} sendMessage={sendMessage} reply={reply} cancleReply={cancleReply} />
     </div>

@@ -10,13 +10,13 @@ import { MdVerified as VerifiedIcon } from 'react-icons/md'
 import Tooltip from '@/common/components/elements/Tooltip'
 import { IMessage } from '@/common/types/messages'
 
-interface IMessageCardProps extends IMessage {
+interface IChatItemProps extends IMessage {
   deleteMessage: (id: string) => void
   sessionEmail: string
   clickReply: (name: string) => void
 }
 
-export default function MessageCard({
+export default function ChatItem({
   id,
   name,
   message,
@@ -28,13 +28,18 @@ export default function MessageCard({
   reply_to,
   deleteMessage,
   clickReply
-}: IMessageCardProps) {
+}: IChatItemProps) {
   const [onHover, setOnHover] = useState(false)
   const authorEmail = process.env.NEXT_PUBLIC_AUTHOR_EMAIL as string
   const time = formatDistanceToNow(new Date(created_at), { addSuffix: true })
 
   return (
-    <div className="flex items-start space-x-3">
+    <motion.div
+      id="chat-card"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex items-start space-x-3"
+    >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
       <div className="flex flex-col space-y-1">
         <div className="flex items-center space-x-3">
@@ -83,6 +88,6 @@ export default function MessageCard({
           <DeleteIcon size={15} className="text-red-500" />
         </button>
       )}
-    </div>
+    </motion.div>
   )
 }

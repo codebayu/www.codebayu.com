@@ -3,9 +3,11 @@ import 'driver.js/dist/driver.css'
 
 interface CreateDriversProps {
   steps: DriveStep[]
+  product: string
+  timing?: number
 }
 
-export default function createDrivers({ steps }: CreateDriversProps) {
+export default function createDrivers({ steps, product, timing = 1000 }: CreateDriversProps) {
   let isProductTour = false
   const driverObj = driver({
     showProgress: true,
@@ -14,12 +16,15 @@ export default function createDrivers({ steps }: CreateDriversProps) {
   })
 
   if (typeof window !== 'undefined') {
-    isProductTour = !(window.localStorage.getItem('cb-product-tour') !== null)
+    isProductTour = !(window.localStorage.getItem(`cb-onboarding-${product}`) !== null)
   }
 
   function runDriver() {
-    driverObj?.drive()
-    window.localStorage.setItem('cb-product-tour', 'true')
+    const timeout = setTimeout(() => {
+      driverObj?.drive()
+      window.localStorage.setItem(`cb-onboarding-${product}`, 'true')
+    }, timing)
+    return () => clearTimeout(timeout)
   }
 
   return { runDriver, isProductTour }
