@@ -5,8 +5,12 @@ import { User } from 'next-auth'
 import React, { useEffect, useRef, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
+import { tourChatRoom } from '@/common/constant/drivers'
+import createDrivers from '@/common/libs/drivers'
 import { firebase } from '@/common/libs/firebase'
 import { IMessage, IRawMessages } from '@/common/types/messages'
+
+import useHasMounted from '@/hooks/useHasMounted'
 
 import ChatAuth from './ChatAuth'
 import MessageCard from './MessageCard'
@@ -20,6 +24,9 @@ export default function ChatRoom({ user }: ChatRoomProps) {
   const [reply, setReply] = useState({ isReply: false, name: '' })
   const [hasScrolledUp, setHasScrolledUp] = useState(false)
   const chatListRef = useRef<HTMLDivElement | null>(null)
+  const mounted = useHasMounted()
+
+  const { runDriver, isProductTour } = createDrivers({ steps: tourChatRoom, product: 'chat-room' })
 
   const db = getDatabase(firebase)
   const dbMessages = process.env.NEXT_PUBLIC_FIREBASE_DATABASE_CHAT
@@ -104,6 +111,10 @@ export default function ChatRoom({ user }: ChatRoomProps) {
       currentChatListRef?.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  if (mounted && isProductTour) {
+    runDriver()
+  }
 
   return (
     <div>

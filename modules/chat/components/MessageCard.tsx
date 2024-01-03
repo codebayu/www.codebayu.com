@@ -34,7 +34,7 @@ export default function MessageCard({
   const time = formatDistanceToNow(new Date(created_at), { addSuffix: true })
 
   return (
-    <div className="flex items-start space-x-3">
+    <div id="chat-card" className="flex items-start space-x-3">
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
       <div className="flex flex-col space-y-1">
         <div className="flex items-center space-x-3">

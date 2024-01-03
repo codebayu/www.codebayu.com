@@ -27,7 +27,7 @@ export default function TaskBoard() {
   const hydrate = useHydrationZustand(useTaskBoard)
   const mounted = useHasMounted()
 
-  const { runDriver, isProductTour } = createDrivers({ steps: tourTaskBoard })
+  const { runDriver, isProductTour } = createDrivers({ steps: tourTaskBoard, product: 'task-board' })
 
   function onDragEnd(result: DropResult, columns: IColumns, setColumns: (columns: IColumns) => void) {
     if (!result.destination) return // Jika Tidak ada kolom Tujuan
@@ -67,9 +67,7 @@ export default function TaskBoard() {
   }
 
   if (mounted && isProductTour) {
-    setTimeout(() => {
-      runDriver()
-    }, 1000)
+    runDriver()
   }
 
   return (
