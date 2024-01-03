@@ -80,7 +80,7 @@ export const tourChatRoom: DriveStep[] = [
     element: '#chat-card',
     popover: {
       title: 'Message',
-      description: 'The message will be shown here. Hover and click reply icon to reply to the message.',
+      description: 'The message will be shown here. Hover and click reply icon to reply the message.',
       side: 'bottom',
       align: 'center'
     }
