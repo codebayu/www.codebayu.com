@@ -11,6 +11,7 @@ import { firebase } from '@/common/libs/firebase'
 import { IMessage, IRawMessages } from '@/common/types/messages'
 
 import useHasMounted from '@/hooks/useHasMounted'
+import { useNotif } from '@/hooks/useNotif'
 
 import ChatAuth from './ChatAuth'
 import ChatItem from './ChatItem'
@@ -27,6 +28,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
   const [hasScrolledUp, setHasScrolledUp] = useState(false)
   const chatListRef = useRef<HTMLDivElement | null>(null)
   const mounted = useHasMounted()
+  const notif = useNotif()
 
   const { runDriver, isProductTour } = createDrivers({ steps: tourChatRoom, product: 'chat-room', timing: 2000 })
 
@@ -59,6 +61,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
   }
 
   function clickReply(name: string) {
+    if (!user) return notif('Please sign in to reply')
     setReply({ isReply: true, name })
   }
 

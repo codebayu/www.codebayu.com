@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { usePathname, useSearchParams } from 'next/navigation'
 
 import AOS from 'aos'
@@ -8,6 +9,8 @@ import React, { ReactNode, useEffect } from 'react'
 
 import BottomNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
+
+const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false })
 
 interface LayoutsProps {
   children: ReactNode
@@ -35,6 +38,7 @@ export default function Layouts({ children }: LayoutsProps) {
         </main>
       </div>
       {!hideSidebar && <BottomNavigation />}
+      <Notif />
     </div>
   )
 }
