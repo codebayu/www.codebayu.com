@@ -60,12 +60,19 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
             </button>
           </motion.div>
         )}
-        <InputField name="message" placeholder="Type your message..." register={register} error={errors} />
+        <InputField
+          isTextArea
+          rows={1}
+          name="message"
+          placeholder="Type your message..."
+          register={register}
+          error={errors}
+        />
       </div>
       <button
         disabled={disabled}
         aria-label="Send message"
-        className={clsxm('bg-neutral-600 text-white p-3 rounded-lg', disabled && 'cursor-not-allowed opacity-50')}
+        className={clsxm('bg-neutral-600 mb-1 text-white p-3 rounded-lg', disabled && 'cursor-not-allowed opacity-50')}
       >
         <SendIcon />
       </button>

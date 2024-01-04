@@ -38,10 +38,10 @@ export default function ChatItem({
       id="chat-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex items-start space-x-3"
+      className="flex items-start space-x-3 w-full"
     >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
-      <div className="flex flex-col space-y-1">
+      <div className="flex flex-col space-y-1 w-full">
         <div className="flex items-center space-x-3">
           <div className="flex space-x-1 items-center">
             <span className="text-sm">{name}</span>
@@ -53,17 +53,16 @@ export default function ChatItem({
           </div>
           <span className="text-neutral-400 text-xs">{time}</span>
         </div>
-
         <div
-          className="flex space-x-2 items-end"
+          className="flex space-x-2 items-end w-full max-w-[90%]"
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <div className="font-sans bg-neutral-100 dark:bg-neutral-800 max-w-[90%] py-2 px-3 rounded-xl rounded-tl-none">
+          <div className="font-sans bg-neutral-100 dark:bg-neutral-800 py-2 px-3 rounded-xl rounded-tl-none">
             <p className="text-neutral-700 dark:text-neutral-200">
               {is_reply && (
                 <>
-                  <span className="text-teal-600">@{reply_to}</span> {message}
+                  <span className="text-teal-600 whitespace-nowrap mr-1">@{reply_to}</span> <span>{message}</span>
                 </>
               )}
               {!is_reply && <>{message}</>}
