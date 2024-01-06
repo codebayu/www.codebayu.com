@@ -24,7 +24,7 @@ export default function Notif() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-6 font-sans right-6 text-sm rounded-md opacity-70 bg-neutral-200 text-neutral-900 py-1 px-2"
+          className="fixed top-6 font-sans right-6 text-xs rounded-sm bg-opacity-80 bg-neutral-800 text-neutral-100 py-1 px-2"
         >
           {text}
         </motion.div>
