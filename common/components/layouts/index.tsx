@@ -7,6 +7,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import React, { ReactNode, useEffect } from 'react'
 
+import ChatOverlay from '../elements/ChatOverlay'
 import BottomNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
 
@@ -39,6 +40,7 @@ export default function Layouts({ children }: LayoutsProps) {
       </div>
       {!hideSidebar && <BottomNavigation />}
       <Notif />
+      <ChatOverlay />
     </div>
   )
 }
