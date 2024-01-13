@@ -10,5 +10,9 @@ interface VideoPlayerProps {
   url: string
 }
 export default function VideoPlayer({ url }: VideoPlayerProps) {
-  return <ReactPlayer url={url} controls width="100%" height="100%" />
+  return (
+    <div data-testid="video-player">
+      <ReactPlayer url={url} controls width="100%" height="100%" />
+    </div>
+  )
 }

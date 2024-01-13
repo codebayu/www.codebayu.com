@@ -12,6 +12,10 @@ describe('Unwrapped Component', () => {
     expect(screen.getByTestId('unwrapped-section-heading')).toBeTruthy()
   })
 
+  it('Should render unwrapped section sub heading text', () => {
+    expect(screen.getAllByText('My coding journey on 2023')[0]).toBeTruthy()
+  })
+
   it('Should render unwrapped component', () => {
     expect(screen.getAllByTestId('unwrapped-video')[0]).toBeTruthy()
   })

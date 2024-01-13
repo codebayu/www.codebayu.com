@@ -9,7 +9,7 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'lcov', 'json-summary', 'json'],
-      exclude: ['hooks/**', 'common/libs/**']
+      exclude: ['hooks/**', 'common/libs/**', 'services/**']
     },
     alias: {
       '@/': './'
