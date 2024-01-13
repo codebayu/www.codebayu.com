@@ -15,14 +15,14 @@ export default function Unwrapped() {
 
   return (
     <section>
-      <div className="space-y-2">
+      <div data-testid="unwrapped-section-heading" className="space-y-2">
         <SectionHeading title="Github Unwrapped" icon={<FaPhotoVideo className="mr-1" />} />
         <SectionSubHeading>
           <p className="dark:text-neutral-400">My coding journey on {data?.data[0].years ?? '2023'}</p>
         </SectionSubHeading>
       </div>
-      <div className="flex flex-row aspect-video mt-6 items-center justify-center">
-        {isLoading ? <Skeleton /> : <VideoPlayer url={data.data[0].url} />}
+      <div data-testid="unwrapped-video" className="flex flex-row aspect-video mt-6 items-center justify-center">
+        {isLoading ? <Skeleton /> : <VideoPlayer url={data?.data[0].url} />}
       </div>
     </section>
   )

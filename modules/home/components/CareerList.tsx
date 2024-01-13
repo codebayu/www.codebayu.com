@@ -13,7 +13,7 @@ export default function CareerList({ careers }: { careers: CareerProps[] }) {
       <div className="space-y-2">
         <SectionHeading title="Career" icon={<CareerIcon className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">My professional career journey.</p>
+          <p className="dark:text-neutral-400">My professional career journey</p>
           <DownloadResume />
         </SectionSubHeading>
       </div>
