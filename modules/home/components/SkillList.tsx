@@ -14,7 +14,7 @@ export default function SkillList() {
       <div className="space-y-2">
         <SectionHeading title="Skills" icon={<HiCode className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">My coding skills.</p>
+          <p className="dark:text-neutral-400">My coding skills</p>
         </SectionSubHeading>
       </div>
 

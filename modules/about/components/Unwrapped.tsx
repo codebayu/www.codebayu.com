@@ -22,7 +22,7 @@ export default function Unwrapped() {
         </SectionSubHeading>
       </div>
       <div data-testid="unwrapped-video" className="flex flex-row aspect-video mt-6 items-center justify-center">
-        {isLoading ? <Skeleton /> : <VideoPlayer url={data.data[0].url} />}
+        {isLoading ? <Skeleton /> : <VideoPlayer url={data?.data[0].url} />}
       </div>
     </section>
   )
