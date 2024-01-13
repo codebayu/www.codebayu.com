@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getBlogDetail, getComments } from '@/services/blog'
+import { getBlogDetailServices, getCommentsServices } from '@/services/blog'
 import { getBlogViews } from '@/services/view'
 
 import BackButton from '@/common/components/elements/BackButton'
@@ -14,7 +14,7 @@ type Props = {
 }
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const blog = await getBlogDetail({ params, searchParams })
+  const blog = await getBlogDetailServices({ params, searchParams })
   return {
     title: `${blog.title} ${METADATA.exTitle}`,
     description: blog.description,
@@ -34,9 +34,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 }
 
 export default async function BlogDetailPage({ params, searchParams }: Props) {
-  const blog = await getBlogDetail({ params, searchParams })
+  const blog = await getBlogDetailServices({ params, searchParams })
   const pageViewCount = await getBlogViews(searchParams.id as string)
-  const comments = await getComments(searchParams.id as string)
+  const comments = await getCommentsServices(searchParams.id as string)
   return (
     <>
       <Container data-aos="fade-left">

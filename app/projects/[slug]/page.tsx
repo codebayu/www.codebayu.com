@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 import React from 'react'
 
 import BackButton from '@/common/components/elements/BackButton'
@@ -50,7 +50,7 @@ export default async function ProjectDetailPage({ params }: ProjectsDetailPagePr
 }
 
 async function getProjectDetail(slug: string): Promise<IProjectItem> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   const projects = response.projects
 
   const project = projects.find(item => item.slug === slug) as IProjectItem

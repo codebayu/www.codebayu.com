@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 import React from 'react'
 
 import BackButton from '@/common/components/elements/BackButton'
@@ -58,7 +58,7 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
 }
 
 async function getLearns(): Promise<ContentProps[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.learns
 }
 

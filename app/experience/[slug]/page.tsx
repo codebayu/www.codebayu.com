@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 
 import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
@@ -32,6 +32,6 @@ export default async function ExperienceDetailPage({ params }: { params: { slug:
 }
 
 async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.careers
 }

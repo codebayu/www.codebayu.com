@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 import React from 'react'
 
 import { METADATA } from '@/common/constant/metadata'
@@ -23,6 +23,6 @@ export default async function MePage() {
 }
 
 async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.careers
 }

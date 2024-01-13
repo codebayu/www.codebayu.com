@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import InputField from '@/common/components/elements/InputField'
+import { reportError } from '@/common/helpers/error'
 
 interface IFormEmail {
   name: string
@@ -33,8 +34,8 @@ export default function ContactForm() {
       reset()
       setIsLoading(false)
     } catch (error) {
-      console.log(error)
       setIsLoading(false)
+      reportError({ error, service: 'handleFormSubmit' })
     }
   }
 

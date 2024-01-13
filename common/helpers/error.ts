@@ -23,7 +23,7 @@ function toErrorWithMessage(maybeError: unknown): ErrorWithMessage {
   }
 }
 
-export async function reportError(error: unknown) {
+export async function reportError({ error, service }: { error: unknown; service: string }) {
   const message = toErrorWithMessage(error).message
-  await reportErrorService(message)
+  await reportErrorService({ message, service })
 }

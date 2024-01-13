@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-import { sendMessage } from '@/services/email'
+import { sendEmailServices } from '@/services/email'
 
 interface IEmailForm {
   [key: string]: string
@@ -18,7 +18,7 @@ export const POST = async (request: Request) => {
   }
 
   try {
-    const response = await sendMessage(newFormBody)
+    const response = await sendEmailServices(newFormBody)
     return NextResponse.json({ status: true, data: response.data }, { status: 200 })
   } catch (error) {
     return NextResponse.json({ status: false, error }, { status: 400 })

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 import React from 'react'
 
 import Container from '@/common/components/elements/Container'
@@ -34,6 +34,6 @@ export default async function RoadmapPage() {
 }
 
 async function getRoadmaps(): Promise<IRoadmap> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.roadmaps
 }

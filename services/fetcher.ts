@@ -1,3 +1,9 @@
 import axios from 'axios'
 
-export const fetcher = (url: string) => axios.get(url).then(response => response.data)
+import { reportError } from '@/common/helpers/error'
+
+export const fetcher = (url: string) =>
+  axios
+    .get(url)
+    .then(response => response.data)
+    .catch(error => reportError({ error, service: url }))

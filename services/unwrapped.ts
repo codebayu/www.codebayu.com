@@ -15,6 +15,6 @@ export async function getUnwrappedServices() {
     })
     return data
   } catch (error) {
-    reportError(error)
+    reportError({ error, service: 'getUnwrappedServices' })
   }
 }

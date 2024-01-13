@@ -1,9 +1,15 @@
 import axios from 'axios'
 
-export async function sendMessage(formData: FormData) {
-  const EMAIL_API = process.env.EMAIL_SERVICE_API || ''
-  const response = await axios.post(EMAIL_API, formData)
+import { reportError } from '@/common/helpers/error'
 
-  if (response.status >= 400) return {}
-  return response.data
+export async function sendEmailServices(formData: FormData) {
+  try {
+    const EMAIL_API = process.env.EMAIL_SERVICE_API || ''
+    const response = await axios.post(EMAIL_API, formData)
+
+    return response.data
+  } catch (error) {
+    reportError({ error, service: 'sendEmailServices' })
+    return {}
+  }
 }

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
+import { getCodeBayuDataServices } from '@/services/codebayu'
 
 import Container from '@/common/components/elements/Container'
 import { METADATA } from '@/common/constant/metadata'
@@ -31,16 +31,16 @@ export default async function HomePage() {
 }
 
 async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.careers
 }
 
 async function getLearns(): Promise<ContentProps[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.learns
 }
 
 async function getServices(): Promise<IServices[]> {
-  const response = await getCodeBayuData()
+  const response = await getCodeBayuDataServices()
   return response.services
 }

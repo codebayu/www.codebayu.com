@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { getBlogDetail, getComments } from '@/services/blog'
+import { getBlogDetailServices, getCommentsServices } from '@/services/blog'
 import { getBlogViews } from '@/services/view'
 import React from 'react'
 
@@ -20,7 +20,7 @@ interface LearnContentDetailPageProps {
 }
 
 export async function generateMetadata({ params, searchParams }: LearnContentDetailPageProps): Promise<Metadata> {
-  const data = await getBlogDetail({ params, searchParams })
+  const data = await getBlogDetailServices({ params, searchParams })
   return {
     title: `${data.title} ${METADATA.exTitle}`,
     openGraph: {
@@ -38,9 +38,9 @@ export async function generateMetadata({ params, searchParams }: LearnContentDet
 }
 
 export default async function LearnContentDetailPage({ params, searchParams }: LearnContentDetailPageProps) {
-  const content = await getBlogDetail({ params, searchParams })
+  const content = await getBlogDetailServices({ params, searchParams })
   const pageViewCount = await getBlogViews(searchParams.id as string)
-  const comments = await getComments(searchParams.id as string)
+  const comments = await getCommentsServices(searchParams.id as string)
   return (
     <>
       <Container data-aos="fade-left">
