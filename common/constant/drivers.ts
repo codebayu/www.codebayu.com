@@ -104,3 +104,15 @@ export const tourChatRoom: DriveStep[] = [
     }
   }
 ]
+
+export const tourRoadmap: DriveStep[] = [
+  {
+    element: '#cta-video',
+    popover: {
+      title: 'Free Playlist Here',
+      description: 'You can watch the free playlist here. Enjoy!',
+      side: 'left',
+      align: 'center'
+    }
+  }
+]
