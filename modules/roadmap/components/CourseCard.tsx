@@ -17,7 +17,7 @@ export default function CourseCard(props: CourseCardProps) {
         <div className="w-5">{STACKS[icon]}</div>
         <span>{title}</span>
       </div>
-      <div className="flex space-x-2">
+      <div id="cta-video" className="flex space-x-2">
         {linkIndonesia && (
           <Tooltip title="Free course!">
             <Badge href={linkIndonesia} target="_blank">
