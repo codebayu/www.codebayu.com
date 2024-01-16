@@ -33,7 +33,7 @@
     "firebase": "^10.7.1",
     "framer-motion": "^10.16.1",
     "gray-matter": "^4.0.3",
-    "next": "13.4.19",
+    "next": "13.5.0",
     "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.4.2",
