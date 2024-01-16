@@ -4,7 +4,6 @@ about: Create a report to help us improve
 title: 'BUG - '
 labels: bug
 assignees: Bayusetiawan45
-
 ---
 
 **Describe the bug**
