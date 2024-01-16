@@ -27,9 +27,9 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
   }
 
   return (
-    <div data-aos={dataAos} className={clsxm('flex flex-col space-y-1', isMePage && 'items-center mt-6')}>
-      <div className="text-sm ml-2 mt-1 mb-2 text-neutral-600 dark:text-neutral-500 font-sora">Let`s Connect</div>
-      <div className={clsxm('flex justify-around space-x-2 lg:justify-between px-5 pt-2', isMePage && 'space-x-8')}>
+    <div data-aos={dataAos} className={clsxm('flex flex-col space-y-1', isMePage && 'mt-6 items-center')}>
+      <div className="font-sora mb-2 ml-2 mt-1 text-sm text-neutral-600 dark:text-neutral-500">Let`s Connect</div>
+      <div className={clsxm('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}>
         {items?.map((item: MenuItemProps, index: number) => (
           <button
             key={index}
@@ -38,7 +38,7 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
             aria-label={item?.title}
           >
             <Tooltip title={item?.title}>
-              <div className="text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 lg:hover:scale-110 transition duration-300">
+              <div className="text-neutral-700 transition duration-300 hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-300 lg:hover:scale-110">
                 {item?.icon}
               </div>
             </Tooltip>

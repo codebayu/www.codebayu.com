@@ -19,17 +19,17 @@ export default function ExperienceDetail(props: CareerProps) {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between space-x-4 pb-4 border-b border-dashed border-neutral-600">
+      <div className="flex items-center justify-between space-x-4 border-b border-dashed border-neutral-600 pb-4">
         <div>
           <h2 className="text-2xl font-semibold">{company}</h2>
-          <div className="flex gap-1 text-sm mt-1">
+          <div className="mt-1 flex gap-1 text-sm">
             <span>{format(startDate, 'MMM yyyy')}</span> -{' '}
             <span>{end_date ? format(endDate, 'MMM yyyy') : 'Present'}</span>
           </div>
         </div>
         <Image src={getCloudinaryUrl(logo)} alt={company} width={60} height={60} />
       </div>
-      <p className="text-neutral-700 dark:text-neutral-300 font-sans">
+      <p className="font-sans text-neutral-700 dark:text-neutral-300">
         At {company}, I proudly served as <strong>{position}</strong> based in {location}, contributing my expertise
         from {format(startDate, 'MMM yyyy')} to {end_date ? format(endDate, 'MMM yyyy') : 'Present'} in a dynamic{' '}
         {location_type} setting.

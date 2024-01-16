@@ -23,7 +23,7 @@ describe('CommentItem Component', () => {
   it('Should render coment item', () => {
     const container = screen.getByTestId('comment-item')
     expect(container).toBeTruthy()
-    expect(container.className).toBe('flex gap-5 dark:text-neutral-400 break-all')
+    expect(container.className).toBe('flex gap-5 break-all dark:text-neutral-400')
   })
 
   it('Should render user image', () => {
@@ -43,7 +43,7 @@ describe('CommentItem Component', () => {
   it('Should render dot', () => {
     const dot = screen.getAllByText('•')[0]
     expect(dot).toBeTruthy()
-    expect(dot.className).toBe('hidden sm:block dark:text-neutral-700')
+    expect(dot.className).toBe('hidden dark:text-neutral-700 sm:block')
   })
 
   it('Should render comment date', () => {
@@ -55,6 +55,6 @@ describe('CommentItem Component', () => {
   it('Should render comment body', () => {
     const commentBody = screen.getAllByTestId('comment-body')[0]
     expect(commentBody).toBeTruthy()
-    expect(commentBody.className).toBe('leading-[1.8] max-w-[600px]')
+    expect(commentBody.className).toBe('max-w-[600px] leading-[1.8]')
   })
 })

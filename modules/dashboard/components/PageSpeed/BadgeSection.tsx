@@ -16,7 +16,7 @@ export default function BadgeSection({ active, refetch }: BadgeSectionProps) {
         <button
           key={route.href}
           className={clsxm(
-            'text-xs py-1 px-2 rounded-lg',
+            'rounded-lg px-2 py-1 text-xs',
             active === route.href
               ? 'bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
               : 'bg-neutral-100 dark:bg-neutral-800'

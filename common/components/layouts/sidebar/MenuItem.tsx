@@ -50,11 +50,11 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
     return (
       <div {...elementProps}>
         <div>{icon}</div>
-        {isHover && <div className="text-sm ml-1 animate-enter-left delay-1000 whitespace-nowrap">{title}</div>}
+        {isHover && <div className="ml-1 animate-enter-left whitespace-nowrap text-sm delay-1000">{title}</div>}
         <div className="flex-grow lg:hidden">{title}</div>
         {children && <>{children}</>}
         {isExternalUrl && isHovered && (
-          <ExternalLinkIcon size={22} className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300" />
+          <ExternalLinkIcon size={22} className="-rotate-45 text-gray-500 lg:transition-all lg:duration-300" />
         )}
       </div>
     )

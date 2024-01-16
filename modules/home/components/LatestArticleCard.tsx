@@ -39,15 +39,15 @@ export default function LatestArticleCard({ data, learns }: LatestArticleCardPro
   return (
     <button
       onClick={handleCardClick}
-      className="min-w-[250px] h-max animate-slide-card flex flex-col space-y-1 hover:scale-95 duration-500"
+      className="flex h-max min-w-[250px] animate-slide-card flex-col space-y-1 duration-500 hover:scale-95"
     >
-      <div className="w-full h-28 overflow-hidden rounded-md">
+      <div className="h-28 w-full overflow-hidden rounded-md">
         <Image
           src={data.cover_image || PLACEHOLDER_URL}
           alt={data.title}
           width={200}
           height={200}
-          className="rounded-md w-full h-full object-cover"
+          className="h-full w-full rounded-md object-cover"
           priority
         />
       </div>

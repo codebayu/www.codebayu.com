@@ -12,13 +12,13 @@ describe('Breakline Component', () => {
     render(<Breakline className={props.className} />)
     const breakline = screen.getByTestId('breakline')
     expect(breakline).toBeTruthy()
-    expect(breakline.className).toBe(`border-t border-gray-300 dark:border-neutral-700 my-4 ${props.className}`)
+    expect(breakline.className).toBe(`my-4 border-t border-gray-300 dark:border-neutral-700 ${props.className}`)
   })
 
   it('Should render breakline element without props', () => {
     const item = render(<Breakline />)
     const breakline = item.getAllByTestId('breakline')[1]
     expect(breakline).toBeTruthy()
-    expect(breakline.className).toBe('border-t border-gray-300 dark:border-neutral-700 my-4 ')
+    expect(breakline.className).toBe('my-4 border-t border-gray-300 dark:border-neutral-700 ')
   })
 })

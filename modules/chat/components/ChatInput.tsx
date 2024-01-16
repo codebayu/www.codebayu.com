@@ -43,12 +43,12 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="flex items-end space-x-2">
-      <div className="flex flex-col w-full space-y-2">
+      <div className="flex w-full flex-col space-y-2">
         {reply.isReply && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center space-x-2 text-xs text-neutral-500 dark:text-neutral-200 w-max bg-neutral-200 dark:bg-neutral-800 rounded-lg py-1 px-2"
+            className="flex w-max items-center justify-center space-x-2 rounded-lg bg-neutral-200 px-2 py-1 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-200"
           >
             <p>Replying to {reply.name}</p>
             <button
@@ -72,7 +72,7 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
       <button
         disabled={disabled}
         aria-label="Send message"
-        className={clsxm('bg-neutral-600 mb-1 text-white p-3 rounded-lg', disabled && 'cursor-not-allowed opacity-50')}
+        className={clsxm('mb-1 rounded-lg bg-neutral-600 p-3 text-white', disabled && 'cursor-not-allowed opacity-50')}
       >
         <SendIcon />
       </button>

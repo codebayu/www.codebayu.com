@@ -23,7 +23,7 @@ export default function ContactCard({ href, title, backgroundColor, icon }: Menu
       onClick={handleCardClick}
       key={title}
       className={clsxm(
-        'flex text-white shadow-lg w-full md:w-max justify-center items-center px-4 py-2 space-x-2 rounded-lg',
+        'flex w-full items-center justify-center space-x-2 rounded-lg px-4 py-2 text-white shadow-lg md:w-max',
         backgroundColor
       )}
     >

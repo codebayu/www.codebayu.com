@@ -34,7 +34,7 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
             width={800}
             height={500}
             alt={title}
-            className="hover:scale-105 transition-all duration-700"
+            className="transition-all duration-700 hover:scale-105"
             priority
           />
         </div>
@@ -47,7 +47,7 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
             {tags?.map((stack: string, index: number) => (
               <span
                 key={index}
-                className="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200 rounded-full px-4 py-1 text-[14px] font-medium"
+                className="rounded-full bg-neutral-200 px-4 py-1 text-[14px] font-medium text-neutral-600 dark:bg-neutral-700 dark:text-neutral-200"
               >
                 {stack}
               </span>
@@ -56,7 +56,7 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
         </div>
       )}
       <Breakline className="!my-10" />
-      <div className="flex flex-col mb-4 space-y-2">
+      <div className="mb-4 flex flex-col space-y-2">
         <h3 className="text-lg font-medium">Comment on DEV Community:</h3>
         <Link href={url} target="_blank" className="text-blue-600">
           {url}

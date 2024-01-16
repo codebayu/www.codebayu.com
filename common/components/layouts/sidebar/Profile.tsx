@@ -33,7 +33,7 @@ export default function Profile() {
   return (
     <div
       className={clsx(
-        'z-20 fixed shadow-sm xl:shadow-none lg:border-none dark:border-b dark:border-neutral-800 bg-white dark:bg-dark lg:!bg-transparent w-full p-5 lg:relative lg:p-0',
+        'fixed z-20 w-full bg-white p-5 shadow-sm dark:border-b dark:border-neutral-800 dark:bg-dark lg:relative lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none',
         isOpen && 'pb-0'
       )}
     >
@@ -42,8 +42,8 @@ export default function Profile() {
         {isMobile && (
           <div
             className={clsx(
-              'flex lg:hidden items-center gap-5 mt-2',
-              isOpen && '!items-end flex-col-reverse justify-between h-[120px] pb-1'
+              'mt-2 flex items-center gap-5 lg:hidden',
+              isOpen && 'h-[120px] flex-col-reverse !items-end justify-between pb-1'
             )}
           >
             <ToggleThemeIcon />

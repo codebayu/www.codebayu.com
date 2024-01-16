@@ -32,9 +32,9 @@ export default function Layouts({ children }: LayoutsProps) {
   }, [])
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
+      <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
         {!hideSidebar && <MobileHeader />}
-        <main className="lg:max-w-[854px] lg:ml-10 transition-all scroll-smooth duration-300 w-full lg:min-h-screen no-scrollbar">
+        <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-10 lg:min-h-screen lg:max-w-[854px]">
           {children}
         </main>
       </div>

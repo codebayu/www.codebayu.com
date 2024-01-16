@@ -126,7 +126,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
     <div>
       <div
         ref={chatListRef}
-        className="h-[60vh] scroll-smooth md:h-[65vh] no-scrollbar overflow-y-auto border-b border-neutral-200 dark:border-neutral-700 pb-2 mb-4 space-y-6"
+        className="no-scrollbar mb-4 h-[60vh] space-y-6 overflow-y-auto scroll-smooth border-b border-neutral-200 pb-2 dark:border-neutral-700 md:h-[65vh]"
       >
         {loading ? (
           <ChatItemSkeleton />

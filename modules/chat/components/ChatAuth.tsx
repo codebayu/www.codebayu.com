@@ -22,8 +22,8 @@ export default function ChatAuth({ user, reply, sendMessage, cancleReply }: Chat
       {user ? (
         <div>
           <ChatInput sendMessage={sendMessage} reply={reply} cancleReply={cancleReply} />
-          <div className="flex text-sm mt-6 justify-between items-center">
-            <div className=" text-neutral-500 flex items-center space-x-2">
+          <div className="mt-6 flex items-center justify-between text-sm">
+            <div className=" flex items-center space-x-2 text-neutral-500">
               <Image src={String(user.image)} alt={String(user.name)} width={35} height={35} className="rounded-full" />
               <div className="flex flex-col">
                 <span>{user.name}</span>
@@ -32,7 +32,7 @@ export default function ChatAuth({ user, reply, sendMessage, cancleReply }: Chat
             </div>
             <button
               onClick={() => signOut()}
-              className="flex items-center text-xs space-x-2 text-red-500"
+              className="flex items-center space-x-2 text-xs text-red-500"
               aria-label="Sign out"
             >
               <span>Sign out</span>
@@ -42,7 +42,7 @@ export default function ChatAuth({ user, reply, sendMessage, cancleReply }: Chat
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center space-y-2">
-          <p className="text-neutral-600 dark:text-neutral-200 text-sm">Please sign in to chat</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-200">Please sign in to chat</p>
           <SignInGoogleButton />
         </div>
       )}
