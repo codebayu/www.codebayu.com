@@ -5,10 +5,10 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "monthly"
-      time: "00:00"
-      timezone: "Asia/Jakarta"
+      interval: 'monthly'
+      time: '00:00'
+      timezone: 'Asia/Jakarta'
     open-pull-requests-limit: 5
