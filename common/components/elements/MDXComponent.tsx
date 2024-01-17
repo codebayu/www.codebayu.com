@@ -24,23 +24,23 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
       remarkPlugins={[remarkGfm]}
       components={{
         a: props => (
-          <a className="text-teal-600 hover:text-teal-400 hover:underline cursor-pointer" target="_blank" {...props} />
+          <a className="cursor-pointer text-teal-600 hover:text-teal-400 hover:underline" target="_blank" {...props} />
         ),
         p: props => <div {...props} className="font-sans" />,
-        h2: props => <h2 className="text-xl font-medium dark:text-neutral-300 font-sans" {...props} />,
-        h3: props => <h3 className="text-[18px] leading-snug pt-4 font-medium dark:text-neutral-300" {...props} />,
-        ul: props => <ul className="pl-10 space-y-3 list-disc pb-5 font-sans" {...props} />,
-        ol: props => <ol className="pl-10 space-y-3 list-decimal pb-5 font-sans" {...props} />,
+        h2: props => <h2 className="font-sans text-xl font-medium dark:text-neutral-300" {...props} />,
+        h3: props => <h3 className="pt-4 text-[18px] font-medium leading-snug dark:text-neutral-300" {...props} />,
+        ul: props => <ul className="list-disc space-y-3 pb-5 pl-10 font-sans" {...props} />,
+        ol: props => <ol className="list-decimal space-y-3 pb-5 pl-10 font-sans" {...props} />,
         code: props => <CodeBlock {...props} />,
         blockquote: props => (
           <blockquote
-            className="pl-6 py-3 text-md border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-100 dark:bg-neutral-800 rounded-lg text-cyan-800 dark:text-cyan-200"
+            className="text-md rounded-lg border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-100 py-3 pl-6 text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200"
             {...props}
           />
         ),
         table: props => <Table {...props} />,
-        th: props => <th className="border dark:border-neutral-600 py-1 px-3 text-left">{props.children}</th>,
-        td: props => <td className="border dark:border-neutral-600  py-1 px-3">{props.children}</td>
+        th: props => <th className="border px-3 py-1 text-left dark:border-neutral-600">{props.children}</th>,
+        td: props => <td className="border px-3  py-1 dark:border-neutral-600">{props.children}</td>
       }}
     >
       {children}

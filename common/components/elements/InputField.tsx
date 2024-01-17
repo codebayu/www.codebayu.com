@@ -28,22 +28,22 @@ export default function InputField<TFormValue extends FieldValues>({
           rows={rows}
           placeholder={renderPlaceholder}
           {...register(name, rule)}
-          className="bg-neutral-50 dark:bg-neutral-900 dark:outline-neutral-700 w-full rounded-lg p-2 outline outline-neutral-300 focus:outline-neutral-400"
+          className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
         />
       ) : (
         <input
           placeholder={renderPlaceholder}
           {...register(name, rule)}
-          className="bg-neutral-50 dark:bg-neutral-900 dark:outline-neutral-700 w-full rounded-lg p-2 outline outline-neutral-300 focus:outline-neutral-400"
+          className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
         />
       )}
       {error[name]?.type === 'required' && (
-        <p role="alert" className="text-red-400 text-[10px]">
+        <p role="alert" className="text-[10px] text-red-400">
           *{name} is required
         </p>
       )}
       {error[name]?.type === 'pattern' && (
-        <p role="alert" className="text-red-400 text-[10px]">
+        <p role="alert" className="text-[10px] text-red-400">
           *{String(error[name]?.message)}
         </p>
       )}

@@ -16,9 +16,9 @@ export default function SpeedSection({ data, isLoading }: SpeedSectionProps) {
   if (isLoading) return <LoadingSpeedInsight />
 
   return (
-    <div className="my-6 flex text-neutral-600 dark:text-neutral-300 text-[10px] md:text-sm justify-center items-end space-x-6 md:space-x-10">
+    <div className="my-6 flex items-end justify-center space-x-6 text-[10px] text-neutral-600 dark:text-neutral-300 md:space-x-10 md:text-sm">
       {categoriesInArray.map(category => (
-        <div key={category.id} className="flex flex-col text-center items-center justify-center space-y-2">
+        <div key={category.id} className="flex flex-col items-center justify-center space-y-2 text-center">
           <h3>{category.title}</h3>
           <CircleProgress value={Number(category.score || 0) * 100} />
         </div>

@@ -6,7 +6,7 @@ interface SectionSubHeadingProps {
 
 export default function SectionSubHeading({ children }: SectionSubHeadingProps) {
   return (
-    <div className="flex flex-col md:flex-row justify-between lg:items-center gap-2 text-neutral-600 dark:text-neutral-400">
+    <div className="flex flex-col justify-between gap-2 text-neutral-600 dark:text-neutral-400 md:flex-row lg:items-center">
       {children}
     </div>
   )

@@ -28,7 +28,7 @@ describe('Copyright Component', () => {
   it('Should render love icon element', () => {
     const element = screen.getAllByText('❤').at(0)
     expect(element).toBeTruthy()
-    expect(element?.className).toBe('text-red-500 animate-pulse')
+    expect(element?.className).toBe('animate-pulse text-red-500')
   })
 
   it('Should render by text element', () => {
@@ -39,6 +39,6 @@ describe('Copyright Component', () => {
   it('Should render codebayu text element', () => {
     const element = screen.getAllByText('codebayu').at(0)
     expect(element).toBeTruthy()
-    expect(element?.className).toBe('hover:dark:text-neutral-400 cursor-pointer')
+    expect(element?.className).toBe('cursor-pointer hover:dark:text-neutral-400')
   })
 })

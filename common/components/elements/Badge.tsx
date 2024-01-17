@@ -60,13 +60,13 @@ export default function Badge(props: BadgeProps) {
         data-testid="badge-link"
         href={href}
         target={target}
-        className={`font-medium text-center rounded-full ${chooseSize} ${variantColor}`}
+        className={`rounded-full text-center font-medium ${chooseSize} ${variantColor}`}
       >
         {children}
       </Link>
     )
   return (
-    <span data-testid="badge" className={`font-medium text-center rounded-full ${chooseSize} ${variantColor}`}>
+    <span data-testid="badge" className={`rounded-full text-center font-medium ${chooseSize} ${variantColor}`}>
       {children}
     </span>
   )

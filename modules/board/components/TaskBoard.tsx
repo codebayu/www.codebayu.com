@@ -78,7 +78,7 @@ export default function TaskBoard() {
           <ToggleThemeIcon />
         </div>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <div className="flex flex-col md:flex-row w-full min-h-fullmd:min-h-[70vh] space-y-4 md:space-y-0 mt-8">
+        <div className="min-h-fullmd:min-h-[70vh] mt-8 flex w-full flex-col space-y-4 md:flex-row md:space-y-0">
           {hydrate ? (
             Object.entries(columns).map(([columnId, column]) => (
               <TaskColumn key={columnId} columnId={columnId} column={column} />

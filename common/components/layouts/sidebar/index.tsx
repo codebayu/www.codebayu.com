@@ -8,7 +8,7 @@ import Profile from './Profile'
 export default function Sidebar() {
   const filterdMenu = MENU_ITEMS?.filter(item => item?.isShow)
   return (
-    <div className="sticky transition-all duration-300 top-0 z-10 flex flex-col lg:py-8">
+    <div className="sticky top-0 z-10 flex flex-col transition-all duration-300 lg:py-8">
       <Profile />
       <nav className="hidden md:block">
         <Breakline />

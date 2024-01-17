@@ -66,8 +66,8 @@ export default function BlogCard({
     <Card
       onClick={handleCardClick}
       className={clsxm(
-        'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full',
-        viewOption === 'grid' ? '!flex-col sm:h-full w-full' : '!flex-row sm:p-5 sm:px-6',
+        'flex w-full cursor-pointer items-center gap-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 sm:flex-row lg:hover:scale-[102%]',
+        viewOption === 'grid' ? 'w-full !flex-col sm:h-full' : '!flex-row sm:p-5 sm:px-6',
         isCarousel && 'min-w-[350px]',
         !isExcerpt && 'sm:h-[320px]'
       )}
@@ -79,20 +79,20 @@ export default function BlogCard({
           height={100}
           alt={title}
           className={clsxm(
-            'sm:rounded-xl sm:h-[8.5rem] w-full object-cover',
-            viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
+            'w-full object-cover sm:h-[8.5rem] sm:rounded-xl',
+            viewOption === 'grid' ? '!h-48 !rounded-b-none !rounded-t-xl' : ''
           )}
         />
       </div>
       <article className={contentContainerClasses}>
-        <h2 className="md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
+        <h2 className="font-medium text-neutral-600 transition-all duration-300 dark:text-neutral-200 dark:hover:text-teal-400 md:text-[17px] lg:hover:text-teal-800">
           {trimmedTitle}
         </h2>
         <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
-          <div className="flex gap-1 items-center ">
+          <div className="flex items-center gap-1 ">
             <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
           </div>
-          <div className="flex gap-1 items-center">
+          <div className="flex items-center gap-1">
             <CommentIcon size={16} />
             <span className="text-xs">
               <div className="flex gap-1">
@@ -103,7 +103,7 @@ export default function BlogCard({
           </div>
         </div>
         {isExcerpt && (
-          <p className="hidden sm:block leading-relaxed text-sm text-neutral-600 dark:text-neutral-400">
+          <p className="hidden text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:block">
             {trimmedContent}
           </p>
         )}

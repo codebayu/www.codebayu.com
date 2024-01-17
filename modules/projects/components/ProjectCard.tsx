@@ -14,9 +14,9 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
   const trimmedContent = description.slice(0, 70) + (description.length > 70 ? '...' : '')
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className="relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] cursor-pointer">
+      <Card className="relative cursor-pointer border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%]">
         {is_featured && (
-          <div className="absolute top-0 right-0 bg-emerald-300 text-emerald-950 text-[13px] font-medium py-1 px-2 rounded-bl-xl rounded-tr-xl z-[2]">
+          <div className="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">
             Featured
           </div>
         )}
@@ -25,13 +25,13 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
           width={400}
           height={200}
           alt={title}
-          className="rounded-t-xl h-48 object-cover object-left"
+          className="h-48 rounded-t-xl object-cover object-left"
         />
-        <div className="p-5 space-y-2">
-          <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
+        <div className="space-y-2 p-5">
+          <div className="font-sora cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:hover:text-teal-400 lg:hover:text-teal-800">
             {title}
           </div>
-          <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">{trimmedContent}</p>
+          <p className="text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-400">{trimmedContent}</p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {stacks?.map((stack: string, index: number) => (
               <div key={index} className="w-6">

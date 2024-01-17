@@ -12,7 +12,7 @@ describe('Status Component', () => {
     const element = screen.getByTestId('available-hire-container')
     expect(element).toBeTruthy()
     expect(element.className).toBe(
-      'absolute inverted-border-radius-dark z-10 left-0 py-2 pr-2 rounded-br-xl bg-white dark:bg-dark'
+      'absolute inverted-border-radius-dark left-0 z-10 rounded-br-xl bg-white py-2 pr-2 dark:bg-dark'
     )
   })
 
@@ -21,7 +21,7 @@ describe('Status Component', () => {
     waitFor(() => {
       expect(element).toBeTruthy()
       expect(element.className).toBe(
-        'absolute inverted-border-radius z-10 left-0 py-2 pr-2 rounded-br-xl bg-white dark:bg-dark'
+        'absolute inverted-border-radius-dark left-0 z-10 rounded-br-xl bg-white py-2 pr-2 dark:bg-dark'
       )
     })
   })
@@ -30,7 +30,7 @@ describe('Status Component', () => {
     const element = screen.getAllByTestId('available-hire')[0]
     expect(element).toBeTruthy()
     expect(element.className).toBe(
-      'flex relative items-center gap-2 bg-white dark:bg-dark rounded-xl py-1 px-2 border border-neutral-300 dark:border-neutral-700'
+      'relative flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-700 dark:bg-dark'
     )
   })
 

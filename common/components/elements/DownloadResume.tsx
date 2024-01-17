@@ -22,12 +22,12 @@ export default function DownloadResume() {
   return (
     <button
       onClick={redirectToResumeUrl}
-      className="flex gap-2 transition-all duration-300 items-center text-neutral-600 dark:text-neutral-500 hover:text-neutral-700 hover:dark:text-neutral-300"
+      className="flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 hover:dark:text-neutral-300"
       data-umami-event="Download Resume"
     >
       <div
         data-testid="download-icon-container"
-        className="border-b-2 overflow-hidden border-neutral-600 dark:border-neutral-500"
+        className="overflow-hidden border-b-2 border-neutral-600 dark:border-neutral-500"
       >
         <DownloadIcon data-testid="download-icon" className="animate-rain-arrow" />
       </div>

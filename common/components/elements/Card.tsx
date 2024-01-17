@@ -10,7 +10,7 @@ export default function Card({ children, className = '', ...others }: CardProps)
   return (
     <div
       data-testid="card"
-      className={`rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md ${className} `}
+      className={`rounded-xl shadow-sm transition-all duration-300 lg:hover:shadow-md ${className} `}
       {...others}
     >
       {children}

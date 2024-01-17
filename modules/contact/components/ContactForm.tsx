@@ -51,7 +51,7 @@ export default function ContactForm() {
     <div className="flex flex-col space-y-4">
       <h2>Or send me a message</h2>
       <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col space-y-4 transition-all duration-300">
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 w-full">
+        <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
           <InputField name="name" rule={{ required: true }} register={register} error={errors} />
           <InputField
             name="email"
@@ -70,7 +70,7 @@ export default function ContactForm() {
         <button
           disabled={isLoading}
           type="submit"
-          className="bg-neutral-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-neutral-800 hover:shadow-lg"
+          className="rounded-lg bg-neutral-700 px-4 py-2 text-white shadow-md hover:bg-neutral-800 hover:shadow-lg"
         >
           {buttonText}
         </button>

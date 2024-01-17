@@ -8,25 +8,25 @@ import { PROFILE_URL } from '@/common/constant'
 
 export default function MeProfile() {
   return (
-    <div className="flex flex-col px-6 items-center space-y-2 mt-6" data-aos="zoom-in-down">
-      <div className="rounded-full p-2 border border-neutral-200 dark:border-neutral-700">
+    <div className="mt-6 flex flex-col items-center space-y-2 px-6" data-aos="zoom-in-down">
+      <div className="rounded-full border border-neutral-200 p-2 dark:border-neutral-700">
         <div className="overflow-hidden rounded-full">
           <Image
             src={PROFILE_URL}
             alt="profile"
             width={80}
             height={80}
-            className="rounded-full hover:scale-105 transition-all duration-300"
+            className="rounded-full transition-all duration-300 hover:scale-105"
           />
         </div>
       </div>
-      <div className="flex gap-2 items-center mt-1 lg:mt-4">
-        <h2 className="flex-grow text-lg lg:text-xl font-sora font-medium">Bayu Setiawan</h2>
+      <div className="mt-1 flex items-center gap-2 lg:mt-4">
+        <h2 className="font-sora flex-grow text-lg font-medium lg:text-xl">Bayu Setiawan</h2>
         <Tooltip title="Verified">
           <VerifiedIcon size={18} className="text-blue-400" />
         </Tooltip>
       </div>
-      <p className="leading-[1.8] md:leading-loose text-sm text-center text-neutral-800 dark:text-neutral-300">
+      <p className="text-center text-sm leading-[1.8] text-neutral-800 dark:text-neutral-300 md:leading-loose">
         Software Engineer who focus on frontend development.
       </p>
     </div>
