@@ -84,5 +84,12 @@
     "prisma": "^5.2.0",
     "ts-node": "^10.9.1",
     "vitest": "^0.34.4"
+  },
+  "resolutions": {
+    "@babel/traverse": "7.23.2",
+    "get-func-name": "2.0.2",
+    "@adobe/css-tools": "4.3.2",
+    "postcss": "8.4.31",
+    "vite": "4.5.1"
   }
 }
