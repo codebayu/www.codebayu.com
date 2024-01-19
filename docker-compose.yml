@@ -1,13 +1,27 @@
 version: '3.5'
 
 services:
-  app:
+  client-dev:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: v2.codebayu.com
+      dockerfile: Dockerfile.dev
+    container_name: DEV_v2.codebayu.com
     ports:
       - '3000:3000'
     volumes:
       - .:/app
       - /app/node_modules
+    env_file:
+      - .env.local
+  client-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: PROD_v2.codebayu.com
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
