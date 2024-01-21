@@ -9,6 +9,7 @@ export default function CurrentlyWorking({ careers }: { careers: CareerProps[] }
   const currentlyCompany = careers[0]
   return (
     <div
+      data-testid="currently-working"
       className="my-8 flex w-full flex-col items-center justify-center space-y-3 px-6 md:space-x-3"
       data-aos="zoom-in-down"
     >

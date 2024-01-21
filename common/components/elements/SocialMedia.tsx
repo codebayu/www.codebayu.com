@@ -27,18 +27,29 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
   }
 
   return (
-    <div data-aos={dataAos} className={clsxm('flex flex-col space-y-1', isMePage && 'mt-6 items-center')}>
+    <div
+      data-testid="social-media"
+      data-aos={dataAos}
+      className={clsxm('flex flex-col space-y-1', isMePage && 'mt-6 items-center')}
+    >
       <div className="font-sora mb-2 ml-2 mt-1 text-sm text-neutral-600 dark:text-neutral-500">Let`s Connect</div>
-      <div className={clsxm('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}>
+      <div
+        data-testid="social-media-items-container"
+        className={clsxm('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}
+      >
         {items?.map((item: MenuItemProps, index: number) => (
           <button
+            data-testid="social-media-item"
             key={index}
             onClick={() => handleCardClick(item)}
             data-umami-event={item?.eventName}
             aria-label={item?.title}
           >
             <Tooltip title={item?.title}>
-              <div className="text-neutral-700 transition duration-300 hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-300 lg:hover:scale-110">
+              <div
+                data-testid="social-media-icon"
+                className="text-neutral-700 transition duration-300 hover:text-neutral-900 dark:text-neutral-400 hover:dark:text-neutral-300 lg:hover:scale-110"
+              >
                 {item?.icon}
               </div>
             </Tooltip>
