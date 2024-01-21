@@ -1,9 +1,10 @@
 ---
 name: Refactor issue template
 about: Improve code styles
-title: Refactor
+title: Refactor -
 labels: refactor
 assignees: Bayusetiawan45
+
 ---
 
 ## Description
