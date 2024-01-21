@@ -1,0 +1,17 @@
+FROM node:20.9.0
+
+WORKDIR /app
+
+COPY package*.json .
+
+COPY . .
+
+RUN yarn install
+
+RUN yarn build
+
+ENV PORT=4000
+
+EXPOSE 4000
+
+CMD [ "yarn", "start" ]
