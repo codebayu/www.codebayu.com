@@ -18,6 +18,6 @@ describe('Ribbon Component', () => {
     const ribbonText = screen.getByTestId('ribbon-text')
     expect(ribbonText).toBeTruthy()
     expect(ribbonText.textContent).toBe('test')
-    expect(ribbonText.className).toBe('font-roboto-condensed -ml-4')
+    expect(ribbonText.className).toBe('-ml-4 font-roboto-condensed')
   })
 })
