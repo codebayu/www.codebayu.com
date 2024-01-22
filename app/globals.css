@@ -153,3 +153,56 @@
   border-top: 1px solid #525252;
   border-left: 1px solid #525252;
 }
+
+/* ----- Ribbon Container ---------------------------------------*/
+#ribbon-container {
+  background: transparent;
+  height: 130px;
+  width: 200px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  overflow: hidden;
+}
+
+/* ----- Top Curl ---------------------------------------*/
+#ribbon-container:before {
+  content: '';
+  display: block;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
+  width: 35px;
+  height: 10px;
+  position: absolute;
+  right: 30px;
+  z-index: 1;
+}
+
+/* ----- Right Curl ---------------------------------------*/
+#ribbon-container:after {
+  content: '';
+  display: block;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px;
+  width: 10px;
+  height: 35px;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+}
+
+/* ----- Ribbon ---------------------------------------*/
+#ribbon-container > div {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  top: 18px;
+  right: -135px;
+  z-index: 11;
+  overflow: hidden;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari and Chrome */
+  -o-transform: rotate(45deg); /* Opera */
+}
