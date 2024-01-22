@@ -18,6 +18,9 @@ const config: Config = {
         dark: '#121212',
         light: '#fafafa'
       },
+      fontFamily: {
+        'roboto-condensed': ['var(--robotoCondensed-fon)']
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
@@ -59,6 +62,10 @@ const config: Config = {
         enterLeft: {
           '0%': { transform: 'translateX(100px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' }
+        },
+        rightInfinite: {
+          '0%': { transform: 'translateX(-150px)' },
+          '100%': { transform: 'translateX(150px)' }
         }
       },
       animation: {
@@ -68,7 +75,8 @@ const config: Config = {
         'slide-card': 'slide 3s 3s ease-in-out',
         'slide-infinite': 'slideInfinite 100s linear infinite',
         'rain-arrow': 'rainArrow 1s ease-out infinite',
-        'enter-left': 'enterLeft 0.5s ease-in-out'
+        'enter-left': 'enterLeft 0.5s ease-in-out',
+        'right-infinite': 'rightInfinite 2s linear infinite'
       }
     }
   },
