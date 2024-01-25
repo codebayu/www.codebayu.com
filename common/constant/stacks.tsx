@@ -1,6 +1,7 @@
 import { BiLogoPostgresql } from 'react-icons/bi'
 import { BsFillBootstrapFill } from 'react-icons/bs'
 import {
+  SiAstro,
   SiChakraui,
   SiCss3,
   SiExpo,
@@ -13,6 +14,7 @@ import {
   SiHtml5,
   SiJavascript,
   SiJest,
+  SiJson,
   SiMui,
   SiNextdotjs,
   SiNodedotjs,
@@ -72,5 +74,7 @@ export const STACKS: stacksProps = {
   Storybook: <SiStorybook size={iconSize} className="text-pink-500" />,
   'React Router': <SiReactrouter size={iconSize} className="text-pink-500" />,
   'React Hook Form': <SiReacthookform size={iconSize} className="text-pink-500" />,
-  'React Table': <SiReacttable size={iconSize} className="text-rose-600" />
+  'React Table': <SiReacttable size={iconSize} className="text-rose-600" />,
+  Astro: <SiAstro className="text-purple-500" />,
+  Json: <SiJson className="text-neutral-700" />
 }
