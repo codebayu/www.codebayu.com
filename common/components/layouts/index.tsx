@@ -8,6 +8,7 @@ import 'aos/dist/aos.css'
 import React, { ReactNode, useEffect } from 'react'
 
 import ChatOverlay from '../elements/ChatOverlay'
+import RunningText from '../elements/RunningText'
 import BottomNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
 
@@ -33,7 +34,11 @@ export default function Layouts({ children }: LayoutsProps) {
   return (
     <div className="flex flex-col justify-center">
       <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
-        {!hideSidebar && <MobileHeader />}
+        {!hideSidebar && (
+          <>
+            <MobileHeader /> <RunningText />
+          </>
+        )}
         <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-10 lg:min-h-screen lg:max-w-[854px]">
           {children}
         </main>
