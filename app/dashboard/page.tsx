@@ -1,11 +1,12 @@
 import { Metadata } from 'next'
 
-import axios from 'axios'
+import { getCodewarsServices } from '@/services/codewars'
+import { getGithubData } from '@/services/github'
 
 import Container from '@/common/components/elements/Container'
 import PageHeading from '@/common/components/elements/PageHeading'
-import { GITHUB_ACCOUNTS, GITHUB_API_BASE_URL, GITHUB_USER_QUERY } from '@/common/constant/github'
 import { METADATA } from '@/common/constant/metadata'
+import { CodewarsData } from '@/common/types/codewars'
 
 import Dashboard from '@/modules/dashboard'
 
@@ -23,30 +24,13 @@ const PAGE_DESCRIPTION =
 
 export default async function DahboardPage() {
   const githubData = await getGithubData()
+  const codewarsData: CodewarsData = await getCodewarsServices()
   return (
     <>
       <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Dashboard githubData={githubData} />
+        <Dashboard githubData={githubData} codewarsData={codewarsData} />
       </Container>
     </>
   )
-}
-
-async function getGithubData() {
-  const response = await axios.post(
-    GITHUB_API_BASE_URL,
-    {
-      query: GITHUB_USER_QUERY,
-      variables: {
-        username: GITHUB_ACCOUNTS.username
-      }
-    },
-    {
-      headers: {
-        Authorization: `bearer ${GITHUB_ACCOUNTS.token}`
-      }
-    }
-  )
-  return response.data?.data.user.contributionsCollection.contributionCalendar
 }

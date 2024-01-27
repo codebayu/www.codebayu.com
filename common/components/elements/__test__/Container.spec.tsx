@@ -20,6 +20,6 @@ describe('Container Component', () => {
   it('Should render container element', () => {
     const element = screen.getByTestId('container')
     expect(element).toBeTruthy()
-    expect(element.className).toBe(`mb-10 mt-6 p-4 md:p-8 lg:mt-0 lg:pr-0 ${props.className}`)
+    expect(element.className).toBe(`mb-10 mt-6 p-4 md:p-8 lg:pr-0 ${props.className}`)
   })
 })
