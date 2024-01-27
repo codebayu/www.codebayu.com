@@ -13,6 +13,12 @@
     "test": "vitest",
     "coverage": "vitest --coverage"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bayusetiawan45/v2.codebayu.com"
+  },
+  "homepage": "https://www.codebayu.com",
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
     "@codebayu/use-hydration-zustand": "^1.0.2",
