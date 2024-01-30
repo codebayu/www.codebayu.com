@@ -9,6 +9,6 @@ export async function getCodewarsServices() {
     const response = await axios.get(CODEWARS_API)
     return response.data
   } catch (error) {
-    reportError(error)
+    reportError({ error, service: 'getCodewarsServices' })
   }
 }

@@ -9,6 +9,6 @@ export async function getRunningTextAdsServices() {
     const docSnap = await getDoc(ref)
     return docSnap.data()
   } catch (error) {
-    reportError(error)
+    reportError({ error, service: 'getRunningTextAdsServices' })
   }
 }
