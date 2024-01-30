@@ -34,10 +34,10 @@ export default function MobileHeader() {
     }
   }, [isOpen])
   return (
-    <div className="flex flex-col lg:hidden py-4 px-4 shadow-sm rounded-b-md">
-      <div className={`flex justify-between w-full ${isOpen ? 'items-start' : 'items-center'}`}>
+    <div className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
+      <div className={`flex w-full justify-between ${isOpen ? 'items-start' : 'items-center'}`}>
         <div className={`flex ${isOpen ? 'flex-col space-y-3' : 'flex-row space-x-3'}`}>
-          <div className="shadow-md w-max border-2 z-10 border-white dark:border-neutral-800 rounded-full">
+          <div className="z-10 w-max rounded-full border-2 border-white shadow-md dark:border-neutral-800">
             <Image
               src={PROFILE_URL}
               alt="profile"
@@ -46,9 +46,9 @@ export default function MobileHeader() {
               rounded="rounded-full"
             />
           </div>
-          <div className="flex gap-2 items-center mt-1">
+          <div className="mt-1 flex items-center gap-2">
             <Link href="/" passHref>
-              <h2 className="flex-grow text-lg lg:text-xl font-sora font-medium whitespace-nowrap">Bayu Setiawan</h2>
+              <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">Bayu Setiawan</h2>
             </Link>
             <Tooltip title="Verified">
               <VerifiedIcon size={18} className="text-blue-400" />
@@ -58,8 +58,8 @@ export default function MobileHeader() {
         {isMobile && (
           <div
             className={clsx(
-              'flex lg:hidden items-center gap-5 mt-2',
-              isOpen && '!items-end flex-col-reverse justify-between h-[120px] pb-1'
+              'mt-2 flex items-center gap-5 lg:hidden',
+              isOpen && 'h-[120px] flex-col-reverse !items-end justify-between pb-1'
             )}
           >
             <ToggleThemeIcon />

@@ -1,18 +1,19 @@
 # codebayu.com
 
-Welcome to the **Personal Website, Blogs, and Programming Tips** open-source repository! This project is built using Next.js, Tailwind CSS, Prisma, and PostgreSQL, and it's designed to help you create your own personal website, share insightful blogs, and offer programming tips to the community. You find this project a bit helpful? Then give me the start
-
-<img width="1440" alt="codebayu" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/6148d30b-40db-40c5-ae7f-c0ab9f181479">
+<div align="center" width="100%">
+   <img width="600" alt="codebayu" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/fb6d296c-d427-49d8-9d7d-1bda3bd0e5ef">
+</div>
 
 ## Introduction
 
-In today's digital age, having a personal website is a fantastic way to showcase your work, share your thoughts through blogs, and contribute to the programming community by offering valuable tips and insights. This repository provides you with a solid foundation to create such a platform with ease.
+In today's digital age, having a personal website is a fantastic way to showcase your work, share your thoughts through blogs, and contribute to the programming community by offering valuable tips and insights. Leave the star if you find this project a bit helpful.
 
 ## Features
 
-- **Modern Stack**: Built with Next.js, a powerful React framework, Tailwind CSS for responsive and elegant styling, Prisma as the database toolkit, and PostgreSQL as the database system.
+- **Modern Stack**: Built with Next.js, a powerful React framework, Tailwind CSS for responsive and elegant styling, Next Auth as the authentication, and Firebase Ecosystem as the database system.
 - **Personal Website**: Display your professional information, portfolio, and achievements in a visually appealing manner.
 - **Blogs**: Share your thoughts, experiences, and expertise with the world through engaging blog posts.
+- **Realtime Chat**: Share your impression or suggestion on the real-time chat room.
 - **Programming Tips**: Provide programming tips, tricks, and tutorials to help fellow developers learn and grow.
 - **SEO Optimized**: Implement best practices for search engine optimization to increase your online visibility.
 - **Responsive Design**: Ensure a seamless experience across various devices and screen sizes.
@@ -41,20 +42,12 @@ Before you begin, make sure you have Node.js and npm (Node Package Manager) inst
 ## Usage
 
 1. Configure your database settings in the .env file.
-2. Run the Prisma migration to set up your database schema:
-   ```bash
-   npx prisma migrate dev
-   ```
-3. Start the development server:
+2. Start the development server:
    ```bash
    yarn dev
    ```
-4. Access the application in your browser at http://localhost:3000.
+3. Access the application in your browser at http://localhost:3000.
 
 ## Contributing
 
 Contributions to this project are welcome and encouraged! If you find any bugs, want to add new features, or improve the existing ones, feel free to open issues and pull requests.
-
-## Reference
-
-[aulianza](https://github.com/aulianza/aulianza.id)

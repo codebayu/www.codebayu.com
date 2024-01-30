@@ -23,7 +23,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[1]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -36,7 +36,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[0]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -49,7 +49,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[3]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -62,7 +62,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[4]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -75,7 +75,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[5]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -88,7 +88,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[6]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -101,7 +101,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[7]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -114,7 +114,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[8]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -127,7 +127,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[9]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -140,7 +140,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[10]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -153,7 +153,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[11]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -166,7 +166,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[12]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -179,7 +179,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[13]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -192,7 +192,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[14]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -205,7 +205,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[15]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -218,7 +218,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[16]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 
@@ -231,7 +231,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[17]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 
@@ -244,7 +244,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[18]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 
@@ -253,7 +253,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge')[19]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -278,7 +278,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[1]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -291,7 +291,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[0]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -304,7 +304,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[4]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-neutral-200 dark:bg-neutral-700'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-neutral-200 dark:bg-neutral-700'
     )
   })
 
@@ -317,7 +317,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[5]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -330,7 +330,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[6]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -343,7 +343,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[7]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'
     )
   })
 
@@ -356,7 +356,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[8]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -369,7 +369,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[9]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -382,7 +382,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[10]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-200 dark:text-black'
     )
   })
 
@@ -395,7 +395,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[11]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -408,7 +408,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[12]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -421,7 +421,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[13]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-red-100 text-red-700 dark:bg-red-200 dark:text-black'
     )
   })
 
@@ -434,7 +434,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[14]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -447,7 +447,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[15]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -460,7 +460,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[16]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-yellow-100 text-yellow-700 dark:bg-yellow-200 dark:text-black'
     )
   })
 
@@ -473,7 +473,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[17]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-[1px] text-[10px] bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-[1px] text-[10px] bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 
@@ -486,7 +486,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[18]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-2 py-1 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-2 py-1 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 
@@ -499,7 +499,7 @@ describe('Animate Badge Component', () => {
     const badge = screen.getAllByTestId('badge-link')[19]
     expect(badge).toBeTruthy()
     expect(badge.className).toBe(
-      'font-medium text-center rounded-full px-3 py-2 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
+      'rounded-full text-center font-medium px-3 py-2 text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-200 dark:text-black'
     )
   })
 })

@@ -17,14 +17,14 @@ export default function Status() {
       transition={{ duration: 0.5 }}
       className={`absolute ${
         resolvedTheme === 'light' ? 'inverted-border-radius' : 'inverted-border-radius-dark'
-      } z-10 left-0 py-2 pr-2 rounded-br-xl bg-white dark:bg-dark`}
+      } left-0 z-10 rounded-br-xl bg-white py-2 pr-2 dark:bg-dark`}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         data-testid="available-hire"
-        className="flex relative items-center gap-2 bg-white dark:bg-dark rounded-xl py-1 px-2 border border-neutral-300 dark:border-neutral-700"
+        className="relative flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-2 py-1 dark:border-neutral-700 dark:bg-dark"
       >
         <motion.div
           data-testid="dots"

@@ -49,26 +49,26 @@ export default function CareerCard({ position, company, logo, location, start_da
   return (
     <Card
       onClick={handleCardClick}
-      className="flex min-w-[350px] border border-l-0 border-neutral-300 dark:border-neutral-600 rounded-r-xl rounded-l-sm !shadow-none py-2 overflow-hidden items-center gap-5 h-max cursor-pointer dark:bg-neutral-900 hover:scale-95 duration-500"
+      className="flex h-max min-w-[350px] cursor-pointer items-center gap-5 overflow-hidden rounded-l-sm rounded-r-xl border border-l-0 border-neutral-300 py-2 !shadow-none duration-500 hover:scale-95 dark:border-neutral-600 dark:bg-neutral-900"
     >
-      <div className="relative h-max my-2">
+      <div className="relative my-2 h-max">
         <div
           className={clsxm(
-            'rounded-r-full shadow-lg border border-neutral-300 dark:border-neutral-600 border-l-0 dark:shadow-neutral-800 flex items-center',
+            'flex items-center rounded-r-full border border-l-0 border-neutral-300 shadow-lg dark:border-neutral-600 dark:shadow-neutral-800',
             resolvedTheme === 'light' ? 'inverted-image-left' : 'inverted-image-left-dark'
           )}
         >
           {logo ? (
-            <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} className="z-10 relative" />
+            <Image src={getCloudinaryUrl(logo)} width={55} height={55} alt={company} className="relative z-10" />
           ) : (
             <CompanyIcon size={30} />
           )}
         </div>
       </div>
 
-      <div className="space-y-1 flex flex-col items-start">
+      <div className="flex flex-col items-start space-y-1">
         <h2>{position}</h2>
-        <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
+        <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
           <div className="flex items-center gap-1 md:gap-2">
             <span>{company}</span>
             <span className="text-neutral-300 dark:text-neutral-700">•</span>

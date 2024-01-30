@@ -21,26 +21,26 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
   return (
     <div
       className={clsx(
-        'flex items-center gap-4 lg:gap-0.5 flex-grow lg:flex-col w-full',
+        'flex w-full flex-grow items-center gap-4 lg:flex-col lg:gap-0.5',
         expandMenu && 'flex-col !items-start'
       )}
     >
-      <div className="relative overflow-hidden hidden w-full pb-2 lg:flex flex-col items-center">
+      <div className="relative hidden w-full flex-col items-center overflow-hidden pb-2 lg:flex">
         <Status />
-        <div className="w-full h-24 overflow-hidden dark:brightness-50 rounded-lg">
+        <div className="h-24 w-full overflow-hidden rounded-lg dark:brightness-50">
           <NextImage
             src={BACKDROP_IMAGE}
             alt="profile"
             width={100}
             height={100}
-            className="w-full scale-125 -ml-4"
+            className="-ml-4 w-full scale-125"
             priority
           />
         </div>
-        <div className="absolute z-10 -right-1 bottom-[55px] py-2 pr-2 rounded-xl">
+        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2">
           <ToggleThemeIcon />
         </div>
-        <div className="-mt-11 shadow-md border-2 z-10 border-white dark:border-neutral-800 rounded-full">
+        <div className="z-10 -mt-11 rounded-full border-2 border-white shadow-md dark:border-neutral-800">
           <Image
             src={PROFILE_URL}
             alt="profile"
@@ -57,11 +57,11 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         width={expandMenu ? 80 : imageSize * 0.9}
         height={expandMenu ? 80 : imageSize * 0.9}
         rounded="rounded-full"
-        className="lg:hover:scale-105 lg:hidden"
+        className="lg:hidden lg:hover:scale-105"
       />
-      <div className="flex gap-2 items-center mt-1">
+      <div className="mt-1 flex items-center gap-2">
         <Link href="/" passHref>
-          <h2 className="flex-grow text-lg lg:text-xl font-sora font-medium whitespace-nowrap">Bayu Setiawan</h2>
+          <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">Bayu Setiawan</h2>
         </Link>
         <Tooltip title="Verified">
           <VerifiedIcon size={18} className="text-blue-400" />
@@ -70,7 +70,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       <Link
         href={DEVTO_PROFILE}
         target="_blank"
-        className="hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
+        className="font-sora hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex"
       >
         @codebayu
       </Link>

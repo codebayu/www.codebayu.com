@@ -21,7 +21,7 @@ export default function Unwrapped() {
           <p className="dark:text-neutral-400">My coding journey on {data?.data[0].years ?? '2023'}</p>
         </SectionSubHeading>
       </div>
-      <div data-testid="unwrapped-video" className="flex flex-row aspect-video mt-6 items-center justify-center">
+      <div data-testid="unwrapped-video" className="mt-6 flex aspect-video flex-row items-center justify-center">
         {isLoading ? <Skeleton /> : <VideoPlayer url={data?.data[0].url} />}
       </div>
     </section>

@@ -17,6 +17,6 @@ describe('Icon Button Component', () => {
   it('Should render icon button element', () => {
     const element = screen.getByRole('button')
     expect(element).toBeTruthy()
-    expect(element.className).toBe('self-end m-1 p-1 rounded-md dark:hover:bg-neutral-900 hover:bg-neutral-100')
+    expect(element.className).toBe('m-1 self-end rounded-md p-1 hover:bg-neutral-100 dark:hover:bg-neutral-900')
   })
 })

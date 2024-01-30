@@ -24,14 +24,15 @@ export default function Saweria({ withText = false }: SaweriaProps) {
 
   return withText ? (
     <button
+      data-testid="saweria-button-with-text"
       onClick={redirectToSaweria}
-      className="flex w-full h-max md:w-max bg-slate-900 text-white shadow-sm justify-center items-center px-6 py-3 rounded-xl gap-2 hover:gap-3 delay-75 hover:transition-all hover:duration-300 transition-all duration-300"
+      className="flex h-max w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-white shadow-sm transition-all delay-75 duration-300 hover:gap-3 hover:transition-all hover:duration-300 md:w-max"
     >
       <TbCoffee />
       <span>Buy me a Coffee</span>
     </button>
   ) : (
-    <button onClick={redirectToSaweria} aria-label="buy-me-cofey">
+    <button data-testid="saweria-button-without-text" onClick={redirectToSaweria} aria-label="buy-me-cofey">
       <TbCoffee size={25} />
     </button>
   )

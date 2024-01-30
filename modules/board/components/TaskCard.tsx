@@ -46,12 +46,12 @@ export default function TaskCard({ item, index, columnId }: TaskCardProps) {
           {provided => (
             <div
               id="draggable-card"
-              className="p-4 mb-4  h-max shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] space-y-2 rounded-xl bg-white dark:bg-neutral-800"
+              className="mb-4 h-max  space-y-2 rounded-xl bg-white p-4 shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] dark:bg-neutral-800"
               ref={provided.innerRef}
               {...provided.draggableProps}
               {...provided.dragHandleProps}
             >
-              <div className="flex justify-between items-center">
+              <div className="flex items-center justify-between">
                 <div className="flex space-x-1">
                   <Badge size="small" variant={badgeVariant}>
                     {item.type}

@@ -11,9 +11,9 @@ import ProjectLink from './ProjectLink'
 export default function ProjectDetail({ title, image, stacks, link_demo, link_github, content }: IProjectItem) {
   return (
     <div className="space-y-8 overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center sm:flex-row gap-5 justify-between">
-        <div className="flex items-center flex-wrap gap-2">
-          <span className="text-[15px] mb-1 text-neutral-700 dark:text-neutral-300">Tech Stack :</span>
+      <div className="flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="mb-1 text-[15px] text-neutral-700 dark:text-neutral-300">Tech Stack :</span>
           <div className="flex flex-wrap items-center gap-3">
             {stacks?.map((stack: string, index: number) => (
               <div key={index}>
@@ -31,10 +31,10 @@ export default function ProjectDetail({ title, image, stacks, link_demo, link_gi
         width={800}
         height={400}
         alt={title}
-        className="hover:scale-105 transition-all duration-300"
+        className="transition-all duration-300 hover:scale-105"
       />
       {content && (
-        <div className="space-y-6 leading-[1.8] dark:text-neutral-300 mt-5">
+        <div className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
           <MDXComponent>{content}</MDXComponent>
         </div>
       )}

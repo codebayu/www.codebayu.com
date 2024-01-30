@@ -21,7 +21,7 @@ export default function ToggleThemeIcon() {
       id="dark-mode-switcher"
       aria-label="Toggle Theme"
       onClick={toggleTheme}
-      className="bg-white dark:bg-neutral-800 p-2 rounded-xl"
+      className="rounded-xl bg-white p-2 dark:bg-neutral-800"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}

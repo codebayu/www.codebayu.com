@@ -9,7 +9,9 @@ import GoHome from './GoHome'
 import MeProfile from './MeProfile'
 
 export default function MeSection({ careers }: { careers: CareerProps[] }) {
-  const filteredSocialMedia = SOCIAL_MEDIA?.filter(item => item?.isShow)
+  const filteredSocialMedia = SOCIAL_MEDIA?.filter(
+    item => item?.isShow && item.title !== 'NPM' && item.title !== 'TikTok'
+  )
   return (
     <>
       <MeProfile />

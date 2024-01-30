@@ -12,7 +12,7 @@ export default function IconButton({ id = 'icon-button', icon, onClick }: IconBu
       id={id}
       aria-label="icon-button"
       type="reset"
-      className="self-end m-1 p-1 rounded-md dark:hover:bg-neutral-900 hover:bg-neutral-100"
+      className="m-1 self-end rounded-md p-1 hover:bg-neutral-100 dark:hover:bg-neutral-900"
       onClick={onClick}
     >
       {icon}

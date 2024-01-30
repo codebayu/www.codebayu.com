@@ -44,7 +44,7 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
       exit={{ height: 0 }}
       transition={{ duration: 0.4 }}
       onSubmit={handleSubmit(handleFormSubmit)}
-      className="mb-4 text-xs flex flex-col shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] rounded-xl text-neutral-600 dark:text-neutral-400 bg-white dark:bg-neutral-800"
+      className="mb-4 flex flex-col rounded-xl bg-white text-xs text-neutral-600 shadow-[rgba(13,_38,_76,_0.15)_0px_7px_10px] dark:bg-neutral-800 dark:text-neutral-400"
     >
       {!isCreated && <IconButton icon={<BsX size={24} />} onClick={closeTaskForm} />}
       <motion.div
@@ -57,19 +57,19 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
       >
         <textarea
           placeholder="What are you working on?"
-          className={`text-sm w-full p-2 rounded-sm border-none outline-none ${
-            errors.task?.type === 'required' && 'outline-red-400 border'
+          className={`w-full rounded-sm border-none p-2 text-sm outline-none ${
+            errors.task?.type === 'required' && 'border outline-red-400'
           } text-md mb-2 bg-transparent`}
           {...register('task', { required: true })}
         />
 
         <div className="font-medium">Task type</div>
         {errors.type?.type === 'required' && (
-          <p role="alert" className="text-red-400 text-[10px]">
+          <p role="alert" className="text-[10px] text-red-400">
             Task type is required
           </p>
         )}
-        <div className="flex space-x-1 justify-between pb-2">
+        <div className="flex justify-between space-x-1 pb-2">
           {['bug', 'feature', 'refactor'].map(type => (
             <RadioInput key={type} id={type} name="type" rule={{ required: true }} register={register} />
           ))}
@@ -77,11 +77,11 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
 
         <div className="font-medium">Priority</div>
         {errors.priority?.type === 'required' && (
-          <p role="alert" className="text-red-400 text-[10px]">
+          <p role="alert" className="text-[10px] text-red-400">
             Priority type is required
           </p>
         )}
-        <div className="flex space-x-1 justify-between pb-2">
+        <div className="flex justify-between space-x-1 pb-2">
           {['low', 'medium', 'high'].map(type => (
             <RadioInput key={type} id={type} name="priority" rule={{ required: true }} register={register} />
           ))}

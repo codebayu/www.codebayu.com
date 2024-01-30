@@ -10,7 +10,7 @@ export default function CursorDots() {
     <motion.div
       data-testid="cursor-dots"
       ref={ref}
-      className="w-3 h-3 bg-teal-300 rounded-full z-50"
+      className="z-50 h-3 w-3 rounded-full bg-teal-300"
       animate={{ x, y }}
       transition={{
         type: 'spring',

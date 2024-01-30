@@ -27,10 +27,12 @@ export default function LatestArticle({ learns }: { learns: ContentProps[] }) {
           <p className="dark:text-neutral-400">Latest articles from dev.to</p>
         </SectionSubHeading>
       </div>
-      <div className="flex flex-row h-40 overflow-y-hidden space-x-3 mt-6 overflow-x-scroll no-scrollbar">
+      <div className="no-scrollbar mt-4 flex h-40 flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2">
         {isLoading
           ? [1, 2, 3, 4].map(item => <LoadingLatestArticle key={item} />)
-          : articles.map(article => <LatestArticleCard key={article.id} data={article} learns={learns} />)}
+          : articles.map((article, index) => (
+              <LatestArticleCard key={article.id} data={article} learns={learns} index={index} />
+            ))}
       </div>
     </section>
   )

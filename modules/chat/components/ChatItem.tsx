@@ -38,12 +38,12 @@ export default function ChatItem({
       id="chat-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex items-start space-x-3 w-full"
+      className="flex w-full items-start space-x-3"
     >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
-      <div className="flex flex-col space-y-1 w-full">
+      <div className="flex w-full flex-col space-y-1">
         <div className="flex items-center space-x-3">
-          <div className="flex space-x-1 items-center">
+          <div className="flex items-center space-x-1">
             <span className="text-sm">{name}</span>
             {authorEmail === email && (
               <Tooltip title="Author">
@@ -51,18 +51,18 @@ export default function ChatItem({
               </Tooltip>
             )}
           </div>
-          <span className="text-neutral-400 text-xs">{time}</span>
+          <span className="text-xs text-neutral-400">{time}</span>
         </div>
         <div
-          className="flex space-x-2 items-end w-full max-w-[90%]"
+          className="flex w-full max-w-[90%] items-end space-x-2"
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <div className="font-sans bg-neutral-100 dark:bg-neutral-800 py-2 px-3 rounded-xl rounded-tl-none">
+          <div className="rounded-xl rounded-tl-none bg-neutral-100 px-3 py-2 font-sans dark:bg-neutral-800">
             <p className="text-neutral-700 dark:text-neutral-200">
               {is_reply && (
                 <>
-                  <span className="text-teal-600 whitespace-nowrap mr-1">@{reply_to}</span> <span>{message}</span>
+                  <span className="mr-1 whitespace-nowrap text-teal-600">@{reply_to}</span> <span>{message}</span>
                 </>
               )}
               {!is_reply && <>{message}</>}
