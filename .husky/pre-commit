@@ -1,0 +1,3 @@
+yarn lint:fix
+yarn format
+yarn coverage
