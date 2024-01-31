@@ -4,7 +4,7 @@ labels:
   - label: 'enhancement'
     sync: true
     matcher:
-      title: '^FEATURE.*'
+      title: '^Feature.*'
 
   - label: 'bug'
     sync: true
@@ -14,7 +14,7 @@ labels:
   - label: 'refactor'
     sync: true
     matcher:
-      title: '^REFACTOR.*'
+      title: '^Refactor.*'
 
   - label: 'test'
     sync: true
