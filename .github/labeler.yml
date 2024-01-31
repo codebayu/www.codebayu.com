@@ -1,0 +1,22 @@
+version: v1
+
+labels:
+  - label: 'enhancement'
+    sync: true
+    matcher:
+      title: '^Feature.*'
+
+  - label: 'bug'
+    sync: true
+    matcher:
+      title: '^BUG.*'
+
+  - label: 'refactor'
+    sync: true
+    matcher:
+      title: '^Refactor.*'
+
+  - label: 'test'
+    sync: true
+    matcher:
+      title: '^TEST.*'
