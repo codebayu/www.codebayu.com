@@ -30,7 +30,7 @@
     "@types/react-dom": "18.2.7",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.15",
-    "axios": "^1.6.5",
+    "axios": "^1.6.7",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
