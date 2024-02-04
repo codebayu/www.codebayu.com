@@ -1,4 +1,4 @@
-name: Auto add label on PR
+name: Running auto label on PR
 
 on:
   pull_request:
