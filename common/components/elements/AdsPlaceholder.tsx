@@ -25,7 +25,7 @@ export default function AdsBanner({ className = 'w-72 h-full' }: AdsBannerProps)
     <Link
       href={banner.link}
       className={clsxm(
-        'relative flex justify-center overflow-hidden rounded-sm font-sans text-xs dark:bg-neutral-700 md:justify-start',
+        'relative flex justify-center overflow-hidden rounded-sm font-sans text-xs text-neutral-900 dark:bg-neutral-700 md:justify-start',
         className
       )}
     >
