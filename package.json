@@ -43,7 +43,7 @@
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
-    "nextjs-toploader": "^1.4.2",
+    "nextjs-toploader": "^1.6.6",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
