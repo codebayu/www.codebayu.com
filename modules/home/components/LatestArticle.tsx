@@ -4,6 +4,7 @@ import { fetcher } from '@/services/fetcher'
 import { HiOutlineNewspaper } from 'react-icons/hi'
 import useSWR from 'swr'
 
+import AdsBanner from '@/common/components/elements/AdsPlaceholder'
 import SectionHeading from '@/common/components/elements/SectionHeading'
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { DEVTO_BLOG_API } from '@/common/constant'
@@ -25,6 +26,7 @@ export default function LatestArticle({ learns }: { learns: ContentProps[] }) {
         <SectionHeading title="Latest Articles" icon={<HiOutlineNewspaper className="mr-1" />} />
         <SectionSubHeading>
           <p className="dark:text-neutral-400">Latest articles from dev.to</p>
+          <AdsBanner />
         </SectionSubHeading>
       </div>
       <div className="no-scrollbar mt-4 flex h-40 flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2">
