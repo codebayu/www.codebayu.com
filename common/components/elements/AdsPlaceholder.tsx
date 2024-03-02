@@ -28,6 +28,7 @@ export default function AdsBanner({ className = 'w-72 h-full' }: AdsBannerProps)
         'relative flex justify-center overflow-hidden rounded-sm font-sans text-xs text-neutral-900 dark:bg-neutral-700 md:justify-start',
         className
       )}
+      target="_blank"
     >
       <div className="absolute h-full w-full animate-pulse bg-sky-200"></div>
       <div className="relative flex items-center space-x-2 px-2 py-1">
