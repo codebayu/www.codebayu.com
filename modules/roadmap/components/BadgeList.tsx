@@ -4,8 +4,8 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 import React from 'react'
 
-import AdsBanner from '@/common/components/elements/AdsPlaceholder'
 import Badge from '@/common/components/elements/Badge'
+import SinglePromotion from '@/common/components/elements/SinglePromotion'
 import { TRIBES } from '@/common/constant/roadmap'
 
 export default function BadgeList() {
@@ -30,7 +30,7 @@ export default function BadgeList() {
             )
         )}
       </div>
-      <AdsBanner className="h-full w-full md:w-max" />
+      <SinglePromotion path="/roadmap" />
     </div>
   )
 }

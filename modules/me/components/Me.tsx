@@ -1,10 +1,9 @@
 import React from 'react'
 
+import MultiplePromotion from '@/common/components/elements/MultiplePromotion'
 import SocialMedia from '@/common/components/elements/SocialMedia'
 import { SOCIAL_MEDIA } from '@/common/constant/menu'
 import { CareerProps } from '@/common/types/careers'
-
-import PromotionSection from '@/modules/roadmap/components/PromotionSection'
 
 import CurrentlyWorking from './CurrentlyWorking'
 import GoHome from './GoHome'
@@ -20,7 +19,7 @@ export default function MeSection({ careers }: { careers: CareerProps[] }) {
       <CurrentlyWorking careers={careers} />
       <SocialMedia items={filteredSocialMedia} isMePage />
       <GoHome />
-      <PromotionSection />
+      <MultiplePromotion path="/me" />
     </>
   )
 }
