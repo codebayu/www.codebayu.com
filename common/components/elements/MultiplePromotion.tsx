@@ -17,9 +17,7 @@ export default function MultiplePromotion({ path }: MultiplePromotionProps) {
   const banners: IAdsBanner[] = data?.data.filter((item: IAdsBanner) => item.showingOn.includes(path))
   return (
     <div className="mt-6 flex flex-col items-center gap-2">
-      {banners.map((banner: IAdsBanner, index: number) => (
-        <AdsBanner key={index} data={banner} />
-      ))}
+      {banners?.map((banner: IAdsBanner, index: number) => <AdsBanner key={index} data={banner} />)}
     </div>
   )
 }
