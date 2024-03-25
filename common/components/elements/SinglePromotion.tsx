@@ -13,9 +13,9 @@ interface SinglePromotionProps {
 }
 
 export default function SinglePromotion({ path }: SinglePromotionProps) {
-  const { data, isLoading } = useSWR('/api/ads/banner', fetcher)
+  const { data, isLoading, error } = useSWR('/api/ads/banner', fetcher)
   if (isLoading) return <Skeleton className="h-10 w-72" />
-  const banner: IAdsBanner = data?.data.find((item: IAdsBanner) => item.showingOn.includes(path))
-  console.log(banner)
+  const banner: IAdsBanner = data?.data?.find((item: IAdsBanner) => item?.showingOn?.includes(path))
+  if (!banner || error) return null
   return <AdsBanner data={banner} />
 }
