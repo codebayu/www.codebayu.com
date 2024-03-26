@@ -1,7 +1,7 @@
 # codebayu.com
 
 <div align="center" width="100%">
-   <img width="600" alt="codebayu" src="https://github.com/Bayusetiawan45/v2.codebayu.com/assets/99315255/fb6d296c-d427-49d8-9d7d-1bda3bd0e5ef">
+   <img width="600" alt="codebayu" src="https://github.com/codebayu/v2.codebayu.com/assets/99315255/fb6d296c-d427-49d8-9d7d-1bda3bd0e5ef">
 </div>
 
 ## Introduction
@@ -27,7 +27,7 @@ Before you begin, make sure you have Node.js and npm (Node Package Manager) inst
 1. Clone this repository to your local machine using:
 
    ```bash
-   git clone https://github.com/Bayusetiawan45/v2.codebayu.com.git
+   git clone https://github.com/codebayu/v2.codebayu.com.git
    ```
 
 2. Navigate to the project directory:

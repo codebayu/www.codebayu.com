@@ -8,7 +8,7 @@ export const commentsMock = [
       name: 'Bayu Setiawan',
       username: 'codebayu',
       twitter_username: null,
-      github_username: 'Bayusetiawan45',
+      github_username: 'codebayu',
       user_id: 1145348,
       website_url: 'https://www.codebayu.com/',
       profile_image:
@@ -26,7 +26,7 @@ export const commentsMock = [
           name: 'Bayu Setiawan',
           username: 'codebayu',
           twitter_username: null,
-          github_username: 'Bayusetiawan45',
+          github_username: 'codebayu',
           user_id: 1145348,
           website_url: 'https://www.codebayu.com/',
           profile_image:

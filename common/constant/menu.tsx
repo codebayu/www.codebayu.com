@@ -111,7 +111,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
     title: 'Github',
-    href: 'https://github.com/Bayusetiawan45',
+    href: 'https://github.com/codebayu',
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
