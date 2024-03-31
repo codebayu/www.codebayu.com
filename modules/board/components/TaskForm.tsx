@@ -1,6 +1,6 @@
-import Button from '@/components/elements/Button'
 import IconButton from '@/components/elements/IconButton'
 import RadioInput from '@/components/elements/RadioInput'
+import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { BsX } from 'react-icons/bs'
@@ -88,11 +88,11 @@ export default function TaskForm({ columnId, defaultValue, closeTaskForm }: ITas
 
         <div className="flex justify-end space-x-2">
           {!isCreated && (
-            <Button theme="text" type="reset" onClick={handleDeleteTask}>
+            <Button size="sm" type="reset" variant="secondary" onClick={handleDeleteTask}>
               Delete
             </Button>
           )}
-          <Button theme="filled" type="submit">
+          <Button size="sm" type="submit">
             Save
           </Button>
         </div>

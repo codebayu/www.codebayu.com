@@ -1,7 +1,5 @@
-import React from 'react'
-
 import { MENU_ITEMS } from '@/common/constant/menu'
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 
 interface BadgeSectionProps {
   active: string
@@ -15,7 +13,7 @@ export default function BadgeSection({ active, refetch }: BadgeSectionProps) {
       {routes.map(route => (
         <button
           key={route.href}
-          className={clsxm(
+          className={cn(
             'rounded-lg px-2 py-1 text-xs',
             active === route.href
               ? 'bg-neutral-700 text-white dark:bg-neutral-200 dark:text-black'

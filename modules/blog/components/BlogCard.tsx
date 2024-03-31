@@ -7,7 +7,7 @@ import { TbMessage2 as CommentIcon } from 'react-icons/tb'
 
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { formatBlogSlug, formatDate } from '@/common/helpers'
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { BlogItem } from '@/common/types/blog'
 
@@ -42,7 +42,7 @@ export default function BlogCard({
   const trimmedTitle = viewOption === 'grid' ? title.slice(0, 70) + (title.length > 70 ? '...' : '') : title
   const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '')
 
-  const contentContainerClasses = clsxm(
+  const contentContainerClasses = cn(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
     view === 'grid' ? 'sm:w-full sm:!p-6' : ''
   )
@@ -65,7 +65,7 @@ export default function BlogCard({
   return (
     <Card
       onClick={handleCardClick}
-      className={clsxm(
+      className={cn(
         'flex w-full cursor-pointer items-center gap-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 sm:flex-row lg:hover:scale-[102%]',
         viewOption === 'grid' ? 'w-full !flex-col sm:h-full' : '!flex-row sm:p-5 sm:px-6',
         isCarousel && 'min-w-[350px]',
@@ -78,7 +78,7 @@ export default function BlogCard({
           width={isMobile || viewOption === 'grid' ? 400 : 240}
           height={100}
           alt={title}
-          className={clsxm(
+          className={cn(
             'w-full object-cover sm:h-[8.5rem] sm:rounded-xl',
             viewOption === 'grid' ? '!h-48 !rounded-b-none !rounded-t-xl' : ''
           )}

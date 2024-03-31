@@ -2,9 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 
-import React from 'react'
-
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { MenuItemProps } from '@/common/types/menu'
 
@@ -22,7 +20,7 @@ export default function ContactCard({ href, title, backgroundColor, icon }: Menu
     <button
       onClick={handleCardClick}
       key={title}
-      className={clsxm(
+      className={cn(
         'flex w-full items-center justify-center space-x-2 rounded-lg px-4 py-2 text-white shadow-lg md:w-max',
         backgroundColor
       )}

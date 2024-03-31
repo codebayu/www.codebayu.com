@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { LuSend as SendIcon } from 'react-icons/lu'
 import { MdOutlineClose as CloseIcon } from 'react-icons/md'
 
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { IReply } from '@/common/types/messages'
 
 interface IChatForm {
@@ -72,7 +72,7 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
       <button
         disabled={disabled}
         aria-label="Send message"
-        className={clsxm('mb-1 rounded-lg bg-neutral-600 p-3 text-white', disabled && 'cursor-not-allowed opacity-50')}
+        className={cn('mb-1 rounded-lg bg-neutral-600 p-3 text-white', disabled && 'cursor-not-allowed opacity-50')}
       >
         <SendIcon />
       </button>

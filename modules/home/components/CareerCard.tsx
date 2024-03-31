@@ -9,7 +9,7 @@ import { useTheme } from 'next-themes'
 import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { CareerProps } from '@/common/types/careers'
 
@@ -53,7 +53,7 @@ export default function CareerCard({ position, company, logo, location, start_da
     >
       <div className="relative my-2 h-max">
         <div
-          className={clsxm(
+          className={cn(
             'flex items-center rounded-r-full border border-l-0 border-neutral-300 shadow-lg dark:border-neutral-600 dark:shadow-neutral-800',
             resolvedTheme === 'light' ? 'inverted-image-left' : 'inverted-image-left-dark'
           )}
