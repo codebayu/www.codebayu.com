@@ -1,12 +1,12 @@
 'use client'
 
+import EmptyState from '@/components/elements/EmptyState'
+import LoadingCard from '@/components/elements/LoadingCard'
 import { fetcher } from '@/services/fetcher'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import useSWR from 'swr'
 
-import EmptyState from '@/common/components/elements/EmptyState'
-import LoadingCard from '@/common/components/elements/LoadingCard'
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
 

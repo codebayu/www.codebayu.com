@@ -1,9 +1,7 @@
 import Link from 'next/link'
 
-import React from 'react'
+import Saweria from '@/components/elements/Saweria'
 import { FcMindMap } from 'react-icons/fc'
-
-import Saweria from '@/common/components/elements/Saweria'
 
 export default function GoHome() {
   return (

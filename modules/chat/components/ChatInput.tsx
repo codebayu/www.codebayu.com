@@ -1,10 +1,10 @@
+import InputField from '@/components/elements/InputField'
 import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { LuSend as SendIcon } from 'react-icons/lu'
 import { MdOutlineClose as CloseIcon } from 'react-icons/md'
 
-import InputField from '@/common/components/elements/InputField'
 import clsxm from '@/common/libs/clsxm'
 import { IReply } from '@/common/types/messages'
 

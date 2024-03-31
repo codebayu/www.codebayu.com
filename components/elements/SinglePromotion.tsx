@@ -1,11 +1,10 @@
 'use client'
 
+import AdsBanner from '@/components/elements/AdsPlaceholder'
+import Skeleton from '@/components/elements/Skeleton'
 import { fetcher } from '@/services/fetcher'
-import React from 'react'
 import useSWR from 'swr'
 
-import AdsBanner from '@/common/components/elements/AdsPlaceholder'
-import Skeleton from '@/common/components/elements/Skeleton'
 import { IAdsBanner } from '@/common/types/ads'
 
 interface SinglePromotionProps {

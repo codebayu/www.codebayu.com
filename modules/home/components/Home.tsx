@@ -1,6 +1,6 @@
+import Breakline from '@/components/elements/Breakline'
 import { lazy } from 'react'
 
-import Breakline from '@/common/components/elements/Breakline'
 import { CareerProps } from '@/common/types/careers'
 import { ContentProps } from '@/common/types/learn'
 import { IServices } from '@/common/types/services'

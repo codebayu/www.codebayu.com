@@ -1,6 +1,5 @@
-import React from 'react'
+import EmptyState from '@/components/elements/EmptyState'
 
-import EmptyState from '@/common/components/elements/EmptyState'
 import { CommentItemProps } from '@/common/types/blog'
 
 import CommentItem from './CommentItem'

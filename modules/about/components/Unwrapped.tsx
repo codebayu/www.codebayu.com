@@ -1,14 +1,12 @@
 'use client'
 
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
+import Skeleton from '@/components/elements/Skeleton'
+import VideoPlayer from '@/components/elements/VideoPlayer'
 import { fetcher } from '@/services/fetcher'
-import React from 'react'
 import { FaPhotoVideo } from 'react-icons/fa'
 import useSWR from 'swr'
-
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
-import Skeleton from '@/common/components/elements/Skeleton'
-import VideoPlayer from '@/common/components/elements/VideoPlayer'
 
 export default function Unwrapped() {
   const { data, isLoading } = useSWR('/api/unwrapped', fetcher)

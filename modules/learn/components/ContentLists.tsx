@@ -1,11 +1,11 @@
 'use client'
 
+import EmptyState from '@/components/elements/EmptyState'
 import { fetcher } from '@/services/fetcher'
 import { motion } from 'framer-motion'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import useSWR from 'swr'
 
-import EmptyState from '@/common/components/elements/EmptyState'
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
 import { ContentProps } from '@/common/types/learn'

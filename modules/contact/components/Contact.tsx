@@ -1,6 +1,4 @@
-import React from 'react'
-
-import Breakline from '@/common/components/elements/Breakline'
+import Breakline from '@/components/elements/Breakline'
 
 import ContactForm from './ContactForm'
 import ContactList from './ContactList'

@@ -1,10 +1,10 @@
 import { usePathname, useRouter } from 'next/navigation'
 
+import Card from '@/components/elements/Card'
+import Image from '@/components/elements/Image'
 import { useEffect, useState } from 'react'
 import { TbMessage2 as CommentIcon } from 'react-icons/tb'
 
-import Card from '@/common/components/elements/Card'
-import Image from '@/common/components/elements/Image'
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { formatBlogSlug, formatDate } from '@/common/helpers'
 import clsxm from '@/common/libs/clsxm'

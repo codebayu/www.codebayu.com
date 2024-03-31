@@ -2,12 +2,12 @@
 
 import { useRouter } from 'next/navigation'
 
+import Card from '@/components/elements/Card'
+import Image from '@/components/elements/Image'
 import { differenceInMonths, differenceInYears, format } from 'date-fns'
 import { useTheme } from 'next-themes'
 import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 
-import Card from '@/common/components/elements/Card'
-import Image from '@/common/components/elements/Image'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import clsxm from '@/common/libs/clsxm'
 import { sendDataLayer } from '@/common/libs/gtm'

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
+import clsxm from '@/common/libs/clsxm'
 
 import useIsMobile from '@/hooks/useIsMobile'
-
-import clsxm from '../../libs/clsxm'
 
 export default function LoadingCard({ view }: { view: string }) {
   const [viewOption, setViewOption] = useState<string>()

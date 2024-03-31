@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
+import Card from '@/components/elements/Card'
+import Tooltip from '@/components/elements/Tooltip'
 import { BiFile as SubContentIcon } from 'react-icons/bi'
 
-import Card from '@/common/components/elements/Card'
-import Tooltip from '@/common/components/elements/Tooltip'
 import { STACKS } from '@/common/constant/stacks'
 import clsxm from '@/common/libs/clsxm'
 import { SubContentProps } from '@/common/types/learn'

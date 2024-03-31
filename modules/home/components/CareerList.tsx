@@ -1,8 +1,8 @@
+import DownloadResume from '@/components/elements/DownloadResume'
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi'
 
-import DownloadResume from '@/common/components/elements/DownloadResume'
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { CareerProps } from '@/common/types/careers'
 
 import CareerCard from './CareerCard'

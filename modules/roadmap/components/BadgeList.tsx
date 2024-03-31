@@ -2,10 +2,9 @@
 
 import { usePathname, useSearchParams } from 'next/navigation'
 
-import React from 'react'
+import Badge from '@/components/elements/Badge'
+import SinglePromotion from '@/components/elements/SinglePromotion'
 
-import Badge from '@/common/components/elements/Badge'
-import SinglePromotion from '@/common/components/elements/SinglePromotion'
 import { TRIBES } from '@/common/constant/roadmap'
 
 export default function BadgeList() {

@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Breakline from '@/common/components/elements/Breakline'
-import CommentList from '@/common/components/elements/CommentList'
-import MDXComponent from '@/common/components/elements/MDXComponent'
+import Breakline from '@/components/elements/Breakline'
+import CommentList from '@/components/elements/CommentList'
+import MDXComponent from '@/components/elements/MDXComponent'
+
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { BlogDetailProps, CommentItemProps } from '@/common/types/blog'
 

@@ -1,9 +1,8 @@
 import Image from 'next/image'
 
+import MDXComponent from '@/components/elements/MDXComponent'
 import { format } from 'date-fns'
-import React from 'react'
 
-import MDXComponent from '@/common/components/elements/MDXComponent'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import loadMdxFiles from '@/common/libs/mdx'
 import { CareerProps } from '@/common/types/careers'

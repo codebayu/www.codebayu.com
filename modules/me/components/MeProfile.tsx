@@ -1,9 +1,8 @@
 import Image from 'next/image'
 
-import React from 'react'
+import Tooltip from '@/components/elements/Tooltip'
 import { MdVerified as VerifiedIcon } from 'react-icons/md'
 
-import Tooltip from '@/common/components/elements/Tooltip'
 import { PROFILE_URL } from '@/common/constant'
 
 export default function MeProfile() {

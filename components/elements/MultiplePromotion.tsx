@@ -1,10 +1,9 @@
 'use client'
 
+import AdsBanner from '@/components/elements/AdsPlaceholder'
 import { fetcher } from '@/services/fetcher'
-import React from 'react'
 import useSWR from 'swr'
 
-import AdsBanner from '@/common/components/elements/AdsPlaceholder'
 import { IAdsBanner } from '@/common/types/ads'
 
 interface MultiplePromotionProps {

@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
-import React from 'react'
+import Ribbon from '@/components/elements/Ribbon'
 
-import Ribbon from '@/common/components/elements/Ribbon'
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { formatDate } from '@/common/helpers'
 import { sendDataLayer } from '@/common/libs/gtm'

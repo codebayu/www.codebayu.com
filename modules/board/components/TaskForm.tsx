@@ -1,12 +1,11 @@
+import Button from '@/components/elements/Button'
+import IconButton from '@/components/elements/IconButton'
+import RadioInput from '@/components/elements/RadioInput'
 import { motion } from 'framer-motion'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { BsX } from 'react-icons/bs'
 import { v4 as uuid } from 'uuid'
 
-import Button from '@/common/components/elements/Button'
-import IconButton from '@/common/components/elements/IconButton'
-import RadioInput from '@/common/components/elements/RadioInput'
 import { ITask } from '@/common/types/board'
 
 import { useTaskBoard } from '@/stores/board'

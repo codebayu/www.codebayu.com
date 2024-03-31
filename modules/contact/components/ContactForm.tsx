@@ -1,10 +1,9 @@
 'use client'
 
+import InputField from '@/components/elements/InputField'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-
-import InputField from '@/common/components/elements/InputField'
 
 interface IFormEmail {
   name: string
