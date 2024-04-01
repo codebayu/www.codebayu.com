@@ -1,10 +1,10 @@
 'use client'
 
+import InputField from '@/components/elements/InputField'
+import { Button } from '@/components/ui/button'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-
-import InputField from '@/common/components/elements/InputField'
 
 interface IFormEmail {
   name: string
@@ -67,13 +67,13 @@ export default function ContactForm() {
           />
         </div>
         <InputField name="message" rule={{ required: true }} register={register} error={errors} isTextArea />
-        <button
+        <Button
           disabled={isLoading}
           type="submit"
           className="rounded-lg bg-neutral-700 px-4 py-2 text-white shadow-md hover:bg-neutral-800 hover:shadow-lg"
         >
           {buttonText}
-        </button>
+        </Button>
       </form>
     </div>
   )

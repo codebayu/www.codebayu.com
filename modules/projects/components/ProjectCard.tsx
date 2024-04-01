@@ -1,10 +1,9 @@
 import Link from 'next/link'
 
-import React from 'react'
+import Card from '@/components/elements/Card'
+import Image from '@/components/elements/Image'
+import Tooltip from '@/components/elements/Tooltip'
 
-import Card from '@/common/components/elements/Card'
-import Image from '@/common/components/elements/Image'
-import Tooltip from '@/common/components/elements/Tooltip'
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { STACKS } from '@/common/constant/stacks'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'

@@ -1,5 +1,7 @@
-import React from 'react'
 import { FieldErrors, FieldValues, Path, RegisterOptions, UseFormRegister } from 'react-hook-form'
+
+import { Input } from '../ui/input'
+import { Textarea } from '../ui/textarea'
 
 type RadioInputProps<TFormValue extends FieldValues> = {
   register: UseFormRegister<TFormValue>
@@ -24,18 +26,9 @@ export default function InputField<TFormValue extends FieldValues>({
   return (
     <div className=" w-full space-y-2">
       {isTextArea ? (
-        <textarea
-          rows={rows}
-          placeholder={renderPlaceholder}
-          {...register(name, rule)}
-          className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
-        />
+        <Textarea rows={rows} placeholder={renderPlaceholder} {...register(name, rule)} />
       ) : (
-        <input
-          placeholder={renderPlaceholder}
-          {...register(name, rule)}
-          className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
-        />
+        <Input placeholder={renderPlaceholder} {...register(name, rule)} />
       )}
       {error[name]?.type === 'required' && (
         <p role="alert" className="text-[10px] text-red-400">

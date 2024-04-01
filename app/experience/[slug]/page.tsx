@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
+import BackButton from '@/components/elements/BackButton'
+import Container from '@/components/elements/Container'
 import { getCodeBayuData } from '@/services/codebayu'
 
-import BackButton from '@/common/components/elements/BackButton'
-import Container from '@/common/components/elements/Container'
 import { METADATA } from '@/common/constant/metadata'
 import { CareerProps } from '@/common/types/careers'
 

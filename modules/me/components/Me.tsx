@@ -1,7 +1,6 @@
-import React from 'react'
+import MultiplePromotion from '@/components/elements/MultiplePromotion'
+import SocialMedia from '@/components/elements/SocialMedia'
 
-import MultiplePromotion from '@/common/components/elements/MultiplePromotion'
-import SocialMedia from '@/common/components/elements/SocialMedia'
 import { SOCIAL_MEDIA } from '@/common/constant/menu'
 import { CareerProps } from '@/common/types/careers'
 

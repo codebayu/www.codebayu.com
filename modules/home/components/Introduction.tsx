@@ -1,5 +1,5 @@
-import Saweria from '@/common/components/elements/Saweria'
-import TypeAnimation from '@/common/components/elements/TypeAnimation'
+import Saweria from '@/components/elements/Saweria'
+import TypeAnimation from '@/components/elements/TypeAnimation'
 
 export default function Introduction() {
   return (

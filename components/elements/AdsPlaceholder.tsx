@@ -3,9 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import React from 'react'
-
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { IAdsBanner } from '@/common/types/ads'
 
 interface AdsBannerProps {
@@ -18,7 +16,7 @@ export default function AdsBanner({ className = 'w-72 h-full', data }: AdsBanner
   return data.isShow ? (
     <Link
       href={data.link}
-      className={clsxm(
+      className={cn(
         'rounded-smfont-sans relative flex justify-center overflow-hidden text-neutral-900 dark:bg-neutral-700 md:justify-start',
         className,
         fontSize

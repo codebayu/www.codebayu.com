@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
-import React from 'react'
+import Ribbon from '@/components/elements/Ribbon'
 
-import Ribbon from '@/common/components/elements/Ribbon'
 import { PLACEHOLDER_URL } from '@/common/constant'
 import { formatDate } from '@/common/helpers'
 import { sendDataLayer } from '@/common/libs/gtm'
@@ -39,7 +38,10 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
   }
 
   return (
-    <button onClick={handleCardClick} className="relative animate-slide-card duration-500 hover:scale-95">
+    <button
+      onClick={handleCardClick}
+      className="relative animate-slide-card transition hover:scale-95 hover:duration-500"
+    >
       <div className="relative z-10 flex h-max min-w-[250px] flex-col items-start space-y-1 ">
         <div className="h-28 w-full overflow-hidden rounded-md">
           <Image

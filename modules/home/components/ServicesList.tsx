@@ -1,8 +1,7 @@
-import React from 'react'
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { FaServicestack } from 'react-icons/fa'
 
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { servicesMock } from '@/common/mocks/services'
 import { IServices } from '@/common/types/services'
 

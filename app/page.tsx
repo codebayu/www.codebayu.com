@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
+import Container from '@/components/elements/Container'
 import { getCodeBayuData } from '@/services/codebayu'
 
-import Container from '@/common/components/elements/Container'
 import { METADATA } from '@/common/constant/metadata'
 import { CareerProps } from '@/common/types/careers'
 import { ContentProps } from '@/common/types/learn'

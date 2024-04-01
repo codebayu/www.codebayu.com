@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 
+import Container from '@/components/elements/Container'
+import PageHeading from '@/components/elements/PageHeading'
 import { getCodewarsServices } from '@/services/codewars'
 import { getGithubData } from '@/services/github'
 
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
 import { CodewarsData } from '@/common/types/codewars'
 

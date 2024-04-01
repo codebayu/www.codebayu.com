@@ -1,9 +1,9 @@
+import EmptyState from '@/components/elements/EmptyState'
+import IconButton from '@/components/elements/IconButton'
 import { Droppable } from '@hello-pangea/dnd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BsPlus, BsX } from 'react-icons/bs'
 
-import EmptyState from '@/common/components/elements/EmptyState'
-import IconButton from '@/common/components/elements/IconButton'
 import { IColumn } from '@/common/types/board'
 
 import TaskCard from './TaskCard'

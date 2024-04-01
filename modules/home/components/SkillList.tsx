@@ -1,8 +1,8 @@
+import MarqueeElement from '@/components/elements/MarqueeElement'
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { HiCode } from 'react-icons/hi'
 
-import MarqueeElement from '@/common/components/elements/MarqueeElement'
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { STACKS } from '@/common/constant/stacks'
 
 import SkillCard from './SkillCard'

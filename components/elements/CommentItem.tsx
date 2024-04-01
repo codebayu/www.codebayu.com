@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import Image from '@/components/elements/Image'
+import { useEffect, useRef } from 'react'
 
-import Image from '@/common/components/elements/Image'
 import { formatDate } from '@/common/helpers'
 import { CommentItemProps } from '@/common/types/blog'
 

@@ -1,12 +1,12 @@
 'use client'
 
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
+import SinglePromotion from '@/components/elements/SinglePromotion'
 import { fetcher } from '@/services/fetcher'
 import { HiOutlineNewspaper } from 'react-icons/hi'
 import useSWR from 'swr'
 
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
-import SinglePromotion from '@/common/components/elements/SinglePromotion'
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
 import { ContentProps } from '@/common/types/learn'

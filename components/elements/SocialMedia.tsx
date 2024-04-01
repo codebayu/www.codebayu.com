@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { MenuItemProps } from '@/common/types/menu'
 
@@ -30,12 +30,12 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
     <div
       data-testid="social-media"
       data-aos={dataAos}
-      className={clsxm('flex flex-col space-y-1', isMePage && 'mt-6 items-center')}
+      className={cn('flex flex-col space-y-1', isMePage && 'mt-6 items-center')}
     >
       <div className="font-sora mb-2 ml-2 mt-1 text-sm text-neutral-600 dark:text-neutral-500">Let`s Connect</div>
       <div
         data-testid="social-media-items-container"
-        className={clsxm('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}
+        className={cn('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}
       >
         {items?.map((item: MenuItemProps, index: number) => (
           <button

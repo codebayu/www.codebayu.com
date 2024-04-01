@@ -1,9 +1,9 @@
+import Badge from '@/components/elements/Badge'
+import IconButton from '@/components/elements/IconButton'
 import { Draggable } from '@hello-pangea/dnd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 
-import Badge from '@/common/components/elements/Badge'
-import IconButton from '@/common/components/elements/IconButton'
 import { IBadgeVariant } from '@/common/types'
 import { ITask } from '@/common/types/board'
 

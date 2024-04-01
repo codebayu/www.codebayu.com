@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
+import Container from '@/components/elements/Container'
+import PageHeading from '@/components/elements/PageHeading'
 import { getCodeBayuData } from '@/services/codebayu'
 
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
 import { IProjectItem } from '@/common/types/projects'
 

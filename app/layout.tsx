@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
+import Analytics from '@/components/elements/Analytics'
+import Layouts from '@/components/layouts/index'
 import NextTopLoader from 'nextjs-toploader'
 
-import Analytics from '@/common/components/elements/Analytics'
-import Layouts from '@/common/components/layouts/index'
 import { METADATA } from '@/common/constant/metadata'
 
 import { soraSans } from '../common/styles/fonts'

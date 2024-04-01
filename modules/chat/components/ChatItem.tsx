@@ -1,13 +1,13 @@
 import Image from 'next/image'
 
+import Tooltip from '@/components/elements/Tooltip'
 import { formatDistanceToNow } from 'date-fns'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FiTrash2 as DeleteIcon } from 'react-icons/fi'
 import { ImReply } from 'react-icons/im'
 import { MdVerified as VerifiedIcon } from 'react-icons/md'
 
-import Tooltip from '@/common/components/elements/Tooltip'
 import { IMessage } from '@/common/types/messages'
 
 interface IChatItemProps extends IMessage {
