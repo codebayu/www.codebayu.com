@@ -9,7 +9,7 @@ import { ReactNode, useEffect } from 'react'
 
 import ChatOverlay from '../elements/ChatOverlay'
 import RunningText from '../elements/RunningText'
-import BottomNavigation from './LeftCollapseNavigation'
+import LeftCollapseNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
 
 const Notif = dynamic(() => import('@/components/elements/Notif'), { ssr: false })
@@ -43,7 +43,7 @@ export default function Layouts({ children }: LayoutsProps) {
           {children}
         </main>
       </div>
-      {!hideSidebar && <BottomNavigation />}
+      {!hideSidebar && <LeftCollapseNavigation />}
       <Notif />
       <ChatOverlay />
     </div>
