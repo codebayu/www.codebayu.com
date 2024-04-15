@@ -5581,10 +5581,10 @@ react-hook-form@^7.47.0:
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.47.0.tgz#a42f07266bd297ddf1f914f08f4b5f9783262f31"
   integrity sha512-F/TroLjTICipmHeFlMrLtNLceO2xr1jU3CyiNla5zdwsGUGu2UOxxR4UyJgLlhMwLW/Wzp4cpJ7CPfgJIeKdSg==
 
-react-icons@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.10.1.tgz#3f3b5eec1f63c1796f6a26174a1091ca6437a500"
-  integrity sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==
+react-icons@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.1.0.tgz#9e7533cc256571a610c2a1ec8a7a143fb1222943"
+  integrity sha512-D3zug1270S4hbSlIRJ0CUS97QE1yNNKDjzQe3HqY0aefp2CBn9VgzgES27sRR2gOvFK+0CNx/BW0ggOESp6fqQ==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
