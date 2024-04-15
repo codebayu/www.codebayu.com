@@ -23,6 +23,7 @@
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
     "@codebayu/use-hydration-zustand": "^1.0.2",
+    "@ctrl/react-adsense": "^1.7.0",
     "@hello-pangea/dnd": "^16.3.0",
     "@prisma/client": "^5.2.0",
     "@radix-ui/react-icons": "^1.3.0",
