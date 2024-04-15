@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
-
-import CircleProgress from '@/common/components/elements/CircleProgress'
-import LoadingSpeedInsight from '@/common/components/elements/LoadingSpeedInsight'
+import CircleProgress from '@/components/elements/CircleProgress'
+import LoadingSpeedInsight from '@/components/elements/LoadingSpeedInsight'
 
 interface SpeedSectionProps {
   data: any

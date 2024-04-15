@@ -1,13 +1,12 @@
 'use client'
 
+import BackButton from '@/components/elements/BackButton'
+import Container from '@/components/elements/Container'
+import PageHeading from '@/components/elements/PageHeading'
+import ToggleThemeIcon from '@/components/elements/ToggleThemeIcon'
 import { useHydrationZustand } from '@codebayu/use-hydration-zustand'
 import { DragDropContext, DropResult } from '@hello-pangea/dnd'
-import React from 'react'
 
-import BackButton from '@/common/components/elements/BackButton'
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
-import ToggleThemeIcon from '@/common/components/elements/ToggleThemeIcon'
 import { tourTaskBoard } from '@/common/constant/drivers'
 import createDrivers from '@/common/libs/drivers'
 import { IColumns } from '@/common/types/board'

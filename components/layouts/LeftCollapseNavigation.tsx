@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { PROFILE_URL } from '@/common/constant'
 import { MENU_ITEMS } from '@/common/constant/menu'

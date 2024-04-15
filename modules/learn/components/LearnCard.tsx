@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
-import Card from '@/common/components/elements/Card'
-import Image from '@/common/components/elements/Image'
+import Card from '@/components/elements/Card'
+import Image from '@/components/elements/Image'
+
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { ContentProps } from '@/common/types/learn'
 

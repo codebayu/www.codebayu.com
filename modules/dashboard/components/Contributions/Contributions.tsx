@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link'
 
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { BsGithub as GithubIcon } from 'react-icons/bs'
 
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { GITHUB_ACCOUNTS } from '@/common/constant/github'
 
 import Calendar from './Calendar'

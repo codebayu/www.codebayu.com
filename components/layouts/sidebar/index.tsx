@@ -1,5 +1,6 @@
-import Breakline from '@/common/components/elements/Breakline'
-import Copyright from '@/common/components/elements/Copyright'
+import Breakline from '@/components/elements/Breakline'
+import Copyright from '@/components/elements/Copyright'
+
 import { MENU_ITEMS } from '@/common/constant/menu'
 
 import Menu from './Menu'

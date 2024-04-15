@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { fetcher } from '@/services/fetcher'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdSpeed } from 'react-icons/md'
 import useSwr from 'swr'
 
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { PAGESPEED_CATEGORIES, PAGESPEED_URL } from '@/common/constant'
 
 import BadgeSection from './BadgeSection'

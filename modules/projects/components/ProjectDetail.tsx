@@ -1,7 +1,8 @@
 import Image from 'next/image'
 
-import MDXComponent from '@/common/components/elements/MDXComponent'
-import Tooltip from '@/common/components/elements/Tooltip'
+import MDXComponent from '@/components/elements/MDXComponent'
+import Tooltip from '@/components/elements/Tooltip'
+
 import { STACKS } from '@/common/constant/stacks'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { IProjectItem } from '@/common/types/projects'

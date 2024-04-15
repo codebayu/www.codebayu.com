@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
+import Card from '@/components/elements/Card'
+import Tooltip from '@/components/elements/Tooltip'
 import { BiFile as SubContentIcon } from 'react-icons/bi'
 
-import Card from '@/common/components/elements/Card'
-import Tooltip from '@/common/components/elements/Tooltip'
 import { STACKS } from '@/common/constant/stacks'
-import clsxm from '@/common/libs/clsxm'
+import { cn } from '@/common/libs/cn'
 import { SubContentProps } from '@/common/types/learn'
 
 export default function LearnSubContentItem({
@@ -19,7 +19,7 @@ export default function LearnSubContentItem({
   return (
     <Link href={`/learn/${contentSlug}/${subContentSlug}?id=${postId}&read-mode=true`}>
       <Card
-        className={clsxm(
+        className={cn(
           'flex w-full cursor-pointer flex-row items-center justify-between border border-neutral-300 px-5 py-4 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%]'
         )}
       >

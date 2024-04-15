@@ -5,14 +5,14 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import React, { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 
 import ChatOverlay from '../elements/ChatOverlay'
 import RunningText from '../elements/RunningText'
-import BottomNavigation from './LeftCollapseNavigation'
+import LeftCollapseNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
 
-const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false })
+const Notif = dynamic(() => import('@/components/elements/Notif'), { ssr: false })
 
 interface LayoutsProps {
   children: ReactNode
@@ -43,7 +43,7 @@ export default function Layouts({ children }: LayoutsProps) {
           {children}
         </main>
       </div>
-      {!hideSidebar && <BottomNavigation />}
+      {!hideSidebar && <LeftCollapseNavigation />}
       <Notif />
       <ChatOverlay />
     </div>

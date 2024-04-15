@@ -1,10 +1,9 @@
 import Link from 'next/link'
 
-import React from 'react'
+import SectionHeading from '@/components/elements/SectionHeading'
+import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { SiCodewars } from 'react-icons/si'
 
-import SectionHeading from '@/common/components/elements/SectionHeading'
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { CODEWARS_URL } from '@/common/constant'
 import { CodewarsData } from '@/common/types/codewars'
 

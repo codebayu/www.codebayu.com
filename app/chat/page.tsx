@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
+import Container from '@/components/elements/Container'
+import PageHeading from '@/components/elements/PageHeading'
 import { User, getServerSession } from 'next-auth'
 
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
 
 import ChatRoom from '@/modules/chat'

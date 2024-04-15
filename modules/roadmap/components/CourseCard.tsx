@@ -1,8 +1,7 @@
-import React from 'react'
+import Badge from '@/components/elements/Badge'
+import Card from '@/components/elements/Card'
+import Tooltip from '@/components/elements/Tooltip'
 
-import Badge from '@/common/components/elements/Badge'
-import Card from '@/common/components/elements/Card'
-import Tooltip from '@/common/components/elements/Tooltip'
 import { STACKS } from '@/common/constant/stacks'
 import { CourseCardProps } from '@/common/types/roadmap'
 

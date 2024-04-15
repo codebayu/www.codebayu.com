@@ -1,9 +1,8 @@
 import { Metadata } from 'next'
 
-import React from 'react'
+import Container from '@/components/elements/Container'
+import PageHeading from '@/components/elements/PageHeading'
 
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
 import { METADATA } from '@/common/constant/metadata'
 
 import Contact from '@/modules/contact'

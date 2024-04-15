@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
+import BackButton from '@/components/elements/BackButton'
+import Container from '@/components/elements/Container'
+import ReaderPage from '@/components/elements/ReaderPage'
 import { getBlogDetail, getComments } from '@/services/blog'
 import { getBlogViews } from '@/services/view'
 
-import BackButton from '@/common/components/elements/BackButton'
-import Container from '@/common/components/elements/Container'
-import ReaderPage from '@/common/components/elements/ReaderPage'
 import { METADATA } from '@/common/constant/metadata'
 
 type Props = {
