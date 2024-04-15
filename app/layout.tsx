@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import Analytics from '@/components/elements/Analytics'
+import GoogleAdsense from '@/components/elements/GoogleAdsense'
 import Layouts from '@/components/layouts/index'
 import NextTopLoader from 'nextjs-toploader'
 
@@ -29,8 +30,13 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const googleAdsUnitBlogId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_UNIT_BLOG_ID
+
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <GoogleAdsense pId={googleAdsUnitBlogId || ''} />
+      </head>
       <body className={soraSans.className}>
         <NextTopLoader
           color="#05b6d3"
