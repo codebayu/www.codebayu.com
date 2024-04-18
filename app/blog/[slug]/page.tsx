@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 
 import BackButton from '@/components/elements/BackButton'
 import Container from '@/components/elements/Container'
-import GoogleAdsBanner from '@/components/elements/GoogleAdsBanner'
 import ReaderPage from '@/components/elements/ReaderPage'
 import { getBlogDetail, getComments } from '@/services/blog'
 import { getBlogViews } from '@/services/view'
@@ -44,7 +43,6 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         <BackButton url="/blog" />
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />
       </Container>
-      <GoogleAdsBanner />
     </>
   )
 }

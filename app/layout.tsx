@@ -32,9 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <head>
-        <GoogleAdsense />
-      </head>
+      <GoogleAdsense />
       <body className={soraSans.className}>
         <NextTopLoader
           color="#05b6d3"
