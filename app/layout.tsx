@@ -30,12 +30,10 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const googleAdsUnitBlogId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_UNIT_BLOG_ID
-
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <GoogleAdsense pId={googleAdsUnitBlogId || ''} />
+        <GoogleAdsense />
       </head>
       <body className={soraSans.className}>
         <NextTopLoader
