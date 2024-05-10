@@ -132,7 +132,7 @@
   width: 25px;
   left: 0;
   border-top-left-radius: 12px;
-  box-shadow: 0 -25px 0 0 #121212;
+  box-shadow: 0 -25px 0 0 #0a0a0a;
   z-index: 0;
 }
 
@@ -145,7 +145,7 @@
   width: 25px;
   right: -25px;
   border-top-left-radius: 12px;
-  box-shadow: 0 -25px 0 0 #121212;
+  box-shadow: 0 -25px 0 0 #0a0a0a;
   z-index: 0;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .inverted-image-left-dark {
-  background: #121212;
+  background: #0a0a0a;
   height: 100px;
   width: 80px;
 }
@@ -205,7 +205,7 @@
   width: 35px;
   left: -5px;
   border-top-left-radius: 50px;
-  box-shadow: 0 -25px 0 0 #121212;
+  box-shadow: 0 -25px 0 0 #0a0a0a;
   z-index: 0;
   border-top: 1px solid #525252;
   border-left: 1px solid #525252;
@@ -220,7 +220,7 @@
   width: 35px;
   left: -5px;
   border-top-left-radius: 50px;
-  box-shadow: 0 -25px 0 0 #121212;
+  box-shadow: 0 -25px 0 0 #0a0a0a;
   z-index: 0;
   transform: scaleY(-1);
   border-top: 1px solid #525252;

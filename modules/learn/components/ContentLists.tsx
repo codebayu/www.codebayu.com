@@ -8,12 +8,12 @@ import useSWR from 'swr'
 
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
-import { ContentProps } from '@/common/types/learn'
+import { ILearn } from '@/common/types/learn'
 
 import LearnSubContentItem from './LearnSubContentItem'
 
 interface ContentListsProps {
-  content: ContentProps
+  content: ILearn
 }
 export default function ContentLists({ content }: ContentListsProps) {
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
@@ -22,7 +22,9 @@ export default function ContentLists({ content }: ContentListsProps) {
 
   const learns: BlogItem[] = useMemo(() => {
     if (!data) return []
-    const filteredLearns = data.filter((blog: BlogItem) => blog.collection_id === content.id)
+    const filteredLearns = data.filter((blog: BlogItem) => {
+      return `${blog.collection_id}` === content.id
+    })
     filteredLearns.sort((a: BlogItem, b: BlogItem) => {
       const dateA = new Date(a.created_at)
       const dateB = new Date(b.created_at)

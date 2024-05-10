@@ -21,7 +21,7 @@ export type ICareerCMS = {
   locationType: string
   type: string
   startDate: Date
-  endDate: Date
+  endDate: Date | null
   link: string
   slug: string
 }

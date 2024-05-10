@@ -40,7 +40,7 @@ model Career {
   locationType  String
   type          String
   startDate     DateTime 
-  endDate       DateTime
+  endDate       DateTime?
   link          String  
   slug          String    @unique
 }

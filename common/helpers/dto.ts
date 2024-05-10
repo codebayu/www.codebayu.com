@@ -1,4 +1,5 @@
 import { ICareerCMS } from '../types/careers'
+import { ILearnCMS } from '../types/learn'
 
 export function careerDto(career: ICareerCMS) {
   return {
@@ -13,5 +14,19 @@ export function careerDto(career: ICareerCMS) {
     end_date: career.endDate,
     link: career.link,
     slug: career.slug
+  }
+}
+
+export function learnDto(learn: ILearnCMS) {
+  return {
+    id: learn.id,
+    title: learn.title,
+    slug: learn.slug,
+    description: learn.description,
+    image: learn.image,
+    is_new: learn.isFeatured,
+    level: learn.level,
+    is_show: learn.isShow,
+    language: learn.language
   }
 }

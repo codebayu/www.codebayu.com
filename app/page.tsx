@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 import Container from '@/components/elements/Container'
-import { getCodeBayuData } from '@/services/codebayu'
 
 import { METADATA } from '@/common/constant/metadata'
-import { CareerProps } from '@/common/types/careers'
-import { ContentProps } from '@/common/types/learn'
+import { learnDto } from '@/common/helpers/dto'
+import { prisma } from '@/common/libs/prisma'
+import { ILearn } from '@/common/types/learn'
 import { IServices } from '@/common/types/services'
 
 import Home from '@/modules/home'
@@ -18,29 +18,23 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const careers = await getCareers()
   const learns = await getLearns()
   const services = await getServices()
   return (
     <>
       <Container data-aos="fade-left">
-        <Home careers={careers} learns={learns} services={services} />
+        <Home learns={learns} services={services} />
       </Container>
     </>
   )
 }
 
-async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
-  return response.careers
-}
-
-async function getLearns(): Promise<ContentProps[]> {
-  const response = await getCodeBayuData()
-  return response.learns
+async function getLearns(): Promise<ILearn[]> {
+  const response = await prisma.learn.findMany()
+  return response.map(learnDto)
 }
 
 async function getServices(): Promise<IServices[]> {
-  const response = await getCodeBayuData()
-  return response.services
+  const response = await prisma.service.findMany()
+  return response
 }

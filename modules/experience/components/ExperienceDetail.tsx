@@ -13,6 +13,8 @@ export default function ExperienceDetail(props: CareerProps) {
   const startDate = new Date(start_date)
   const endDate = end_date ? new Date(end_date) : new Date()
 
+  console.log(slug)
+
   const contents = loadMdxFiles(slug, 'experience')
   const content = contents.find(item => item.slug === slug)?.content
 

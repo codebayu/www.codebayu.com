@@ -4,9 +4,9 @@ import Card from '@/components/elements/Card'
 import Image from '@/components/elements/Image'
 
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
-import { ContentProps } from '@/common/types/learn'
+import { ILearn } from '@/common/types/learn'
 
-export default function LearnCard({ title, slug, description, image, is_new }: ContentProps) {
+export default function LearnCard({ title, slug, description, image, is_new }: ILearn) {
   return (
     <Link href={`/learn/${slug}`}>
       <Card className="relative cursor-pointer border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%]">
