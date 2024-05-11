@@ -1,5 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// schema.prisma
 
 generator client {
   provider = "prisma-client-js"
@@ -7,28 +6,69 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL") // uses connection pooling
 }
 
-model Projects {
-  id          Int      @id @default(autoincrement())
+model User {
+  id            String       @default(cuid()) @id
+  name          String
+  email         String   @unique
+  password      String
+}
+
+model Project {
+  id          String   @unique    @default(cuid()) @id
   title       String
   slug        String   @unique
   description String
   image       String
-  link_demo   String?
-  link_github String?
-  stacks      String
-  is_show     Boolean  @default(true)
-  updated_at  DateTime @default(now())
-  content     String?  @db.Text
-  is_featured Boolean  @default(false)
+  linkDemo    String
+  linkGithub  String
+  stacks      String[]
+  isShow      Boolean 
+  updatedAt   DateTime
+  content     String    @db.Text
+  isFeatured  Boolean 
 }
 
-model ContentMeta {
-  id         Int      @id @default(autoincrement())
-  slug       String   @unique
-  type       String
-  views      Int      @default(0)
-  updated_at DateTime @default(now())
+model Career {
+  id            String   @unique    @default(cuid()) @id
+  position      String
+  company       String
+  logo          String
+  location      String
+  locationType  String
+  type          String
+  startDate     DateTime 
+  endDate       DateTime?
+  link          String  
+  slug          String    @unique
+}
+
+model Service {
+  id          String  @unique @default(cuid()) @id
+  tag         String
+  title       String
+  description String
+}
+
+model Learn {
+  id            String  @unique @default(cuid()) @id
+  title         String
+  description   String
+  slug          String    @unique
+  image         String
+  level         String
+  language      String
+  isFeatured    Boolean
+  isShow        Boolean
+}
+
+model Promotion {
+  id            String  @unique @default(cuid()) @id
+  text          String
+  image         String
+  link          String
+  isShow        Boolean
+  showingOn     String[]
 }

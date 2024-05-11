@@ -7,11 +7,11 @@ import { PLACEHOLDER_URL } from '@/common/constant'
 import { formatDate } from '@/common/helpers'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { BlogItem } from '@/common/types/blog'
-import { ContentProps } from '@/common/types/learn'
+import { ILearn } from '@/common/types/learn'
 
 interface LatestArticleCardProps {
   data: BlogItem
-  learns: ContentProps[]
+  learns: ILearn[]
   index: number
 }
 
@@ -33,7 +33,7 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
 
   function generateDetailUrl() {
     if (!data.collection_id) return `/blog/${data.slug}?id=${data.id}&read-mode=true`
-    const collection = learns.find(collection => collection.id === data.collection_id)
+    const collection = learns.find(collection => collection.id === `${data.collection_id}`)
     return `/learn/${collection?.slug}/${data.slug}?id=${data.id}&read-mode=true`
   }
 

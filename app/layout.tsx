@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     siteName: METADATA.openGraph.siteName,
     locale: METADATA.openGraph.locale,
     type: 'website'
+  },
+  robots: {
+    index: true,
+    follow: true
   }
 }
 

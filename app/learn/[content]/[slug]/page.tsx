@@ -22,14 +22,16 @@ export async function generateMetadata({ params, searchParams }: LearnContentDet
   const data = await getBlogDetail({ params, searchParams })
   return {
     title: `${data.title} ${METADATA.exTitle}`,
+    description: data.description,
     openGraph: {
       url: METADATA.openGraph.url,
       siteName: METADATA.openGraph.siteName,
       locale: METADATA.openGraph.locale,
       type: 'article',
-      authors: METADATA.creator
+      authors: METADATA.creator,
+      images: data.social_image
     },
-    keywords: data.title,
+    keywords: data.tag_list,
     alternates: {
       canonical: `${process.env.DOMAIN}/learn/${params.content}/${params.slug}`
     }

@@ -13,12 +13,12 @@ export default function ServicesList({ services }: { services: IServices[] }) {
       <div className="space-y-2">
         <SectionHeading title="Services" icon={<FaServicestack className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">What can I do for you</p>
+          <p className="dark:text-neutral-400">I can deliver the following services</p>
         </SectionSubHeading>
       </div>
-      <div className="no-scrollbar mt-6 flex flex-row space-x-3 overflow-y-hidden overflow-x-scroll">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {(services || servicesMock).map((item, index) => (
-          <ServicesCard key={index} {...item} />
+          <ServicesCard key={index} {...item} index={index} />
         ))}
       </div>
     </section>

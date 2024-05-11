@@ -9,12 +9,12 @@ import useSWR from 'swr'
 
 import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
-import { ContentProps } from '@/common/types/learn'
+import { ILearn } from '@/common/types/learn'
 
 import LatestArticleCard from './LatestArticleCard'
 import LoadingLatestArticle from './LoadingLatestArticle'
 
-export default function LatestArticle({ learns }: { learns: ContentProps[] }) {
+export default function LatestArticle({ learns }: { learns: ILearn[] }) {
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
     revalidateOnMount: true
   })
