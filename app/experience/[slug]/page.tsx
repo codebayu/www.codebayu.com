@@ -2,9 +2,10 @@ import { Metadata } from 'next'
 
 import BackButton from '@/components/elements/BackButton'
 import Container from '@/components/elements/Container'
-import { getCodeBayuData } from '@/services/codebayu'
 
 import { METADATA } from '@/common/constant/metadata'
+import { careerDto } from '@/common/helpers/dto'
+import { prisma } from '@/common/libs/prisma'
 import { CareerProps } from '@/common/types/careers'
 
 import ExperienceDetail from '@/modules/experience'
@@ -32,6 +33,6 @@ export default async function ExperienceDetailPage({ params }: { params: { slug:
 }
 
 async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
-  return response.careers
+  const response = await prisma.career.findMany({ orderBy: { startDate: 'desc' } })
+  return response.map(careerDto)
 }

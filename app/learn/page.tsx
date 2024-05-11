@@ -2,10 +2,11 @@ import { Metadata } from 'next'
 
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
-import { getCodeBayuData } from '@/services/codebayu'
 
 import { METADATA } from '@/common/constant/metadata'
-import { ContentProps } from '@/common/types/learn'
+import { learnDto } from '@/common/helpers/dto'
+import { prisma } from '@/common/libs/prisma'
+import { ILearn } from '@/common/types/learn'
 
 import LearnModule from '@/modules/learn'
 
@@ -35,7 +36,7 @@ export default async function LearnPage() {
   )
 }
 
-async function getLearns(): Promise<ContentProps[]> {
-  const response = await getCodeBayuData()
-  return response.learns
+async function getLearns(): Promise<ILearn[]> {
+  const response = await prisma.learn.findMany()
+  return response.map(learnDto)
 }

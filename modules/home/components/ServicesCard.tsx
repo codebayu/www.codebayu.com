@@ -1,37 +1,27 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import Card from '@/components/elements/Card'
+import { HiOutlineComputerDesktop, HiOutlineDevicePhoneMobile } from 'react-icons/hi2'
+import { IoAnalyticsOutline } from 'react-icons/io5'
+import { RiSeoLine } from 'react-icons/ri'
 
 interface ServicesCardProps {
   tag: string
   title: string
   description: string
+  index: number
 }
 
-export default function ServicesCard({ tag, title, description }: ServicesCardProps) {
-  const [hover, setHover] = useState(false)
+export default function ServicesCard({ tag, title, description, index }: ServicesCardProps) {
   return (
-    <div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className={`min-w-[300px] overflow-hidden rounded-xl bg-[url('/backdrop_services.jpg')] bg-cover bg-center text-neutral-100 md:w-80`}
-    >
-      <div className="flex h-full w-full flex-col justify-center p-6 font-mono ">
-        {!hover && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="text-sm text-neutral-300">#{tag}</span>
-            <h3 className="mt-2 text-2xl font-bold text-neutral-200">{title}</h3>
-          </motion.div>
-        )}
-
-        {hover && (
-          <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }}>
-            <h3 className="mb-4 text-lg font-bold text-neutral-200">{title}</h3>
-            <p className="text-xs text-neutral-300">{description}</p>
-          </motion.div>
-        )}
+    <Card className="border border-neutral-200 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800">
+      <div className="flex items-center space-x-2">
+        {index === 0 ? <HiOutlineComputerDesktop /> : null}
+        {index === 1 ? <HiOutlineDevicePhoneMobile /> : null}
+        {index === 2 ? <IoAnalyticsOutline /> : null}
+        {index === 3 ? <RiSeoLine /> : null}
+        <h3>{title}</h3>
       </div>
-    </div>
+      <span className="text-xs text-neutral-500 dark:text-teal-200">#{tag}</span>
+      <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
+    </Card>
   )
 }

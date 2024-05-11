@@ -3,15 +3,27 @@ export interface ContentLanguage {
   title: string
 }
 
-export interface ContentProps {
-  id: number
+export interface ILearn {
+  id: string
   title: string
   slug: string
   description: string
   image: string
   is_new: boolean
-  level: 'Easy' | 'Medium' | 'Hard'
+  level: string
   is_show: boolean
+  language: string
+}
+
+export interface ILearnCMS {
+  id: string
+  title: string
+  slug: string
+  description: string
+  image: string
+  isFeatured: boolean
+  level: string
+  isShow: boolean
   language: string
 }
 
