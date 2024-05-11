@@ -8,7 +8,7 @@ export const careersMock: CareerProps[] = [
     location: 'Jakarta, Indonesia',
     location_type: 'remote',
     type: 'full-time',
-    start_date: '2023-01-01',
+    start_date: new Date(),
     end_date: null,
     link: 'https://www.codebayu.com/',
     slug: 'codebayu'
