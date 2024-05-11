@@ -12,5 +12,5 @@ export const METADATA = {
     locale: 'id-ID'
   },
   exTitle: '| Code Bayu',
-  profile: 'https://res.cloudinary.com/codebayu/image/upload/f_auto,q_auto/v1/codebayu/profile'
+  profile: 'https://res.cloudinary.com/codebayu/image/upload/f_auto,q_auto/v1/codebayu/logo'
 }
