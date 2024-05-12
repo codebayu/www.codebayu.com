@@ -1,3 +1,5 @@
+@import url('star.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -278,4 +280,16 @@
   -moz-transform: rotate(45deg); /* Firefox */
   -webkit-transform: rotate(45deg); /* Safari and Chrome */
   -o-transform: rotate(45deg); /* Opera */
+}
+
+/* Dotted Background */
+
+.dotted {
+  background-image: radial-gradient(#e5e5e5 5%, transparent 0);
+  background-size: 35px 35px;
+}
+
+.dotted-dark {
+  background-image: radial-gradient(#262626 5%, transparent 0);
+  background-size: 35px 35px;
 }

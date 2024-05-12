@@ -9,6 +9,8 @@ import { ReactNode, useEffect } from 'react'
 
 import ChatOverlay from '../elements/ChatOverlay'
 import RunningText from '../elements/RunningText'
+import ShiningStar from '../elements/ShiningStar'
+import ShootingStar from '../elements/ShootingStar'
 import LeftCollapseNavigation from './LeftCollapseNavigation'
 import MobileHeader from './MobileHeader'
 
@@ -33,6 +35,8 @@ export default function Layouts({ children }: LayoutsProps) {
   }, [])
   return (
     <div className="flex flex-col justify-center">
+      <ShootingStar />
+      <ShiningStar />
       <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
         {!hideSidebar && (
           <>
