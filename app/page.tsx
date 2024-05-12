@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { revalidatePath } from 'next/cache'
 
 import Container from '@/components/elements/Container'
 
@@ -35,6 +36,7 @@ async function getLearns(): Promise<ILearn[]> {
 }
 
 async function getServices(): Promise<IServices[]> {
+  revalidatePath('/')
   const response = await prisma.service.findMany()
   return response
 }
