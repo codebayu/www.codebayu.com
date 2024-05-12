@@ -31,6 +31,7 @@ export default async function HomePage() {
 }
 
 async function getLearns(): Promise<ILearn[]> {
+  revalidatePath('/')
   const response = await prisma.learn.findMany()
   return response.map(learnDto)
 }

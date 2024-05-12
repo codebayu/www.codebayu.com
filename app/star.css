@@ -209,3 +209,15 @@
 .single-star:nth-child(5)::after {
   animation-delay: 1.8s;
 }
+
+@media only screen and (max-width: 1024px) {
+  @keyframes falling {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(200px);
+    }
+  }
+}
