@@ -35,6 +35,22 @@ export const MENU_ITEMS: MenuItemProps[] = [
     eventName: 'Pages: Home'
   },
   {
+    title: 'About',
+    href: '/about',
+    icon: <ProfileIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: About'
+  },
+  {
+    title: 'Blog',
+    href: '/blog?category=home',
+    icon: <BlogIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Blog'
+  },
+  {
     title: 'Projects',
     href: '/projects',
     icon: <ProjectIcon size={iconSize} />,
@@ -42,19 +58,12 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isExternal: false,
     eventName: 'Pages: Projects'
   },
-  {
-    title: 'Blog',
-    href: '/blog',
-    icon: <BlogIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Blog'
-  },
+
   {
     title: 'Learn',
     href: '/learn',
     icon: <LearnIcon size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: false,
     eventName: 'Pages: Learn'
   },
@@ -81,14 +90,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat Room'
-  },
-  {
-    title: 'About',
-    href: '/about',
-    icon: <ProfileIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: About'
   },
   {
     title: 'Contact',
@@ -187,5 +188,32 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Tiktok',
     backgroundColor: 'bg-black'
+  }
+]
+
+export const BLOG_LINK = [
+  {
+    id: null,
+    href: '?category=home',
+    label: 'Home',
+    value: 'home'
+  },
+  {
+    id: 24593,
+    href: '?category=nextjs',
+    label: 'Next.js',
+    value: 'nextjs'
+  },
+  {
+    id: 24596,
+    href: '?category=typescript',
+    label: 'TypeScript',
+    value: 'typescript'
+  },
+  {
+    id: null,
+    href: '/roadmap?tribe=frontend-developer',
+    label: 'Roadmap',
+    value: 'roadmap'
   }
 ]

@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
+import { revalidatePath } from 'next/cache'
 
 import Container from '@/components/elements/Container'
-import PageHeading from '@/components/elements/PageHeading'
+import { getBlogData } from '@/services/blog'
 
+import { BLOG_LINK } from '@/common/constant/menu'
 import { METADATA } from '@/common/constant/metadata'
+import { BlogItem } from '@/common/types/blog'
 
 import Blog from '@/modules/blog'
 
@@ -16,16 +19,22 @@ export const metadata: Metadata = {
   }
 }
 
-const PAGE_TITLE = 'Blog'
-const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant learning.'
-
-export default async function BlogPage() {
+export default async function BlogPage({ searchParams }: { searchParams: { category: string } }) {
+  const blogs = await getBlog(searchParams.category)
   return (
-    <>
-      <Container data-aos="fade-left">
-        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Blog />
-      </Container>
-    </>
+    <Container data-aos="fade-left">
+      <Blog blogs={blogs} />
+    </Container>
   )
+}
+
+async function getBlog(category: string) {
+  revalidatePath('/blog')
+  const blogs = await getBlogData()
+
+  const data: BlogItem[] = blogs?.filter((blog: BlogItem) => {
+    const activeId = BLOG_LINK.find(link => link.value === category)?.id
+    return blog.collection_id === activeId
+  })
+  return data
 }
