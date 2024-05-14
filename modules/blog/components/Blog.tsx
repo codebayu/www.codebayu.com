@@ -1,63 +1,24 @@
-'use client'
-
-import EmptyState from '@/components/elements/EmptyState'
-import LoadingCard from '@/components/elements/LoadingCard'
-import { fetcher } from '@/services/fetcher'
-import clsx from 'clsx'
-import { motion } from 'framer-motion'
-import useSWR from 'swr'
-
-import { DEVTO_BLOG_API } from '@/common/constant'
 import { BlogItem } from '@/common/types/blog'
 
-import { useBlogView } from '@/stores/blog-view'
-
-import useIsMobile from '@/hooks/useIsMobile'
-
 import BlogCard from './BlogCard'
-import BlogListHeader from './BlogListHeader'
+import BlogHeader from './BlogHeader'
+import BlogThumbnail from './BlogThumbnail'
 
-export default function Blog() {
-  const isMobile = useIsMobile()
-  const { viewOption, setViewOption } = useBlogView()
-  const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
-    revalidateOnMount: true
-  })
+interface BlogProps {
+  blogs: BlogItem[]
+}
 
-  const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null)
-
-  if (isLoading)
-    return (
-      <div
-        className={clsx(
-          'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
-        )}
-      >
-        {[1, 2].map(item => (
-          <LoadingCard key={item} view={viewOption} />
-        ))}
-      </div>
-    )
-
-  if (blogs.length === 0 && !isLoading) {
-    return <EmptyState message="No Data" />
-  }
-
+export default function Blog({ blogs }: BlogProps) {
   return (
     <>
-      {!isMobile && <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />}
-      <div className={clsx('gap-5 sm:gap-4', viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2')}>
-        {blogs?.map((item: BlogItem, index: number) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-          >
-            <BlogCard view={viewOption} {...item} />
-          </motion.div>
-        ))}
+      <BlogHeader />
+      <BlogThumbnail newestBlog={blogs[0]} />
+      <h3 className="mb-4 mt-10 hidden font-semibold text-neutral-700 transition-all duration-300 dark:text-neutral-200 md:block md:text-xl">
+        Related Articles
+      </h3>
+
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {blogs?.slice(1).map((item: BlogItem, index: number) => <BlogCard key={index} {...item} />)}
       </div>
     </>
   )

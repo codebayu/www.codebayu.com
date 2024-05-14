@@ -40,7 +40,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   return (
     <>
       <Container data-aos="fade-left">
-        <BackButton url="/blog" />
+        <BackButton url="/blog?category=home" />
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />
       </Container>
     </>
