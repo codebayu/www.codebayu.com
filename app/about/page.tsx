@@ -1,12 +1,16 @@
 import { Metadata } from 'next'
+import { revalidatePath } from 'next/cache'
 
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
+import axios from 'axios'
 
+import { CODEBAYU_SERVICE } from '@/common/constant'
 import { METADATA } from '@/common/constant/metadata'
+import { getRequestHeader } from '@/common/helpers'
 import { careerDto } from '@/common/helpers/dto'
-import { prisma } from '@/common/libs/prisma'
-import { CareerProps } from '@/common/types/careers'
+import { IResponseCodeBayuService } from '@/common/types'
+import { CareerProps, ICareerCMS } from '@/common/types/careers'
 
 import About from '@/modules/about'
 
@@ -34,6 +38,10 @@ export default async function AboutPage() {
 }
 
 async function getCareers(): Promise<CareerProps[]> {
-  const response = await prisma.career.findMany({ orderBy: { startDate: 'desc' } })
-  return response.map(careerDto)
+  revalidatePath('/')
+  const headers = getRequestHeader()
+  const response = await axios.get(`${CODEBAYU_SERVICE}/career`, { headers })
+  const data = response.data as IResponseCodeBayuService<ICareerCMS[]>
+  if (data.statusCode !== 200) return []
+  return data.data.map(careerDto).sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime())
 }

@@ -13,3 +13,13 @@ export interface ICodeBayuData {
   roadmaps: IRoadmap
   services: IServices[]
 }
+
+export interface IRequestHeader {
+  [key: string]: string | number
+}
+
+export interface IResponseCodeBayuService<T> {
+  statusCode: number
+  message: string
+  data: T
+}

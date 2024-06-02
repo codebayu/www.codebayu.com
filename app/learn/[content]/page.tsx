@@ -1,13 +1,17 @@
 import { Metadata } from 'next'
+import { revalidatePath } from 'next/cache'
 
 import BackButton from '@/components/elements/BackButton'
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
+import axios from 'axios'
 
+import { CODEBAYU_SERVICE } from '@/common/constant'
 import { METADATA } from '@/common/constant/metadata'
+import { getRequestHeader } from '@/common/helpers'
 import { learnDto } from '@/common/helpers/dto'
-import { prisma } from '@/common/libs/prisma'
-import { ILearn } from '@/common/types/learn'
+import { IResponseCodeBayuService } from '@/common/types'
+import { ILearn, ILearnCMS } from '@/common/types/learn'
 
 import ContentLists from '@/modules/learn/components/ContentLists'
 
@@ -58,8 +62,12 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
 }
 
 async function getLearns(): Promise<ILearn[]> {
-  const response = await prisma.learn.findMany()
-  return response.map(learnDto)
+  revalidatePath('/learn')
+  const headers = getRequestHeader()
+  const response = await axios.get(`${CODEBAYU_SERVICE}/learn`, { headers })
+  const data = response.data as IResponseCodeBayuService<ILearnCMS[]>
+  if (data.statusCode !== 200) return []
+  return data.data.map(learnDto)
 }
 
 async function getContent(contentSlug: string) {

@@ -20,8 +20,8 @@ export type ICareerCMS = {
   location: string
   locationType: string
   type: string
-  startDate: Date
-  endDate: Date | null
+  startDate: string
+  endDate: string | null
   link: string
   slug: string
 }

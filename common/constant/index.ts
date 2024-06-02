@@ -13,3 +13,4 @@ export const PAGESPEED_CATEGORIES = '&category=accessibility&category=performanc
 
 export const SAWERIA_URL = 'https://saweria.co/codebayu'
 export const CODEWARS_URL = 'https://www.codewars.com/'
+export const CODEBAYU_SERVICE = process.env.CODEBAYU_SERVICE || ''
