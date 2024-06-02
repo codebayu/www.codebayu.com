@@ -6,8 +6,9 @@ import Badge from '@/components/elements/Badge'
 import SinglePromotion from '@/components/elements/SinglePromotion'
 
 import { TRIBES } from '@/common/constant/roadmap'
+import { IAdsBanner } from '@/common/types/ads'
 
-export default function BadgeList() {
+export default function BadgeList({ promotion }: { promotion?: IAdsBanner }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const url = `${pathname}?${searchParams}`
@@ -29,7 +30,7 @@ export default function BadgeList() {
             )
         )}
       </div>
-      <SinglePromotion path="/roadmap" />
+      <SinglePromotion data={promotion} />
     </div>
   )
 }

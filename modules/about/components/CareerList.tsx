@@ -3,11 +3,11 @@ import SectionHeading from '@/components/elements/SectionHeading'
 import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi'
 
-import { CareerProps } from '@/common/types/careers'
+import { ICareer } from '@/common/types/careers'
 
 import CareerCard from './CareerCard'
 
-export default function CareerList({ careers }: { careers: CareerProps[] }) {
+export default function CareerList({ careers }: { careers: ICareer[] }) {
   return (
     <section className="space-y-6">
       <div className="space-y-2">

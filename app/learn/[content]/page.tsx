@@ -1,17 +1,12 @@
 import { Metadata } from 'next'
-import { revalidatePath } from 'next/cache'
+import { unstable_noStore as noStore } from 'next/cache'
 
 import BackButton from '@/components/elements/BackButton'
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
-import axios from 'axios'
+import { getLearns } from '@/services/codebayu'
 
-import { CODEBAYU_SERVICE } from '@/common/constant'
 import { METADATA } from '@/common/constant/metadata'
-import { getRequestHeader } from '@/common/helpers'
-import { learnDto } from '@/common/helpers/dto'
-import { IResponseCodeBayuService } from '@/common/types'
-import { ILearn, ILearnCMS } from '@/common/types/learn'
 
 import ContentLists from '@/modules/learn/components/ContentLists'
 
@@ -25,6 +20,7 @@ type Props = {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  noStore()
   const { content } = await getContent(params.content)
   return {
     title: `${content?.title} ${METADATA.exTitle}`,
@@ -59,15 +55,6 @@ export default async function LearnContentPage({ params }: LearnContentPage) {
       </Container>
     </>
   )
-}
-
-async function getLearns(): Promise<ILearn[]> {
-  revalidatePath('/learn')
-  const headers = getRequestHeader()
-  const response = await axios.get(`${CODEBAYU_SERVICE}/learn`, { headers })
-  const data = response.data as IResponseCodeBayuService<ILearnCMS[]>
-  if (data.statusCode !== 200) return []
-  return data.data.map(learnDto)
 }
 
 async function getContent(contentSlug: string) {

@@ -1,10 +1,9 @@
 import { Metadata } from 'next'
 
-import { getCodeBayuData } from '@/services/codebayu'
-import React from 'react'
+import { getCareers, getPromotions } from '@/services/codebayu'
 
 import { METADATA } from '@/common/constant/metadata'
-import { CareerProps } from '@/common/types/careers'
+import { IAdsBanner } from '@/common/types/ads'
 
 import MeSection from '@/modules/me'
 
@@ -19,10 +18,7 @@ export const metadata: Metadata = {
 
 export default async function MePage() {
   const careers = await getCareers()
-  return <MeSection careers={careers} />
-}
-
-async function getCareers(): Promise<CareerProps[]> {
-  const response = await getCodeBayuData()
-  return response.careers
+  const promotions = await getPromotions()
+  const promotion = promotions.filter((item: IAdsBanner) => item.showingOn.includes('/me'))
+  return <MeSection careers={careers} promotions={promotion} />
 }

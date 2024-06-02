@@ -5,5 +5,6 @@ export interface IAdsBanner {
   link: string
   isShow: boolean
   showingOn: string[]
-  bgColor: string
+  createdAt: string
+  updatedAt: string | null
 }

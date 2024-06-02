@@ -2,13 +2,14 @@ import MultiplePromotion from '@/components/elements/MultiplePromotion'
 import SocialMedia from '@/components/elements/SocialMedia'
 
 import { SOCIAL_MEDIA } from '@/common/constant/menu'
-import { CareerProps } from '@/common/types/careers'
+import { IAdsBanner } from '@/common/types/ads'
+import { ICareer } from '@/common/types/careers'
 
 import CurrentlyWorking from './CurrentlyWorking'
 import GoHome from './GoHome'
 import MeProfile from './MeProfile'
 
-export default function MeSection({ careers }: { careers: CareerProps[] }) {
+export default function MeSection({ careers, promotions }: { careers: ICareer[]; promotions: IAdsBanner[] }) {
   const filteredSocialMedia = SOCIAL_MEDIA?.filter(
     item => item?.isShow && item.title !== 'NPM' && item.title !== 'TikTok'
   )
@@ -18,7 +19,7 @@ export default function MeSection({ careers }: { careers: CareerProps[] }) {
       <CurrentlyWorking careers={careers} />
       <SocialMedia items={filteredSocialMedia} isMePage />
       <GoHome />
-      <MultiplePromotion path="/me" />
+      <MultiplePromotion data={promotions} />
     </>
   )
 }

@@ -11,11 +11,11 @@ import { BsBuildings as CompanyIcon } from 'react-icons/bs'
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
-import { CareerProps } from '@/common/types/careers'
+import { ICareer } from '@/common/types/careers'
 
 import useHasMounted from '@/hooks/useHasMounted'
 
-export default function CareerCard({ position, company, logo, location, start_date, end_date, slug }: CareerProps) {
+export default function CareerCard({ position, company, logo, location, start_date, end_date, slug }: ICareer) {
   const router = useRouter()
   const { resolvedTheme } = useTheme()
 

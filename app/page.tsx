@@ -1,16 +1,11 @@
 import { Metadata } from 'next'
-import { revalidatePath } from 'next/cache'
+import { unstable_noStore as noStore } from 'next/cache'
 
 import Container from '@/components/elements/Container'
-import axios from 'axios'
+import { getLearns, getPromotions, getServices } from '@/services/codebayu'
 
-import { CODEBAYU_SERVICE } from '@/common/constant'
 import { METADATA } from '@/common/constant/metadata'
-import { getRequestHeader } from '@/common/helpers'
-import { learnDto } from '@/common/helpers/dto'
-import { IResponseCodeBayuService } from '@/common/types'
-import { ILearn, ILearnCMS } from '@/common/types/learn'
-import { IServices } from '@/common/types/services'
+import { IAdsBanner } from '@/common/types/ads'
 
 import Home from '@/modules/home'
 
@@ -22,31 +17,16 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
+  noStore()
   const learns = await getLearns()
   const services = await getServices()
+  const promotions = await getPromotions()
+  const promotion = promotions.find((item: IAdsBanner) => item.showingOn.includes('/'))
   return (
     <>
       <Container data-aos="fade-left">
-        <Home learns={learns} services={services} />
+        <Home learns={learns} services={services} promotion={promotion} />
       </Container>
     </>
   )
-}
-
-async function getLearns(): Promise<ILearn[]> {
-  revalidatePath('/')
-  const headers = getRequestHeader()
-  const response = await axios.get(`${CODEBAYU_SERVICE}/learn`, { headers })
-  const data = response.data as IResponseCodeBayuService<ILearnCMS[]>
-  if (data.statusCode !== 200) return []
-  return data.data.map(learnDto)
-}
-
-async function getServices(): Promise<IServices[]> {
-  revalidatePath('/')
-  const headers = getRequestHeader()
-  const response = await axios.get(`${CODEBAYU_SERVICE}/service`, { headers })
-  const data = response.data as IResponseCodeBayuService<IServices[]>
-  if (data.statusCode !== 200) return []
-  return data.data
 }

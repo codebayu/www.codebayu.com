@@ -1,10 +1,8 @@
 import Link from 'next/link'
 
-import React from 'react'
+import { ICareer } from '@/common/types/careers'
 
-import { CareerProps } from '@/common/types/careers'
-
-export default function CurrentlyWorking({ careers }: { careers: CareerProps[] }) {
+export default function CurrentlyWorking({ careers }: { careers: ICareer[] }) {
   const currentlyCompany = careers[0]
   return (
     <div

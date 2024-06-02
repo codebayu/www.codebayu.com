@@ -1,6 +1,6 @@
 import Breakline from '@/components/elements/Breakline'
 
-import { CareerProps } from '@/common/types/careers'
+import { ICareer } from '@/common/types/careers'
 
 import CareerList from './CareerList'
 import SkillList from './SkillList'
@@ -9,7 +9,7 @@ import Tiktok from './Tiktok'
 import Unwrapped from './Unwrapped'
 
 interface AboutProps {
-  careers: CareerProps[]
+  careers: ICareer[]
 }
 
 export default function About({ careers }: AboutProps) {

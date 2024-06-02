@@ -1,4 +1,4 @@
-export interface CareerProps {
+export interface ICareer {
   id?: string
   position: string
   company: string

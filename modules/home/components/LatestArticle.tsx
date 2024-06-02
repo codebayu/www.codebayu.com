@@ -8,13 +8,14 @@ import { HiOutlineNewspaper } from 'react-icons/hi'
 import useSWR from 'swr'
 
 import { DEVTO_BLOG_API } from '@/common/constant'
+import { IAdsBanner } from '@/common/types/ads'
 import { BlogItem } from '@/common/types/blog'
 import { ILearn } from '@/common/types/learn'
 
 import LatestArticleCard from './LatestArticleCard'
 import LoadingLatestArticle from './LoadingLatestArticle'
 
-export default function LatestArticle({ learns }: { learns: ILearn[] }) {
+export default function LatestArticle({ learns, promotion }: { learns: ILearn[]; promotion?: IAdsBanner }) {
   const { data, isLoading } = useSWR(DEVTO_BLOG_API, fetcher, {
     revalidateOnMount: true
   })
@@ -26,7 +27,7 @@ export default function LatestArticle({ learns }: { learns: ILearn[] }) {
         <SectionHeading title="Latest Articles" icon={<HiOutlineNewspaper className="mr-1" />} />
         <SectionSubHeading>
           <p className="dark:text-neutral-400">Latest articles from dev.to</p>
-          <SinglePromotion path="/" />
+          <SinglePromotion data={promotion} />
         </SectionSubHeading>
       </div>
       <div className="no-scrollbar mt-4 flex h-40 flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2">

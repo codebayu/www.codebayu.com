@@ -5,9 +5,9 @@ import { format } from 'date-fns'
 
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'
 import loadMdxFiles from '@/common/libs/mdx'
-import { CareerProps } from '@/common/types/careers'
+import { ICareer } from '@/common/types/careers'
 
-export default function ExperienceDetail(props: CareerProps) {
+export default function ExperienceDetail(props: ICareer) {
   const { logo, company, position, location, location_type, start_date, end_date, slug } = props
 
   const startDate = new Date(start_date)

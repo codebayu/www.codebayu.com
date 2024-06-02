@@ -1,6 +1,6 @@
-import { CareerProps } from '../types/careers'
+import { ICareer } from '../types/careers'
 
-export const careersMock: CareerProps[] = [
+export const careersMock: ICareer[] = [
   {
     position: 'Senior Frontend Engineer',
     company: 'CodeBayu',

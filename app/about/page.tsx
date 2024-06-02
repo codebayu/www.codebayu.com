@@ -10,7 +10,7 @@ import { METADATA } from '@/common/constant/metadata'
 import { getRequestHeader } from '@/common/helpers'
 import { careerDto } from '@/common/helpers/dto'
 import { IResponseCodeBayuService } from '@/common/types'
-import { CareerProps, ICareerCMS } from '@/common/types/careers'
+import { ICareer, ICareerCMS } from '@/common/types/careers'
 
 import About from '@/modules/about'
 
@@ -37,7 +37,7 @@ export default async function AboutPage() {
   )
 }
 
-async function getCareers(): Promise<CareerProps[]> {
+async function getCareers(): Promise<ICareer[]> {
   revalidatePath('/')
   const headers = getRequestHeader()
   const response = await axios.get(`${CODEBAYU_SERVICE}/career`, { headers })

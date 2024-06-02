@@ -10,7 +10,7 @@ import { METADATA } from '@/common/constant/metadata'
 import { getRequestHeader } from '@/common/helpers'
 import { careerDto } from '@/common/helpers/dto'
 import { IResponseCodeBayuService } from '@/common/types'
-import { CareerProps, ICareerCMS } from '@/common/types/careers'
+import { ICareer, ICareerCMS } from '@/common/types/careers'
 
 import ExperienceDetail from '@/modules/experience'
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default async function ExperienceDetailPage({ params }: { params: { slug: string } }) {
   const careers = await getCareers()
-  const career: CareerProps = careers.find(item => item.slug === params.slug) as CareerProps
+  const career: ICareer = careers.find(item => item.slug === params.slug) as ICareer
   return (
     <>
       <Container data-aos="fade-left">
@@ -36,7 +36,7 @@ export default async function ExperienceDetailPage({ params }: { params: { slug:
   )
 }
 
-async function getCareers(): Promise<CareerProps[]> {
+async function getCareers(): Promise<ICareer[]> {
   revalidatePath('/experience')
   const headers = getRequestHeader()
   const response = await axios.get(`${CODEBAYU_SERVICE}/career`, { headers })
