@@ -12,7 +12,7 @@ interface ServicesCardProps {
 
 export default function ServicesCard({ tag, title, description, index }: ServicesCardProps) {
   return (
-    <Card className="border border-neutral-200 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800">
+    <Card className="border border-neutral-200 bg-gradient-to-br from-white to-neutral-100 px-6 py-4 dark:border-neutral-700 dark:from-neutral-800 dark:to-neutral-900">
       <div className="flex items-center space-x-2">
         {index === 0 ? <HiOutlineComputerDesktop /> : null}
         {index === 1 ? <HiOutlineDevicePhoneMobile /> : null}

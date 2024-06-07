@@ -49,7 +49,7 @@ export default function CareerCard({ position, company, logo, location, start_da
   return (
     <Card
       onClick={handleCardClick}
-      className="flex h-max min-w-[350px] cursor-pointer items-center gap-5 overflow-hidden rounded-l-sm rounded-r-xl border border-l-0 border-neutral-300 py-2 !shadow-none duration-500 hover:scale-95 dark:border-neutral-600 dark:bg-neutral-900"
+      className="flex h-max min-w-[350px] cursor-pointer items-center gap-5 overflow-hidden rounded-l-sm rounded-r-xl border border-l-0 border-neutral-300 py-2 !shadow-none duration-500 hover:scale-95 dark:border-neutral-600 dark:bg-gradient-to-br  dark:from-neutral-900 dark:to-neutral-950"
     >
       <div className="relative my-2 h-max">
         <div

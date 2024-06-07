@@ -8,7 +8,7 @@ export default function ContactList() {
       <h2>Find me on</h2>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {SOCIAL_MEDIA.map(media => (
-          <ContactCard {...media} key={media.title} />
+          <ContactCard {...media} key={media.id} />
         ))}
       </div>
     </div>

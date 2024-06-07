@@ -17,13 +17,13 @@ export default function AdsBanner({ className = 'w-72 h-full', data }: AdsBanner
     <Link
       href={data.link}
       className={cn(
-        'rounded-smfont-sans relative flex justify-center overflow-hidden text-neutral-900 dark:bg-neutral-700 md:justify-start',
+        'rounded-smfont-sans relative flex justify-center overflow-hidden rounded-sm border border-sky-100 bg-sky-50 text-neutral-900 md:justify-start',
         className,
         fontSize
       )}
       target="_blank"
     >
-      <div className="absolute h-full w-full animate-pulse bg-sky-200"></div>
+      <div className="absolute h-full w-full animate-pulse bg-gradient-to-br from-sky-100 to-sky-200"></div>
       <div className="relative flex items-center space-x-2 px-2 py-1">
         <Image src={data.image} alt="promote icon" width={30} height={30} />
         <p>{data.text || 'Iklan'}</p>

@@ -12,7 +12,7 @@ describe('DownloadResume Component', () => {
     const button = screen.getByRole('button')
     expect(button).toBeTruthy()
     expect(button.className).toBe(
-      'flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 hover:dark:text-neutral-300'
+      'flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300'
     )
   })
 

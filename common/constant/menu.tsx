@@ -102,7 +102,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
   {
-    id: 'Discord',
+    id: 'GitHub',
     title: 'Explore the code',
     description: 'Explore the source code for all my projects on GitHub.',
     href: 'https://github.com/codebayu',
