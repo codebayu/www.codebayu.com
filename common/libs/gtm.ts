@@ -1,16 +1,11 @@
-type WindowWithDataLayer = Window & {
-  dataLayer: Record<string, unknown>[]
-}
+'use client'
 
-declare const window: WindowWithDataLayer
+import { sendGTMEvent } from '@next/third-parties/google'
 
 export const sendPageView = (url: string) => {
-  if (!window.dataLayer) return
-  const pageViewData = { event: 'page_viewed', url }
-  window.dataLayer.push(pageViewData)
+  sendGTMEvent({ event: 'page_viewed', url })
 }
 
 export const sendDataLayer = (data: Record<string, unknown>) => {
-  if (!window.dataLayer) return
-  window.dataLayer.push(data)
+  sendGTMEvent(data)
 }
