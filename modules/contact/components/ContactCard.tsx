@@ -32,26 +32,30 @@ export default function DiscordCard({
   return (
     <div
       className={cn(
-        'flex h-max w-full items-end justify-between gap-4 rounded-lg border bg-opacity-40 bg-gradient-to-br p-6',
+        'flex h-max w-full items-end justify-between rounded-lg border bg-opacity-40 bg-gradient-to-br p-4 md:p-6',
         inter.className,
         classContainer
       )}
     >
       <div className={classText}>
         <h3 className="text-xl font-semibold ">{title}</h3>
-        <p className="my-2 max-w-[250px] text-xs">{description}</p>
+        <p className="my-2 max-w-[250px] text-[10px] md:text-xs">{description}</p>
         <button
           onClick={handleCardClick}
           className={cn(
-            'mt-4 flex w-max gap-1 rounded-md px-4 py-2 text-sm font-medium text-white shadow-sm dark:text-black',
+            'mt-4 flex w-max items-center gap-1 rounded-md px-3 py-2 text-[8px] text-xs font-medium text-white shadow-sm dark:text-black md:px-4 md:py-2 md:text-sm',
             classLink
           )}
         >
           <span>Go to {id}</span>
-          <FiArrowUpRight className="text-xl" />
+          <FiArrowUpRight className="text-base md:text-xl" />
         </button>
       </div>
-      <div className={cn('flex h-16 w-16 items-center justify-center rounded-full text-white', classIcon)}>{icon}</div>
+      <div
+        className={cn('flex h-12 w-12 items-center justify-center rounded-full text-white md:h-16 md:w-16', classIcon)}
+      >
+        {icon}
+      </div>
     </div>
   )
 }

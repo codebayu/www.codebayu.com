@@ -34,7 +34,7 @@ export default function Layouts({ children }: LayoutsProps) {
     })
   }, [])
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center overflow-x-hidden">
       <ShootingStar />
       <ShiningStar />
       <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
