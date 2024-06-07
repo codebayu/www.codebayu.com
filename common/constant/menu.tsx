@@ -5,23 +5,14 @@ import {
   BiHomeSmile as HomeIcon,
   BiBookBookmark as LearnIcon,
   BiLeaf as ProfileIcon,
-  BiArchive as ProjectIcon,
-  BiAt as ThreadsIcon
+  BiArchive as ProjectIcon
 } from 'react-icons/bi'
-import {
-  BsDiscord as DiscordIcon,
-  BsGithub as GithubIcon,
-  BsInstagram as InstagramIcon,
-  BsLinkedin as LinkedinIcon,
-  BsTiktok as TiktokIcon,
-  BsTwitter as TwitterIcon,
-  BsYoutube as YoutubeIcon
-} from 'react-icons/bs'
+import { BsDiscord as DiscordIcon, BsGithub as GithubIcon, BsLinkedin as LinkedinIcon } from 'react-icons/bs'
 import { LuTrello, LuWorkflow } from 'react-icons/lu'
 import { PiChatTeardropDotsBold as ChatIcon } from 'react-icons/pi'
 import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
-import { MenuItemProps } from '../types/menu'
+import { MenuItemProps, SocialMedia } from '../types/menu'
 
 const iconSize = 20
 
@@ -109,85 +100,54 @@ export const MENU_ITEMS: MenuItemProps[] = [
   }
 ]
 
-export const SOCIAL_MEDIA: MenuItemProps[] = [
+export const SOCIAL_MEDIA: SocialMedia[] = [
   {
-    title: 'Github',
+    id: 'Discord',
+    title: 'Explore the code',
+    description: 'Explore the source code for all my projects on GitHub.',
     href: 'https://github.com/codebayu',
-    icon: <GithubIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Github',
-    backgroundColor: 'bg-gray-800'
+    icon: <GithubIcon className="text-3xl" />,
+    classContainer:
+      'border-slate-300 from-slate-100 to-slate-200 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950',
+    classText: 'text-slate-800 dark:text-slate-400',
+    classLink: 'bg-slate-800 dark:bg-slate-400',
+    classIcon: 'bg-slate-800 dark:bg-slate-500'
   },
   {
-    title: 'NPM',
-    href: 'https://www.npmjs.com/~bayu-setiawan',
-    icon: <NpmIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Npm',
-    backgroundColor: 'bg-red-700'
-  },
-  {
-    title: 'Linkedin',
+    id: 'Linkedin',
+    title: 'Let`s connect',
+    description: 'Connect for collaboration or explore my professional experience.',
     href: 'https://www.linkedin.com/in/bayu-setiawan99/',
-    icon: <LinkedinIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Linkedin',
-    backgroundColor: 'bg-blue-600'
+    icon: <LinkedinIcon className="text-3xl" />,
+    classContainer:
+      'border-blue-300 from-blue-100 to-blue-200 dark:border-blue-600 dark:from-blue-900 dark:to-blue-950',
+    classText: 'text-blue-600 dark:text-blue-400',
+    classLink: 'bg-blue-600 dark:bg-blue-400',
+    classIcon: 'bg-blue-600 dark:bg-blue-500'
   },
   {
-    title: 'Twitter',
-    href: 'https://twitter.com/',
-    icon: <TwitterIcon size={iconSize} />,
-    isShow: false,
-    isExternal: true,
-    eventName: 'Social: Twitter'
+    id: 'NPM',
+    title: 'Open source',
+    description: 'Install and contribute to my open-source projects.',
+    href: 'https://www.npmjs.com/~bayu-setiawan',
+    icon: <NpmIcon className="text-3xl" />,
+    classContainer:
+      'border-rose-300 from-rose-100 to-rose-200 dark:border-rose-600 dark:from-rose-900 dark:to-rose-950',
+    classText: 'text-rose-700 dark:text-rose-400',
+    classLink: 'bg-rose-700 dark:bg-rose-400',
+    classIcon: 'bg-rose-700 dark:bg-rose-500'
   },
   {
-    title: 'Instagram',
-    href: 'https://instagram.com/bayustr__',
-    icon: <InstagramIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Instagram',
-    backgroundColor: 'bg-pink-600'
-  },
-  {
-    title: 'Threads',
-    href: '',
-    icon: <ThreadsIcon size={iconSize} />,
-    isShow: false,
-    isExternal: true,
-    eventName: 'Social: Threads'
-  },
-  {
-    title: 'Discord',
+    id: 'Discord',
+    title: 'Chat with the community',
+    description: 'Join over 1,000+ others developers on The Code Bayu Discord.',
     href: 'https://discord.gg/76UFeGdXy6',
-    icon: <DiscordIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Discord',
-    backgroundColor: 'bg-purple-700'
-  },
-  {
-    title: 'Youtube',
-    href: 'https://www.youtube.com/@codebayu',
-    icon: <YoutubeIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Youtube',
-    backgroundColor: 'bg-red-700'
-  },
-  {
-    title: 'TikTok',
-    href: 'https://www.tiktok.com/@codebayu.com',
-    icon: <TiktokIcon size={iconSize} />,
-    isShow: true,
-    isExternal: true,
-    eventName: 'Social: Tiktok',
-    backgroundColor: 'bg-black'
+    icon: <DiscordIcon className="text-3xl" />,
+    classContainer:
+      'border-purple-300 from-purple-100 to-purple-200 dark:border-purple-600 dark:from-purple-900 dark:to-purple-950',
+    classText: 'text-purple-600 dark:text-purple-400',
+    classLink: 'bg-purple-600 dark:bg-purple-400',
+    classIcon: 'bg-purple-600 dark:bg-purple-500'
   }
 ]
 

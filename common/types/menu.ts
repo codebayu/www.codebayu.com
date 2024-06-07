@@ -13,3 +13,15 @@ export type MenuItemProps = {
   backgroundColor?: string
   isHover?: boolean
 }
+
+export interface SocialMedia {
+  id: string
+  title: string
+  description: string
+  href: string
+  icon: ReactNode
+  classContainer: string
+  classText: string
+  classLink: string
+  classIcon: string
+}
