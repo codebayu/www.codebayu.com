@@ -4,12 +4,12 @@ import { usePathname } from 'next/navigation'
 
 import { cn } from '@/common/libs/cn'
 import { sendDataLayer } from '@/common/libs/gtm'
-import { MenuItemProps } from '@/common/types/menu'
+import { SocialMedia as ISocialMedia } from '@/common/types/menu'
 
 import Tooltip from './Tooltip'
 
 type SocialMediaProps = {
-  items: MenuItemProps[]
+  items: ISocialMedia[]
   isMePage?: boolean
 }
 
@@ -17,7 +17,7 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
   const pathname = usePathname()
   const dataAos = isMePage ? 'zoom-in-down' : ''
 
-  function handleCardClick(data: MenuItemProps) {
+  function handleCardClick(data: ISocialMedia) {
     sendDataLayer({
       event: 'contact_clicked',
       contact_title: data.title,
@@ -37,12 +37,11 @@ export default function SocialMedia({ items, isMePage }: SocialMediaProps) {
         data-testid="social-media-items-container"
         className={cn('flex justify-around space-x-2 px-5 pt-2 lg:justify-between', isMePage && 'space-x-8')}
       >
-        {items?.map((item: MenuItemProps, index: number) => (
+        {items?.map((item: ISocialMedia, index: number) => (
           <button
             data-testid="social-media-item"
             key={index}
             onClick={() => handleCardClick(item)}
-            data-umami-event={item?.eventName}
             aria-label={item?.title}
           >
             <Tooltip title={item?.title}>

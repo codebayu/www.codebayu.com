@@ -10,9 +10,7 @@ import GoHome from './GoHome'
 import MeProfile from './MeProfile'
 
 export default function MeSection({ careers, promotions }: { careers: ICareer[]; promotions: IAdsBanner[] }) {
-  const filteredSocialMedia = SOCIAL_MEDIA?.filter(
-    item => item?.isShow && item.title !== 'NPM' && item.title !== 'TikTok'
-  )
+  const filteredSocialMedia = SOCIAL_MEDIA?.filter(item => item.title !== 'NPM' && item.title !== 'TikTok')
   return (
     <>
       <MeProfile />
