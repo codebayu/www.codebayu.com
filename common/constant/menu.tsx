@@ -110,7 +110,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     classContainer:
       'border-slate-300 from-slate-100 to-slate-200 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950',
     classText: 'text-slate-800 dark:text-slate-400',
-    classLink: 'bg-slate-800 dark:bg-slate-400',
+    classLink: 'bg-slate-800 hover:bg-slate-700 dark:bg-slate-400 dark:hover:bg-slate-300',
     classIcon: 'bg-slate-800 dark:bg-slate-500'
   },
   {
@@ -122,7 +122,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     classContainer:
       'border-blue-300 from-blue-100 to-blue-200 dark:border-blue-600 dark:from-blue-900 dark:to-blue-950',
     classText: 'text-blue-600 dark:text-blue-400',
-    classLink: 'bg-blue-600 dark:bg-blue-400',
+    classLink: 'bg-blue-600 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-300',
     classIcon: 'bg-blue-600 dark:bg-blue-500'
   },
   {
@@ -134,7 +134,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     classContainer:
       'border-rose-300 from-rose-100 to-rose-200 dark:border-rose-600 dark:from-rose-900 dark:to-rose-950',
     classText: 'text-rose-700 dark:text-rose-400',
-    classLink: 'bg-rose-700 dark:bg-rose-400',
+    classLink: 'bg-rose-700 hover:bg-rose-600 dark:bg-rose-400 dark:hover:bg-rose-300',
     classIcon: 'bg-rose-700 dark:bg-rose-500'
   },
   {
@@ -146,7 +146,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     classContainer:
       'border-purple-300 from-purple-100 to-purple-200 dark:border-purple-600 dark:from-purple-900 dark:to-purple-950',
     classText: 'text-purple-600 dark:text-purple-400',
-    classLink: 'bg-purple-600 dark:bg-purple-400',
+    classLink: 'bg-purple-600 hover:bg-purple-500 dark:bg-purple-400 dark:hover:bg-purple-300',
     classIcon: 'bg-purple-600 dark:bg-purple-500'
   }
 ]

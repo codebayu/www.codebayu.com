@@ -43,7 +43,7 @@ export default function DiscordCard({
         <button
           onClick={handleCardClick}
           className={cn(
-            'mt-4 flex w-max items-center gap-1 rounded-md px-3 py-2 text-[8px] text-xs font-medium text-white shadow-sm dark:text-black md:px-4 md:py-2 md:text-sm',
+            'mt-4 flex w-max items-center gap-1 rounded-md px-3 py-2 text-[8px] text-xs font-medium text-white shadow-sm transition-all duration-150 dark:text-black md:px-4 md:py-2 md:text-sm',
             classLink
           )}
         >
