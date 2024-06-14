@@ -3,7 +3,9 @@ import { revalidatePath } from 'next/cache'
 
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
+import StructuredData from '@/components/elements/StructuredData'
 import axios from 'axios'
+import { Person, WithContext } from 'schema-dts'
 
 import { CODEBAYU_SERVICE } from '@/common/constant'
 import { METADATA } from '@/common/constant/metadata'
@@ -22,6 +24,16 @@ export const metadata: Metadata = {
   }
 }
 
+const structuredData: WithContext<Person> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: METADATA.authors.name,
+  url: METADATA.authors.url,
+  image: METADATA.profile,
+  jobTitle: 'Software Engineer',
+  gender: 'Male'
+}
+
 const PAGE_TITLE = 'About'
 const PAGE_DESCRIPTION = 'A short story of me'
 
@@ -29,6 +41,7 @@ export default async function AboutPage() {
   const careers = await getCareers()
   return (
     <>
+      <StructuredData data={structuredData} />
       <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <About careers={careers} />
