@@ -52,7 +52,8 @@ function generateStructuredData(blog: BlogDetailProps, comments: CommentItemProp
       image: {
         '@type': 'ImageObject',
         url: blog.user.profile_image
-      }
+      },
+      url: blog.user.website_url
     },
     image: {
       '@type': 'ImageObject',

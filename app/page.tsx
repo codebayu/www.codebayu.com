@@ -18,14 +18,16 @@ export const metadata: Metadata = {
   }
 }
 
-const structuredData: WithContext<Person> = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: METADATA.authors.name,
-  url: METADATA.authors.url,
-  image: METADATA.profile,
-  jobTitle: 'Software Engineer',
-  gender: 'Male'
+function generateStructuredData(): WithContext<Person> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: METADATA.authors.name,
+    url: METADATA.authors.url,
+    image: METADATA.profile,
+    jobTitle: 'Software Engineer',
+    gender: 'Male'
+  }
 }
 
 export default async function HomePage() {
@@ -36,7 +38,7 @@ export default async function HomePage() {
   const promotion = promotions.find((item: IAdsBanner) => item.showingOn.includes('/'))
   return (
     <>
-      <StructuredData data={structuredData} />
+      <StructuredData data={generateStructuredData()} />
       <Container data-aos="fade-left">
         <Home learns={learns} services={services} promotion={promotion} />
       </Container>

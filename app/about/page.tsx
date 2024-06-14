@@ -24,14 +24,16 @@ export const metadata: Metadata = {
   }
 }
 
-const structuredData: WithContext<Person> = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: METADATA.authors.name,
-  url: METADATA.authors.url,
-  image: METADATA.profile,
-  jobTitle: 'Software Engineer',
-  gender: 'Male'
+function generateStructuredData(): WithContext<Person> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: METADATA.authors.name,
+    url: METADATA.authors.url,
+    image: METADATA.profile,
+    jobTitle: 'Software Engineer',
+    gender: 'Male'
+  }
 }
 
 const PAGE_TITLE = 'About'
@@ -41,7 +43,7 @@ export default async function AboutPage() {
   const careers = await getCareers()
   return (
     <>
-      <StructuredData data={structuredData} />
+      <StructuredData data={generateStructuredData()} />
       <Container data-aos="fade-left">
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <About careers={careers} />
