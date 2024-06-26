@@ -37,16 +37,6 @@ export default function Codewars({ codewarsData }: { codewarsData: CodewarsData 
         <OverviewItem label="Total Completed Kata" value={codewarsData?.codeChallenges.totalCompleted} />
         <OverviewItem label="Leaderboard Position" value={codewarsData?.leaderboardPosition} />
       </div>
-      <div className="my-t flex flex-col justify-between font-sans text-sm text-neutral-600 dark:text-neutral-300 md:flex-row">
-        <div>
-          <p>Username: {codewarsData?.username}</p>
-          <p>Clan: {codewarsData?.clan || 'No Clan'}</p>
-        </div>
-        <div>
-          <p>Member Since: Jan 2024</p>
-          <p>Skills: {codewarsData?.skills?.map(skill => skill).join(', ')}</p>
-        </div>
-      </div>
     </section>
   )
 }

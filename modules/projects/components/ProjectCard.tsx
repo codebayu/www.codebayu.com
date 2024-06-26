@@ -13,7 +13,7 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
   const trimmedContent = description.slice(0, 70) + (description.length > 70 ? '...' : '')
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className="relative cursor-pointer border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%]">
+      <Card className="relative cursor-pointer border border-neutral-200 bg-gradient-to-br from-white to-neutral-100 dark:border-neutral-700 dark:from-neutral-800 dark:to-neutral-900 lg:hover:scale-[102%] lg:hover:border-neutral-300 dark:lg:hover:border-teal-300">
         {is_featured && (
           <div className="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">
             Featured
