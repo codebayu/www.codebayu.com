@@ -1,9 +1,7 @@
 'use client'
 
-import BackButton from '@/components/elements/BackButton'
 import Container from '@/components/elements/Container'
 import PageHeading from '@/components/elements/PageHeading'
-import ToggleThemeIcon from '@/components/elements/ToggleThemeIcon'
 import { useHydrationZustand } from '@codebayu/use-hydration-zustand'
 import { DragDropContext, DropResult } from '@hello-pangea/dnd'
 
@@ -72,10 +70,6 @@ export default function TaskBoard() {
   return (
     <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
       <Container withMarginTop={false}>
-        <div className="flex items-center justify-between">
-          <BackButton />
-          <ToggleThemeIcon />
-        </div>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <div className="min-h-fullmd:min-h-[70vh] mt-8 flex w-full flex-col space-y-4 md:flex-row md:space-y-0">
           {hydrate ? (

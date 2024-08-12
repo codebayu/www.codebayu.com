@@ -1,5 +1,4 @@
 import Breakline from '@/components/elements/Breakline'
-import { lazy } from 'react'
 
 import { IAdsBanner } from '@/common/types/ads'
 import { ILearn } from '@/common/types/learn'
@@ -7,8 +6,7 @@ import { IServices } from '@/common/types/services'
 
 import Introduction from './Introduction'
 import LatestArticle from './LatestArticle'
-
-const ServicesList = lazy(() => import('./ServicesList'))
+import ServicesList from './ServicesList'
 
 interface HomeProps {
   learns: ILearn[]
