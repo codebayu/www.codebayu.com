@@ -24,7 +24,7 @@ export default function Layouts({ children }: LayoutsProps) {
   const searchParams = useSearchParams()
   const readMode = searchParams.get('read-mode')
 
-  const hideSidebar = ['/me', '/board'].includes(pathName) || readMode === 'true'
+  const hideSidebar = ['/me'].includes(pathName) || readMode === 'true'
 
   useEffect(() => {
     AOS.init({
