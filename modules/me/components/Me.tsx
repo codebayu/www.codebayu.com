@@ -12,12 +12,12 @@ import MeProfile from './MeProfile'
 export default function MeSection({ careers, promotions }: { careers: ICareer[]; promotions: IAdsBanner[] }) {
   const filteredSocialMedia = SOCIAL_MEDIA?.filter(item => item.title !== 'NPM' && item.title !== 'TikTok')
   return (
-    <>
+    <section className="min-h-screen">
       <MeProfile />
       <CurrentlyWorking careers={careers} />
       <SocialMedia items={filteredSocialMedia} isMePage />
       <GoHome />
       <MultiplePromotion data={promotions} />
-    </>
+    </section>
   )
 }
