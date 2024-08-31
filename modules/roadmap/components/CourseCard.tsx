@@ -1,5 +1,5 @@
 import Badge from '@/components/elements/Badge'
-import Card from '@/components/elements/Card'
+import { Card } from '@/components/elements/Card'
 import Tooltip from '@/components/elements/Tooltip'
 
 import { STACKS } from '@/common/constant/stacks'

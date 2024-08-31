@@ -35,6 +35,18 @@
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
+
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(168, 239, 255, 1);
+    --c2: rgba(168, 239, 255, 0.1);
+
+    --line2-color: #d4d4d4; /* neutral-300 */
+    --line1-color: #a3a3a3; /* neutral-200 */
+    --area1-color: rgba(212, 212, 212, 0.3); /* neutral-300 with transparency */
+    --area2-color: rgba(229, 229, 229, 0.3); /* neutral-200 with transparency */
   }
 
   .dark {
@@ -65,6 +77,18 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(168, 239, 255, 1);
+    --c2: rgba(168, 239, 255, 0.1);
+
+    --line1-color: #67e8f9; /* neutral-800 */
+    --line2-color: #e879f9; /* neutral-700 */
+    --area1-color: rgba(38, 38, 38, 0.3); /* neutral-800 with transparency */
+    --area2-color: rgba(64, 64, 64, 0.3); /* neutral-700 with transparency */
   }
 }
 
@@ -314,8 +338,8 @@
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
+  width: calc(100%);
+  height: calc(100%);
   animation: glowing 20s linear infinite;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -350,5 +374,41 @@
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+.inset-shadow {
+  box-shadow:
+    0 1px 0 1px rgba(0, 0, 0, 0.02),
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 6px #171717;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+.glow-border {
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.1turn, var(--c2) 0.1turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
   }
 }

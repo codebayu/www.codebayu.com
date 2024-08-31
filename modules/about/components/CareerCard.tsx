@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 
-import Card from '@/components/elements/Card'
+import { Card } from '@/components/elements/Card'
 import Image from '@/components/elements/Image'
 import { differenceInMonths, differenceInYears, format } from 'date-fns'
 import { useTheme } from 'next-themes'

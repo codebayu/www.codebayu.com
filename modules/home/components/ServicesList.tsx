@@ -18,7 +18,7 @@ export default function ServicesList({ services }: { services: IServices[] }) {
       </div>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         {(services || servicesMock).map((item, index) => (
-          <ServicesCard key={index} {...item} index={index} />
+          <ServicesCard key={index} {...item} />
         ))}
       </div>
     </section>

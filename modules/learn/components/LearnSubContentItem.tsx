@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Card from '@/components/elements/Card'
+import { Card } from '@/components/elements/Card'
 import Tooltip from '@/components/elements/Tooltip'
 import { BiFile as SubContentIcon } from 'react-icons/bi'
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Card from '@/components/elements/Card'
+import { Card } from '@/components/elements/Card'
 import Image from '@/components/elements/Image'
 
 import { getCloudinaryUrl } from '@/common/libs/cloudinary'

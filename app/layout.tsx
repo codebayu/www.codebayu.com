@@ -3,11 +3,11 @@ import type { Metadata } from 'next'
 import Analytics from '@/components/elements/Analytics'
 import GoogleAdsense from '@/components/elements/GoogleAdsense'
 import Layouts from '@/components/layouts/index'
+import { GeistSans } from 'geist/font/sans'
 import NextTopLoader from 'nextjs-toploader'
 
 import { METADATA } from '@/common/constant/metadata'
 
-import { soraSans } from '../common/styles/fonts'
 import ThemeProviderContext from '../stores/theme'
 import './globals.css'
 
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <GoogleAdsense />
-      <body className={soraSans.className}>
+      <body className={GeistSans.className}>
         <NextTopLoader
           color="#05b6d3"
           initialPosition={0.08}
