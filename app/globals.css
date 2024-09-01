@@ -1,4 +1,5 @@
 @import url('star.css');
+@import url('loading.css');
 
 @tailwind base;
 @tailwind components;
