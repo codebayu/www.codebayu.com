@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 
 import Container from '@/components/elements/Container'
 import { getBlogData } from '@/services/blog'
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
 }
 
 export default async function BlogPage({ searchParams }: { searchParams: { category: string } }) {
+  if (!searchParams.category) {
+    redirect('/blog?category=home')
+  }
   const blogs = await getBlog(searchParams.category)
   return (
     <Container data-aos="fade-left">
