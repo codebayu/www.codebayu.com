@@ -1,13 +1,19 @@
 'use client'
 
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { FaRegEye as ViewIcon } from 'react-icons/fa'
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi'
+import { HiOutlineClock as ClockIcon, HiShare } from 'react-icons/hi'
 import { TbMessage2 as CommentIcon } from 'react-icons/tb'
 import { scroller } from 'react-scroll'
 
 import { formatDate } from '@/common/helpers'
+
+import useIsMobile from '@/hooks/useIsMobile'
+
+import SocialShare from './SocialShare'
 
 interface ReaderHeaderProps {
   title: string
@@ -25,6 +31,8 @@ export default function ReaderHeader({
   reading_time_minutes
 }: ReaderHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isShareOpen, setIsShareOpen] = useState(false)
+  const isMobile = useIsMobile()
 
   const scrollToSection = () => {
     scroller.scrollTo('comments', {
@@ -107,6 +115,37 @@ export default function ReaderHeader({
               <span>Comment{comments_count > 1 && 's'}</span>
             </div>
           </div>
+
+          {isMobile ? (
+            <Drawer open={isShareOpen} onOpenChange={setIsShareOpen}>
+              <DrawerTrigger className="flex items-center gap-1 lg:hidden">
+                <HiShare size={18} />
+                <p>Share</p>
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Share to</DrawerTitle>
+                </DrawerHeader>
+                <div className="p-4">
+                  <SocialShare />
+                </div>
+              </DrawerContent>
+            </Drawer>
+          ) : (
+            <Dialog open={isShareOpen} onOpenChange={setIsShareOpen}>
+              <DialogTrigger className="hidden items-center gap-1 lg:flex">
+                <HiShare size={18} />
+                <p>Share</p>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Share to</DialogTitle>
+                </DialogHeader>
+
+                <SocialShare />
+              </DialogContent>
+            </Dialog>
+          )}
         </div>
 
         <div
