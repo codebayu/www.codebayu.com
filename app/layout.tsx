@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next'
+import type { Viewport } from 'next'
 
 import Analytics from '@/components/elements/Analytics'
 import GoogleAdsense from '@/components/elements/GoogleAdsense'
@@ -6,42 +6,40 @@ import Layouts from '@/components/layouts/index'
 import { GeistSans } from 'geist/font/sans'
 import NextTopLoader from 'nextjs-toploader'
 
-import { METADATA } from '@/common/constant/metadata'
-
 import ThemeProviderContext from '../stores/theme'
 import './globals.css'
 
-export const metadata: Metadata = {
-  applicationName: 'codebayu',
-  manifest: '/manifest.json',
-  appleWebApp: {
-    title: 'codebayu',
-    capable: true,
-    statusBarStyle: 'default'
-  },
-  formatDetection: {
-    telephone: false
-  },
-  metadataBase: new URL(process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.DOMAIN || ''),
-  description: METADATA.description,
-  keywords: METADATA.keyword,
-  creator: METADATA.creator,
-  authors: {
-    name: METADATA.creator,
-    url: METADATA.openGraph.url
-  },
-  openGraph: {
-    images: METADATA.profile,
-    url: METADATA.openGraph.url,
-    siteName: METADATA.openGraph.siteName,
-    locale: METADATA.openGraph.locale,
-    type: 'website'
-  },
-  robots: {
-    index: true,
-    follow: true
-  }
-}
+// export const metadata: Metadata = {
+//   applicationName: 'codebayu',
+//   manifest: '/manifest.json',
+//   appleWebApp: {
+//     title: 'codebayu',
+//     capable: true,
+//     statusBarStyle: 'default'
+//   },
+//   formatDetection: {
+//     telephone: false
+//   },
+//   metadataBase: new URL(process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.DOMAIN || ''),
+//   description: METADATA.description,
+//   keywords: METADATA.keyword,
+//   creator: METADATA.creator,
+//   authors: {
+//     name: METADATA.creator,
+//     url: METADATA.openGraph.url
+//   },
+//   openGraph: {
+//     images: METADATA.profile,
+//     url: METADATA.openGraph.url,
+//     siteName: METADATA.openGraph.siteName,
+//     locale: METADATA.openGraph.locale,
+//     type: 'website'
+//   },
+//   robots: {
+//     index: true,
+//     follow: true
+//   }
+// }
 
 export const viewport: Viewport = {
   themeColor: '#0a0a0a'
