@@ -19,7 +19,7 @@ export default function Contributions({ githubData }: ContributionsProps) {
     <section className="flex flex-col gap-y-2">
       <SectionHeading title="Contributions" icon={<GithubIcon className="mr-1" />} />
       <SectionSubHeading>
-        <p className="dark:text-neutral-400">My contributions from last year on github.</p>
+        <p className="dark:text-neutral-400">My public contributions from last year on GitHub.</p>
         <Link
           href={`https://github.com/${GITHUB_ACCOUNTS.username}`}
           target="_blank"

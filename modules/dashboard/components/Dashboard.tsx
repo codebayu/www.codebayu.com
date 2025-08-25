@@ -15,7 +15,6 @@ export default function Dashboard({ githubData, codewarsData }: DashboardProps) 
   return (
     <section className="flex flex-col">
       <PageSpeed />
-      <Breakline />
       <Contributions githubData={githubData} />
       <Breakline />
       <Codewars codewarsData={codewarsData} />

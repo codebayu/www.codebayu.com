@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import Breakline from '@/components/elements/Breakline'
 import SectionHeading from '@/components/elements/SectionHeading'
 import SectionSubHeading from '@/components/elements/SectionSubHeading'
 import { fetcher } from '@/services/fetcher'
@@ -28,6 +29,8 @@ export default function PageSpeed() {
     mutate()
   }
 
+  if (!data) return null
+
   return (
     <section>
       <SectionHeading title="Pagespeed Insight" icon={<MdSpeed className="mr-1" />} />
@@ -44,6 +47,8 @@ export default function PageSpeed() {
       </SectionSubHeading>
       <BadgeSection active={active} refetch={refetch} />
       <SpeedSection data={data} isLoading={isLoading} />
+
+      <Breakline />
     </section>
   )
 }
