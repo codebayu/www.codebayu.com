@@ -76,7 +76,7 @@ export default function ChatItem({
                 animate={{ opacity: 1, transform: 'rotate(0deg)' }}
                 onClick={() => clickReply(name)}
               >
-                <ImReply sixe={18} className="text-neutral-400" />
+                <ImReply size={18} className="text-neutral-400" />
               </motion.button>
             </Tooltip>
           )}

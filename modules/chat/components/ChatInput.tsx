@@ -42,7 +42,7 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
   }, [watch])
 
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="flex items-end space-x-2">
+    <form onSubmit={handleSubmit(handleFormSubmit)} className="flex items-start space-x-2">
       <div className="flex w-full flex-col space-y-2">
         {reply.isReply && (
           <motion.div
