@@ -11,6 +11,7 @@ type RadioInputProps<TFormValue extends FieldValues> = {
   isTextArea?: boolean
   placeholder?: string
   rows?: number
+  maxLength?: number
 }
 
 export default function InputField<TFormValue extends FieldValues>({
@@ -20,13 +21,14 @@ export default function InputField<TFormValue extends FieldValues>({
   isTextArea = false,
   placeholder = '',
   rows = 2,
+  maxLength,
   register
 }: RadioInputProps<TFormValue>) {
   const renderPlaceholder = placeholder || name.charAt(0).toUpperCase() + name.slice(1)
   return (
     <div className=" w-full space-y-2">
       {isTextArea ? (
-        <Textarea rows={rows} placeholder={renderPlaceholder} {...register(name, rule)} />
+        <Textarea rows={rows} placeholder={renderPlaceholder} {...register(name, rule)} maxLength={maxLength} />
       ) : (
         <Input placeholder={renderPlaceholder} {...register(name, rule)} />
       )}

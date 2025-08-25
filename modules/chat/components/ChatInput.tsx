@@ -67,7 +67,9 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
           placeholder="Type your message..."
           register={register}
           error={errors}
+          maxLength={300}
         />
+        <p className="text-[10px] text-neutral-400">Max 300 characters</p>
       </div>
       <button
         disabled={disabled}
