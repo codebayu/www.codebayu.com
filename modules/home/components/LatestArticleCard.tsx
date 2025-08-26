@@ -9,6 +9,8 @@ import { sendDataLayer } from '@/common/libs/gtm'
 import { BlogItem } from '@/common/types/blog'
 import { ILearn } from '@/common/types/learn'
 
+import useIsLargeDesktop from '@/hooks/useIsLargeDesktop'
+
 interface LatestArticleCardProps {
   data: BlogItem
   learns: ILearn[]
@@ -18,7 +20,9 @@ interface LatestArticleCardProps {
 export default function LatestArticleCard({ data, learns, index }: LatestArticleCardProps) {
   const router = useRouter()
   const pathname = usePathname()
-  const title = data?.title.slice(0, 30) + (data.title.length > 20 ? '...' : '')
+  const isLargeDesktop = useIsLargeDesktop()
+  const length = isLargeDesktop ? 50 : 25
+  const title = data?.title.slice(0, length) + (data.title.length > length ? '...' : '')
 
   function handleCardClick() {
     sendDataLayer({
@@ -42,8 +46,8 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
       onClick={handleCardClick}
       className="relative w-full animate-slide-card transition hover:scale-95 hover:duration-500"
     >
-      <div className="relative z-10 flex h-max w-full min-w-[250px] flex-col items-start space-y-1 ">
-        <div className="relative h-28 w-full overflow-hidden rounded-md lg:h-40 3xl:h-48">
+      <div className="relative z-10 flex h-max w-full  flex-col items-start space-y-1 ">
+        <div className="relative aspect-video h-28 w-full overflow-hidden rounded-md lg:h-40 3xl:h-48">
           <Image
             src={data.cover_image || PLACEHOLDER_URL}
             alt={data.title}
@@ -52,8 +56,8 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
             priority
           />
         </div>
-        <p className=" text-sm text-neutral-800 dark:text-neutral-300 3xl:text-base">{title}</p>
-        <span className=" text-[10px] text-neutral-600 dark:text-neutral-400">
+        <p className=" text-start text-sm text-neutral-800 dark:text-neutral-300 3xl:text-base">{title}</p>
+        <span className=" text-[10px] text-neutral-600 dark:text-neutral-400 3xl:text-sm">
           {formatDate(data.published_at, 'MMM dd, yyyy')}
         </span>
       </div>

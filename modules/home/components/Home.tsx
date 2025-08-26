@@ -18,9 +18,9 @@ export default function Home({ learns, services, promotion }: HomeProps) {
   return (
     <>
       <Introduction />
-      <Breakline className="my-6" />
+      <Breakline className="my-6 3xl:my-10" />
       <LatestArticle learns={learns} promotion={promotion} />
-      <Breakline className="my-6" />
+      <Breakline className="my-6 3xl:my-10" />
       <ServicesList services={services} />
     </>
   )

@@ -36,7 +36,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
             priority
           />
         </div>
-        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2 3xl:bottom-28 3xl:right-2">
+        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2 2xl:bottom-28 2xl:right-2">
           <ToggleThemeIcon />
         </div>
         <div className="z-10 -mt-11 rounded-full border-2 border-white shadow-md dark:border-neutral-800">

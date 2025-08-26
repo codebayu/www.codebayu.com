@@ -29,13 +29,12 @@ export default function ReaderPage({ content, comments, pageViewCount }: ReaderP
         page_views_count={pageViewCount}
       />
       <div className="space-y-6 leading-[1.8] dark:text-neutral-300 ">
-        <div className="overflow-hidden">
+        <div className="relative aspect-video w-full overflow-hidden">
           <Image
             src={cover_image || PLACEHOLDER_URL}
-            width={800}
-            height={500}
+            fill
             alt={title}
-            className="transition-all duration-700 hover:scale-105"
+            className="object-cover transition-all duration-700 hover:scale-105"
             priority
           />
         </div>
