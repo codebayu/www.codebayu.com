@@ -49,8 +49,8 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
   const itemComponent = () => {
     return (
       <div {...elementProps}>
-        <div className="text-xl  2xl:text-3xl">{icon}</div>
-        {isHover && <div className="ml-1 animate-enter-left whitespace-nowrap text-sm 2xl:text-base">{title}</div>}
+        <div className="3xl:text-3xl  text-xl">{icon}</div>
+        {isHover && <div className="3xl:text-base ml-1 animate-enter-left whitespace-nowrap text-sm">{title}</div>}
         <div className="flex-grow lg:hidden">{title}</div>
         {children && <>{children}</>}
         {isExternalUrl && isHovered && (

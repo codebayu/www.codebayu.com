@@ -26,7 +26,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
     >
       <div className="relative hidden w-full flex-col items-center overflow-hidden pb-2 lg:flex">
         <Status />
-        <div className="h-24 w-full overflow-hidden rounded-lg dark:brightness-50 2xl:h-40">
+        <div className="3xl:h-40 h-24 w-full overflow-hidden rounded-lg dark:brightness-50">
           <NextImage
             src={BACKDROP_IMAGE}
             alt="profile"
@@ -36,7 +36,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
             priority
           />
         </div>
-        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2 2xl:bottom-28 2xl:right-2">
+        <div className="3xl:bottom-28 3xl:right-2 absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2">
           <ToggleThemeIcon />
         </div>
         <div className="z-10 -mt-11 rounded-full border-2 border-white shadow-md dark:border-neutral-800">
@@ -60,7 +60,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       />
       <div className="mt-1 flex items-center gap-2">
         <Link href="/" passHref>
-          <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl 2xl:text-2xl">
+          <h2 className="font-sora 3xl:text-2xl flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
             Bayu Setiawan
           </h2>
         </Link>
@@ -71,7 +71,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       <Link
         href={DEVTO_PROFILE}
         target="_blank"
-        className="font-sora hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex 2xl:text-lg"
+        className="font-sora 3xl:text-lg hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex"
       >
         @codebayu
       </Link>

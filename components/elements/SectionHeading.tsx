@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({ title, icon, className = '' }: SectionHeadingProps) {
   return (
     <div
-      className={`flex items-center gap-1 text-xl font-medium text-neutral-800 dark:text-neutral-300 2xl:gap-2 2xl:text-3xl ${className}`}
+      className={`3xl:gap-2 3xl:text-3xl flex items-center gap-1 text-xl font-medium text-neutral-800 dark:text-neutral-300 ${className}`}
     >
       {icon && <>{icon}</>}
       <h2 className="capitalize">{title}</h2>

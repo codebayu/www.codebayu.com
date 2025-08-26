@@ -18,7 +18,7 @@ export default function CareerList({ careers }: { careers: ICareer[] }) {
         </SectionSubHeading>
       </div>
 
-      <div className="mt-6 grid gap-5 md:grid-cols-2 2xl:grid-cols-3">
+      <div className="3xl:grid-cols-3 mt-6 grid gap-5 md:grid-cols-2">
         {careers?.map((career, index) => <CareerCard key={index} {...career} />)}
       </div>
     </section>
