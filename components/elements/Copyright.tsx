@@ -1,6 +1,6 @@
 export default function Copyright({ isHover }: { isHover: boolean }) {
   return (
-    <div className="font-sora 3xl:text-lg flex items-center gap-1 px-3 py-1 text-sm text-neutral-600 dark:text-neutral-400">
+    <div className="font-sora flex items-center gap-1 px-3 py-1 text-sm text-neutral-600 dark:text-neutral-400 3xl:text-lg">
       {isHover ? (
         <>
           <span>©</span>

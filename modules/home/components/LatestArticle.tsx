@@ -30,7 +30,7 @@ export default function LatestArticle({ learns, promotion }: { learns: ILearn[];
           <SinglePromotion data={promotion} />
         </SectionSubHeading>
       </div>
-      <div className="no-scrollbar 3xl:h-56 mt-4 flex h-40 flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2 lg:h-52">
+      <div className="no-scrollbar mt-4 flex h-40 flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2 lg:h-52 3xl:h-56">
         {isLoading
           ? [1, 2, 3, 4].map(item => <LoadingLatestArticle key={item} />)
           : articles.map((article, index) => (

@@ -13,7 +13,7 @@ export default function Projects({ projects }: IProjectsItemProps) {
     return 'no data'
   }
   return (
-    <section className="3xl:grid-cols-3 grid gap-5 pt-2 sm:grid-cols-2">
+    <section className="grid gap-5 pt-2 sm:grid-cols-2 3xl:grid-cols-3">
       {fiteredProjects.map((project, index) => (
         <motion.div
           key={index}

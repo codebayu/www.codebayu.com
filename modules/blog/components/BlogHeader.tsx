@@ -15,7 +15,7 @@ export default function BlogHeader() {
   const activeCategory = searchParams.get('category')
   return (
     <div className="flex flex-col items-center">
-      <div className="3xl:h-40 3xl:w-40 relative h-24 w-24">
+      <div className="relative h-24 w-24 3xl:h-40 3xl:w-40">
         <Image
           src={resolvedTheme === 'dark' ? '/img/logo-white.png' : '/img/logo-black.png'}
           fill
@@ -23,7 +23,7 @@ export default function BlogHeader() {
           className="object-cover"
         />
       </div>
-      <p className="3xl:text-lg text-center text-sm text-neutral-600 dark:text-neutral-500">
+      <p className="text-center text-sm text-neutral-600 dark:text-neutral-500 3xl:text-lg">
         Welcome to my blog! Your Source for Expert Tips and Insights!
       </p>
 
@@ -33,7 +33,7 @@ export default function BlogHeader() {
             key={index}
             href={link.href}
             className={cn(
-              '3xl:text-lg text-sm',
+              'text-sm 3xl:text-lg',
               activeCategory === link.value
                 ? 'text-emerald-500 dark:text-emerald-300'
                 : 'text-neutral-500 dark:text-neutral-300'

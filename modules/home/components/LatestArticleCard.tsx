@@ -43,7 +43,7 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
       className="relative w-full animate-slide-card transition hover:scale-95 hover:duration-500"
     >
       <div className="relative z-10 flex h-max w-full min-w-[250px] flex-col items-start space-y-1 ">
-        <div className="3xl:h-48 relative h-28 w-full overflow-hidden rounded-md lg:h-40">
+        <div className="relative h-28 w-full overflow-hidden rounded-md lg:h-40 3xl:h-48">
           <Image
             src={data.cover_image || PLACEHOLDER_URL}
             alt={data.title}
@@ -52,7 +52,7 @@ export default function LatestArticleCard({ data, learns, index }: LatestArticle
             priority
           />
         </div>
-        <p className=" 3xl:text-base text-sm text-neutral-800 dark:text-neutral-300">{title}</p>
+        <p className=" text-sm text-neutral-800 dark:text-neutral-300 3xl:text-base">{title}</p>
         <span className=" text-[10px] text-neutral-600 dark:text-neutral-400">
           {formatDate(data.published_at, 'MMM dd, yyyy')}
         </span>
