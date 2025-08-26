@@ -2,10 +2,11 @@
 
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { useMenu } from '@/stores/menu'
 
+import useIsLargeDesktop from '@/hooks/useIsLargeDesktop'
 import useIsMobile from '@/hooks/useIsMobile'
 
 import ToggleThemeIcon from '../../elements/ToggleThemeIcon'
@@ -15,7 +16,8 @@ import ProfileHeader from './ProfileHeader'
 
 export default function Profile() {
   const isMobile = useIsMobile()
-  const imageSize = isMobile ? 40 : 100
+  const isLargeDesktop = useIsLargeDesktop()
+  const imageSize = isMobile ? 40 : isLargeDesktop ? 150 : 100
   const { isOpen, toggleMenu } = useMenu()
 
   useEffect(() => {

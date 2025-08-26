@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import { User } from 'next-auth'
 import { signOut } from 'next-auth/react'
-import React from 'react'
 import { FaSignOutAlt as SignOutIcon } from 'react-icons/fa'
 
 import { IReply } from '@/common/types/messages'

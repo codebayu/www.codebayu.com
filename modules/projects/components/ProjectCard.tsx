@@ -19,13 +19,15 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
             Featured
           </div>
         )}
-        <Image
-          src={getCloudinaryUrl(image) || PLACEHOLDER_URL}
-          width={400}
-          height={200}
-          alt={title}
-          className="h-48 rounded-t-xl object-cover object-left"
-        />
+        <div className="relative aspect-video w-full overflow-hidden rounded-t-xl object-cover object-left">
+          <Image
+            src={getCloudinaryUrl(image) || PLACEHOLDER_URL}
+            width={400}
+            height={200}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
+        </div>
         <div className="space-y-2 p-5">
           <div className="font-sora cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:hover:text-teal-400 lg:hover:text-teal-800">
             {title}

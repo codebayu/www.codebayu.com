@@ -6,7 +6,7 @@
 // export default function Embed({ html }: EmbedProps) {
 //   return <div dangerouslySetInnerHTML={{ __html: html }} />;
 // }
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 export default function Embed() {
   useEffect(() => {

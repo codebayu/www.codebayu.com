@@ -16,7 +16,7 @@ export default function ServicesList({ services }: { services: IServices[] }) {
           <p className="dark:text-neutral-400">I can deliver the following services</p>
         </SectionSubHeading>
       </div>
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
         {(services || servicesMock).map((item, index) => (
           <ServicesCard key={index} {...item} />
         ))}

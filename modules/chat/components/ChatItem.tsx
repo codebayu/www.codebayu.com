@@ -38,31 +38,21 @@ export default function ChatItem({
       id="chat-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex w-full items-start space-x-3"
+      className="flex w-full items-end space-x-2"
     >
-      <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
-      <div className="flex w-full flex-col space-y-1">
-        <div className="flex items-center space-x-3">
-          <div className="flex items-center space-x-1">
-            <span className="text-sm">{name}</span>
-            {authorEmail === email && (
-              <Tooltip title="Author">
-                <VerifiedIcon size={15} className="text-blue-400" />
-              </Tooltip>
-            )}
-          </div>
-          <span className="text-xs text-neutral-400">{time}</span>
-        </div>
+      <Image src={image} alt={name} width={40} height={40} className="mb-6 rounded-full" />
+      <div className="flex w-full flex-col space-y-[2px]">
         <div
           className="flex w-full max-w-[90%] items-end space-x-2"
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <div className="rounded-xl rounded-tl-none bg-neutral-100 px-3 py-2 font-sans dark:bg-neutral-800">
-            <p className="text-neutral-700 dark:text-neutral-200">
+          <div className="rounded-[20px] rounded-bl-sm border border-teal-900 bg-teal-100 px-3 py-2 font-sans dark:border-teal-100  dark:bg-teal-900 dark:text-teal-200">
+            <p className="text-teal-900 dark:text-teal-100">
               {is_reply && (
                 <>
-                  <span className="mr-1 whitespace-nowrap text-teal-600">@{reply_to}</span> <span>{message}</span>
+                  <span className="mr-1 whitespace-nowrap text-yellow-600 dark:text-yellow-200">@{reply_to}</span>{' '}
+                  <span>{message}</span>
                 </>
               )}
               {!is_reply && <>{message}</>}
@@ -80,6 +70,18 @@ export default function ChatItem({
               </motion.button>
             </Tooltip>
           )}
+        </div>
+        <div className="flex items-center space-x-1 text-neutral-500">
+          <div className="flex items-center space-x-1">
+            <span className="text-xs">{name}</span>
+            {authorEmail === email && (
+              <Tooltip title="Author">
+                <VerifiedIcon size={15} className="text-blue-400" />
+              </Tooltip>
+            )}
+          </div>
+          <span>•</span>
+          <span className="text-xs ">{time}</span>
         </div>
       </div>
       {authorEmail === sessionEmail && (

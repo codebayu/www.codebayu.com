@@ -17,7 +17,7 @@ export default function LeftCollapseNavigation() {
     <div
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className="fixed bottom-0 left-0 top-0 z-30 hidden w-16 flex-col items-center justify-between overflow-hidden rounded-r-2xl px-2 py-4 shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition-all duration-500 hover:w-64 hover:items-stretch hover:p-4 hover:transition-all hover:duration-500 dark:shadow-neutral-800 lg:flex"
+      className="fixed bottom-0 left-0 top-0 z-30 hidden w-16 flex-col items-center justify-between overflow-hidden rounded-r-2xl px-2 py-4 shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition-all duration-500 hover:w-64 hover:items-stretch hover:p-4 hover:transition-all hover:duration-500 dark:shadow-neutral-800 lg:flex xl:w-24 2xl:hover:w-96"
     >
       <div className={`flex h-64 ${isHover ? 'items-start' : 'items-center'}`}>
         {isHover ? (
@@ -25,7 +25,7 @@ export default function LeftCollapseNavigation() {
         ) : (
           <div className="flex flex-col items-center gap-8">
             <div className="z-10 rounded-full border-2 border-white shadow-md dark:border-neutral-800">
-              <Image src={PROFILE_URL} alt="profile" width={50} height={50} className="rounded-full" />
+              <Image src={PROFILE_URL} alt="profile" width={50} height={50} className="rounded-full xl:h-16 xl:w-16" />
             </div>
             <ToggleThemeIcon />
           </div>
@@ -33,7 +33,7 @@ export default function LeftCollapseNavigation() {
       </div>
       <nav className="mb-6 mt-4 flex flex-col gap-3 border-t border-neutral-300 pt-4">
         {filterdMenu.map((item, index) => (
-          <MenuItem key={index} {...item} isHover={isHover} />
+          <MenuItem key={index} {...item} isHover={isHover} className="flex items-center" />
         ))}
       </nav>
       <Copyright isHover={isHover} />

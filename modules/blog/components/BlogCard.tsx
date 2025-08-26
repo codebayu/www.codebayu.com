@@ -47,26 +47,20 @@ export default function BlogCard({
 
   return (
     <div className="flex w-full cursor-pointer flex-col text-start" onClick={handleCardClick}>
-      <div className="overflow-hidden rounded-lg">
-        <Image
-          src={cover_image || PLACEHOLDER_URL}
-          width={200}
-          height={100}
-          alt={title}
-          className="!h-48 w-full  object-cover"
-        />
+      <div className="relative aspect-[16/7] overflow-hidden rounded-lg">
+        <Image src={cover_image || PLACEHOLDER_URL} fill alt={title} className="h-full w-full  object-cover" />
       </div>
       <article className="mt-4 flex w-full flex-grow flex-col space-y-3 self-center">
-        <h2 className="font-medium text-neutral-600 transition-all duration-300 dark:text-neutral-200 dark:hover:text-teal-400 md:text-[17px] lg:hover:text-teal-800">
+        <h2 className="font-medium  text-neutral-600 transition-all duration-300 dark:text-neutral-200 dark:hover:text-teal-400 md:text-[17px] lg:hover:text-teal-800 2xl:text-3xl">
           {trimmedTitle}
         </h2>
         <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
           <div className="flex items-center gap-1 ">
-            <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
+            <span className="text-xs 2xl:text-base">{formatDate(published_at, 'MMM dd, yyyy')}</span>
           </div>
           <div className="flex items-center gap-1">
             <CommentIcon size={16} />
-            <span className="text-xs">
+            <span className="text-xs 2xl:text-base">
               <div className="flex gap-1">
                 <span>{comments_count}</span>
                 <span className="hidden lg:block">Comment{comments_count > 1 && 's'}</span>
@@ -74,7 +68,7 @@ export default function BlogCard({
             </span>
           </div>
         </div>
-        <p className="hidden text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:block">
+        <p className="hidden text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:block 2xl:text-lg">
           {trimmedContent}
         </p>
       </article>

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
-import React from 'react'
 import { BsCloudMoon, BsCloudSun } from 'react-icons/bs'
 
 import useHasMounted from '@/hooks/useHasMounted'
@@ -21,7 +20,7 @@ export default function ToggleThemeIcon() {
       id="dark-mode-switcher"
       aria-label="Toggle Theme"
       onClick={toggleTheme}
-      className="rounded-xl bg-white p-2 dark:bg-neutral-800"
+      className="rounded-xl bg-white  p-2 dark:bg-neutral-800 2xl:text-2xl"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}

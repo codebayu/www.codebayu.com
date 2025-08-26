@@ -2,7 +2,6 @@ import NextImage from 'next/image'
 import Link from 'next/link'
 
 import clsx from 'clsx'
-import React from 'react'
 import { MdVerified as VerifiedIcon } from 'react-icons/md'
 
 import { BACKDROP_IMAGE, DEVTO_PROFILE, PROFILE_URL } from '@/common/constant'
@@ -27,7 +26,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
     >
       <div className="relative hidden w-full flex-col items-center overflow-hidden pb-2 lg:flex">
         <Status />
-        <div className="h-24 w-full overflow-hidden rounded-lg dark:brightness-50">
+        <div className="h-24 w-full overflow-hidden rounded-lg dark:brightness-50 2xl:h-40">
           <NextImage
             src={BACKDROP_IMAGE}
             alt="profile"
@@ -37,7 +36,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
             priority
           />
         </div>
-        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2">
+        <div className="absolute -right-1 bottom-[55px] z-10 rounded-xl py-2 pr-2 2xl:bottom-28 2xl:right-2">
           <ToggleThemeIcon />
         </div>
         <div className="z-10 -mt-11 rounded-full border-2 border-white shadow-md dark:border-neutral-800">
@@ -61,7 +60,9 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       />
       <div className="mt-1 flex items-center gap-2">
         <Link href="/" passHref>
-          <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">Bayu Setiawan</h2>
+          <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl 2xl:text-2xl">
+            Bayu Setiawan
+          </h2>
         </Link>
         <Tooltip title="Verified">
           <VerifiedIcon size={18} className="text-blue-400" />
@@ -70,7 +71,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       <Link
         href={DEVTO_PROFILE}
         target="_blank"
-        className="font-sora hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex"
+        className="font-sora hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex 2xl:text-lg"
       >
         @codebayu
       </Link>

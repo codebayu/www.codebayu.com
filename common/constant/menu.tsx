@@ -14,13 +14,11 @@ import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
 import { MenuItemProps, SocialMedia } from '../types/menu'
 
-const iconSize = 20
-
 export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Home',
     href: '/',
-    icon: <HomeIcon size={iconSize} />,
+    icon: <HomeIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home'
@@ -28,7 +26,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'About',
     href: '/about',
-    icon: <ProfileIcon size={iconSize} />,
+    icon: <ProfileIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: About'
@@ -36,7 +34,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Blog',
     href: '/blog?category=home',
-    icon: <BlogIcon size={iconSize} />,
+    icon: <BlogIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog'
@@ -44,7 +42,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Projects',
     href: '/projects',
-    icon: <ProjectIcon size={iconSize} />,
+    icon: <ProjectIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Projects'
@@ -53,7 +51,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Learn',
     href: '/learn',
-    icon: <LearnIcon size={iconSize} />,
+    icon: <LearnIcon />,
     isShow: false,
     isExternal: false,
     eventName: 'Pages: Learn'
@@ -61,7 +59,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Roadmap',
     href: '/roadmap?tribe=frontend-developer',
-    icon: <LuWorkflow size={iconSize} />,
+    icon: <LuWorkflow />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Roadmap'
@@ -69,7 +67,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Task Board',
     href: '/board',
-    icon: <LuTrello size={iconSize} />,
+    icon: <LuTrello />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Task Board'
@@ -77,7 +75,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Chat Room',
     href: '/chat',
-    icon: <ChatIcon size={iconSize} />,
+    icon: <ChatIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat Room'
@@ -85,7 +83,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Contact',
     href: '/contact',
-    icon: <ContactIcon size={iconSize} />,
+    icon: <ContactIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact'
@@ -93,7 +91,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Dashboard',
     href: '/dashboard',
-    icon: <DashboardIcon size={iconSize} />,
+    icon: <DashboardIcon />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard'
